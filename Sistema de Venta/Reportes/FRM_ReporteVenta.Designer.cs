@@ -30,36 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.textVentaId = new System.Windows.Forms.TextBox();
             this.usp_Reportes_GeneralReporteVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetPrincipal = new Sistema_de_Venta.DataSetPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.textVentaId = new System.Windows.Forms.TextBox();
             this.usp_Reportes_GeneralReporteVentaTableAdapter = new Sistema_de_Venta.DataSetPrincipalTableAdapters.usp_Reportes_GeneralReporteVentaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.usp_Reportes_GeneralReporteVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetPrincipal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.usp_Reportes_GeneralReporteVentaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sistema_de_Venta.Reportes.RPT_ReporteVenra.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1014, 498);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // textVentaId
-            // 
-            this.textVentaId.Location = new System.Drawing.Point(776, 67);
-            this.textVentaId.Name = "textVentaId";
-            this.textVentaId.Size = new System.Drawing.Size(100, 20);
-            this.textVentaId.TabIndex = 1;
-            this.textVentaId.Visible = false;
-            this.textVentaId.TextChanged += new System.EventHandler(this.textVentaId_TextChanged);
             // 
             // usp_Reportes_GeneralReporteVentaBindingSource
             // 
@@ -71,17 +49,43 @@
             this.DataSetPrincipal.DataSetName = "DataSetPrincipal";
             this.DataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.usp_Reportes_GeneralReporteVentaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sistema_de_Venta.Reportes.RPT_ReporteVenra.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1521, 766);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // textVentaId
+            // 
+            this.textVentaId.Location = new System.Drawing.Point(1164, 103);
+            this.textVentaId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textVentaId.Name = "textVentaId";
+            this.textVentaId.Size = new System.Drawing.Size(148, 26);
+            this.textVentaId.TabIndex = 1;
+            this.textVentaId.Visible = false;
+            this.textVentaId.TextChanged += new System.EventHandler(this.textVentaId_TextChanged);
+            // 
             // usp_Reportes_GeneralReporteVentaTableAdapter
             // 
             this.usp_Reportes_GeneralReporteVentaTableAdapter.ClearBeforeFill = true;
             // 
             // FRM_ReporteVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 498);
+            this.ClientSize = new System.Drawing.Size(1521, 766);
             this.Controls.Add(this.textVentaId);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FRM_ReporteVenta";
             this.Text = "FRM_ReporteVenta";
             this.Load += new System.EventHandler(this.FRM_ReporteVenta_Load);
