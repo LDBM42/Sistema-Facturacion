@@ -73,7 +73,6 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     if (text_Id.Text == "")
                     {
-
                         Producto producto = new Producto();
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
@@ -99,7 +98,6 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Imagen = ms.GetBuffer();
                         if (Fproducto.Insertar(producto) > 0)
                         {
-
                             MessageBox.Show("Datos insertados correctamente");
                             FRM_Producto_Load(null, null);
                         }
@@ -134,11 +132,10 @@ namespace Sistema_de_Venta.Presentacion
                         //Solucion del error de no guardar la imagen
                         producto.Imagen = ms.GetBuffer();
 
-                        if (Fproducto.Actualizar(producto) == 0)
+                        if (Fproducto.Actualizar(producto) > 0)
                         {
-
                             MessageBox.Show("Datos Modificados correctamente");
-                            FRM_Producto_Load(null, null);
+                            FRM_Producto_Load(null, null); 
                         }
                     }
                 }

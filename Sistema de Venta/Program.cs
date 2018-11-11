@@ -17,8 +17,8 @@ namespace Sistema_de_Venta
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new Form1());
-           // Application.Run(new FRM_Login());
+           //Application.Run(new Form1());
+           Application.Run(new FRM_Login());
            
           //Application.Run(FRM_Ventas.GetInstance());
            //Application.Run(new FRM_Usuario());

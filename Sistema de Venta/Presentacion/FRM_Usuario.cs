@@ -130,7 +130,7 @@ namespace Sistema_de_Venta.Presentacion
         //Funciones
         public string validarDatos()
         {
-            //Funcion para validar los datos y indicarle al usuario si estos fueron completados 
+            //Funcion para validar los datos e indicarle al usuario si estos fueron completados 
             string resultado = "";
             if (text_Nombre.Text == "") resultado += "El campo: Nombre,\n";
             if (text_Apellido.Text == "") resultado += "El campo: Apellido,\n";

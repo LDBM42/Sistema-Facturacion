@@ -19,22 +19,13 @@ namespace Sistema_de_Venta.Presentacion
             InitializeComponent();
         }
 
-        private void FRM_Login_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
            
-           
             DataSet ds = FLogin.ValidarLogin(text_Usuario.Text, text_Password.Text);
             DataTable dt = ds.Tables[0];
 
-           
-
-             
-             
 
             if (dt.Rows.Count > 0)
             {
@@ -48,12 +39,8 @@ namespace Sistema_de_Venta.Presentacion
                 Usuario.Tipo = dt.Rows[0]["Tipo"].ToString();
 
                 Form1 principal = new Form1();
-                
-                principal.ShowDialog();
-
-                FRM_Login login = new FRM_Login();
-                login.Hide();
-
+                principal.Show();
+                this.Hide();
             }
             else
             {
@@ -87,5 +74,6 @@ namespace Sistema_de_Venta.Presentacion
                     
             Close();
         }
+
     }
 }

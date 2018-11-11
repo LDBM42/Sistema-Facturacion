@@ -20,16 +20,13 @@ namespace Sistema_de_Venta
         }
         private int childFormNumber = 0;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
+
        private void ShowNewForm(object sender, EventArgs e)
         {
-          Form childForm = new Form();
-        childForm.MdiParent = this;
-        childForm.Text = "Window " + childFormNumber++;
-        childForm.Show();
+            Form childForm = new Form();
+            childForm.MdiParent = this;
+            childForm.Text = "Window " + childFormNumber++;
+            childForm.Show();
         }
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -63,10 +60,9 @@ namespace Sistema_de_Venta
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_Login frmlogin = FRM_Login.GetInstance();
-            //frmlogin.MdiParent = this;
-            //frmlogin.Show();      
-            Close();
+            FRM_Login frmlogin = new FRM_Login();
+            frmlogin.Show();
+            this.Hide();
         }
 
         private void aYUDAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,12 +72,12 @@ namespace Sistema_de_Venta
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Usuario.Tipo != "Admin")
+            if (Usuario.Tipo != "Administrador")
             {
                 cONFIGURACIONESToolStripMenuItem.Visible = false;
             }
             toolStripStatusLabel1.Text = "Usuario - " + Usuario.Nombre + " " + Usuario.Apellido;
-            int Activate = 0;
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -98,8 +94,10 @@ namespace Sistema_de_Venta
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_Usuario Usuario = new FRM_Usuario();
-            Usuario.MdiParent = this;
-            Usuario.Show();
+            //Usuario.MdiParent = this;
+            Usuario.ShowDialog(this);
         }
+
+ 
     } 
 }
