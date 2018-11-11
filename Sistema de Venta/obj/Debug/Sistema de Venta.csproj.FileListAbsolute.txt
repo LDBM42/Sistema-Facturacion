@@ -38,3 +38,19 @@ C:\Users\edwar\Desktop\De todo\juego\Sistema de Venta\Sistema de Venta\obj\Debug
 C:\Users\edwar\Desktop\De todo\juego\Sistema de Venta\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CoreCompileInputs.cache
 C:\Users\edwar\Desktop\De todo\juego\Sistema de Venta\Sistema de Venta\obj\Debug\Sistema de Venta.exe
 C:\Users\edwar\Desktop\De todo\juego\Sistema de Venta\Sistema de Venta\obj\Debug\Sistema de Venta.pdb
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csprojAssemblyReference.cache
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Login.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Usuario.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Form1.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Categoria.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Cliente.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_DetalleVenta.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Producto.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Ventas.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.RegistrarUsuario.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Properties.Resources.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.FRM_ReporteVenta.resources
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.GenerateResource.cache
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.exe
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.pdb
