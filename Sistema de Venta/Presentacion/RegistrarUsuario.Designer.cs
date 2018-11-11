@@ -40,34 +40,38 @@
             // 
             this.pictureBox1.BackgroundImage = global::Sistema_de_Venta.Properties.Resources.adduser_añadir_3553;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 77);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 173);
+            this.pictureBox1.Size = new System.Drawing.Size(232, 266);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 63);
+            this.label1.Location = new System.Drawing.Point(315, 97);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario";
             // 
             // txtUsuario1
             // 
-            this.txtUsuario1.Location = new System.Drawing.Point(317, 63);
+            this.txtUsuario1.Location = new System.Drawing.Point(476, 97);
+            this.txtUsuario1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsuario1.Name = "txtUsuario1";
-            this.txtUsuario1.Size = new System.Drawing.Size(163, 20);
+            this.txtUsuario1.Size = new System.Drawing.Size(242, 26);
             this.txtUsuario1.TabIndex = 2;
             this.txtUsuario1.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // Aceptar
             // 
-            this.Aceptar.Location = new System.Drawing.Point(287, 155);
+            this.Aceptar.Location = new System.Drawing.Point(430, 238);
+            this.Aceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Aceptar.Name = "Aceptar";
-            this.Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.Aceptar.Size = new System.Drawing.Size(112, 35);
             this.Aceptar.TabIndex = 3;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = true;
@@ -75,9 +79,10 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(405, 155);
+            this.Cancelar.Location = new System.Drawing.Point(608, 238);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cancelar.Size = new System.Drawing.Size(112, 35);
             this.Cancelar.TabIndex = 3;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
@@ -85,16 +90,18 @@
             // 
             // RegistrarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 296);
+            this.ClientSize = new System.Drawing.Size(990, 455);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
             this.Controls.Add(this.txtUsuario1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RegistrarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrarUsuario";
             this.Load += new System.EventHandler(this.RegistrarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
