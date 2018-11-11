@@ -54,3 +54,11 @@ E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Ven
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.exe
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.pdb
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Sistema de Venta.exe.config
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Sistema de Venta.exe
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Sistema de Venta.pdb
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CopyComplete
