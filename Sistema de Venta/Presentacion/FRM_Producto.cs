@@ -36,11 +36,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Categoria.Text = id;
             text_CategoriaDescripcion.Text = descripcion;
         }
-        private void text_Descripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void Buscar_Categoria_Click(object sender, EventArgs e)
         {
             FRM_Categoria FRMCate = new FRM_Categoria();
@@ -191,10 +187,6 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (MessageBox.Show("Esta seguro de eliminar los productos seleccionados?", "Eliminacion de Productos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-
-
-
-
                     foreach (DataGridViewRow row in dgvProductos.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
@@ -254,7 +246,6 @@ namespace Sistema_de_Venta.Presentacion
                 DataGridViewCheckBoxCell chkEliminar =
                     (DataGridViewCheckBoxCell)dgvProductos.Rows[e.RowIndex].Cells["Eliminar"];
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
-                ;
             }
 
         }
@@ -359,10 +350,7 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
-        private void text_CategoriaDescripcion_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void Imagen_Click(object sender, EventArgs e)
         {
@@ -416,9 +404,11 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-        private void text_Stock_TextChanged(object sender, EventArgs e)
+        private void text_CategoriaDescripcion_MouseClick(object sender, MouseEventArgs e)
         {
-
+            FRM_Categoria FRMCate = new FRM_Categoria();
+            FRMCate.SetFlag("1");
+            FRMCate.ShowDialog();
         }
     }
 }

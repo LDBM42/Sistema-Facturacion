@@ -72,27 +72,6 @@ namespace Sistema_de_Venta
         private void aYUDAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Esta funcion aun esta en mantenimiento, por favor comuniquece con el administrador del programa.", "AYUDA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-          
-        }
-
-        private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void cascadaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void cONFIGURACIONESToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -102,6 +81,7 @@ namespace Sistema_de_Venta
                 cONFIGURACIONESToolStripMenuItem.Visible = false;
             }
             toolStripStatusLabel1.Text = "Usuario - " + Usuario.Nombre + " " + Usuario.Apellido;
+            int Activate = 0;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

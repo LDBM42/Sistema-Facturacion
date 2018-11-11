@@ -118,7 +118,6 @@
             this.cONFIGURACIONESToolStripMenuItem.Name = "cONFIGURACIONESToolStripMenuItem";
             this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(263, 35);
             this.cONFIGURACIONESToolStripMenuItem.Text = "CONFIGURACIONES";
-            this.cONFIGURACIONESToolStripMenuItem.Click += new System.EventHandler(this.cONFIGURACIONESToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 

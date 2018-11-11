@@ -21,7 +21,6 @@ namespace Sistema_de_Venta.Datos
                     
                 };
             return FDBHelper.ExecuteDataSet("usp_Data_FProducto_GetAll", dbParams);
-
         }
 
         public static int Insertar(Producto producto)
