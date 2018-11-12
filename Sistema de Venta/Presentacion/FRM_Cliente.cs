@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Sistema_de_Venta.Entidades;
+using SistemaVentas.Datos;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SisVenttas.Datos;
-using System.Data.SqlClient;
-using System.Configuration;
-using Sistema_de_Venta.Datos;
-using Sistema_de_Venta.Entidades;
 
 namespace Sistema_de_Venta.Presentacion
 {
@@ -41,32 +32,32 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Cliente_Load(object sender, EventArgs e)
         {
-          try
-   
-             {
-                 DataSet ds = FClientes.GetAll();
-                 dt = ds.Tables[0];
-                 dgvClientes.DataSource = dt;
+            try
 
-                 if (dt.Rows.Count > 0)
-              
-              {
+            {
+                DataSet ds = FClientes.GetAll();
+                dt = ds.Tables[0];
+                dgvClientes.DataSource = dt;
 
-                  noencontrado.Visible = false;
-                  dgvClientes_CellClick(null, null);
-              }
-                 else
-                 {
+                if (dt.Rows.Count > 0)
 
-                     noencontrado.Visible = true;
-                 }
-          }
+                {
+
+                    noencontrado.Visible = false;
+                    dgvClientes_CellClick(null, null);
+                }
+                else
+                {
+
+                    noencontrado.Visible = true;
+                }
+            }
             catch (Exception ex)
-          {
-              MessageBox.Show(ex.Message + ex.StackTrace);
-          }
-          MostrarGuardarCancelar(false);
-   
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            MostrarGuardarCancelar(false);
+
         }
 
         private void ListaClientes_Enter(object sender, EventArgs e)
@@ -78,49 +69,49 @@ namespace Sistema_de_Venta.Presentacion
         {
             try
             {
-               string sresultado = ValidarDatos();
+                string sresultado = ValidarDatos();
 
-               if (sresultado =="")
-               { 
-                if (text_Id.Text == "")
+                if (sresultado == "")
                 {
-
-                    Cliente cliente = new Cliente();
-                    cliente.Nombre = text_Nombre.Text;
-                    cliente.Apellido = text_Apellido.Text;
-                    cliente.Domicilio = text_Domicilio.Text;
-                    cliente.Dni = Convert.ToInt32(text_DNI.Text);
-                    cliente.Telefono = text_Telefono.Text;
-
-                    if (FClientes.Insertar(cliente) > 0)
+                    if (text_Id.Text == "")
                     {
 
-                        MessageBox.Show("Datos insertados correctamente");
-                        FRM_Cliente_Load(null, null);
+                        Cliente cliente = new Cliente();
+                        cliente.Nombre = text_Nombre .Text;
+                        cliente.Apellido = text_Apellido.Text;
+                        cliente.Domicilio = text_Domicilio.Text;
+                        cliente.Dni = Convert.ToInt32(text_DNI.Text);
+                        cliente.Telefono = text_Telefono.Text;
+
+                        if (FClientes.Insertar(cliente) > 0)
+                        {
+
+                            MessageBox.Show("Datos insertados correctamente");
+                            FRM_Cliente_Load(null, null);
+                        }
+                    }
+
+                    else
+                    {
+
+                        Cliente cliente = new Cliente();
+                        cliente.Id = Convert.ToInt32(text_Id.Text);
+                        cliente.Nombre = text_Nombre.Text;
+                        cliente.Apellido = text_Apellido.Text;
+                        cliente.Domicilio = text_Domicilio.Text;
+                        cliente.Dni = Convert.ToInt32(text_DNI.Text);
+                        cliente.Telefono = text_Telefono.Text;
+
+                        if (FClientes.Actualizar(cliente) == 1)
+                        {
+
+                            MessageBox.Show("Datos Modificados correctamente");
+                            FRM_Cliente_Load(null, null);
+                        }
                     }
                 }
 
                 else
-                {
-
-                    Cliente cliente = new Cliente();
-                    cliente.Id = Convert.ToInt32(text_Id.Text);
-                    cliente.Nombre = text_Nombre.Text;
-                    cliente.Apellido = text_Apellido.Text;
-                    cliente.Domicilio = text_Domicilio.Text;
-                    cliente.Dni = Convert.ToInt32(text_DNI.Text);
-                    cliente.Telefono = text_Telefono.Text;
-
-                    if (FClientes.Actualizar(cliente) == 0)
-                    {
-
-                        MessageBox.Show("Datos Modificados correctamente");
-                        FRM_Cliente_Load(null, null);
-                    }
-                }
-            }
-
-               else
                 {
                     MessageBox.Show("Faltan Completar Datos: \n " + sresultado);
 
@@ -128,29 +119,29 @@ namespace Sistema_de_Venta.Presentacion
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message + ex.StackTrace);
-                
+
             }
 
         }
-        
-                public string ValidarDatos()
+
+        public string ValidarDatos()
         {
             string Resultado = "";
-            if (text_Nombre.Text =="")
-            { 
-            Resultado = Resultado + " Nombre \n";
+            if (text_Nombre.Text == "")
+            {
+                Resultado = Resultado + " Nombre \n";
 
             }
-        if (text_Apellido.Text == "")
-        {
+            if (text_Apellido.Text == "")
+            {
 
-            Resultado = Resultado + " Apellido \n";
+                Resultado = Resultado + " Apellido \n";
+            }
+
+            return Resultado;
         }
-
-        return Resultado;
-                }
 
         private void Nuevo_Click(object sender, EventArgs e)
         {
@@ -161,8 +152,8 @@ namespace Sistema_de_Venta.Presentacion
 
 
         }
-            
-        public void MostrarGuardarCancelar (bool b)
+
+        public void MostrarGuardarCancelar(bool b)
         {
 
             Guardar.Visible = b;
@@ -195,14 +186,14 @@ namespace Sistema_de_Venta.Presentacion
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
 
-            
+
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(false);
             dgvClientes_CellClick(null, null);
-          
+
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -217,61 +208,61 @@ namespace Sistema_de_Venta.Presentacion
                 text_DNI.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
                 text_Domicilio.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
             }
-}
+        }
 
         private void FRM_Cliente_Click(object sender, EventArgs e)
         {
 
         }
         public void limpiar()
-    {
+        {
             text_Id.Clear();
             text_Nombre.Clear();
             text_Apellido.Clear();
             text_Domicilio.Clear();
             text_DNI.Clear();
             text_Telefono.Clear();
-    }
+        }
 
         private void BT_liminar_Click(object sender, EventArgs e)
         {
             try
             {
-                
+
                 if (MessageBox.Show("Esta seguro de eliminar los clientes seleccionados?", "Eliminacion de Clientes", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
 
 
-                
-                
-                foreach (DataGridViewRow row in dgvClientes.Rows)
-                {
-                  if ( Convert.ToBoolean( row.Cells["Eliminar"].Value))
-                  {
-                      Cliente cliente = new Cliente();
-                      cliente.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                     if ( FClientes.Eliminar(cliente) == 0)
-                     {
-                         MessageBox.Show("Cliente Eliminado", "Eliminacion de Cliente",
-                             MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                     }
-                     else
+
+
+                    foreach (DataGridViewRow row in dgvClientes.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
+                        {
+                            Cliente cliente = new Cliente();
+                            cliente.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                            if (FClientes.Eliminar(cliente) == 0)
+                            {
+                                MessageBox.Show("Cliente Eliminado", "Eliminacion de Cliente",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
                             {
                                 MessageBox.Show("El cliente no pudo ser eliminado", "Eliminacion de Cliente",
                                                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-                  }
-                }
-                FRM_Cliente_Load(null, null);
+                        }
+                    }
+                    FRM_Cliente_Load(null, null);
 
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message + ex.StackTrace);
-                
+
             }
         }
 
@@ -287,13 +278,14 @@ namespace Sistema_de_Venta.Presentacion
                 DataView dv = new DataView(dt.Copy());
                 dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
                 dgvClientes.DataSource = dv;
-                
+
                 if (dv.Count == 0)
                 {
                     noencontrado.Visible = true;
                 }
-                
-                else {
+
+                else
+                {
                     noencontrado.Visible = false;
                 }
             }
@@ -333,7 +325,7 @@ namespace Sistema_de_Venta.Presentacion
                         );
                     frmVenta.Show();
                     Close();
-                } 
+                }
             }
         }
     }

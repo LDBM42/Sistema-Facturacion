@@ -68,12 +68,11 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Excedio el maximo de tiempo de espera, por motivo de seguridad el programa sera cerrado", "Tiempo Agotado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
-            Close();
-        }
 
+
+        private void FRM_Login_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

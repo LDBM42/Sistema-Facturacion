@@ -169,8 +169,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 9000000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FRM_Login
             // 
@@ -188,6 +188,7 @@
             this.Name = "FRM_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Login";
+            this.Load += new System.EventHandler(this.FRM_Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Load_Imagen)).EndInit();
