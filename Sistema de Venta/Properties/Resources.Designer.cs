@@ -143,6 +143,16 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap giphy__2_ {
+            get {
+                object obj = ResourceManager.GetObject("giphy (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Help_icon {
             get {
                 object obj = ResourceManager.GetObject("Help-icon", resourceCulture);

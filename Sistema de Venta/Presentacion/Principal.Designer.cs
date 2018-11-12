@@ -77,7 +77,7 @@
             this.cLIENTESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.new_add_user_16734;
             this.cLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
@@ -86,7 +86,7 @@
             this.pRODUCTOSToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.box;
             this.pRODUCTOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
-            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
@@ -96,7 +96,7 @@
             this.vENTASToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.cart_png_pic_png_image_512;
             this.vENTASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
             this.vENTASToolStripMenuItem.Text = "VENTAS";
             this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
@@ -105,7 +105,7 @@
             this.cATEGORIAToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Documents_icon;
             this.cATEGORIAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
-            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(220, 30);
             this.cATEGORIAToolStripMenuItem.Text = "CATEGORIAS";
             this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
             // 
@@ -167,9 +167,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(854, 404);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -204,7 +206,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-
     }
 }
 
