@@ -60,7 +60,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.btnUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.ListaClientes.SuspendLayout();
             this.DatosClientes.SuspendLayout();
@@ -442,20 +441,6 @@
             this.txtUsuario.TabIndex = 14;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
-            // btnUsuario
-            // 
-            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUsuario.Location = new System.Drawing.Point(603, 820);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(15, 17);
-            this.btnUsuario.TabIndex = 11;
-            this.btnUsuario.Text = "...";
-            this.btnUsuario.UseVisualStyleBackColor = false;
-            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
-            // 
             // FRM_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -463,7 +448,6 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1820, 834);
             this.Controls.Add(this.ListaClientes);
-            this.Controls.Add(this.btnUsuario);
             this.Controls.Add(this.DatosClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -513,6 +497,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnUsuario;
     }
 }

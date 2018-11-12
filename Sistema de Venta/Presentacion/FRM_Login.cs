@@ -19,6 +19,7 @@ namespace Sistema_de_Venta.Presentacion
             InitializeComponent();
         }
 
+        int countDownTimer;
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -72,6 +73,28 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Login_Load(object sender, EventArgs e)
         {
+            countDownTimer = 15;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (countDownTimer != 0)
+            {
+                lbl_CountDown.Text = Convert.ToString(countDownTimer);
+                countDownTimer--;
+
+                if (!this.Visible)
+                {
+                    timer1.Stop();
+                }
+            }
+            else
+            {
+                timer1.Stop();
+                MessageBox.Show("Excedio el máximo de tiempo de espera, por motivo de seguridad el programa sera cerrado", "Tiempo Agotado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
             
         }
     }

@@ -37,7 +37,7 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.lbl_CountDown = new System.Windows.Forms.Label();
             this.Load_Imagen = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -133,16 +133,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario";
             // 
-            // lblBienvenido
+            // lbl_CountDown
             // 
-            this.lblBienvenido.BackColor = System.Drawing.Color.SpringGreen;
-            this.lblBienvenido.Location = new System.Drawing.Point(18, 18);
-            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(36, 28);
-            this.lblBienvenido.TabIndex = 2;
-            this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblBienvenido.Visible = false;
+            this.lbl_CountDown.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CountDown.Location = new System.Drawing.Point(31, 18);
+            this.lbl_CountDown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_CountDown.Name = "lbl_CountDown";
+            this.lbl_CountDown.Size = new System.Drawing.Size(77, 51);
+            this.lbl_CountDown.TabIndex = 2;
+            this.lbl_CountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Load_Imagen
             // 
@@ -170,7 +170,8 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 9000000;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FRM_Login
             // 
@@ -178,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(723, 768);
-            this.Controls.Add(this.lblBienvenido);
+            this.Controls.Add(this.lbl_CountDown);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Load_Imagen);
@@ -203,7 +204,7 @@
         private System.Windows.Forms.TextBox text_Usuario;
         private System.Windows.Forms.TextBox text_Password;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Label lbl_CountDown;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label label2;
