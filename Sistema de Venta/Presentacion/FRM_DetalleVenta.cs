@@ -245,8 +245,7 @@ namespace Sistema_de_Venta.Presentacion
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             FRM_ReporteVenta frmRepVenta = new FRM_ReporteVenta();
-
-            frmRepVenta.SetventaId(Convert.ToInt32(textVentaId.Text));
+            frmRepVenta.SetVentaId(Convert.ToInt32(textVentaId.Text));
             frmRepVenta.ShowDialog();
         }
     }

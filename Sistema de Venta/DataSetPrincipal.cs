@@ -1,7 +1,9 @@
-﻿namespace Sistema_de_Venta {
-    
-    
-    public partial class DataSetPrincipal {
+﻿namespace Sistema_de_Venta
+{
+
+
+    public partial class DataSetPrincipal
+    {
     }
 }
 

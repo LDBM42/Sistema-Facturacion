@@ -17,26 +17,17 @@ namespace Sistema_de_Venta
             InitializeComponent();
         }
 
-        public void SetventaId(int VentaId)
+        public void SetVentaId(int ventaId)
         {
-            textVentaId.Text = VentaId.ToString();
-        }
+            txtVentaId.Text = ventaId.ToString();
+        } 
+
         private void FRM_ReporteVenta_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSetPrincipal.usp_Reportes_GeneralReporteVenta' table. You can move, or remove it, as needed.
-            this.usp_Reportes_GeneralReporteVentaTableAdapter.Fill(this.DataSetPrincipal.usp_Reportes_GeneralReporteVenta, Convert.ToInt32(textVentaId.Text));
+            // TODO: esta línea de código carga datos en la tabla 'DataSet2.usp_Reportes_GenrerarReporteVenta' Puede moverla o quitarla según sea necesario.
+            this.usp_Reportes_GenrerarReporteVentaTableAdapter.Fill(this.DataSet2.usp_Reportes_GenrerarReporteVenta, Convert.ToInt32(txtVentaId.Text));
 
             this.reportViewer1.RefreshReport();
-        }
-
-        private void textVentaId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
