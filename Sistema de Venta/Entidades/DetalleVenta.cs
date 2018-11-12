@@ -31,9 +31,9 @@ namespace Sistema_de_Venta.Entidades
            get { return _producto; }
            set { _producto = value; }
        }
-       private double _cantidad;
+       private int _cantidad;
 
-       public double Cantidad
+       public int Cantidad
        {
            get { return _cantidad; }
            set { _cantidad = value; }

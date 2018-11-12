@@ -239,7 +239,7 @@ namespace Sistema_de_Venta.Presentacion
                         {
                             Cliente cliente = new Cliente();
                             cliente.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                            if (FClientes.Eliminar(cliente) == 0)
+                            if (FClientes.Eliminar(cliente) > 0)
                             {
                                 MessageBox.Show("Cliente Eliminado", "Eliminacion de Cliente",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

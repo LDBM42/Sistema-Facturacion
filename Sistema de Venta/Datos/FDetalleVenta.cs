@@ -64,15 +64,15 @@ namespace Sistema_de_Venta.Datos
 
         }
 
-        internal static int DisminuirStock(DetalleVenta Dventa)
-        {
-            SqlParameter[] dbParams = new SqlParameter[]
-                {
-                    FDBHelper.MakeParam("@ProductoID",SqlDbType.Int, 0, Dventa.Producto.Id),
-                    FDBHelper.MakeParam("@Cantidad",SqlDbType.Decimal, 0, Dventa.Cantidad)
-                };
-            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetallesVenta_DisminuirStock", dbParams));
-        }
+        //internal static int DisminuirStock(DetalleVenta Dventa)
+        //{
+        //    SqlParameter[] dbParams = new SqlParameter[]
+        //        {
+        //            FDBHelper.MakeParam("@ProductoID",SqlDbType.Int, 0, Dventa.Producto.Id),
+        //            FDBHelper.MakeParam("@Cantidad",SqlDbType.Decimal, 0, Dventa.Cantidad)
+        //        };
+        //    return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetallesVenta_DisminuirStock", dbParams));
+        //}
 
         internal static int AumentarStock(DetalleVenta Dventa)
         {

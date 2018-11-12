@@ -107,14 +107,18 @@ namespace Sistema_de_Venta.Presentacion
                     
                     Dventa.Venta.Id = Convert.ToInt32(textVentaId.Text);
                     Dventa.Producto.Id = Convert.ToInt32(text_ProductoId.Text);
-                    Dventa.Cantidad = Convert.ToDouble(text_Cantidad.Text);
+                    Dventa.Cantidad = Convert.ToInt32(text_Cantidad.Text);
                     Dventa.PrecioUnitario = Convert.ToDouble(text_PrecioUnitario.Text);
 
                     int iDVentaId = FDetalleVenta.Insertar(Dventa);
 
                     if (iDVentaId > 0)
                     {
-                        FDetalleVenta.DisminuirStock(Dventa);
+                        //obteniento nuevo stock
+                        int currentStock = Convert.ToInt32(text_stock.Text);
+                        string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
+                        text_stock.Text = newStock;
+
                         FRM_DetalleVenta_Load(null, null);
                         MessageBox.Show("El Producto fue agregado correctamente");
                         Limpiar();
@@ -129,7 +133,6 @@ namespace Sistema_de_Venta.Presentacion
                 else
                 {
                     MessageBox.Show(sresultado,"Error",MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
             catch (Exception ex)
@@ -163,6 +166,8 @@ namespace Sistema_de_Venta.Presentacion
             if (Convert.ToInt32(text_Cantidad.Text) > Convert.ToInt32(text_stock.Text))
             {
                 Resultado = Resultado + " La cantidad que intenta vender supera el stock \n";
+                text_Cantidad.Value = Convert.ToInt32(text_stock.Text);
+                text_Cantidad.Focus();
             }
 
             return Resultado;
