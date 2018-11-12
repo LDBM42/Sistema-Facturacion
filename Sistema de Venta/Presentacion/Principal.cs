@@ -72,7 +72,7 @@ namespace Sistema_de_Venta
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Usuario.Tipo != "Administrador")
+            if (Usuario.Tipo != "Admin")
             {
                 cONFIGURACIONESToolStripMenuItem.Visible = false;
             }

@@ -132,27 +132,27 @@
             // 
             // text_Direccion
             // 
-            this.text_Direccion.Location = new System.Drawing.Point(134, 252);
+            this.text_Direccion.Location = new System.Drawing.Point(132, 252);
             this.text_Direccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Direccion.Name = "text_Direccion";
-            this.text_Direccion.Size = new System.Drawing.Size(298, 28);
+            this.text_Direccion.Size = new System.Drawing.Size(301, 28);
             this.text_Direccion.TabIndex = 10;
             // 
             // text_Telefono
             // 
-            this.text_Telefono.Location = new System.Drawing.Point(134, 298);
+            this.text_Telefono.Location = new System.Drawing.Point(132, 298);
             this.text_Telefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Telefono.Name = "text_Telefono";
-            this.text_Telefono.Size = new System.Drawing.Size(298, 28);
+            this.text_Telefono.Size = new System.Drawing.Size(301, 28);
             this.text_Telefono.TabIndex = 9;
             this.text_Telefono.Text = " ";
             // 
             // text_DNI
             // 
-            this.text_DNI.Location = new System.Drawing.Point(134, 206);
+            this.text_DNI.Location = new System.Drawing.Point(132, 206);
             this.text_DNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_DNI.Name = "text_DNI";
-            this.text_DNI.Size = new System.Drawing.Size(298, 28);
+            this.text_DNI.Size = new System.Drawing.Size(301, 28);
             this.text_DNI.TabIndex = 8;
             // 
             // Buscar
@@ -207,18 +207,18 @@
             // 
             // text_Nombre
             // 
-            this.text_Nombre.Location = new System.Drawing.Point(134, 114);
+            this.text_Nombre.Location = new System.Drawing.Point(132, 114);
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Nombre.Name = "text_Nombre";
-            this.text_Nombre.Size = new System.Drawing.Size(298, 28);
+            this.text_Nombre.Size = new System.Drawing.Size(301, 28);
             this.text_Nombre.TabIndex = 7;
             // 
             // text_Apellido
             // 
-            this.text_Apellido.Location = new System.Drawing.Point(134, 160);
+            this.text_Apellido.Location = new System.Drawing.Point(132, 160);
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.text_Apellido.Name = "text_Apellido";
-            this.text_Apellido.Size = new System.Drawing.Size(298, 28);
+            this.text_Apellido.Size = new System.Drawing.Size(301, 28);
             this.text_Apellido.TabIndex = 7;
             // 
             // text_Id
@@ -362,7 +362,7 @@
             this.cbxTipo.Items.AddRange(new object[] {
             "Admin",
             "Empleado"});
-            this.cbxTipo.Location = new System.Drawing.Point(130, 443);
+            this.cbxTipo.Location = new System.Drawing.Point(132, 443);
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(301, 30);
@@ -419,12 +419,12 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPassword.Location = new System.Drawing.Point(134, 395);
+            this.txtPassword.Location = new System.Drawing.Point(132, 395);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(298, 30);
+            this.txtPassword.Size = new System.Drawing.Size(301, 30);
             this.txtPassword.TabIndex = 13;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -433,11 +433,11 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUsuario.Location = new System.Drawing.Point(134, 348);
+            this.txtUsuario.Location = new System.Drawing.Point(132, 348);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(0, 5, 4, 5);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(298, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(301, 29);
             this.txtUsuario.TabIndex = 14;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 

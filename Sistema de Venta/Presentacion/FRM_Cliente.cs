@@ -132,11 +132,9 @@ namespace Sistema_de_Venta.Presentacion
             if (text_Nombre.Text == "")
             {
                 Resultado = Resultado + " Nombre \n";
-
             }
             if (text_Apellido.Text == "")
             {
-
                 Resultado = Resultado + " Apellido \n";
             }
 

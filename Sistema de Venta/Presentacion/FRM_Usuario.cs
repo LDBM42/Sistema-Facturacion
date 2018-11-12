@@ -20,6 +20,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             InitializeComponent();
         }
+        string dniValidar = ""; //almacena valor anterior a la modificación del dni
 
         public static FRM_Usuario GetInstance()
         {
@@ -77,7 +78,7 @@ namespace Sistema_de_Venta.Presentacion
             try
             {
                 string sResultado = validarDatos();
-                if (sResultado == "")
+                if (sResultado == "") // no faltan datos
                 {
                     if (text_Id.Text != "") //Actualizar registro
                     {
@@ -134,14 +135,14 @@ namespace Sistema_de_Venta.Presentacion
             string resultado = "";
             if (text_Nombre.Text == "") resultado += "El campo: Nombre,\n";
             if (text_Apellido.Text == "") resultado += "El campo: Apellido,\n";
-            if (text_Id.Text == "" && text_DNI.Text != "")
+            if (text_Id.Text == "" && text_DNI.Text != "") //está agregando nuevo
             {
                 if (FUsuario.VerificarDNI(Convert.ToInt32(text_DNI.Text)) > 0)
                     resultado += "El campo: DNI,\n (DNI ya existe) \n";
             }   
-            else
+            else //está modificando
             {
-                if (text_DNI.Text != dgvUsuarios.CurrentRow.Cells[4].Value.ToString())
+                if (text_DNI.Text != dniValidar)
                 {
                     if (FUsuario.VerificarDNI(Convert.ToInt32(text_DNI.Text)) > 0)
                         resultado += "El campo: DNI,\n (DNI ya existe) \n";
@@ -161,7 +162,6 @@ namespace Sistema_de_Venta.Presentacion
             Nuevo.Visible = !si;
             Editar.Visible = !si;
             Eliminar.Visible = !si;
-            btnUsuario.Visible = si;
             dgvUsuarios.Enabled = !si;
 
             text_Nombre.Enabled = si;
@@ -195,6 +195,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Editar_Click(object sender, EventArgs e)
         {
+            dniValidar = text_DNI.Text; //asignar dni anterior a la variable
             MostrarBotonesOcultos(true);
         }
 
@@ -311,10 +312,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             MessageBox.Show("Usuario: " + usuario + "\n Password: " + password);
             txtUsuario.Text = usuario;
-            txtPassword.Text = password;
-                
-
-          
+            txtPassword.Text = password;          
         }
 
                 private void txtUsuario_TextChanged(object sender, EventArgs e)
