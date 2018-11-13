@@ -180,7 +180,29 @@ namespace Sistema_de_Venta.Presentacion
             try
             {
                 DataView dv = new DataView(dt.Copy());
-                dv.RowFilter = CMB_Descripcion.Text + " Like '" + Buscar.Text + "%'";
+                try
+                {
+                    dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+
+                }
+                catch (Exception)
+                {
+                    if (Buscar.Text != "")
+                    {
+                        try
+                        {
+                            if (Convert.ToInt32(Buscar.Text) >= 0)
+                                dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                            Buscar.Text = "";
+                            Buscar.Focus();
+                        }
+                    }
+                }
+
                 dgvCategoria.DataSource = dv;
 
                 if (dv.Count == 0)
@@ -194,11 +216,11 @@ namespace Sistema_de_Venta.Presentacion
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
             }
         }
 
@@ -282,6 +304,12 @@ namespace Sistema_de_Venta.Presentacion
         private void btn_salir_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
         }
     }
 }

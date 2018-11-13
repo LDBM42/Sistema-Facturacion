@@ -36,9 +36,9 @@ namespace Sistema_de_Venta.Entidades
             get { return _descripcion; }
             set { _descripcion = value; }
         }
-        private double _stock;
+        private int _stock;
 
-        public double Stock
+        public int Stock
         {
             get { return _stock; }
             set { _stock = value; }
@@ -76,7 +76,7 @@ namespace Sistema_de_Venta.Entidades
         {
             _categoria = new Categoria();
         }
-        public Producto(int id, Categoria categoria, string nombre, string descripcion, double stock, double precioCompra, double precioVenta, DateTime fechaVencimiento, byte[] imagen )
+        public Producto(int id, Categoria categoria, string nombre, string descripcion, int stock, double precioCompra, double precioVenta, DateTime fechaVencimiento, byte[] imagen )
 
         {
             Id = id;

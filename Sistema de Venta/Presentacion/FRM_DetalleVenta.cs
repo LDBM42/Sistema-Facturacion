@@ -28,12 +28,6 @@ namespace Sistema_de_Venta.Presentacion
 
             return _instancia;
         }
-        private void btn_BuscarProducto_Click(object sender, EventArgs e)
-        {
-            FRM_Producto FRMPro = FRM_Producto.GetInscance();
-            FRMPro.SetFlag("1");
-            FRMPro.ShowDialog();
-        }
 
         internal void SetProducto(Producto producto)
         {
@@ -182,9 +176,16 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (e.ColumnIndex == dgvVentas.Columns["Eliminar"].Index)
             {
-                DataGridViewCheckBoxCell chkEliminar =
+                try
+                {
+                    DataGridViewCheckBoxCell chkEliminar =
                     (DataGridViewCheckBoxCell)dgvVentas.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                    chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                }
+                catch (Exception)
+                {
+                }
+                
             }
         }
 
@@ -208,28 +209,15 @@ namespace Sistema_de_Venta.Presentacion
                             Dventa.Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
 
                             Dventa.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                            if (FDetalleVenta.Eliminar(Dventa) > 0)
+                            if (!(FDetalleVenta.Eliminar(Dventa) > 0))
                             {
-                           
-                                    FDetalleVenta.AumentarStock(Dventa);
-                                }
-
-                                else
-                                {
-                                    MessageBox.Show("El producto no pudo ser quitado de la venta. Intente nuevamente", "Eliminacion de Producto",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                           
+                                MessageBox.Show("El producto no pudo ser quitado de la venta. Intente nuevamente", "Eliminacion de Producto",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
-
-                        //else
-                        //{
-                        //    MessageBox.Show("Debe seleccionar al menos un producto ", "Eliminacion de Productro",
-                        //               MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //}
                     }
                     FRM_DetalleVenta_Load(null, null);
-
+                    Limpiar();
                 }
 
             }
@@ -247,6 +235,65 @@ namespace Sistema_de_Venta.Presentacion
             FRM_ReporteVenta frmRepVenta = new FRM_ReporteVenta();
             frmRepVenta.SetVentaId(Convert.ToInt32(textVentaId.Text));
             frmRepVenta.ShowDialog();
+        }
+
+        private void text_ProductoDescripcion_MouseClick(object sender, MouseEventArgs e)
+        {
+            FRM_Producto FRMPro = FRM_Producto.GetInscance();
+            FRMPro.SetFlag("1");
+            FRMPro.ShowDialog();
+        }
+
+        private void Buscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataView dv = new DataView(dt.Copy());
+                if (CMB_Buscar.Text == "Nombre")
+                {
+                    dv.RowFilter = CMB_Buscar.Text + " LIKE '" + Buscar.Text + "%'";
+                }
+                else if (Buscar.Text != "")
+                {
+                    if (Buscar.Text != "")
+                    {
+                        try
+                        {
+                            if (Convert.ToInt32(Buscar.Text) >= 0)
+                                dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                            Buscar.Text = "";
+                            Buscar.Focus();
+                        }
+                    }
+                }
+
+                dgvVentas.DataSource = dv;
+
+                if (dv.Count == 0)
+                {
+                    noencontrado.Visible = true;
+                }
+                else
+                {
+                    noencontrado.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
+            }
+        }
+
+        private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
         }
     }
 }

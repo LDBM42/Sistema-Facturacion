@@ -297,6 +297,8 @@ namespace Sistema_de_Venta {
             
             private global::System.Data.DataColumn columnDni;
             
+            private global::System.Data.DataColumn columnProductoNombre;
+            
             private global::System.Data.DataColumn columnProductoDescripcion;
             
             private global::System.Data.DataColumn columnTotalParcial;
@@ -408,6 +410,14 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ProductoNombreColumn {
+                get {
+                    return this.columnProductoNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ProductoDescripcionColumn {
                 get {
                     return this.columnProductoDescripcion;
@@ -459,7 +469,7 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string TipoDocumento, string Nombre, string Apellido, int Dni, string ProductoDescripcion, decimal TotalParcial) {
+            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string TipoDocumento, string Nombre, string Apellido, int Dni, string ProductoNombre, string ProductoDescripcion, decimal TotalParcial) {
                 usp_Reportes_GenrerarReporteVentaRow rowusp_Reportes_GenrerarReporteVentaRow = ((usp_Reportes_GenrerarReporteVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VentaId,
@@ -471,6 +481,7 @@ namespace Sistema_de_Venta {
                         Nombre,
                         Apellido,
                         Dni,
+                        ProductoNombre,
                         ProductoDescripcion,
                         TotalParcial};
                 rowusp_Reportes_GenrerarReporteVentaRow.ItemArray = columnValuesArray;
@@ -504,6 +515,7 @@ namespace Sistema_de_Venta {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellido = base.Columns["Apellido"];
                 this.columnDni = base.Columns["Dni"];
+                this.columnProductoNombre = base.Columns["ProductoNombre"];
                 this.columnProductoDescripcion = base.Columns["ProductoDescripcion"];
                 this.columnTotalParcial = base.Columns["TotalParcial"];
             }
@@ -529,6 +541,8 @@ namespace Sistema_de_Venta {
                 base.Columns.Add(this.columnApellido);
                 this.columnDni = new global::System.Data.DataColumn("Dni", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDni);
+                this.columnProductoNombre = new global::System.Data.DataColumn("ProductoNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductoNombre);
                 this.columnProductoDescripcion = new global::System.Data.DataColumn("ProductoDescripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductoDescripcion);
                 this.columnTotalParcial = new global::System.Data.DataColumn("TotalParcial", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -542,8 +556,10 @@ namespace Sistema_de_Venta {
                 this.columnNombre.MaxLength = 50;
                 this.columnApellido.AllowDBNull = false;
                 this.columnApellido.MaxLength = 50;
+                this.columnProductoNombre.AllowDBNull = false;
+                this.columnProductoNombre.MaxLength = 200;
                 this.columnProductoDescripcion.AllowDBNull = false;
-                this.columnProductoDescripcion.MaxLength = 200;
+                this.columnProductoDescripcion.MaxLength = 500;
                 this.columnTotalParcial.ReadOnly = true;
             }
             
@@ -810,6 +826,17 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ProductoNombre {
+                get {
+                    return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoNombreColumn]));
+                }
+                set {
+                    this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ProductoDescripcion {
                 get {
                     return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn]));
@@ -1065,6 +1092,7 @@ namespace Sistema_de_Venta.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellido", "Apellido");
             tableMapping.ColumnMappings.Add("Dni", "Dni");
+            tableMapping.ColumnMappings.Add("ProductoNombre", "ProductoNombre");
             tableMapping.ColumnMappings.Add("ProductoDescripcion", "ProductoDescripcion");
             tableMapping.ColumnMappings.Add("TotalParcial", "TotalParcial");
             this._adapter.TableMappings.Add(tableMapping);

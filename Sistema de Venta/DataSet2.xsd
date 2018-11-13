@@ -31,6 +31,7 @@
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Apellido" DataSetColumn="Apellido" />
               <Mapping SourceColumn="Dni" DataSetColumn="Dni" />
+              <Mapping SourceColumn="ProductoNombre" DataSetColumn="ProductoNombre" />
               <Mapping SourceColumn="ProductoDescripcion" DataSetColumn="ProductoDescripcion" />
               <Mapping SourceColumn="TotalParcial" DataSetColumn="TotalParcial" />
             </Mappings>
@@ -80,10 +81,17 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:int" minOccurs="0" />
-              <xs:element name="ProductoDescripcion" msprop:Generator_ColumnVarNameInTable="columnProductoDescripcion" msprop:Generator_ColumnPropNameInRow="ProductoDescripcion" msprop:Generator_ColumnPropNameInTable="ProductoDescripcionColumn" msprop:Generator_UserColumnName="ProductoDescripcion">
+              <xs:element name="ProductoNombre" msprop:Generator_ColumnVarNameInTable="columnProductoNombre" msprop:Generator_ColumnPropNameInRow="ProductoNombre" msprop:Generator_ColumnPropNameInTable="ProductoNombreColumn" msprop:Generator_UserColumnName="ProductoNombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductoDescripcion" msprop:Generator_ColumnVarNameInTable="columnProductoDescripcion" msprop:Generator_ColumnPropNameInRow="ProductoDescripcion" msprop:Generator_ColumnPropNameInTable="ProductoDescripcionColumn" msprop:Generator_UserColumnName="ProductoDescripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

@@ -75,6 +75,9 @@ namespace Sistema_de_Venta.Presentacion
         {
             countDownTimer = 15;
             timer1.Start();
+
+            //BORRAR
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
