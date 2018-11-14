@@ -44,9 +44,11 @@
             this.noencontrado = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.ListaClientes = new System.Windows.Forms.GroupBox();
+            this.Buscar = new System.Windows.Forms.TextBox();
+            this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbx_DescripcionVenta = new System.Windows.Forms.TextBox();
+            this.text_DescripcionVenta = new System.Windows.Forms.TextBox();
             this.Lbl_Comentario = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.text_Cantidad = new System.Windows.Forms.NumericUpDown();
@@ -60,8 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFlag = new System.Windows.Forms.TextBox();
-            this.Buscar = new System.Windows.Forms.TextBox();
-            this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.ListaClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -232,6 +232,30 @@
             this.ListaClientes.TabStop = false;
             this.ListaClientes.Text = "Detalles de Venta";
             // 
+            // Buscar
+            // 
+            this.Buscar.Location = new System.Drawing.Point(188, 36);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(707, 24);
+            this.Buscar.TabIndex = 22;
+            this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
+            // 
+            // CMB_Buscar
+            // 
+            this.CMB_Buscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_Buscar.FormattingEnabled = true;
+            this.CMB_Buscar.Items.AddRange(new object[] {
+            "Nombre",
+            "Cantidad",
+            "PrecioUnitario"});
+            this.CMB_Buscar.Location = new System.Drawing.Point(20, 36);
+            this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.CMB_Buscar.Name = "CMB_Buscar";
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
+            this.CMB_Buscar.TabIndex = 21;
+            this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
+            // 
             // btnQuitar
             // 
             this.btnQuitar.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -247,7 +271,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbx_DescripcionVenta);
+            this.groupBox1.Controls.Add(this.text_DescripcionVenta);
             this.groupBox1.Controls.Add(this.Lbl_Comentario);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.text_Cantidad);
@@ -282,14 +306,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Ventas";
             // 
-            // tbx_DescripcionVenta
+            // text_DescripcionVenta
             // 
-            this.tbx_DescripcionVenta.Location = new System.Drawing.Point(167, 359);
-            this.tbx_DescripcionVenta.Margin = new System.Windows.Forms.Padding(4);
-            this.tbx_DescripcionVenta.Multiline = true;
-            this.tbx_DescripcionVenta.Name = "tbx_DescripcionVenta";
-            this.tbx_DescripcionVenta.Size = new System.Drawing.Size(240, 74);
-            this.tbx_DescripcionVenta.TabIndex = 20;
+            this.text_DescripcionVenta.Location = new System.Drawing.Point(167, 359);
+            this.text_DescripcionVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.text_DescripcionVenta.Multiline = true;
+            this.text_DescripcionVenta.Name = "text_DescripcionVenta";
+            this.text_DescripcionVenta.Size = new System.Drawing.Size(240, 74);
+            this.text_DescripcionVenta.TabIndex = 20;
             // 
             // Lbl_Comentario
             // 
@@ -438,30 +462,6 @@
             this.txtFlag.TabIndex = 9;
             this.txtFlag.Visible = false;
             // 
-            // Buscar
-            // 
-            this.Buscar.Location = new System.Drawing.Point(188, 36);
-            this.Buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(707, 24);
-            this.Buscar.TabIndex = 22;
-            this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
-            // 
-            // CMB_Buscar
-            // 
-            this.CMB_Buscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_Buscar.FormattingEnabled = true;
-            this.CMB_Buscar.Items.AddRange(new object[] {
-            "Nombre",
-            "Cantidad",
-            "PrecioUnitario"});
-            this.CMB_Buscar.Location = new System.Drawing.Point(20, 36);
-            this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
-            this.CMB_Buscar.TabIndex = 21;
-            this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
-            // 
             // FRM_DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -519,7 +519,7 @@
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TextBox txtFlag;
-        private System.Windows.Forms.TextBox tbx_DescripcionVenta;
+        private System.Windows.Forms.TextBox text_DescripcionVenta;
         private System.Windows.Forms.Label Lbl_Comentario;
         private System.Windows.Forms.TextBox Buscar;
         private System.Windows.Forms.ComboBox CMB_Buscar;

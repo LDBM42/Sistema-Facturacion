@@ -62,8 +62,8 @@ namespace Sistema_de_Venta.Presentacion
                 dgvVentas.Columns["ProductoId"].Visible = false;
                 dgvVentas.Columns["Id"].Visible = false;
                 dgvVentas.Columns["PrecioVenta"].Visible = false;
-                   
-                if (dt.Rows.Count > 0)  
+
+                    if (dt.Rows.Count > 0)  
                 {
 
                     noencontrado.Visible = false;
@@ -103,6 +103,7 @@ namespace Sistema_de_Venta.Presentacion
                     Dventa.Producto.Id = Convert.ToInt32(text_ProductoId.Text);
                     Dventa.Cantidad = Convert.ToInt32(text_Cantidad.Text);
                     Dventa.PrecioUnitario = Convert.ToDouble(text_PrecioUnitario.Text);
+                    Dventa.DescripcionVenta = text_DescripcionVenta.Text;
 
                     int iDVentaId = FDetalleVenta.Insertar(Dventa);
 

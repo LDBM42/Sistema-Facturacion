@@ -46,6 +46,16 @@ namespace Sistema_de_Venta.Entidades
            set { _precioUnitario = value; }
        }
 
+        private string _descripcionVenta;
+
+        public string DescripcionVenta
+        {
+            get { return _descripcionVenta; }
+            set { _descripcionVenta = value; }
+        }
+
+        
+
        public DetalleVenta()
        {
            _producto = new Producto();
