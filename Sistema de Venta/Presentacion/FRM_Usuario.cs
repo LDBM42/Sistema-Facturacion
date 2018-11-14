@@ -207,11 +207,19 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.ColumnIndex == dgvUsuarios.Columns["Eliminar"].Index)
             {
-                DataGridViewCheckBoxCell chkEliminar =
-                    (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                try
+                {
+                    DataGridViewCheckBoxCell chkEliminar =
+                        (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells["Eliminar"];
+                    chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                }
+                catch (Exception)
+                {
+
+                }
             }
         }
         private bool verificarFilasSeleccionada()
@@ -268,7 +276,17 @@ namespace Sistema_de_Venta.Presentacion
                 }
                 else if (Buscar.Text != "")
                 {
-                    dv.RowFilter = CMB_Buscar.Text + " >= " + Buscar.Text;
+                    try
+                    {
+                        if (Convert.ToInt32(Buscar.Text) >= 0)
+                            dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                        Buscar.Text = "";
+                        Buscar.Focus();
+                    }
                 }
 
                 dgvUsuarios.DataSource = dv;
@@ -282,9 +300,12 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                //MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
             }
         }
 
@@ -315,24 +336,10 @@ namespace Sistema_de_Venta.Presentacion
             txtPassword.Text = password;          
         }
 
-                private void txtUsuario_TextChanged(object sender, EventArgs e)
-                {
-
-                }
-
-                private void txtPassword_TextChanged(object sender, EventArgs e)
-                {
-
-                }
-
-                private void text_Id_TextChanged(object sender, EventArgs e)
-                {
-
-                }
-
-                private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
-                {
-
-                }
+        private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
+        }
     }
 }

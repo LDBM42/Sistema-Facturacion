@@ -57,12 +57,6 @@ namespace Sistema_de_Venta.Presentacion
             text_ClienteId.Enabled = false;
             text_ClienteNombre.Enabled = false;
         }
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
-        {
-            FRM_Cliente FRMCli = new FRM_Cliente();
-            FRMCli.SetFlag("1");
-            FRMCli.Show();
-        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {//guardar
@@ -144,6 +138,7 @@ namespace Sistema_de_Venta.Presentacion
             //para que me muestre la columna eliminar 
             Eliminar.Visible = true;
             limpiar();
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -156,7 +151,29 @@ namespace Sistema_de_Venta.Presentacion
             try
             {
                 DataView dv = new DataView(dt.Copy());
-                dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+                try
+                {
+                    dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+
+                }
+                catch (Exception)
+                {
+                    if (Buscar.Text != "")
+                    {
+                        try
+                        {
+                            if (Convert.ToInt32(Buscar.Text) >= 0)
+                                dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                            Buscar.Text = "";
+                            Buscar.Focus();
+                        }
+                    }
+                }
+
                 dgvVentas.DataSource = dv;
                 
                 if (dv.Count == 0)
@@ -169,14 +186,12 @@ namespace Sistema_de_Venta.Presentacion
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
             }
-        
-
         }
 
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -209,12 +224,11 @@ namespace Sistema_de_Venta.Presentacion
             btnCancelar.Visible = b;
             btnNuevo.Visible = !b;
             btnEditar.Visible = !b;
-            btnBuscarCliente.Visible = b;
             
             dgvVentas.Enabled = !b;
 
             //text_ClienteId.Enabled = b;
-            //text_ClienteNombre.Enabled = b;
+            text_ClienteNombre.Enabled = b;
             text_NumeroDoc.Enabled = b;
             text_fecha.Enabled = b;
             cmdTipoDoc.Enabled = b;
@@ -243,6 +257,7 @@ namespace Sistema_de_Venta.Presentacion
             text_ClienteId.Clear();
             text_ClienteNombre.Clear();
             text_NumeroDoc.Clear();
+            text_fecha.Text = "";
 
         }
 
@@ -289,7 +304,6 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     MessageBox.Show("La Fecha de venta no puede menor a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     text_fecha.Value = DateTime.Now;
-
                 
                 }
                 if (text_fecha.Value > DateTime.Now && text_fecha.Enabled)
@@ -302,6 +316,19 @@ namespace Sistema_de_Venta.Presentacion
 
 
             }            
+        }
+
+        private void text_ClienteNombre_MouseClick(object sender, MouseEventArgs e)
+        {
+            FRM_Cliente FRMCli = new FRM_Cliente();
+            FRMCli.SetFlag("1");
+            FRMCli.Show();
+        }
+
+        private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
         }
     } 
 }

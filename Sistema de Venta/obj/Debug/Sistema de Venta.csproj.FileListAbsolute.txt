@@ -140,3 +140,4 @@ E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\SqlServerTypes
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.exe.config

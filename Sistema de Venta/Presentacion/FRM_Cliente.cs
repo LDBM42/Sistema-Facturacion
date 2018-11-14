@@ -179,9 +179,15 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (e.ColumnIndex == dgvClientes.Columns["Eliminar"].Index)
             {
-                DataGridViewCheckBoxCell chkEliminar =
-                    (DataGridViewCheckBoxCell)dgvClientes.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                try
+                {
+                    DataGridViewCheckBoxCell chkEliminar =
+                        (DataGridViewCheckBoxCell)dgvClientes.Rows[e.RowIndex].Cells["Eliminar"];
+                    chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                }
+                catch (Exception)
+                {
+                }
             }
 
 
@@ -266,7 +272,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)
@@ -274,7 +281,29 @@ namespace Sistema_de_Venta.Presentacion
             try
             {
                 DataView dv = new DataView(dt.Copy());
-                dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+                try
+                {
+                    dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+
+                }
+                catch (Exception)
+                {
+                    if (Buscar.Text != "")
+                    {
+                        try
+                        {
+                            if (Convert.ToInt32(Buscar.Text) >= 0)
+                                dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                            Buscar.Text = "";
+                            Buscar.Focus();
+                        }
+                    }
+                }
+
                 dgvClientes.DataSource = dv;
 
                 if (dv.Count == 0)
@@ -288,11 +317,11 @@ namespace Sistema_de_Venta.Presentacion
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
             }
         }
 

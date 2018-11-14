@@ -77,7 +77,7 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToDouble(text_Stock.Text);
+                        producto.Stock = Convert.ToInt32(text_Stock.Text);
                         producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
@@ -111,7 +111,7 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToDouble(text_Stock.Text);
+                        producto.Stock = Convert.ToInt32(text_Stock.Text);
                         producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
@@ -217,7 +217,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 text_Id.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                 text_Categoria.Text = dgvProductos.CurrentRow.Cells["CategoriaId"].Value.ToString();
-                //text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
+                text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
                 text_Nombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                 text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
                 text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
@@ -240,9 +240,16 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (e.ColumnIndex == dgvProductos.Columns["Eliminar"].Index)
             {
-                DataGridViewCheckBoxCell chkEliminar =
+                try
+                {
+                    DataGridViewCheckBoxCell chkEliminar =
                     (DataGridViewCheckBoxCell)dgvProductos.Rows[e.RowIndex].Cells["Eliminar"];
-                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                    chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+                }
+                catch (Exception)
+                {
+                }
+                
             }
 
         }
@@ -287,7 +294,7 @@ namespace Sistema_de_Venta.Presentacion
 
             Cambiar.Visible = b;
             Quitar.Visible = b;
-            Buscar.Visible = b;
+            Buscar.Visible = !b;
 
 
 
@@ -375,7 +382,7 @@ namespace Sistema_de_Venta.Presentacion
                     Producto producto = new Producto();
                     producto.Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
                     producto.Nombre = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    producto.Stock = Convert.ToDouble(dgvProductos.CurrentRow.Cells["Stock"].Value.ToString());
+                    producto.Stock = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Stock"].Value.ToString());
                     producto.PrecioVenta = Convert.ToDouble(dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString());
 
                     frmDetalle.SetProducto(producto);
@@ -406,6 +413,61 @@ namespace Sistema_de_Venta.Presentacion
             FRM_Categoria FRMCate = new FRM_Categoria();
             FRMCate.SetFlag("1");
             FRMCate.ShowDialog();
+        }
+
+        private void Buscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataView dv = new DataView(dt.Copy());
+                try
+                {
+                    dv.RowFilter = CMB_Buscar.Text + " Like '" + Buscar.Text + "%'";
+
+                }
+                catch (Exception)
+                {
+                    if (Buscar.Text != "")
+                    {
+                        try
+                        {
+                            if (Convert.ToInt32(Buscar.Text) >= 0)
+                                dv.RowFilter = CMB_Buscar.Text + " = " + Buscar.Text;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                            Buscar.Text = "";
+                            Buscar.Focus();
+                        }
+                    }
+                }
+
+                dgvProductos.DataSource = dv;
+
+                if (dv.Count == 0)
+                {
+                    noencontrado.Visible = true;
+                }
+
+                else
+                {
+                    noencontrado.Visible = false;
+                }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Favor escribir un valor correcto", "Texto incorrecto");
+                Buscar.Text = "";
+                Buscar.Focus();
+            }
+        }
+
+        private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Buscar_TextChanged(null, null);
+            Buscar.Focus();
         }
     }
 }
