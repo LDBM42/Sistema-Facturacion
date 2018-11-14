@@ -66,12 +66,21 @@ namespace Sistema_de_Venta.Entidades
             get { return _password; }
             set { _password = value; }
         }
-        private   string _tipo;
+
+        public   string _tipo;
 
         public   string Tipo
         {
             get { return _tipo; }
             set { _tipo = value; }
+        }
+
+        public static int _logged;
+
+        public static int Logged
+        {
+            get { return _logged; }
+            set { _logged = value; }
         }
 
     }

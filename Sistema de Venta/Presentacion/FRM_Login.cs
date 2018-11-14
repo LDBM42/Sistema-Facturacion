@@ -23,7 +23,6 @@ namespace Sistema_de_Venta.Presentacion
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-           
             DataSet ds = FLogin.ValidarLogin(text_Usuario.Text, text_Password.Text);
             DataTable dt = ds.Tables[0];
 
@@ -38,10 +37,14 @@ namespace Sistema_de_Venta.Presentacion
                 Usuario.Telefono = dt.Rows[0]["Telefono"].ToString();
                 Usuario.Nombreusuario = dt.Rows[0]["Usuario"].ToString();
                 Usuario.Tipo = dt.Rows[0]["Tipo"].ToString();
+                Usuario.Password = dt.Rows[0]["Password"].ToString();
+                Usuario.Logged = 1; // para activar autologgin
 
-                Form1 principal = new Form1();
-                principal.Show();
-                this.Hide();
+                //Guardar Datos Autologgin
+                if (FLogin.AutoLoginSet(Usuario.Nombreusuario, Usuario.Password, Usuario.Logged) == 1)
+                {
+                    this.DialogResult = DialogResult.OK; //terminar loggin y abrir Principal
+                }
             }
             else
             {
@@ -63,9 +66,6 @@ namespace Sistema_de_Venta.Presentacion
         {
             pictureBox1.Visible = !t;
             groupBox1.Visible = !t;
-           
-            
-
 
         }
 
@@ -73,11 +73,22 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Login_Load(object sender, EventArgs e)
         {
-            countDownTimer = 15;
-            timer1.Start();
+            DataSet ds = FLogin.AutoLoginGet();
+            DataTable dt = ds.Tables[0];
 
-            //BORRAR
-            
+
+            if (dt.Rows.Count > 0)
+            {
+               text_Usuario.Text = dt.Rows[0]["Usuario"].ToString();
+               text_Password.Text = dt.Rows[0]["Contraseña"].ToString();
+
+                btnEntrar.PerformClick();
+            }
+            else
+            {
+                countDownTimer = 15;
+                timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

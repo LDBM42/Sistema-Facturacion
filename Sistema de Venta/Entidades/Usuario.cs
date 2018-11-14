@@ -72,5 +72,13 @@ namespace Sistema_de_Venta.Entidades
             set { _tipo = value; }
         }
 
+        private static int _logged;
+
+        public static int Logged
+        {
+            get { return _logged; }
+            set { _logged = value; }
+        }
+
     }
 }

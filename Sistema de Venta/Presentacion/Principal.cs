@@ -1,4 +1,5 @@
-﻿using Sistema_de_Venta.Entidades;
+﻿using Sistema_de_Venta.Datos;
+using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Presentacion;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Sistema_de_Venta
             InitializeComponent();
         }
         private int childFormNumber = 0;
+        private bool cerrarSeccion = false;
 
 
        private void ShowNewForm(object sender, EventArgs e)
@@ -60,9 +62,29 @@ namespace Sistema_de_Venta
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Login frmlogin = new FRM_Login();
-            frmlogin.Show();
-            this.Hide();
+            cerrarSeccion = true;
+            if (MessageBox.Show("¿Estás seguro de cerrar sección " + 
+                Usuario.Nombre + " " + Usuario.Apellido + "?", "Cerrar Sección",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Usuario.Logged = 0; // para desactivar autologgin
+                //DESLOGEARSE
+                if (!(FLogin.AutoLoginSet(Usuario.Nombreusuario, Usuario.Password, Usuario.Logged) == 1))
+                {
+                    MessageBox.Show("No se pudo hacer el cerrado de sección", "Cerado Sección");
+                }
+
+                Application.Exit();
+            }
+            else
+                cerrarSeccion = false;
+
+            //Application.Restart();
+
+
+            //FRM_Login frmlogin = new FRM_Login();
+            //frmlogin.Show();
+            //this.Hide();
         }
 
         private void aYUDAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,13 +104,17 @@ namespace Sistema_de_Venta
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Mejora para asegurar que el usuario si quiere salir del programa
-            if (MessageBox.Show("¿Seguro que desea salir del programa?", "Salir del Programa",
-                  MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                Environment.Exit(1);
+            if(!cerrarSeccion)
+            { 
+                //Mejora para asegurar que el usuario si quiere salir del programa
+                if (MessageBox.Show("¿Estás seguro de salir del programa " +
+                Usuario.Nombre + " " + Usuario.Apellido + "?", "Salir del Programa",
+                      MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    Environment.Exit(1);
+                }
+                else e.Cancel = true;
             }
-            else e.Cancel = true;
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
