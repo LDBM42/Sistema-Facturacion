@@ -558,8 +558,7 @@ namespace Sistema_de_Venta {
                 this.columnApellido.MaxLength = 50;
                 this.columnProductoNombre.AllowDBNull = false;
                 this.columnProductoNombre.MaxLength = 200;
-                this.columnProductoDescripcion.AllowDBNull = false;
-                this.columnProductoDescripcion.MaxLength = 500;
+                this.columnProductoDescripcion.ReadOnly = true;
                 this.columnTotalParcial.ReadOnly = true;
             }
             
@@ -839,7 +838,13 @@ namespace Sistema_de_Venta {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ProductoDescripcion {
                 get {
-                    return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn]));
+                    try {
+                        return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProductoDescripcion\' de la tabla \'usp_Reportes_GenrerarRe" +
+                                "porteVenta\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn] = value;
@@ -909,6 +914,18 @@ namespace Sistema_de_Venta {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDniNull() {
                 this[this.tableusp_Reportes_GenrerarReporteVenta.DniColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsProductoDescripcionNull() {
+                return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetProductoDescripcionNull() {
+                this[this.tableusp_Reportes_GenrerarReporteVenta.ProductoDescripcionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

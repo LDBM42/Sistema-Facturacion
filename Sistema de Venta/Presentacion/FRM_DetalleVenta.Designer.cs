@@ -475,7 +475,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRM_DetalleVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de Detalle de Venta";
+            this.Text = "Facturación";
             this.Load += new System.EventHandler(this.FRM_DetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ListaClientes.ResumeLayout(false);

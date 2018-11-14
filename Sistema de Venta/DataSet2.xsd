@@ -88,13 +88,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ProductoDescripcion" msprop:Generator_ColumnVarNameInTable="columnProductoDescripcion" msprop:Generator_ColumnPropNameInRow="ProductoDescripcion" msprop:Generator_ColumnPropNameInTable="ProductoDescripcionColumn" msprop:Generator_UserColumnName="ProductoDescripcion">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="ProductoDescripcion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductoDescripcion" msprop:Generator_ColumnPropNameInRow="ProductoDescripcion" msprop:Generator_ColumnPropNameInTable="ProductoDescripcionColumn" msprop:Generator_UserColumnName="ProductoDescripcion" type="xs:string" minOccurs="0" />
               <xs:element name="TotalParcial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalParcial" msprop:Generator_ColumnPropNameInRow="TotalParcial" msprop:Generator_ColumnPropNameInTable="TotalParcialColumn" msprop:Generator_UserColumnName="TotalParcial" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
