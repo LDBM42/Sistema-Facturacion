@@ -90,12 +90,13 @@
             // 
             // BT_Eliminar
             // 
-            this.BT_Eliminar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BT_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.BT_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BT_Eliminar.Location = new System.Drawing.Point(25, 519);
-            this.BT_Eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.BT_Eliminar.Location = new System.Drawing.Point(25, 490);
+            this.BT_Eliminar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.BT_Eliminar.Name = "BT_Eliminar";
-            this.BT_Eliminar.Size = new System.Drawing.Size(100, 28);
+            this.BT_Eliminar.Size = new System.Drawing.Size(100, 40);
             this.BT_Eliminar.TabIndex = 12;
             this.BT_Eliminar.Text = "Eliminar";
             this.BT_Eliminar.UseVisualStyleBackColor = false;
@@ -162,12 +163,13 @@
             // 
             // Editar
             // 
-            this.Editar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Editar.Location = new System.Drawing.Point(261, 506);
-            this.Editar.Margin = new System.Windows.Forms.Padding(4);
+            this.Editar.Location = new System.Drawing.Point(261, 490);
+            this.Editar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(100, 28);
+            this.Editar.Size = new System.Drawing.Size(100, 40);
             this.Editar.TabIndex = 14;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
@@ -175,12 +177,13 @@
             // 
             // Guardar
             // 
-            this.Guardar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Guardar.Location = new System.Drawing.Point(108, 441);
-            this.Guardar.Margin = new System.Windows.Forms.Padding(4);
+            this.Guardar.Location = new System.Drawing.Point(108, 425);
+            this.Guardar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.Guardar.Name = "Guardar";
-            this.Guardar.Size = new System.Drawing.Size(100, 28);
+            this.Guardar.Size = new System.Drawing.Size(100, 40);
             this.Guardar.TabIndex = 13;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
@@ -188,12 +191,13 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancelar.Location = new System.Drawing.Point(261, 441);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancelar.Location = new System.Drawing.Point(261, 425);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(100, 28);
+            this.Cancelar.Size = new System.Drawing.Size(100, 40);
             this.Cancelar.TabIndex = 12;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
@@ -201,12 +205,13 @@
             // 
             // Nuevo
             // 
-            this.Nuevo.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Nuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Nuevo.Location = new System.Drawing.Point(108, 506);
-            this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.Nuevo.Location = new System.Drawing.Point(108, 490);
+            this.Nuevo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.Nuevo.Name = "Nuevo";
-            this.Nuevo.Size = new System.Drawing.Size(100, 28);
+            this.Nuevo.Size = new System.Drawing.Size(100, 40);
             this.Nuevo.TabIndex = 2;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
@@ -267,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1064, 620);
             this.Controls.Add(this.ListaClientes);
             this.Controls.Add(this.DatosClientes);
