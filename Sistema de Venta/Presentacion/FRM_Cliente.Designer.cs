@@ -80,9 +80,9 @@
             this.DatosClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosClientes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.DatosClientes.Location = new System.Drawing.Point(35, 44);
-            this.DatosClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DatosClientes.Margin = new System.Windows.Forms.Padding(4);
             this.DatosClientes.Name = "DatosClientes";
-            this.DatosClientes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DatosClientes.Padding = new System.Windows.Forms.Padding(4);
             this.DatosClientes.Size = new System.Drawing.Size(428, 555);
             this.DatosClientes.TabIndex = 1;
             this.DatosClientes.TabStop = false;
@@ -94,7 +94,7 @@
             this.Editar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Editar.Location = new System.Drawing.Point(233, 519);
-            this.Editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(100, 28);
             this.Editar.TabIndex = 14;
@@ -107,7 +107,7 @@
             this.Guardar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Guardar.Location = new System.Drawing.Point(125, 457);
-            this.Guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(100, 28);
             this.Guardar.TabIndex = 13;
@@ -120,7 +120,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Cancelar.Location = new System.Drawing.Point(233, 457);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(100, 28);
             this.Cancelar.TabIndex = 12;
@@ -133,7 +133,7 @@
             this.Nuevo.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Nuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Nuevo.Location = new System.Drawing.Point(125, 519);
-            this.Nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(100, 28);
             this.Nuevo.TabIndex = 0;
@@ -144,7 +144,7 @@
             // text_Domicilio
             // 
             this.text_Domicilio.Location = new System.Drawing.Point(116, 325);
-            this.text_Domicilio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Domicilio.Margin = new System.Windows.Forms.Padding(4);
             this.text_Domicilio.Name = "text_Domicilio";
             this.text_Domicilio.Size = new System.Drawing.Size(265, 24);
             this.text_Domicilio.TabIndex = 5;
@@ -152,7 +152,7 @@
             // text_Telefono
             // 
             this.text_Telefono.Location = new System.Drawing.Point(116, 391);
-            this.text_Telefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.text_Telefono.Name = "text_Telefono";
             this.text_Telefono.Size = new System.Drawing.Size(265, 24);
             this.text_Telefono.TabIndex = 6;
@@ -161,7 +161,7 @@
             // text_DNI
             // 
             this.text_DNI.Location = new System.Drawing.Point(116, 266);
-            this.text_DNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_DNI.Margin = new System.Windows.Forms.Padding(4);
             this.text_DNI.Name = "text_DNI";
             this.text_DNI.Size = new System.Drawing.Size(265, 24);
             this.text_DNI.TabIndex = 4;
@@ -169,7 +169,7 @@
             // text_Nombre
             // 
             this.text_Nombre.Location = new System.Drawing.Point(116, 143);
-            this.text_Nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(265, 24);
             this.text_Nombre.TabIndex = 2;
@@ -177,7 +177,7 @@
             // text_Apellido
             // 
             this.text_Apellido.Location = new System.Drawing.Point(116, 207);
-            this.text_Apellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(265, 24);
             this.text_Apellido.TabIndex = 3;
@@ -187,7 +187,7 @@
             this.text_Id.Enabled = false;
             this.text_Id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.text_Id.Location = new System.Drawing.Point(116, 75);
-            this.text_Id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
             this.text_Id.Size = new System.Drawing.Size(108, 24);
             this.text_Id.TabIndex = 1;
@@ -262,9 +262,9 @@
             this.ListaClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListaClientes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ListaClientes.Location = new System.Drawing.Point(495, 37);
-            this.ListaClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListaClientes.Margin = new System.Windows.Forms.Padding(4);
             this.ListaClientes.Name = "ListaClientes";
-            this.ListaClientes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListaClientes.Padding = new System.Windows.Forms.Padding(4);
             this.ListaClientes.Size = new System.Drawing.Size(917, 555);
             this.ListaClientes.TabIndex = 4;
             this.ListaClientes.TabStop = false;
@@ -275,7 +275,7 @@
             this.BT_liminar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.BT_liminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BT_liminar.Location = new System.Drawing.Point(25, 519);
-            this.BT_liminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(100, 28);
             this.BT_liminar.TabIndex = 12;
@@ -296,7 +296,7 @@
             // Buscar
             // 
             this.Buscar.Location = new System.Drawing.Point(199, 55);
-            this.Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(695, 24);
             this.Buscar.TabIndex = 2;
@@ -314,7 +314,7 @@
             "Telefono",
             "Domicilio"});
             this.CMB_Buscar.Location = new System.Drawing.Point(25, 55);
-            this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
             this.CMB_Buscar.TabIndex = 1;
@@ -327,7 +327,7 @@
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
             this.dgvClientes.Location = new System.Drawing.Point(8, 118);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
@@ -353,7 +353,7 @@
             this.text_Flag.Enabled = false;
             this.text_Flag.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.text_Flag.Location = new System.Drawing.Point(413, 15);
-            this.text_Flag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.text_Flag.Margin = new System.Windows.Forms.Padding(4);
             this.text_Flag.Name = "text_Flag";
             this.text_Flag.Size = new System.Drawing.Size(48, 22);
             this.text_Flag.TabIndex = 6;
@@ -361,15 +361,14 @@
             // 
             // FRM_Cliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1452, 604);
             this.Controls.Add(this.ListaClientes);
             this.Controls.Add(this.DatosClientes);
             this.Controls.Add(this.text_Flag);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1470, 651);
             this.MinimumSize = new System.Drawing.Size(1470, 651);
             this.Name = "FRM_Cliente";

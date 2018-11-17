@@ -94,7 +94,7 @@
             this.BT_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BT_Eliminar.Location = new System.Drawing.Point(25, 490);
-            this.BT_Eliminar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.BT_Eliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Eliminar.Name = "BT_Eliminar";
             this.BT_Eliminar.Size = new System.Drawing.Size(100, 40);
             this.BT_Eliminar.TabIndex = 12;
@@ -167,7 +167,7 @@
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Editar.Location = new System.Drawing.Point(261, 490);
-            this.Editar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Editar.Margin = new System.Windows.Forms.Padding(0);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(100, 40);
             this.Editar.TabIndex = 14;
@@ -181,7 +181,7 @@
             this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Guardar.Location = new System.Drawing.Point(108, 425);
-            this.Guardar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Guardar.Margin = new System.Windows.Forms.Padding(0);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(100, 40);
             this.Guardar.TabIndex = 13;
@@ -195,7 +195,7 @@
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Cancelar.Location = new System.Drawing.Point(261, 425);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(0);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(100, 40);
             this.Cancelar.TabIndex = 12;
@@ -209,7 +209,7 @@
             this.Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Nuevo.Location = new System.Drawing.Point(108, 490);
-            this.Nuevo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Nuevo.Margin = new System.Windows.Forms.Padding(0);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(100, 40);
             this.Nuevo.TabIndex = 2;
@@ -270,8 +270,7 @@
             // 
             // FRM_Categoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1064, 620);
             this.Controls.Add(this.ListaClientes);
