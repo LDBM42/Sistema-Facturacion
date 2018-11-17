@@ -286,9 +286,6 @@
     <None Include="Resources\Logout_37127.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Usuarios.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\adduser_añadir_3553.png" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +294,17 @@
   <ItemGroup>
     <None Include="Resources\giphy %282%29.gif" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\settingss.png" />
+    <None Include="Resources\menu1.png" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO %28peq%29.png" />
+    <None Include="Resources\Categoria.png" />
+    <None Include="Resources\Productos.png" />
+    <None Include="Resources\Administrador.png" />
+    <None Include="Resources\Usuario.png" />
+    <None Include="Resources\Ventas.png" />
+    <None Include="Resources\Usuarios.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
