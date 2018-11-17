@@ -165,8 +165,6 @@ namespace Sistema_de_Venta
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        /*
-
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 15;
         private const int WM_NCHITTEST = 132;
@@ -205,15 +203,12 @@ namespace Sistema_de_Venta
         protected override void OnPaint(PaintEventArgs e)
         {
 
-            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(55, 61, 69));
+            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(0, 56, 117));
             e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
 
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
         //------------------------------------------------
-
-        */
-
     }
 }
