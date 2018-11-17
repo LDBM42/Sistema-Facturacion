@@ -209,11 +209,6 @@ namespace Sistema_de_Venta
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
-
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         //------------------------------------------------
     }
 }
