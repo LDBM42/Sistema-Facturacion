@@ -43,7 +43,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.text_NumeroDoc = new System.Windows.Forms.TextBox();
-            this.text_ClienteId = new System.Windows.Forms.TextBox();
             this.text_ClienteNombre = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.text_ClienteId = new System.Windows.Forms.TextBox();
             this.ListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -249,15 +249,6 @@
             this.text_NumeroDoc.Size = new System.Drawing.Size(265, 24);
             this.text_NumeroDoc.TabIndex = 10;
             // 
-            // text_ClienteId
-            // 
-            this.text_ClienteId.Enabled = false;
-            this.text_ClienteId.Location = new System.Drawing.Point(138, 142);
-            this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
-            this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(72, 24);
-            this.text_ClienteId.TabIndex = 7;
-            // 
             // text_ClienteNombre
             // 
             this.text_ClienteNombre.Enabled = false;
@@ -354,6 +345,15 @@
             this.lblUsuario.TabIndex = 8;
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
+            // text_ClienteId
+            // 
+            this.text_ClienteId.Enabled = false;
+            this.text_ClienteId.Location = new System.Drawing.Point(138, 142);
+            this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
+            this.text_ClienteId.Name = "text_ClienteId";
+            this.text_ClienteId.Size = new System.Drawing.Size(72, 24);
+            this.text_ClienteId.TabIndex = 7;
+            // 
             // FRM_Ventas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -393,7 +393,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox text_NumeroDoc;
-        private System.Windows.Forms.TextBox text_ClienteId;
         private System.Windows.Forms.TextBox text_ClienteNombre;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label label8;
@@ -406,5 +405,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.TextBox text_ClienteId;
     }
 }

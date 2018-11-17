@@ -46,7 +46,6 @@ E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Ven
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_DetalleVenta.resources
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Producto.resources
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Ventas.resources
-E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.RegistrarUsuario.resources
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Properties.Resources.resources
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.FRM_ReporteVenta.resources
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.GenerateResource.cache

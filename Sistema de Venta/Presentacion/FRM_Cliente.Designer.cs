@@ -45,7 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.ListaClientes = new System.Windows.Forms.GroupBox();
             this.BT_liminar = new System.Windows.Forms.Button();
             this.noencontrado = new System.Windows.Forms.Label();
@@ -70,13 +69,11 @@
             this.DatosClientes.Controls.Add(this.text_DNI);
             this.DatosClientes.Controls.Add(this.text_Nombre);
             this.DatosClientes.Controls.Add(this.text_Apellido);
-            this.DatosClientes.Controls.Add(this.text_Id);
             this.DatosClientes.Controls.Add(this.label5);
             this.DatosClientes.Controls.Add(this.label6);
             this.DatosClientes.Controls.Add(this.label7);
             this.DatosClientes.Controls.Add(this.label4);
             this.DatosClientes.Controls.Add(this.label3);
-            this.DatosClientes.Controls.Add(this.label2);
             this.DatosClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosClientes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.DatosClientes.Location = new System.Drawing.Point(35, 44);
@@ -143,7 +140,7 @@
             // 
             // text_Domicilio
             // 
-            this.text_Domicilio.Location = new System.Drawing.Point(116, 325);
+            this.text_Domicilio.Location = new System.Drawing.Point(138, 157);
             this.text_Domicilio.Margin = new System.Windows.Forms.Padding(4);
             this.text_Domicilio.Name = "text_Domicilio";
             this.text_Domicilio.Size = new System.Drawing.Size(265, 24);
@@ -151,7 +148,7 @@
             // 
             // text_Telefono
             // 
-            this.text_Telefono.Location = new System.Drawing.Point(116, 391);
+            this.text_Telefono.Location = new System.Drawing.Point(138, 204);
             this.text_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.text_Telefono.Name = "text_Telefono";
             this.text_Telefono.Size = new System.Drawing.Size(265, 24);
@@ -160,7 +157,7 @@
             // 
             // text_DNI
             // 
-            this.text_DNI.Location = new System.Drawing.Point(116, 266);
+            this.text_DNI.Location = new System.Drawing.Point(138, 111);
             this.text_DNI.Margin = new System.Windows.Forms.Padding(4);
             this.text_DNI.Name = "text_DNI";
             this.text_DNI.Size = new System.Drawing.Size(265, 24);
@@ -168,7 +165,7 @@
             // 
             // text_Nombre
             // 
-            this.text_Nombre.Location = new System.Drawing.Point(116, 143);
+            this.text_Nombre.Location = new System.Drawing.Point(141, 254);
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(265, 24);
@@ -176,7 +173,7 @@
             // 
             // text_Apellido
             // 
-            this.text_Apellido.Location = new System.Drawing.Point(116, 207);
+            this.text_Apellido.Location = new System.Drawing.Point(141, 304);
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(265, 24);
@@ -186,16 +183,17 @@
             // 
             this.text_Id.Enabled = false;
             this.text_Id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.text_Id.Location = new System.Drawing.Point(116, 75);
+            this.text_Id.Location = new System.Drawing.Point(426, 15);
             this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
-            this.text_Id.Size = new System.Drawing.Size(108, 24);
+            this.text_Id.Size = new System.Drawing.Size(14, 22);
             this.text_Id.TabIndex = 1;
+            this.text_Id.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 399);
+            this.label5.Location = new System.Drawing.Point(30, 212);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 18);
@@ -205,7 +203,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 329);
+            this.label6.Location = new System.Drawing.Point(30, 161);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 18);
@@ -215,7 +213,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 266);
+            this.label7.Location = new System.Drawing.Point(30, 111);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 18);
@@ -225,7 +223,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 207);
+            this.label4.Location = new System.Drawing.Point(33, 304);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 18);
@@ -235,22 +233,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 146);
+            this.label3.Location = new System.Drawing.Point(33, 257);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 18);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombres";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Id";
             // 
             // ListaClientes
             // 
@@ -352,10 +340,10 @@
             this.text_Flag.BackColor = System.Drawing.SystemColors.Window;
             this.text_Flag.Enabled = false;
             this.text_Flag.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.text_Flag.Location = new System.Drawing.Point(413, 15);
+            this.text_Flag.Location = new System.Drawing.Point(448, 15);
             this.text_Flag.Margin = new System.Windows.Forms.Padding(4);
             this.text_Flag.Name = "text_Flag";
-            this.text_Flag.Size = new System.Drawing.Size(48, 22);
+            this.text_Flag.Size = new System.Drawing.Size(13, 22);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
             // 
@@ -367,6 +355,7 @@
             this.Controls.Add(this.ListaClientes);
             this.Controls.Add(this.DatosClientes);
             this.Controls.Add(this.text_Flag);
+            this.Controls.Add(this.text_Id);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1470, 651);
@@ -403,7 +392,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox ListaClientes;
         private System.Windows.Forms.Button BT_liminar;
         private System.Windows.Forms.Label noencontrado;
