@@ -36,7 +36,6 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.text_FechadeVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.Imagen = new System.Windows.Forms.PictureBox();
             this.text_Nombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.text_CategoriaDescripcion = new System.Windows.Forms.TextBox();
@@ -62,9 +61,16 @@
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Imagen = new System.Windows.Forms.PictureBox();
+            this.pbx_Productos = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
+            this.pbx_Servicios = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).BeginInit();
+            this.pnl_Lista_Categoria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).BeginInit();
             this.SuspendLayout();
             // 
             // BT_liminar
@@ -75,7 +81,7 @@
             this.BT_liminar.FlatAppearance.BorderSize = 0;
             this.BT_liminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_liminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BT_liminar.Location = new System.Drawing.Point(43, 553);
+            this.BT_liminar.Location = new System.Drawing.Point(42, 553);
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(801, 46);
@@ -92,7 +98,7 @@
             this.noencontrado.AutoSize = true;
             this.noencontrado.BackColor = System.Drawing.Color.Transparent;
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(335, 321);
+            this.noencontrado.Location = new System.Drawing.Point(334, 318);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
             this.noencontrado.Size = new System.Drawing.Size(217, 18);
@@ -103,10 +109,10 @@
             // 
             this.Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscar.Location = new System.Drawing.Point(215, 69);
+            this.Buscar.Location = new System.Drawing.Point(210, 66);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(629, 24);
+            this.Buscar.Size = new System.Drawing.Size(633, 24);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -123,7 +129,7 @@
             "CategoriaDescripcion",
             "PrecioCompra",
             "PrecioVenta"});
-            this.CMB_Buscar.Location = new System.Drawing.Point(43, 68);
+            this.CMB_Buscar.Location = new System.Drawing.Point(42, 65);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
@@ -142,7 +148,7 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dgvProductos.Location = new System.Drawing.Point(43, 105);
+            this.dgvProductos.Location = new System.Drawing.Point(42, 102);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
@@ -170,17 +176,6 @@
             this.text_FechadeVencimiento.Size = new System.Drawing.Size(316, 24);
             this.text_FechadeVencimiento.TabIndex = 21;
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
-            // 
-            // Imagen
-            // 
-            this.Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Imagen.Location = new System.Drawing.Point(45, 366);
-            this.Imagen.Margin = new System.Windows.Forms.Padding(4);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(207, 150);
-            this.Imagen.TabIndex = 20;
-            this.Imagen.TabStop = false;
-            this.Imagen.Click += new System.EventHandler(this.Imagen_Click);
             // 
             // text_Nombre
             // 
@@ -476,11 +471,68 @@
             this.panel2.Controls.Add(this.lbl_Descripcion);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.Editar);
+            this.panel2.Controls.Add(this.pbx_Servicios);
+            this.panel2.Controls.Add(this.pbx_Productos);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(885, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 640);
             this.panel2.TabIndex = 22;
+            // 
+            // Imagen
+            // 
+            this.Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Imagen.Location = new System.Drawing.Point(45, 366);
+            this.Imagen.Margin = new System.Windows.Forms.Padding(4);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(207, 150);
+            this.Imagen.TabIndex = 20;
+            this.Imagen.TabStop = false;
+            this.Imagen.Click += new System.EventHandler(this.Imagen_Click);
+            // 
+            // pbx_Productos
+            // 
+            this.pbx_Productos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_Productos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbx_Productos.Image = global::Sistema_de_Venta.Properties.Resources.ProductosBig;
+            this.pbx_Productos.Location = new System.Drawing.Point(204, 501);
+            this.pbx_Productos.Margin = new System.Windows.Forms.Padding(4);
+            this.pbx_Productos.Name = "pbx_Productos";
+            this.pbx_Productos.Size = new System.Drawing.Size(100, 100);
+            this.pbx_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Productos.TabIndex = 22;
+            this.pbx_Productos.TabStop = false;
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvProductos);
+            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1398, 640);
+            this.pnl_Lista_Categoria.TabIndex = 26;
+            // 
+            // pbx_Servicios
+            // 
+            this.pbx_Servicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_Servicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbx_Servicios.Image = global::Sistema_de_Venta.Properties.Resources.ServiciosBig;
+            this.pbx_Servicios.Location = new System.Drawing.Point(204, 501);
+            this.pbx_Servicios.Margin = new System.Windows.Forms.Padding(4);
+            this.pbx_Servicios.Name = "pbx_Servicios";
+            this.pbx_Servicios.Size = new System.Drawing.Size(100, 100);
+            this.pbx_Servicios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Servicios.TabIndex = 23;
+            this.pbx_Servicios.TabStop = false;
+            this.pbx_Servicios.Visible = false;
             // 
             // FRM_Producto
             // 
@@ -488,13 +540,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1398, 640);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.noencontrado);
-            this.Controls.Add(this.CMB_Buscar);
-            this.Controls.Add(this.Buscar);
-            this.Controls.Add(this.BT_liminar);
-            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.pnl_Lista_Categoria);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -504,11 +552,14 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FRM_Producto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).EndInit();
+            this.pnl_Lista_Categoria.ResumeLayout(false);
+            this.pnl_Lista_Categoria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -546,5 +597,8 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_Lista_Categoria;
+        private System.Windows.Forms.PictureBox pbx_Productos;
+        private System.Windows.Forms.PictureBox pbx_Servicios;
     }
 }

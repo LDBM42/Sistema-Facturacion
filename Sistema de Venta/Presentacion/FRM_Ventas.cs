@@ -12,13 +12,26 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
 {
-    public partial class FRM_Ventas : Form
+    public partial class FRM_Ventas : Form, IFormulario
     {
         private static DataTable dt = new DataTable();
-        private static FRM_Ventas _Instancia =null;
+        private static FRM_Ventas _Instancia = null;
         public FRM_Ventas()
         {
             InitializeComponent();
+        }
+
+        public void InicializarParametros(params object[] parametros)
+        {
+            if (parametros.Length == 1)
+            {
+                int parametro1 = (int)parametros[0];
+                //string parametro2 = parametros[1].ToString();
+            }
+            //else
+            // {
+            //     throw new Exception("El número de parámetros es incorrecto");
+            // }
         }
 
         public static FRM_Ventas GetInstance()
@@ -120,12 +133,9 @@ namespace Sistema_de_Venta.Presentacion
 
         private void CargarDetalle(Venta venta)
         {
-
             FRM_DetalleVenta frmDetalle = FRM_DetalleVenta.GetInstance();
             frmDetalle.SetVenta(venta);
             frmDetalle.ShowDialog();
-            frmDetalle.BringToFront();
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

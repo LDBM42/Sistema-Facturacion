@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
 {
-    public partial class FRM_Usuario : Form
+    public partial class FRM_Usuario : Form, IFormulario
     {
         private static DataTable dt = new DataTable();
         private static FRM_Usuario _instancia = null;
@@ -20,6 +20,21 @@ namespace Sistema_de_Venta.Presentacion
         {
             InitializeComponent();
         }
+
+        public void InicializarParametros(params object[] parametros)
+        {
+            if (parametros.Length == 1)
+            {
+                int parametro1 = (int)parametros[0];
+                //string parametro2 = parametros[1].ToString();
+            }
+            //else
+            // {
+            //     throw new Exception("El número de parámetros es incorrecto");
+            // }
+        }
+
+
         string dniValidar = ""; //almacena valor anterior a la modificación del dni
 
         public static FRM_Usuario GetInstance()

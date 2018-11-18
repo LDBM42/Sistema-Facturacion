@@ -49,14 +49,16 @@
             this.Buscar = new System.Windows.Forms.TextBox();
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
             this.SuspendLayout();
             // 
             // Editar
@@ -258,10 +260,10 @@
             // 
             this.Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscar.Location = new System.Drawing.Point(217, 70);
+            this.Buscar.Location = new System.Drawing.Point(211, 70);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(733, 24);
+            this.Buscar.Size = new System.Drawing.Size(739, 24);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -308,6 +310,12 @@
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentDoubleClick);
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // text_Flag
             // 
@@ -370,17 +378,26 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.text_Nombre);
             this.panel2.Controls.Add(this.text_Apellido);
+            this.panel2.Controls.Add(this.pbx_Ventas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(993, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 552);
             this.panel2.TabIndex = 1;
             // 
-            // Eliminar
+            // pbx_Ventas
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_Ventas.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_Ventas.Image = global::Sistema_de_Venta.Properties.Resources.UsuarioBig;
+            this.pbx_Ventas.Location = new System.Drawing.Point(152, 319);
+            this.pbx_Ventas.Name = "pbx_Ventas";
+            this.pbx_Ventas.Size = new System.Drawing.Size(107, 140);
+            this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Ventas.TabIndex = 19;
+            this.pbx_Ventas.TabStop = false;
             // 
             // FRM_Cliente
             // 
@@ -405,6 +422,7 @@
             this.pnl_Lista_Categoria.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +453,6 @@
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.PictureBox pbx_Ventas;
     }
 }

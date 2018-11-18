@@ -20,8 +20,10 @@ namespace Sistema_de_Venta
         {
             InitializeComponent();
         }
+
         private int childFormNumber = 0;
         private bool cerrarSeccion = false;
+
 
 
        private void ShowNewForm(object sender, EventArgs e)
@@ -33,28 +35,34 @@ namespace Sistema_de_Venta
         }
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Ventas>();
+            AbrirFormulario<FRM_Ventas>(1);
             //FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
             //frmVenta.ShowDialog(this);
         }
 
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Cliente>();
+            AbrirFormulario<FRM_Cliente>(1);
             //FRM_Cliente frmCliente = FRM_Cliente.GetInstance();
             //frmCliente.ShowDialog(this);
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Producto>();
+            AbrirFormulario<FRM_Producto>(0);
             //FRM_Producto frmProducto = FRM_Producto.GetInscance();
             //frmProducto.ShowDialog(this);
         }
 
+
+        private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FRM_Producto>(1);
+        }
+
         private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Categoria>();
+            AbrirFormulario<FRM_Categoria>(0);
             //FRM_Categoria frmCategoria = FRM_Categoria.GetInstance();
             //frmCategoria.ShowDialog(this);
 
@@ -62,7 +70,7 @@ namespace Sistema_de_Venta
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Usuario>();
+            AbrirFormulario<FRM_Usuario>(0);
             //FRM_Usuario Usuario = new FRM_Usuario();
             //Usuario.ShowDialog(this);
         }
@@ -200,7 +208,7 @@ namespace Sistema_de_Venta
         #endregion
 
         //Form dentro del panel
-        public void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        public void AbrirFormulario<MiForm>(params object[] args) where MiForm : Form, IFormulario, new()
         {
             Form formulario;
             formulario = pnl_Formularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion el formulario
@@ -208,6 +216,7 @@ namespace Sistema_de_Venta
             if (formulario == null)
             {
                 formulario = new MiForm();
+                ((IFormulario)formulario).InicializarParametros(args);
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
@@ -221,8 +230,7 @@ namespace Sistema_de_Venta
             {
                 formulario.BringToFront();
             }
-
-
         }
+
     }
 }

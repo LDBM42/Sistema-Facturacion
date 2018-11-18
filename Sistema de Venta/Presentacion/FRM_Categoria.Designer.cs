@@ -47,10 +47,12 @@
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.Pnl_Categoria_Size.SuspendLayout();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -58,10 +60,10 @@
             this.Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Location = new System.Drawing.Point(217, 69);
+            this.Buscar.Location = new System.Drawing.Point(211, 69);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(779, 24);
+            this.Buscar.Size = new System.Drawing.Size(785, 24);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -276,6 +278,7 @@
             this.panel2.Controls.Add(this.text_Id);
             this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.text_Descripcion);
+            this.panel2.Controls.Add(this.pbx_Ventas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1039, 0);
             this.panel2.Name = "panel2";
@@ -292,11 +295,25 @@
             this.btn_Cerrar.Location = new System.Drawing.Point(50, 462);
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(264, 40);
+            this.btn_Cerrar.Size = new System.Drawing.Size(264, 46);
             this.btn_Cerrar.TabIndex = 15;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            // 
+            // pbx_Ventas
+            // 
+            this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_Ventas.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_Ventas.Image = global::Sistema_de_Venta.Properties.Resources.CategoriasBig;
+            this.pbx_Ventas.Location = new System.Drawing.Point(131, 185);
+            this.pbx_Ventas.Name = "pbx_Ventas";
+            this.pbx_Ventas.Size = new System.Drawing.Size(107, 274);
+            this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Ventas.TabIndex = 20;
+            this.pbx_Ventas.TabStop = false;
             // 
             // FRM_Categoria
             // 
@@ -321,6 +338,7 @@
             this.pnl_Lista_Categoria.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +363,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.PictureBox pbx_Ventas;
     }
 }

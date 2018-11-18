@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
 {
-    public partial class FRM_Cliente : Form
+    public partial class FRM_Cliente : Form, IFormulario
     {
         private static DataTable dt = new DataTable();
         private static FRM_Cliente _instancia;
@@ -14,6 +14,23 @@ namespace Sistema_de_Venta.Presentacion
         {
             InitializeComponent();
         }
+
+        public void InicializarParametros(params object[] parametros)
+        {
+            if (parametros.Length == 1)
+            {
+                int parametro1 = (int)parametros[0];
+                //string parametro2 = parametros[1].ToString();
+            }
+            //else
+            // {
+            //     throw new Exception("El número de parámetros es incorrecto");
+            // }
+        }
+
+
+
+
         public static FRM_Cliente GetInstance()
         {
             if (_instancia == null)

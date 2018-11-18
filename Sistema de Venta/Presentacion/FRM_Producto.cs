@@ -14,13 +14,22 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
 {
-    public partial class FRM_Producto : Form
+    public partial class FRM_Producto : Form, IFormulario
     {
         private static DataTable dt = new DataTable();
         private static FRM_Producto _Instancia;
         public FRM_Producto()
         {
             InitializeComponent();
+        }
+        private int Servicios = 0;
+
+        public void InicializarParametros(params object[] parametros)
+        {
+            if (parametros.Length == 1)
+            {
+                Servicios = (int)parametros[0];
+            }
         }
 
 
@@ -256,6 +265,19 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
+            //Form1 frmDetalle = Form1.GetInstance();
+            //frmDetalle.SetVenta(venta);
+            if (Servicios == 1)
+            {
+                pbx_Productos.Visible = false;
+                pbx_Servicios.Visible = true;
+            }
+            else
+            {
+                pbx_Servicios.Visible = false;
+                pbx_Productos.Visible = true;
+            }
+
             CMB_Buscar.Text = "Nombre";
 
             try

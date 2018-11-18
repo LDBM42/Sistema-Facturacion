@@ -72,10 +72,20 @@ namespace Sistema_de_Venta.Entidades
             set { _imagen = value; }
         }
 
+
+        private int _servicios;
+
+        public int Servicios
+        {
+            get { return _servicios; }
+            set { _servicios = value; }
+        }
+
         public Producto()
         {
             _categoria = new Categoria();
         }
+
         public Producto(int id, Categoria categoria, string nombre, string descripcion, int stock, double precioCompra, double precioVenta, DateTime fechaVencimiento, byte[] imagen )
 
         {
@@ -87,14 +97,13 @@ namespace Sistema_de_Venta.Entidades
             PrecioCompra = precioCompra;
             PrecioVenta = precioVenta;
             FechaVencimiento = fechaVencimiento;
-            Imagen = imagen;
-
-                            
+            Imagen = imagen;                          
         
         }
 
 
-        
-        }
+
+
+    }
 
 }

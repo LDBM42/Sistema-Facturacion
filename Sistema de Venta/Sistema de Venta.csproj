@@ -98,6 +98,7 @@
     <Compile Include="Entidades\RUsuario.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="IFormulario.cs" />
     <Compile Include="Presentacion\FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +297,21 @@
     <None Include="Resources\Usuario.png" />
     <None Include="Resources\Ventas.png" />
     <None Include="Resources\Usuarios.png" />
+    <None Include="Resources\Reporte.png" />
+    <None Include="Resources\Agregar.png" />
+    <None Include="Resources\Reporte1.png" />
+    <None Include="Resources\Agregar1.png" />
+    <None Include="Resources\Reporte2.png" />
+    <None Include="Resources\Agregar2.png" />
+    <None Include="Resources\AgregarP.png" />
+    <None Include="Resources\Imprimir.png" />
+    <None Include="Resources\Servicios.png" />
+    <None Include="Resources\VentasBig.png" />
+    <None Include="Resources\CategoriasBig.png" />
+    <None Include="Resources\UsuarioBig.png" />
+    <None Include="Resources\ProductosBig.png" />
+    <None Include="Resources\ServiciosBig.png" />
+    <None Include="Resources\UsuariosBig.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
