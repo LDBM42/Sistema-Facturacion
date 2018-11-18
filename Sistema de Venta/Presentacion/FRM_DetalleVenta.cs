@@ -44,7 +44,6 @@ namespace Sistema_de_Venta.Presentacion
             text_ClienteId.Text = venta.Cliente.Id.ToString();
             text_ClienteNombre.Text = venta.Cliente.Nombre;
             text_fecha.Text = venta.FechaVenta.ToString();
-            cmdTipoDoc.Text = venta.TipoDocumento;
             text_NumeroDoc.Text = Convert.ToString(venta.NumeroDocumento);
         }
 

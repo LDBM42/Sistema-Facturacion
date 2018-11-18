@@ -73,7 +73,6 @@ namespace Sistema_de_Venta.Presentacion
                         Venta venta = new Venta();
                         venta.Cliente.Id = Convert.ToInt32(text_ClienteId.Text);
                         venta.FechaVenta = text_fecha.Value;
-                        venta.TipoDocumento = cmdTipoDoc.Text;
                         venta.NumeroDocumento = text_NumeroDoc.Text;
                         venta.Cliente.Nombre = text_ClienteNombre.Text;
                         
@@ -93,7 +92,6 @@ namespace Sistema_de_Venta.Presentacion
                         venta.Id = Convert.ToInt32(textId.Text);
                         venta.Cliente.Id = Convert.ToInt32(text_ClienteId.Text);
                         venta.FechaVenta = text_fecha.Value;
-                        venta.TipoDocumento = cmdTipoDoc.Text;
                         venta.NumeroDocumento = text_NumeroDoc.Text;
 
                         if (FVenta.Actualizar(venta) == 1)
@@ -139,8 +137,6 @@ namespace Sistema_de_Venta.Presentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
-            //para que me muestre la columna eliminar 
-            Eliminar.Visible = true;
             limpiar();
             
         }
@@ -207,7 +203,6 @@ namespace Sistema_de_Venta.Presentacion
                 text_ClienteId.Text = dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString();
                 text_ClienteNombre.Text = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() +" "+ dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
                 text_fecha.Text = dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString();
-                cmdTipoDoc.Text = dgvVentas.CurrentRow.Cells["TipoDocumento"].Value.ToString();
                 text_NumeroDoc.Text = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
             }
         }
@@ -226,7 +221,6 @@ namespace Sistema_de_Venta.Presentacion
             text_ClienteNombre.Enabled = b;
             text_NumeroDoc.Enabled = b;
             text_fecha.Enabled = b;
-            cmdTipoDoc.Enabled = b;
             text_NumeroDoc.Enabled = b;
         }
 
@@ -272,7 +266,6 @@ namespace Sistema_de_Venta.Presentacion
                 venta.Cliente.Id = Convert.ToInt32(dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString());
                 venta.Cliente.Nombre= dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
                 venta.FechaVenta = Convert.ToDateTime(dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString());
-                venta.TipoDocumento= dgvVentas.CurrentRow.Cells["TipoDocumento"].Value.ToString();
                 venta.NumeroDocumento = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
 
                 CargarDetalle(venta);

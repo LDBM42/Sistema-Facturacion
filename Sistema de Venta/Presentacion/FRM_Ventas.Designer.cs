@@ -35,9 +35,7 @@
             this.Buscar = new System.Windows.Forms.TextBox();
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmdTipoDoc = new System.Windows.Forms.ComboBox();
             this.text_fecha = new System.Windows.Forms.DateTimePicker();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -48,7 +46,6 @@
             this.text_ClienteNombre = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -133,8 +130,6 @@
             this.dgvVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
             this.dgvVentas.Location = new System.Drawing.Point(20, 110);
             this.dgvVentas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVentas.Name = "dgvVentas";
@@ -146,17 +141,8 @@
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             this.dgvVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellDoubleClick);
             // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 75;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmdTipoDoc);
             this.groupBox1.Controls.Add(this.text_fecha);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -167,7 +153,6 @@
             this.groupBox1.Controls.Add(this.text_ClienteNombre);
             this.groupBox1.Controls.Add(this.textId);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
@@ -181,19 +166,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Ventas";
-            // 
-            // cmdTipoDoc
-            // 
-            this.cmdTipoDoc.FormattingEnabled = true;
-            this.cmdTipoDoc.Items.AddRange(new object[] {
-            "Boleta",
-            "Factura"});
-            this.cmdTipoDoc.Location = new System.Drawing.Point(138, 266);
-            this.cmdTipoDoc.Margin = new System.Windows.Forms.Padding(4);
-            this.cmdTipoDoc.Name = "cmdTipoDoc";
-            this.cmdTipoDoc.Size = new System.Drawing.Size(265, 26);
-            this.cmdTipoDoc.TabIndex = 16;
-            this.cmdTipoDoc.Text = "Factura";
             // 
             // text_fecha
             // 
@@ -309,16 +281,6 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "Numero Doc";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 266);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 18);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Tipo Doc";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -380,7 +342,6 @@
         private System.Windows.Forms.TextBox Buscar;
         private System.Windows.Forms.ComboBox CMB_Buscar;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
@@ -389,11 +350,9 @@
         private System.Windows.Forms.TextBox text_ClienteNombre;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmdTipoDoc;
         private System.Windows.Forms.DateTimePicker text_fecha;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox text_ClienteId;
