@@ -256,6 +256,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
+            CMB_Buscar.Text = "Nombre";
+
             try
             {
                 DataSet ds = Fproducto.GetAll();
@@ -294,7 +296,6 @@ namespace Sistema_de_Venta.Presentacion
 
             Cambiar.Visible = b;
             Quitar.Visible = b;
-            Buscar.Visible = !b;
 
 
 
@@ -468,6 +469,11 @@ namespace Sistema_de_Venta.Presentacion
         {
             Buscar_TextChanged(null, null);
             Buscar.Focus();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

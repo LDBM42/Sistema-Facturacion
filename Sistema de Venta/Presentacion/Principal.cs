@@ -33,32 +33,38 @@ namespace Sistema_de_Venta
         }
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
-            //frmVenta.MdiParent = this;
-            frmVenta.ShowDialog(this);
+            AbrirFormulario<FRM_Ventas>();
+            //FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
+            //frmVenta.ShowDialog(this);
         }
 
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Cliente frmCliente = FRM_Cliente.GetInstance();
-            //frmCliente.MdiParent = this;
-            frmCliente.ShowDialog(this);
+            AbrirFormulario<FRM_Cliente>();
+            //FRM_Cliente frmCliente = FRM_Cliente.GetInstance();
+            //frmCliente.ShowDialog(this);
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Producto frmProducto = FRM_Producto.GetInscance();
-            //frmProducto.MdiParent = this;
-            frmProducto.ShowDialog(this);
+            AbrirFormulario<FRM_Producto>();
+            //FRM_Producto frmProducto = FRM_Producto.GetInscance();
+            //frmProducto.ShowDialog(this);
         }
 
         private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-            FRM_Categoria frmCategoria = FRM_Categoria.GetInstance();
-            //frmCategoria.MdiParent = this;
-            frmCategoria.ShowDialog(this);
+            AbrirFormulario<FRM_Categoria>();
+            //FRM_Categoria frmCategoria = FRM_Categoria.GetInstance();
+            //frmCategoria.ShowDialog(this);
 
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FRM_Usuario>();
+            //FRM_Usuario Usuario = new FRM_Usuario();
+            //Usuario.ShowDialog(this);
         }
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,13 +85,6 @@ namespace Sistema_de_Venta
             }
             else
                 cerrarSeccion = false;
-
-            //Application.Restart();
-
-
-            //FRM_Login frmlogin = new FRM_Login();
-            //frmlogin.Show();
-            //this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -111,18 +110,6 @@ namespace Sistema_de_Venta
                 }
                 else e.Cancel = true;
             }
-        }
-
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FRM_Usuario Usuario = new FRM_Usuario();
-            //Usuario.MdiParent = this;
-            Usuario.ShowDialog(this);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -151,7 +138,7 @@ namespace Sistema_de_Venta
             btnRestore.Visible = true;
         }
 
-
+        #region Funcionalidades del form
         // to be able to move the windows-------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -210,5 +197,32 @@ namespace Sistema_de_Venta
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
         //------------------------------------------------
+        #endregion
+
+        //Form dentro del panel
+        public void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = pnl_Formularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion el formulario
+            //si el formulario/instancia no existe
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                pnl_Formularios.Controls.Add(formulario);
+                pnl_Formularios.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
+            }
+
+
+        }
     }
 }

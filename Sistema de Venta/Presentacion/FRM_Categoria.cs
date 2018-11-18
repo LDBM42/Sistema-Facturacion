@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,6 +34,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Categoria_Load(object sender, EventArgs e)
         {
+            CMB_Buscar.Text = "Descripcion";
+
             try
    
              {
@@ -145,9 +148,6 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (MessageBox.Show("Esta seguro de eliminar las categorias seleccionados?", "Eliminacion de Categoria", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-
-
-
 
                     foreach (DataGridViewRow row in dgvCategoria.Rows)
                     {
@@ -311,5 +311,12 @@ namespace Sistema_de_Venta.Presentacion
             Buscar_TextChanged(null, null);
             Buscar.Focus();
         }
+
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
+
     }
 }

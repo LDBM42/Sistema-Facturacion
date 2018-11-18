@@ -29,6 +29,8 @@ namespace Sistema_de_Venta.Presentacion
         }
         private void FRM_Ventas_Load(object sender, EventArgs e)
         {
+            CMB_Buscar.Text = "Nombre";
+
             try
             {
                 DataSet ds = FVenta.GetAll();
@@ -47,7 +49,6 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = true;
 
                 }
-                lblUsuario.Text = Usuario.Nombre + " " + Usuario.Apellido;
             }
             catch (Exception ex)
             {
@@ -121,9 +122,12 @@ namespace Sistema_de_Venta.Presentacion
 
         private void CargarDetalle(Venta venta)
         {
-           FRM_DetalleVenta frmDetalle = FRM_DetalleVenta.GetInstance();
-           frmDetalle.SetVenta(venta);
-          frmDetalle.ShowDialog();
+
+            FRM_DetalleVenta frmDetalle = FRM_DetalleVenta.GetInstance();
+            frmDetalle.SetVenta(venta);
+            frmDetalle.ShowDialog();
+            frmDetalle.BringToFront();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -208,15 +212,6 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // if (e.ColumnIndex == dgvVentas.Columns["Eliminar"].Index)
-            //{
-               // DataGridViewCheckBoxCell chkEliminar =
-                 //   (DataGridViewCheckBoxCell)dgvVentas.Rows[e.RowIndex].Cells["Eliminar"];
-                //chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
-            //}
-        }
         public void MostrarGuardarCancelar(bool b)
         {
 
@@ -284,18 +279,6 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-        private void lblUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FRM_Ventas_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            this.Parent = null;
-            e.Cancel = true;
-        }
-
         private void text_fecha_ValueChanged(object sender, EventArgs e)
         {
             if (ActiveControl == text_fecha)
@@ -329,6 +312,11 @@ namespace Sistema_de_Venta.Presentacion
         {
             Buscar_TextChanged(null, null);
             Buscar.Focus();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     } 
 }

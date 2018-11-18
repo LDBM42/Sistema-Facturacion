@@ -81,9 +81,9 @@ namespace Sistema_de_Venta.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            //MostrarGuardarCancelar(false);
-            //text_ClienteId.Enabled = false;
-            //text_ClienteNombre.Enabled = false;
+
+
+            CMB_Buscar.Text = "Nombre";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -295,6 +295,11 @@ namespace Sistema_de_Venta.Presentacion
         {
             Buscar_TextChanged(null, null);
             Buscar.Focus();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

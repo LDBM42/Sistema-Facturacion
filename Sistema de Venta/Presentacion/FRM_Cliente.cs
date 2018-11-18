@@ -32,6 +32,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Cliente_Load(object sender, EventArgs e)
         {
+            CMB_Buscar.Text = "Nombre";
+
             try
 
             {
@@ -354,6 +356,11 @@ namespace Sistema_de_Venta.Presentacion
                     Close();
                 }
             }
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

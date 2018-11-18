@@ -55,6 +55,8 @@ namespace Sistema_de_Venta.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+
+            CMB_Buscar.Text = "Nombre";
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -314,19 +316,6 @@ namespace Sistema_de_Venta.Presentacion
         {
            string[] users = value;
         }
-         
-        private void btnUsuario_Click(object sender, EventArgs e)
-        {
-            //registrar los usuarios
-            //string[] user = new string[dgvUsuarios.Rows.Count];
-            //for (int i = 0; i < dgvUsuarios.Rows.Count; i++)
-            //{
-            //    user[i] = Convert.ToString(dgvUsuarios.Rows[i].Cells["Usuario"].Value);
-            //}
-            //RegistrarUsuario frmUse = new RegistrarUsuario();
-            //frmUse.SetUsers(user);
-            //frmUse.ShowDialog();
-        }
         
                // internal
         public void setUser(string usuario, string password)
@@ -340,6 +329,16 @@ namespace Sistema_de_Venta.Presentacion
         {
             Buscar_TextChanged(null, null);
             Buscar.Focus();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnl_Lista_Categoria_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

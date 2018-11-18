@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnl_Formularios = new System.Windows.Forms.Panel();
+            this.pbx_Logo = new System.Windows.Forms.PictureBox();
             this.btnRestore = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnMaximize = new System.Windows.Forms.PictureBox();
@@ -46,6 +48,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cERRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
+            this.pnl_Formularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
@@ -57,9 +61,9 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.BackgroundImage = global::Sistema_de_Venta.Properties.Resources.MiEmpresaFicticiaLOGO__peq_;
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlMain.Controls.Add(this.btnRestore);
+            this.pnlMain.Controls.Add(this.pnl_Formularios);
             this.pnlMain.Controls.Add(this.btnClose);
             this.pnlMain.Controls.Add(this.btnMaximize);
             this.pnlMain.Controls.Add(this.btnMinimize);
@@ -70,6 +74,26 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1300, 650);
             this.pnlMain.TabIndex = 1;
+            // 
+            // pnl_Formularios
+            // 
+            this.pnl_Formularios.Controls.Add(this.pbx_Logo);
+            this.pnl_Formularios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Formularios.Location = new System.Drawing.Point(0, 74);
+            this.pnl_Formularios.Name = "pnl_Formularios";
+            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 551);
+            this.pnl_Formularios.TabIndex = 8;
+            // 
+            // pbx_Logo
+            // 
+            this.pbx_Logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbx_Logo.Image = global::Sistema_de_Venta.Properties.Resources.MiEmpresaFicticiaLOGO__peq_;
+            this.pbx_Logo.Location = new System.Drawing.Point(0, 0);
+            this.pbx_Logo.Name = "pbx_Logo";
+            this.pbx_Logo.Size = new System.Drawing.Size(1300, 551);
+            this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Logo.TabIndex = 0;
+            this.pbx_Logo.TabStop = false;
             // 
             // btnRestore
             // 
@@ -83,7 +107,6 @@
             this.btnRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestore.TabIndex = 6;
             this.btnRestore.TabStop = false;
-            this.btnRestore.Visible = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnClose
@@ -112,6 +135,7 @@
             this.btnMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximize.TabIndex = 7;
             this.btnMaximize.TabStop = false;
+            this.btnMaximize.Visible = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnMinimize
@@ -158,10 +182,10 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(18, 20, 5, 20);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1300, 74);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
             // 
             // mENÚToolStripMenuItem
@@ -272,10 +296,13 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SISTEMA DE VENTA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            this.pnl_Formularios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
@@ -306,6 +333,8 @@
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnRestore;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnl_Formularios;
+        private System.Windows.Forms.PictureBox pbx_Logo;
     }
 }
 
