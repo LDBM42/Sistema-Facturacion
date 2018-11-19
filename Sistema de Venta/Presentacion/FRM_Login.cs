@@ -58,14 +58,9 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         private void mostrarOcultar(bool t)
         {
             pictureBox1.Visible = !t;
-            groupBox1.Visible = !t;
 
         }
 
@@ -86,7 +81,7 @@ namespace Sistema_de_Venta.Presentacion
             }
             else
             {
-                countDownTimer = 15;
+                countDownTimer = 30;
                 timer1.Start();
             }
         }
@@ -111,5 +106,106 @@ namespace Sistema_de_Venta.Presentacion
             }
             
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void FRM_Login_Paint(object sender, PaintEventArgs e)
+        {
+            Pen pen = new Pen(Color.FromArgb(255, 40, 40, 40),2);
+            e.Graphics.DrawLine(pen, 310, 125, 711, 125);
+
+            Pen pen2 = new Pen(Color.FromArgb(255, 40, 40, 40), 2);
+            e.Graphics.DrawLine(pen2, 310, 190, 711, 190);
+        }
+
+        private void text_Usuario_MouseEnter(object sender, EventArgs e)
+        {
+            if (text_Usuario.Text == "USUARIO")
+            {
+                text_Usuario.Text = "";
+                text_Usuario.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void text_Usuario_MouseLeave(object sender, EventArgs e)
+        {
+            if (text_Usuario.Text == "" && text_Usuario.Focused == false)
+            {
+                text_Usuario.Text = "USUARIO";
+                text_Usuario.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void text_Password_MouseEnter(object sender, EventArgs e)
+        {
+            if (text_Password.Text == "PASSWORD")
+            {
+                text_Password.Text = "";
+                text_Password.ForeColor = Color.LightGray;
+                text_Password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void text_Password_MouseLeave(object sender, EventArgs e)
+        {
+            if (text_Password.Text == "" && text_Password.Focused == false)
+            {
+                text_Password.Text = "PASSWORD";
+                text_Password.ForeColor = Color.DimGray;
+                text_Password.UseSystemPasswordChar = false;
+            }
+        }
+        
+
+        private void text_Usuario_Click(object sender, EventArgs e)
+        {
+            if (text_Password.Text == "")
+            {
+                text_Password.Text = "PASSWORD";
+                text_Password.ForeColor = Color.DimGray;
+                text_Password.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void text_Password_Click(object sender, EventArgs e)
+        {
+            if (text_Usuario.Text == "")
+            {
+                text_Usuario.Text = "USUARIO";
+                text_Usuario.ForeColor = Color.DimGray;
+            }
+            text_Password.UseSystemPasswordChar = true;
+        }
+
+        private void text_Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                btnEntrar_Click(null, null);
+            }
+        }
+
+        private void text_Usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                SendKeys.Send("{TAB}"); //hace que se presione la tecla TAB por código
+            }
+        }
+
     }
 }

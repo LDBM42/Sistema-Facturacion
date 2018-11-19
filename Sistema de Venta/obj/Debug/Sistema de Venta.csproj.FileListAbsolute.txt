@@ -140,3 +140,6 @@ E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Ven
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.exe.config
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CopyComplete
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
