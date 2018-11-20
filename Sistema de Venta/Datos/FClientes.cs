@@ -25,7 +25,7 @@ namespace SistemaVentas.Datos
                 {
                     FDBHelper.MakeParam("@Nombre", SqlDbType.VarChar, 0, cliente.Nombre),
                     FDBHelper.MakeParam("@Apellido", SqlDbType.VarChar, 0, cliente.Apellido),
-                    FDBHelper.MakeParam("@Dni", SqlDbType.VarChar, 0, cliente.Dni),
+                    FDBHelper.MakeParam("@Ncf", SqlDbType.VarChar, 0, cliente.Ncf),
                     FDBHelper.MakeParam("@Domicilio", SqlDbType.VarChar, 0, cliente.Domicilio),
                     FDBHelper.MakeParam("@Telefono", SqlDbType.VarChar, 0, cliente.Telefono)
                 };
@@ -40,7 +40,7 @@ namespace SistemaVentas.Datos
                     FDBHelper.MakeParam("@Id", SqlDbType.Int, 0, cliente.Id),
                     FDBHelper.MakeParam("@Nombre", SqlDbType.VarChar, 0, cliente.Nombre),
                     FDBHelper.MakeParam("@Apellido", SqlDbType.VarChar, 0, cliente.Apellido),
-                    FDBHelper.MakeParam("@Dni", SqlDbType.VarChar, 0, cliente.Dni),
+                    FDBHelper.MakeParam("@Ncf", SqlDbType.VarChar, 0, cliente.Ncf),
                     FDBHelper.MakeParam("@Domicilio", SqlDbType.VarChar, 0, cliente.Domicilio),
                     FDBHelper.MakeParam("@Telefono", SqlDbType.VarChar, 0, cliente.Telefono)
                 };

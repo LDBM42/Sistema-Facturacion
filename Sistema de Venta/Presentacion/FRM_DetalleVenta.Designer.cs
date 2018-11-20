@@ -314,19 +314,19 @@
             // text_ProductoId
             // 
             this.text_ProductoId.Enabled = false;
-            this.text_ProductoId.Location = new System.Drawing.Point(153, 189);
+            this.text_ProductoId.Location = new System.Drawing.Point(333, 28);
             this.text_ProductoId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoId.Name = "text_ProductoId";
-            this.text_ProductoId.Size = new System.Drawing.Size(52, 26);
+            this.text_ProductoId.Size = new System.Drawing.Size(12, 26);
             this.text_ProductoId.TabIndex = 7;
             // 
             // text_ProductoDescripcion
             // 
-            this.text_ProductoDescripcion.Location = new System.Drawing.Point(215, 189);
+            this.text_ProductoDescripcion.Location = new System.Drawing.Point(153, 189);
             this.text_ProductoDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoDescripcion.Name = "text_ProductoDescripcion";
             this.text_ProductoDescripcion.ReadOnly = true;
-            this.text_ProductoDescripcion.Size = new System.Drawing.Size(203, 26);
+            this.text_ProductoDescripcion.Size = new System.Drawing.Size(265, 26);
             this.text_ProductoDescripcion.TabIndex = 7;
             this.text_ProductoDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ProductoDescripcion_MouseClick);
             // 

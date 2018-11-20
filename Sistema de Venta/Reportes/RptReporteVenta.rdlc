@@ -49,8 +49,8 @@
           <DataField>Apellido</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Dni">
-          <DataField>Dni</DataField>
+        <Field Name="Ncf">
+          <DataField>Ncf</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="ProductoNombre">

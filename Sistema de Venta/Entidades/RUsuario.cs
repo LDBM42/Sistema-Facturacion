@@ -17,12 +17,12 @@ namespace Sistema_de_Venta.Entidades
             get { return _id; }
             set { _id = value; }
         }
-        public int _dni;
+        public int _ncf;
 
-        public   int Dni
+        public   int Ncf
         {
-            get { return _dni; }
-            set {  _dni = value; }
+            get { return _ncf; }
+            set {  _ncf = value; }
         }
         public  string _nombre;
 

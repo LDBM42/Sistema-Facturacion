@@ -35,7 +35,7 @@ namespace Sistema_de_Venta.Presentacion
         }
 
 
-        string dniValidar = ""; //almacena valor anterior a la modificación del dni
+        string ncfValidar = ""; //almacena valor anterior a la modificación del NCF
 
         public static FRM_Usuario GetInstance()
         {
@@ -81,7 +81,7 @@ namespace Sistema_de_Venta.Presentacion
                 text_Id.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
                 text_Nombre.Text = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
                 text_Apellido.Text = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
-                text_DNI.Text = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+                text_NCF.Text = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
                 text_Direccion.Text = dgvUsuarios.CurrentRow.Cells[5].Value.ToString();
                 text_Telefono.Text = dgvUsuarios.CurrentRow.Cells[6].Value.ToString();
                 txtUsuario.Text = dgvUsuarios.CurrentRow.Cells[7].Value.ToString();
@@ -103,7 +103,7 @@ namespace Sistema_de_Venta.Presentacion
                         usuario.Id = Convert.ToInt32(text_Id.Text);
                         usuario.Nombre = text_Nombre.Text;
                         usuario.Apellido = text_Apellido.Text;
-                        usuario.Dni = Convert.ToInt32(text_DNI.Text);
+                        usuario.Ncf = Convert.ToInt32(text_NCF.Text);
                         usuario.Direccion = text_Direccion.Text;
                         usuario.Telefono = text_Telefono.Text;
                         usuario.Nombreusuario = txtUsuario.Text;
@@ -121,7 +121,7 @@ namespace Sistema_de_Venta.Presentacion
                         RUsuario usuario = new RUsuario();
                         usuario.Nombre = text_Nombre.Text;
                         usuario.Apellido = text_Apellido.Text;
-                        usuario.Dni = Convert.ToInt32(text_DNI.Text);
+                        usuario.Ncf = Convert.ToInt32(text_NCF.Text);
                         usuario.Direccion = text_Direccion.Text;
                         usuario.Telefono = text_Telefono.Text;
                         usuario.Nombreusuario = txtUsuario.Text;
@@ -152,17 +152,17 @@ namespace Sistema_de_Venta.Presentacion
             string resultado = "";
             if (text_Nombre.Text == "") resultado += "El campo: Nombre,\n";
             if (text_Apellido.Text == "") resultado += "El campo: Apellido,\n";
-            if (text_Id.Text == "" && text_DNI.Text != "") //está agregando nuevo
+            if (text_Id.Text == "" && text_NCF.Text != "") //está agregando nuevo
             {
-                if (FUsuario.VerificarDNI(Convert.ToInt32(text_DNI.Text)) > 0)
-                    resultado += "El campo: DNI,\n (DNI ya existe) \n";
+                if (FUsuario.VerificarNCF(Convert.ToInt32(text_NCF.Text)) > 0)
+                    resultado += "El campo: NCF,\n (NCF ya existe) \n";
             }   
             else //está modificando
             {
-                if (text_DNI.Text != dniValidar)
+                if (text_NCF.Text != ncfValidar)
                 {
-                    if (FUsuario.VerificarDNI(Convert.ToInt32(text_DNI.Text)) > 0)
-                        resultado += "El campo: DNI,\n (DNI ya existe) \n";
+                    if (FUsuario.VerificarNCF(Convert.ToInt32(text_NCF.Text)) > 0)
+                        resultado += "El campo: NCF,\n (NCF ya existe) \n";
                 }
             }
             if (txtUsuario.Text == "") resultado += "El campo: Usuario,\n El campo: Password,\n";
@@ -183,7 +183,7 @@ namespace Sistema_de_Venta.Presentacion
 
             text_Nombre.Enabled = si;
             text_Apellido.Enabled = si;
-            text_DNI.Enabled = si;
+            text_NCF.Enabled = si;
             text_Direccion.Enabled = si;
             text_Telefono.Enabled = si;
             txtUsuario.Enabled = si;
@@ -202,7 +202,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Id.Text = "";
             text_Nombre.Text = "";
             text_Apellido.Text = "";
-            text_DNI.Text = "";
+            text_NCF.Text = "";
             text_Direccion.Text = "";
             text_Telefono.Text = "";
             txtUsuario.Text = "";
@@ -212,7 +212,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            dniValidar = text_DNI.Text; //asignar dni anterior a la variable
+            ncfValidar = text_NCF.Text; //asignar NCF anterior a la variable
             MostrarBotonesOcultos(true);
         }
 
@@ -287,7 +287,7 @@ namespace Sistema_de_Venta.Presentacion
             try
             {
                 DataView dv = new DataView(dt.Copy());
-                if (CMB_Buscar.Text != "DNI")
+                if (CMB_Buscar.Text != "NCF")
                 {
                     dv.RowFilter = CMB_Buscar.Text + " LIKE '" + Buscar.Text + "%'";
                 }

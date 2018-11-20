@@ -295,7 +295,7 @@ namespace Sistema_de_Venta {
             
             private global::System.Data.DataColumn columnApellido;
             
-            private global::System.Data.DataColumn columnDni;
+            private global::System.Data.DataColumn columnNcf;
             
             private global::System.Data.DataColumn columnProductoNombre;
             
@@ -402,9 +402,9 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DniColumn {
+            public global::System.Data.DataColumn NcfColumn {
                 get {
-                    return this.columnDni;
+                    return this.columnNcf;
                 }
             }
             
@@ -469,7 +469,7 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string TipoDocumento, string Nombre, string Apellido, int Dni, string ProductoNombre, string ProductoDescripcion, decimal TotalParcial) {
+            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string TipoDocumento, string Nombre, string Apellido, int Ncf, string ProductoNombre, string ProductoDescripcion, decimal TotalParcial) {
                 usp_Reportes_GenrerarReporteVentaRow rowusp_Reportes_GenrerarReporteVentaRow = ((usp_Reportes_GenrerarReporteVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VentaId,
@@ -480,7 +480,7 @@ namespace Sistema_de_Venta {
                         TipoDocumento,
                         Nombre,
                         Apellido,
-                        Dni,
+                        Ncf,
                         ProductoNombre,
                         ProductoDescripcion,
                         TotalParcial};
@@ -514,7 +514,7 @@ namespace Sistema_de_Venta {
                 this.columnTipoDocumento = base.Columns["TipoDocumento"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellido = base.Columns["Apellido"];
-                this.columnDni = base.Columns["Dni"];
+                this.columnNcf = base.Columns["Ncf"];
                 this.columnProductoNombre = base.Columns["ProductoNombre"];
                 this.columnProductoDescripcion = base.Columns["ProductoDescripcion"];
                 this.columnTotalParcial = base.Columns["TotalParcial"];
@@ -539,8 +539,8 @@ namespace Sistema_de_Venta {
                 base.Columns.Add(this.columnNombre);
                 this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApellido);
-                this.columnDni = new global::System.Data.DataColumn("Dni", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDni);
+                this.columnNcf = new global::System.Data.DataColumn("Ncf", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNcf);
                 this.columnProductoNombre = new global::System.Data.DataColumn("ProductoNombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductoNombre);
                 this.columnProductoDescripcion = new global::System.Data.DataColumn("ProductoDescripcion", typeof(string), null, global::System.Data.MappingType.Element);
@@ -808,18 +808,18 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Dni {
+            public int Ncf {
                 get {
                     try {
-                        return ((int)(this[this.tableusp_Reportes_GenrerarReporteVenta.DniColumn]));
+                        return ((int)(this[this.tableusp_Reportes_GenrerarReporteVenta.NcfColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dni\' de la tabla \'usp_Reportes_GenrerarReporteVenta\' es D" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ncf\' de la tabla \'usp_Reportes_GenrerarReporteVenta\' es D" +
                                 "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableusp_Reportes_GenrerarReporteVenta.DniColumn] = value;
+                    this[this.tableusp_Reportes_GenrerarReporteVenta.NcfColumn] = value;
                 }
             }
             
@@ -906,14 +906,14 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDniNull() {
-                return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.DniColumn);
+            public bool IsNcfNull() {
+                return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.NcfColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDniNull() {
-                this[this.tableusp_Reportes_GenrerarReporteVenta.DniColumn] = global::System.Convert.DBNull;
+            public void SetNcfNull() {
+                this[this.tableusp_Reportes_GenrerarReporteVenta.NcfColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1108,7 +1108,7 @@ namespace Sistema_de_Venta.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("TipoDocumento", "TipoDocumento");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellido", "Apellido");
-            tableMapping.ColumnMappings.Add("Dni", "Dni");
+            tableMapping.ColumnMappings.Add("Ncf", "Ncf");
             tableMapping.ColumnMappings.Add("ProductoNombre", "ProductoNombre");
             tableMapping.ColumnMappings.Add("ProductoDescripcion", "ProductoDescripcion");
             tableMapping.ColumnMappings.Add("TotalParcial", "TotalParcial");

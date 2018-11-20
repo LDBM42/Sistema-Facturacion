@@ -43,26 +43,26 @@ namespace Sistema_de_Venta.Entidades
             get { return _telefono; }
             set { _telefono = value; }
         }
-        private int _dni;
+        private int _ncf;
 
-        public int Dni
+        public int Ncf
         {
-            get { return _dni; }
-            set { _dni = value; }
+            get { return _ncf; }
+            set { _ncf = value; }
         }
 
         public Cliente()
         {
 
         }
-        public Cliente (int id, string nombre, string apellido, string domicilio, string telefono, int dni)
+        public Cliente (int id, string nombre, string apellido, string domicilio, string telefono, int ncf)
         {
             this._id = id;
             this._nombre = nombre;
             this._apellido = apellido;
             this._domicilio = domicilio;
             this._telefono = telefono;
-            this._dni = dni;
+            this._ncf = ncf;
         }
 
     }

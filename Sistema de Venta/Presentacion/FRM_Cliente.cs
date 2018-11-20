@@ -99,7 +99,7 @@ namespace Sistema_de_Venta.Presentacion
                         cliente.Nombre = text_Nombre .Text;
                         cliente.Apellido = text_Apellido.Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Dni = Convert.ToInt32(text_DNI.Text);
+                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
                         cliente.Telefono = text_Telefono.Text;
 
                         if (FClientes.Insertar(cliente) > 0)
@@ -118,7 +118,7 @@ namespace Sistema_de_Venta.Presentacion
                         cliente.Nombre = text_Nombre.Text;
                         cliente.Apellido = text_Apellido.Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Dni = Convert.ToInt32(text_DNI.Text);
+                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
                         cliente.Telefono = text_Telefono.Text;
 
                         if (FClientes.Actualizar(cliente) == 1)
@@ -184,7 +184,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Nombre.Enabled = b;
             text_Apellido.Enabled = b;
             text_Telefono.Enabled = b;
-            text_DNI.Enabled = b;
+            text_NCF.Enabled = b;
             text_Domicilio.Enabled = b;
 
         }
@@ -228,7 +228,7 @@ namespace Sistema_de_Venta.Presentacion
                 text_Nombre.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
                 text_Apellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
                 text_Telefono.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
-                text_DNI.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
+                text_NCF.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
                 text_Domicilio.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
             }
         }
@@ -243,7 +243,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Nombre.Clear();
             text_Apellido.Clear();
             text_Domicilio.Clear();
-            text_DNI.Clear();
+            text_NCF.Clear();
             text_Telefono.Clear();
         }
 

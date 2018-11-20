@@ -35,7 +35,7 @@
             this.Nuevo = new System.Windows.Forms.Button();
             this.text_Domicilio = new System.Windows.Forms.TextBox();
             this.text_Telefono = new System.Windows.Forms.TextBox();
-            this.text_DNI = new System.Windows.Forms.TextBox();
+            this.text_NCF = new System.Windows.Forms.TextBox();
             this.text_Nombre = new System.Windows.Forms.TextBox();
             this.text_Apellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -134,13 +134,13 @@
             this.text_Telefono.TabIndex = 6;
             this.text_Telefono.Text = " ";
             // 
-            // text_DNI
+            // text_NCF
             // 
-            this.text_DNI.Location = new System.Drawing.Point(119, 77);
-            this.text_DNI.Margin = new System.Windows.Forms.Padding(4);
-            this.text_DNI.Name = "text_DNI";
-            this.text_DNI.Size = new System.Drawing.Size(247, 27);
-            this.text_DNI.TabIndex = 4;
+            this.text_NCF.Location = new System.Drawing.Point(119, 77);
+            this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
+            this.text_NCF.Name = "text_NCF";
+            this.text_NCF.Size = new System.Drawing.Size(247, 27);
+            this.text_NCF.TabIndex = 4;
             // 
             // text_Nombre
             // 
@@ -187,9 +187,9 @@
             this.label7.Location = new System.Drawing.Point(42, 81);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 20);
+            this.label7.Size = new System.Drawing.Size(43, 20);
             this.label7.TabIndex = 3;
-            this.label7.Text = "DNI";
+            this.label7.Text = "NCF";
             // 
             // label4
             // 
@@ -276,7 +276,7 @@
             "Id",
             "Nombre",
             "Apellido",
-            "DNI",
+            "Ncf",
             "Telefono",
             "Domicilio"});
             this.CMB_Buscar.Location = new System.Drawing.Point(43, 69);
@@ -374,7 +374,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.text_Telefono);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.text_DNI);
+            this.panel2.Controls.Add(this.text_NCF);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.text_Nombre);
             this.panel2.Controls.Add(this.text_Apellido);
@@ -431,7 +431,7 @@
         private System.Windows.Forms.Button Nuevo;
         private System.Windows.Forms.TextBox text_Domicilio;
         private System.Windows.Forms.TextBox text_Telefono;
-        private System.Windows.Forms.TextBox text_DNI;
+        private System.Windows.Forms.TextBox text_NCF;
         private System.Windows.Forms.TextBox text_Nombre;
         private System.Windows.Forms.TextBox text_Apellido;
         private System.Windows.Forms.TextBox text_Id;

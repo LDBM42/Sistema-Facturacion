@@ -36,7 +36,7 @@
             this.Nuevo = new System.Windows.Forms.Button();
             this.text_Direccion = new System.Windows.Forms.TextBox();
             this.text_Telefono = new System.Windows.Forms.TextBox();
-            this.text_DNI = new System.Windows.Forms.TextBox();
+            this.text_NCF = new System.Windows.Forms.TextBox();
             this.Buscar = new System.Windows.Forms.TextBox();
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -159,14 +159,14 @@
             this.text_Telefono.TabIndex = 9;
             this.text_Telefono.Text = " ";
             // 
-            // text_DNI
+            // text_NCF
             // 
-            this.text_DNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_DNI.Location = new System.Drawing.Point(134, 145);
-            this.text_DNI.Margin = new System.Windows.Forms.Padding(4);
-            this.text_DNI.Name = "text_DNI";
-            this.text_DNI.Size = new System.Drawing.Size(227, 24);
-            this.text_DNI.TabIndex = 8;
+            this.text_NCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_NCF.Location = new System.Drawing.Point(134, 145);
+            this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
+            this.text_NCF.Name = "text_NCF";
+            this.text_NCF.Size = new System.Drawing.Size(227, 24);
+            this.text_NCF.TabIndex = 8;
             // 
             // Buscar
             // 
@@ -187,7 +187,7 @@
             this.CMB_Buscar.Items.AddRange(new object[] {
             "Nombre",
             "Apellido",
-            "DNI",
+            "NCF",
             "Telefono",
             "Domicilio"});
             this.CMB_Buscar.Location = new System.Drawing.Point(43, 69);
@@ -299,9 +299,9 @@
             this.label7.Location = new System.Drawing.Point(41, 148);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 20);
+            this.label7.Size = new System.Drawing.Size(43, 20);
             this.label7.TabIndex = 3;
-            this.label7.Text = "DNI";
+            this.label7.Text = "NCF";
             // 
             // label4
             // 
@@ -444,7 +444,7 @@
             this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.text_Nombre);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.text_DNI);
+            this.panel2.Controls.Add(this.text_NCF);
             this.panel2.Controls.Add(this.Nuevo);
             this.panel2.Controls.Add(this.text_Telefono);
             this.panel2.Controls.Add(this.txtPassword);
@@ -519,7 +519,7 @@
         private System.Windows.Forms.Button Nuevo;
         private System.Windows.Forms.TextBox text_Direccion;
         private System.Windows.Forms.TextBox text_Telefono;
-        private System.Windows.Forms.TextBox text_DNI;
+        private System.Windows.Forms.TextBox text_NCF;
         private System.Windows.Forms.TextBox Buscar;
         private System.Windows.Forms.ComboBox CMB_Buscar;
         private System.Windows.Forms.DataGridView dgvUsuarios;

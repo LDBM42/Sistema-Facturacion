@@ -15,12 +15,12 @@ namespace Sistema_de_Venta.Entidades
             get { return _id; }
             set { _id = value; }
         }
-        private static int _dni;
+        private static int _ncf;
 
-        public static int Dni
+        public static int Ncf
         {
-            get { return _dni; }
-            set {  _dni = value; }
+            get { return _ncf; }
+            set { _ncf = value; }
         }
         private static string _nombre;
 

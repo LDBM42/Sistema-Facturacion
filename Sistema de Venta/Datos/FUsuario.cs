@@ -32,7 +32,7 @@ namespace Sistema_de_Venta.Datos
                 {
                     FDBHelper.MakeParam("@Nombre",SqlDbType.VarChar, 0, Rusuario.Nombre),
                     FDBHelper.MakeParam("@Apellido",SqlDbType.VarChar, 0,Rusuario.Apellido),
-                    FDBHelper.MakeParam("@DNI",SqlDbType.Int, 0, Rusuario.Dni),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Rusuario.Ncf),
                     FDBHelper.MakeParam("@Direccion",SqlDbType.VarChar, 0, Rusuario.Direccion),
                     FDBHelper.MakeParam("@Telefono",SqlDbType.VarChar, 0, Rusuario.Telefono),
                     FDBHelper.MakeParam("@Usuario",SqlDbType.VarChar, 0, Rusuario.Nombreusuario),
@@ -49,7 +49,7 @@ namespace Sistema_de_Venta.Datos
                     FDBHelper.MakeParam("@Id",SqlDbType.Int, 0, Rusuario.Id),
                     FDBHelper.MakeParam("@Nombre",SqlDbType.VarChar, 0, Rusuario.Nombre),
                     FDBHelper.MakeParam("@Apellido",SqlDbType.VarChar, 0,Rusuario.Apellido),
-                    FDBHelper.MakeParam("@DNI",SqlDbType.Int, 0, Rusuario.Dni),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Rusuario.Ncf),
                     FDBHelper.MakeParam("@Direccion",SqlDbType.VarChar, 0, Rusuario.Direccion),
                     FDBHelper.MakeParam("@Telefono",SqlDbType.VarChar, 0, Rusuario.Telefono),
                     FDBHelper.MakeParam("@Usuario",SqlDbType.VarChar, 0, Rusuario.Nombreusuario),
@@ -68,13 +68,13 @@ namespace Sistema_de_Venta.Datos
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FUsuario_Eliminar", dbParams));
         }
 
-        public static int VerificarDNI(int dni)
+        public static int VerificarNCF(int Ncf)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-                    FDBHelper.MakeParam("@DNI",SqlDbType.Int, 0, dni),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Ncf),
                 };
-            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FUsuario_VerificarDNI", dbParams));
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FUsuario_VerificarNCF", dbParams));
         }
     }
 }

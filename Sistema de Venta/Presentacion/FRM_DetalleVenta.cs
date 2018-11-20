@@ -239,7 +239,9 @@ namespace Sistema_de_Venta.Presentacion
         private void text_ProductoDescripcion_MouseClick(object sender, MouseEventArgs e)
         {
             FRM_Producto FRMPro = FRM_Producto.GetInscance();
+            FRMPro.Hide();
             FRMPro.SetFlag("1");
+            FRMPro.WindowState = FormWindowState.Maximized;
             FRMPro.ShowDialog();
         }
 
@@ -299,5 +301,6 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
+
     }
 }

@@ -42,7 +42,7 @@ namespace Sistema_de_Venta.Presentacion
                 Usuario.Id = Convert.ToInt32(dt.Rows[0]["Id"]);
                 Usuario.Nombre = dt.Rows[0]["Nombre"].ToString();
                 Usuario.Apellido = dt.Rows[0]["Apellido"].ToString();
-                Usuario.Dni = Convert.ToInt32(dt.Rows[0]["Dni"]);
+                Usuario.Ncf = Convert.ToInt32(dt.Rows[0]["Ncf"]);
                 Usuario.Direccion = dt.Rows[0]["Direccion"].ToString();
                 Usuario.Telefono = dt.Rows[0]["Telefono"].ToString();
                 Usuario.Nombreusuario = dt.Rows[0]["Usuario"].ToString();
@@ -121,7 +121,7 @@ namespace Sistema_de_Venta.Presentacion
             }
             else
             {
-                countDownTimer = 30;
+                countDownTimer = 300;
                 timer1.Start();
             }
         }
