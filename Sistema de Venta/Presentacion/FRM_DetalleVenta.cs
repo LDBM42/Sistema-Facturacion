@@ -114,7 +114,6 @@ namespace Sistema_de_Venta.Presentacion
                         text_stock.Text = newStock;
 
                         FRM_DetalleVenta_Load(null, null);
-                        MessageBox.Show("El Producto fue agregado correctamente");
                         Limpiar();
                     }
                     else

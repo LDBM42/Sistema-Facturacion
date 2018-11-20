@@ -29,9 +29,7 @@ namespace Sistema_de_Venta.Datos
                     
                     FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente.Id),
                      FDBHelper.MakeParam("@FechaVenta", SqlDbType.Date, 0, venta.FechaVenta),
-                      FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento),
-                       FDBHelper.MakeParam("@TipoDocumento", SqlDbType.VarChar, 0, venta.TipoDocumento)
-
+                      FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento)
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FVenta_Insertar", dbParams));
 
@@ -44,8 +42,7 @@ namespace Sistema_de_Venta.Datos
                     FDBHelper.MakeParam("@Id", SqlDbType.Int, 0, venta.Id),
                     FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente.Id),
                      FDBHelper.MakeParam("@FechaVenta", SqlDbType.Date, 0, venta.FechaVenta),
-                      FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento),
-                       FDBHelper.MakeParam("@TipoDocumento", SqlDbType.VarChar, 0, venta.TipoDocumento)
+                      FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento)
 
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FVenta_Actualizar", dbParams));

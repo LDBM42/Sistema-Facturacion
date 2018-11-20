@@ -69,11 +69,10 @@
             // 
             // txtVentaId
             // 
-            this.txtVentaId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVentaId.Location = new System.Drawing.Point(446, 89);
+            this.txtVentaId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtVentaId.Location = new System.Drawing.Point(0, 0);
             this.txtVentaId.Name = "txtVentaId";
-            this.txtVentaId.Size = new System.Drawing.Size(100, 22);
+            this.txtVentaId.Size = new System.Drawing.Size(992, 22);
             this.txtVentaId.TabIndex = 1;
             this.txtVentaId.Visible = false;
             // 
@@ -82,15 +81,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 678);
-            this.Controls.Add(this.txtVentaId);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.txtVentaId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1010, 1000);
             this.MinimumSize = new System.Drawing.Size(1010, 500);
             this.Name = "FRM_ReporteVenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Factura";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FRM_ReporteVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usp_Reportes_GenrerarReporteVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();

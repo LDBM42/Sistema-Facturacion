@@ -33,13 +33,6 @@ namespace Sistema_de_Venta.Entidades
             get { return _numeroDocumento; }
             set { _numeroDocumento = value; }
         }
-        private string _tipoDocumento;
-
-        public string TipoDocumento
-        {
-            get { return _tipoDocumento; }
-            set { _tipoDocumento = value; }
-        }
 
         public Venta()
         {

@@ -300,7 +300,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1300, 650);
             this.Controls.Add(this.pnlMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;

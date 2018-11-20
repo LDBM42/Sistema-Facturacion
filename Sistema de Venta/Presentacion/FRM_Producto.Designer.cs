@@ -65,6 +65,7 @@
             this.pbx_Servicios = new System.Windows.Forms.PictureBox();
             this.pbx_Productos = new System.Windows.Forms.PictureBox();
             this.pnl_Lista_Productos = new System.Windows.Forms.Panel();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
@@ -84,7 +85,7 @@
             this.BT_liminar.Location = new System.Drawing.Point(42, 553);
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
-            this.BT_liminar.Size = new System.Drawing.Size(801, 46);
+            this.BT_liminar.Size = new System.Drawing.Size(803, 46);
             this.BT_liminar.TabIndex = 12;
             this.BT_liminar.Text = "Eliminar";
             this.BT_liminar.UseVisualStyleBackColor = false;
@@ -98,10 +99,10 @@
             this.noencontrado.AutoSize = true;
             this.noencontrado.BackColor = System.Drawing.Color.Transparent;
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(334, 318);
+            this.noencontrado.Location = new System.Drawing.Point(334, 311);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(217, 18);
+            this.noencontrado.Size = new System.Drawing.Size(244, 20);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -112,7 +113,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 66);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(633, 24);
+            this.Buscar.Size = new System.Drawing.Size(635, 26);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -132,7 +133,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 65);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
             this.CMB_Buscar.TabIndex = 1;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -154,7 +155,7 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(801, 450);
+            this.dgvProductos.Size = new System.Drawing.Size(803, 450);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
@@ -173,7 +174,7 @@
             this.text_FechadeVencimiento.Location = new System.Drawing.Point(153, 241);
             this.text_FechadeVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.text_FechadeVencimiento.Name = "text_FechadeVencimiento";
-            this.text_FechadeVencimiento.Size = new System.Drawing.Size(316, 24);
+            this.text_FechadeVencimiento.Size = new System.Drawing.Size(316, 26);
             this.text_FechadeVencimiento.TabIndex = 21;
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
             // 
@@ -182,7 +183,7 @@
             this.text_Nombre.Location = new System.Drawing.Point(153, 102);
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
-            this.text_Nombre.Size = new System.Drawing.Size(316, 24);
+            this.text_Nombre.Size = new System.Drawing.Size(316, 26);
             this.text_Nombre.TabIndex = 19;
             // 
             // label8
@@ -192,7 +193,7 @@
             this.label8.Location = new System.Drawing.Point(41, 105);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 18);
+            this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "Nombre";
             // 
@@ -202,7 +203,7 @@
             this.text_CategoriaDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_CategoriaDescripcion.Name = "text_CategoriaDescripcion";
             this.text_CategoriaDescripcion.ReadOnly = true;
-            this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 24);
+            this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 26);
             this.text_CategoriaDescripcion.TabIndex = 17;
             this.text_CategoriaDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_CategoriaDescripcion_MouseClick);
             // 
@@ -213,7 +214,7 @@
             this.label1.Location = new System.Drawing.Point(40, 244);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Vencimiento";
             // 
@@ -306,7 +307,7 @@
             this.text_PrecioCompra.Location = new System.Drawing.Point(378, 274);
             this.text_PrecioCompra.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioCompra.Name = "text_PrecioCompra";
-            this.text_PrecioCompra.Size = new System.Drawing.Size(91, 24);
+            this.text_PrecioCompra.Size = new System.Drawing.Size(91, 26);
             this.text_PrecioCompra.TabIndex = 10;
             // 
             // text_PrecioVenta
@@ -314,7 +315,7 @@
             this.text_PrecioVenta.Location = new System.Drawing.Point(153, 274);
             this.text_PrecioVenta.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioVenta.Name = "text_PrecioVenta";
-            this.text_PrecioVenta.Size = new System.Drawing.Size(91, 24);
+            this.text_PrecioVenta.Size = new System.Drawing.Size(91, 26);
             this.text_PrecioVenta.TabIndex = 9;
             this.text_PrecioVenta.Text = " ";
             // 
@@ -323,7 +324,7 @@
             this.text_Stock.Location = new System.Drawing.Point(153, 309);
             this.text_Stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_Stock.Name = "text_Stock";
-            this.text_Stock.Size = new System.Drawing.Size(91, 24);
+            this.text_Stock.Size = new System.Drawing.Size(91, 26);
             this.text_Stock.TabIndex = 8;
             // 
             // text_Categoria
@@ -332,7 +333,7 @@
             this.text_Categoria.Margin = new System.Windows.Forms.Padding(4);
             this.text_Categoria.Name = "text_Categoria";
             this.text_Categoria.ReadOnly = true;
-            this.text_Categoria.Size = new System.Drawing.Size(13, 24);
+            this.text_Categoria.Size = new System.Drawing.Size(13, 26);
             this.text_Categoria.TabIndex = 7;
             this.text_Categoria.Visible = false;
             // 
@@ -352,7 +353,7 @@
             this.text_Id.Location = new System.Drawing.Point(412, 23);
             this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
-            this.text_Id.Size = new System.Drawing.Size(15, 24);
+            this.text_Id.Size = new System.Drawing.Size(15, 26);
             this.text_Id.TabIndex = 6;
             this.text_Id.Visible = false;
             // 
@@ -363,7 +364,7 @@
             this.label5.Location = new System.Drawing.Point(40, 277);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 18);
+            this.label5.Size = new System.Drawing.Size(116, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Costo a Pagar";
             // 
@@ -374,7 +375,7 @@
             this.label6.Location = new System.Drawing.Point(261, 277);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 18);
+            this.label6.Size = new System.Drawing.Size(121, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Precio Compra";
             // 
@@ -385,7 +386,7 @@
             this.label7.Location = new System.Drawing.Point(40, 312);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 18);
+            this.label7.Size = new System.Drawing.Size(51, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Stock";
             // 
@@ -396,7 +397,7 @@
             this.lbl_Descripcion.Location = new System.Drawing.Point(40, 142);
             this.lbl_Descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
-            this.lbl_Descripcion.Size = new System.Drawing.Size(87, 18);
+            this.lbl_Descripcion.Size = new System.Drawing.Size(99, 20);
             this.lbl_Descripcion.TabIndex = 2;
             this.lbl_Descripcion.Text = "Descripción";
             // 
@@ -407,7 +408,7 @@
             this.label3.Location = new System.Drawing.Point(41, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Categoria";
             // 
@@ -422,7 +423,7 @@
             this.text_Flag.Location = new System.Drawing.Point(435, 23);
             this.text_Flag.Margin = new System.Windows.Forms.Padding(4);
             this.text_Flag.Name = "text_Flag";
-            this.text_Flag.Size = new System.Drawing.Size(11, 24);
+            this.text_Flag.Size = new System.Drawing.Size(11, 26);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
             this.text_Flag.TextChanged += new System.EventHandler(this.text_Flag_TextChanged);
@@ -473,8 +474,8 @@
             this.panel2.Controls.Add(this.Editar);
             this.panel2.Controls.Add(this.pbx_Servicios);
             this.panel2.Controls.Add(this.pbx_Productos);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(885, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 640);
             this.panel2.TabIndex = 22;
@@ -523,25 +524,34 @@
             // 
             // pnl_Lista_Productos
             // 
-            this.pnl_Lista_Productos.Controls.Add(this.CMB_Buscar);
             this.pnl_Lista_Productos.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Productos.Controls.Add(this.CMB_Buscar);
             this.pnl_Lista_Productos.Controls.Add(this.dgvProductos);
             this.pnl_Lista_Productos.Controls.Add(this.BT_liminar);
             this.pnl_Lista_Productos.Controls.Add(this.Buscar);
+            this.pnl_Lista_Productos.Controls.Add(this.pnl_Lista_Categoria);
             this.pnl_Lista_Productos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Productos.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Productos.Location = new System.Drawing.Point(513, 0);
             this.pnl_Lista_Productos.Name = "pnl_Lista_Productos";
-            this.pnl_Lista_Productos.Size = new System.Drawing.Size(1398, 640);
+            this.pnl_Lista_Productos.Size = new System.Drawing.Size(885, 640);
             this.pnl_Lista_Productos.TabIndex = 26;
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(885, 640);
+            this.pnl_Lista_Categoria.TabIndex = 17;
             // 
             // FRM_Producto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1398, 640);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_Lista_Productos);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -600,5 +610,6 @@
         private System.Windows.Forms.Panel pnl_Lista_Productos;
         public System.Windows.Forms.PictureBox pbx_Productos;
         public System.Windows.Forms.PictureBox pbx_Servicios;
+        private System.Windows.Forms.Panel pnl_Lista_Categoria;
     }
 }

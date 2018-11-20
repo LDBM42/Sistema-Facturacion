@@ -48,9 +48,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
+            this.pnl_Lista_Categoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Cerrar
@@ -77,10 +79,10 @@
             this.noencontrado.AutoSize = true;
             this.noencontrado.BackColor = System.Drawing.Color.Transparent;
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(406, 290);
+            this.noencontrado.Location = new System.Drawing.Point(406, 287);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(217, 18);
+            this.noencontrado.Size = new System.Drawing.Size(244, 20);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -91,7 +93,7 @@
             this.Buscar.Location = new System.Drawing.Point(216, 66);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(771, 24);
+            this.Buscar.Size = new System.Drawing.Size(771, 26);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -110,7 +112,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 65);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(166, 26);
+            this.CMB_Buscar.Size = new System.Drawing.Size(166, 28);
             this.CMB_Buscar.TabIndex = 1;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -141,7 +143,7 @@
             this.text_fecha.Location = new System.Drawing.Point(114, 106);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
-            this.text_fecha.Size = new System.Drawing.Size(265, 24);
+            this.text_fecha.Size = new System.Drawing.Size(265, 26);
             this.text_fecha.TabIndex = 15;
             this.text_fecha.ValueChanged += new System.EventHandler(this.text_fecha_ValueChanged);
             // 
@@ -206,7 +208,7 @@
             this.text_NumeroDoc.Location = new System.Drawing.Point(114, 146);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 24);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
             this.text_NumeroDoc.TabIndex = 10;
             // 
             // text_ClienteId
@@ -215,7 +217,7 @@
             this.text_ClienteId.Location = new System.Drawing.Point(349, 19);
             this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(10, 24);
+            this.text_ClienteId.Size = new System.Drawing.Size(10, 26);
             this.text_ClienteId.TabIndex = 7;
             this.text_ClienteId.Visible = false;
             // 
@@ -226,7 +228,7 @@
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
             this.text_ClienteNombre.ReadOnly = true;
-            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 24);
+            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
             this.text_ClienteNombre.TabIndex = 7;
             this.text_ClienteNombre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ClienteNombre_MouseClick);
             // 
@@ -237,7 +239,7 @@
             this.textId.Location = new System.Drawing.Point(367, 19);
             this.textId.Margin = new System.Windows.Forms.Padding(4);
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(12, 24);
+            this.textId.Size = new System.Drawing.Size(12, 26);
             this.textId.TabIndex = 6;
             this.textId.Visible = false;
             // 
@@ -248,7 +250,7 @@
             this.label8.Location = new System.Drawing.Point(41, 149);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 18);
+            this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 4;
             this.label8.Text = "No. Doc";
             // 
@@ -259,7 +261,7 @@
             this.label10.Location = new System.Drawing.Point(41, 109);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 18);
+            this.label10.Size = new System.Drawing.Size(55, 20);
             this.label10.TabIndex = 2;
             this.label10.Text = "Fecha";
             // 
@@ -270,7 +272,7 @@
             this.label11.Location = new System.Drawing.Point(41, 69);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 18);
+            this.label11.Size = new System.Drawing.Size(61, 20);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cliente";
             // 
@@ -291,8 +293,8 @@
             this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.pbx_Ventas);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1031, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(423, 537);
             this.panel2.TabIndex = 23;
@@ -310,17 +312,26 @@
             this.pbx_Ventas.TabIndex = 17;
             this.pbx_Ventas.TabStop = false;
             // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(423, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1031, 537);
+            this.pnl_Lista_Categoria.TabIndex = 26;
+            // 
             // FRM_Ventas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1454, 537);
+            this.Controls.Add(this.pnl_Lista_Categoria);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.noencontrado);
-            this.Controls.Add(this.Buscar);
-            this.Controls.Add(this.CMB_Buscar);
-            this.Controls.Add(this.dgvVentas);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -333,8 +344,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
+            this.pnl_Lista_Categoria.ResumeLayout(false);
+            this.pnl_Lista_Categoria.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -358,5 +370,6 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbx_Ventas;
+        private System.Windows.Forms.Panel pnl_Lista_Categoria;
     }
 }

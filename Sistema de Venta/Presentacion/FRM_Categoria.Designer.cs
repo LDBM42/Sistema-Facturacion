@@ -74,10 +74,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.noencontrado.AutoSize = true;
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(412, 283);
+            this.noencontrado.Location = new System.Drawing.Point(411, 277);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(217, 18);
+            this.noencontrado.Size = new System.Drawing.Size(244, 20);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -149,7 +149,7 @@
             this.Editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Editar.Location = new System.Drawing.Point(186, 142);
+            this.Editar.Location = new System.Drawing.Point(186, 103);
             this.Editar.Margin = new System.Windows.Forms.Padding(0);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(128, 40);
@@ -163,7 +163,7 @@
             this.Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Guardar.Location = new System.Drawing.Point(50, 142);
+            this.Guardar.Location = new System.Drawing.Point(50, 103);
             this.Guardar.Margin = new System.Windows.Forms.Padding(0);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(128, 40);
@@ -177,7 +177,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancelar.Location = new System.Drawing.Point(186, 142);
+            this.Cancelar.Location = new System.Drawing.Point(186, 103);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(0);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(128, 40);
@@ -191,7 +191,7 @@
             this.Nuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Nuevo.Location = new System.Drawing.Point(50, 142);
+            this.Nuevo.Location = new System.Drawing.Point(50, 103);
             this.Nuevo.Margin = new System.Windows.Forms.Padding(0);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(128, 40);
@@ -202,10 +202,10 @@
             // 
             // text_Descripcion
             // 
-            this.text_Descripcion.Location = new System.Drawing.Point(50, 106);
+            this.text_Descripcion.Location = new System.Drawing.Point(50, 67);
             this.text_Descripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_Descripcion.Name = "text_Descripcion";
-            this.text_Descripcion.Size = new System.Drawing.Size(265, 24);
+            this.text_Descripcion.Size = new System.Drawing.Size(265, 27);
             this.text_Descripcion.TabIndex = 1;
             // 
             // text_Id
@@ -215,7 +215,7 @@
             this.text_Id.Location = new System.Drawing.Point(371, 36);
             this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
-            this.text_Id.Size = new System.Drawing.Size(15, 24);
+            this.text_Id.Size = new System.Drawing.Size(15, 27);
             this.text_Id.TabIndex = 0;
             this.text_Id.Visible = false;
             this.text_Id.TextChanged += new System.EventHandler(this.text_Id_TextChanged);
@@ -225,7 +225,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(47, 84);
+            this.label3.Location = new System.Drawing.Point(47, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 18);
@@ -239,7 +239,7 @@
             this.text_Flag.Location = new System.Drawing.Point(394, 36);
             this.text_Flag.Margin = new System.Windows.Forms.Padding(4);
             this.text_Flag.Name = "text_Flag";
-            this.text_Flag.Size = new System.Drawing.Size(12, 24);
+            this.text_Flag.Size = new System.Drawing.Size(12, 27);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
             this.text_Flag.TextChanged += new System.EventHandler(this.text_Flag_TextChanged);
@@ -256,12 +256,13 @@
             // 
             // pnl_Lista_Categoria
             // 
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
             this.pnl_Lista_Categoria.Controls.Add(this.BT_Eliminar);
             this.pnl_Lista_Categoria.Controls.Add(this.dgvCategoria);
             this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
             this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
             this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(359, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
             this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1039, 552);
             this.pnl_Lista_Categoria.TabIndex = 14;
@@ -279,8 +280,8 @@
             this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.text_Descripcion);
             this.panel2.Controls.Add(this.pbx_Ventas);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1039, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(359, 552);
             this.panel2.TabIndex = 0;
@@ -308,9 +309,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbx_Ventas.BackColor = System.Drawing.Color.Transparent;
             this.pbx_Ventas.Image = global::Sistema_de_Venta.Properties.Resources.CategoriasBig;
-            this.pbx_Ventas.Location = new System.Drawing.Point(131, 185);
+            this.pbx_Ventas.Location = new System.Drawing.Point(131, 146);
             this.pbx_Ventas.Name = "pbx_Ventas";
-            this.pbx_Ventas.Size = new System.Drawing.Size(107, 274);
+            this.pbx_Ventas.Size = new System.Drawing.Size(107, 313);
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Ventas.TabIndex = 20;
             this.pbx_Ventas.TabStop = false;
@@ -320,9 +321,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1398, 552);
-            this.Controls.Add(this.noencontrado);
             this.Controls.Add(this.Pnl_Categoria_Size);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -340,7 +340,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

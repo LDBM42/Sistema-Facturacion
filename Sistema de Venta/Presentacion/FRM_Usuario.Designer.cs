@@ -59,12 +59,12 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnl_Lista_Categoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
+            this.pnl_Lista_Categoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // BT_liminar
@@ -175,7 +175,7 @@
             this.Buscar.Location = new System.Drawing.Point(217, 70);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(733, 24);
+            this.Buscar.Size = new System.Drawing.Size(733, 26);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -193,7 +193,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(43, 69);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
             this.CMB_Buscar.TabIndex = 1;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -251,7 +251,7 @@
             this.text_Id.Location = new System.Drawing.Point(331, 30);
             this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
-            this.text_Id.Size = new System.Drawing.Size(10, 24);
+            this.text_Id.Size = new System.Drawing.Size(10, 26);
             this.text_Id.TabIndex = 6;
             this.text_Id.Visible = false;
             // 
@@ -266,7 +266,7 @@
             this.noencontrado.Location = new System.Drawing.Point(388, 275);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(217, 18);
+            this.noencontrado.Size = new System.Drawing.Size(244, 20);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -277,7 +277,7 @@
             this.label5.Location = new System.Drawing.Point(41, 222);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 18);
+            this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Telefono";
             // 
@@ -288,7 +288,7 @@
             this.label6.Location = new System.Drawing.Point(41, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 18);
+            this.label6.Size = new System.Drawing.Size(81, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Direccion";
             // 
@@ -299,7 +299,7 @@
             this.label7.Location = new System.Drawing.Point(41, 148);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 18);
+            this.label7.Size = new System.Drawing.Size(38, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "DNI";
             // 
@@ -310,7 +310,7 @@
             this.label4.Location = new System.Drawing.Point(41, 111);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 18);
+            this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Apellidos";
             // 
@@ -321,7 +321,7 @@
             this.label3.Location = new System.Drawing.Point(41, 74);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 18);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombres";
             // 
@@ -334,7 +334,7 @@
             this.cbxTipo.Location = new System.Drawing.Point(134, 331);
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(227, 26);
+            this.cbxTipo.Size = new System.Drawing.Size(227, 28);
             this.cbxTipo.TabIndex = 16;
             // 
             // txtFlag
@@ -342,7 +342,7 @@
             this.txtFlag.Location = new System.Drawing.Point(345, 30);
             this.txtFlag.Margin = new System.Windows.Forms.Padding(4);
             this.txtFlag.Name = "txtFlag";
-            this.txtFlag.Size = new System.Drawing.Size(11, 24);
+            this.txtFlag.Size = new System.Drawing.Size(11, 26);
             this.txtFlag.TabIndex = 12;
             this.txtFlag.Visible = false;
             // 
@@ -451,25 +451,11 @@
             this.panel2.Controls.Add(this.txtUsuario);
             this.panel2.Controls.Add(this.text_Direccion);
             this.panel2.Controls.Add(this.pbx_Ventas);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(993, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 552);
             this.panel2.TabIndex = 9;
-            // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvUsuarios);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 552);
-            this.pnl_Lista_Categoria.TabIndex = 16;
-            this.pnl_Lista_Categoria.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Lista_Categoria_Paint);
             // 
             // pbx_Ventas
             // 
@@ -485,6 +471,20 @@
             this.pbx_Ventas.TabIndex = 18;
             this.pbx_Ventas.TabStop = false;
             // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvUsuarios);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(405, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 552);
+            this.pnl_Lista_Categoria.TabIndex = 16;
+            this.pnl_Lista_Categoria.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Lista_Categoria_Paint);
+            // 
             // FRM_Usuario
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -492,7 +492,7 @@
             this.ClientSize = new System.Drawing.Size(1398, 552);
             this.Controls.Add(this.pnl_Lista_Categoria);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -504,9 +504,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.pnl_Lista_Categoria.ResumeLayout(false);
             this.pnl_Lista_Categoria.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
 
         }
