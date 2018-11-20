@@ -498,7 +498,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbx_Servicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbx_Servicios.Image = global::Sistema_de_Venta.Properties.Resources.ServiciosBig;
-            this.pbx_Servicios.Location = new System.Drawing.Point(204, 501);
+            this.pbx_Servicios.Location = new System.Drawing.Point(204, 499);
             this.pbx_Servicios.Margin = new System.Windows.Forms.Padding(4);
             this.pbx_Servicios.Name = "pbx_Servicios";
             this.pbx_Servicios.Size = new System.Drawing.Size(100, 100);
@@ -514,7 +514,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbx_Productos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbx_Productos.Image = global::Sistema_de_Venta.Properties.Resources.ProductosBig;
-            this.pbx_Productos.Location = new System.Drawing.Point(204, 501);
+            this.pbx_Productos.Location = new System.Drawing.Point(204, 499);
             this.pbx_Productos.Margin = new System.Windows.Forms.Padding(4);
             this.pbx_Productos.Name = "pbx_Productos";
             this.pbx_Productos.Size = new System.Drawing.Size(100, 100);
@@ -559,7 +559,6 @@
             this.Name = "FRM_Producto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Producto";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FRM_Producto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panel2.ResumeLayout(false);

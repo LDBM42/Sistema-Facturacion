@@ -73,7 +73,7 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1300, 650);
+            this.pnlMain.Size = new System.Drawing.Size(1300, 710);
             this.pnlMain.TabIndex = 1;
             // 
             // btnRestore
@@ -96,7 +96,7 @@
             this.pnl_Formularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Formularios.Location = new System.Drawing.Point(0, 74);
             this.pnl_Formularios.Name = "pnl_Formularios";
-            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 551);
+            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 611);
             this.pnl_Formularios.TabIndex = 8;
             // 
             // pbx_Logo
@@ -106,7 +106,7 @@
             this.pbx_Logo.Image = global::Sistema_de_Venta.Properties.Resources.MiEmpresaFicticiaLOGO__peq_;
             this.pbx_Logo.Location = new System.Drawing.Point(0, 0);
             this.pbx_Logo.Name = "pbx_Logo";
-            this.pbx_Logo.Size = new System.Drawing.Size(1300, 551);
+            this.pbx_Logo.Size = new System.Drawing.Size(1300, 611);
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Logo.TabIndex = 0;
             this.pbx_Logo.TabStop = false;
@@ -160,7 +160,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 625);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 685);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1300, 25);
             this.statusStrip1.TabIndex = 2;
@@ -298,7 +298,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1300, 710);
             this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -306,7 +306,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1150, 580);
+            this.MinimumSize = new System.Drawing.Size(1150, 710);
             this.Name = "Form1";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -315,6 +315,7 @@
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();

@@ -26,6 +26,7 @@ namespace Sistema_de_Venta
         string UserTemp = Usuario.Nombre;
         string prodOrServ; 
         string prodOrServ_Before;
+        int minimizar = 0;
 
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -312,12 +313,29 @@ namespace Sistema_de_Venta
             }
         }
 
+        //detecta si se cambión de usuario para volver a cargar el form.
         private void Form1_Activated(object sender, EventArgs e)
         {
             if (UserTemp != Usuario.Nombre)
             {
                 UserTemp = Usuario.Nombre;
                 Form1_Load(sender, e);
+            }
+        }
+
+
+        // cambia botón restaurar por maximizar, al cambiar el tamaño
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (minimizar <= 4)
+            {
+                minimizar++;
+            }
+            else
+            {
+                btnMaximize.Visible = true;
+                btnRestore.Visible = false;
+                minimizar = 0;
             }
         }
     }
