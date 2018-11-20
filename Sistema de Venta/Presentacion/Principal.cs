@@ -285,23 +285,25 @@ namespace Sistema_de_Venta
             //si el formulario/instancia no existe
             if (formulario == null)
             {
-                formulario = new MiForm();
-                ((IFormulario)formulario).InicializarParametros(args); // para pasarle parametros
-                formulario.TopLevel = false;
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.Dock = DockStyle.Fill;
-                pnl_Formularios.Controls.Add(formulario);
-                pnl_Formularios.Tag = formulario;
                 try
                 {
+                    formulario = new MiForm();
+                    ((IFormulario)formulario).InicializarParametros(args); // para pasarle parametros
+                    formulario.TopLevel = false;
+                    formulario.FormBorderStyle = FormBorderStyle.None;
+                    formulario.Dock = DockStyle.Fill;
+                    pnl_Formularios.Controls.Add(formulario);
+                    pnl_Formularios.Tag = formulario;
                     formulario.Show();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Favor intentarlo otra vez", "Advertencia");
-                }
 
-                formulario.BringToFront();
+                    formulario.BringToFront();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                    
+                }
+                
             }
             //si el formulario/instancia existe
             else
