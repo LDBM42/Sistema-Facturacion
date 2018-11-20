@@ -173,6 +173,16 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_gray {
+            get {
+                object obj = ResourceManager.GetObject("close_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Help_icon {
             get {
                 object obj = ResourceManager.GetObject("Help-icon", resourceCulture);
@@ -246,6 +256,16 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap MiEmpresaFicticiaLOGO__peq_ {
             get {
                 object obj = ResourceManager.GetObject("MiEmpresaFicticiaLOGO (peq)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize_gray {
+            get {
+                object obj = ResourceManager.GetObject("minimize_gray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

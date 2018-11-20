@@ -22,7 +22,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             InitializeComponent();
         }
-        private int Servicios = 0;
+        public int Servicios = 0;
 
         public void InicializarParametros(params object[] parametros)
         {
@@ -57,7 +57,6 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (dialogo.ShowDialog() == DialogResult.OK)
             {
-
                 Imagen.BackgroundImage = null;
                 Imagen.Image = new Bitmap(dialogo.FileName);
                 Imagen.SizeMode = PictureBoxSizeMode.StretchImage;

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Sistema_de_Venta.Presentacion
 {
@@ -20,6 +21,15 @@ namespace Sistema_de_Venta.Presentacion
         }
 
         int countDownTimer;
+        public int reOpened;
+        Form1 Principal;
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -43,7 +53,35 @@ namespace Sistema_de_Venta.Presentacion
                 //Guardar Datos Autologgin
                 if (FLogin.AutoLoginSet(Usuario.Nombreusuario, Usuario.Password, Usuario.Logged) == 1)
                 {
-                    this.DialogResult = DialogResult.OK; //terminar loggin y abrir Principal
+                    if (reOpened > 0)
+                    {
+                        try
+                        {
+                            // para saber si el formulario existe, o sea si está abierto o cerrado
+                            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "Form1").SingleOrDefault<Form>();
+
+                            existe.Refresh();
+                            existe.Opacity = 0.95;
+
+                            if (existe != null)
+                            {
+                                this.Close();
+                                //Principal = new Form1();
+                                //Principal.ShowDialog();
+                                existe.Show();
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            Principal = new Form1();
+                            Principal.ShowDialog();
+                        }
+                        
+                    }
+                    else
+                    {
+                        this.DialogResult = DialogResult.OK; //terminar loggin y abrir Principal
+                    }
                 }
             }
             else
@@ -68,6 +106,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Login_Load(object sender, EventArgs e)
         {
+            this.Opacity = 0.95;
+
             DataSet ds = FLogin.AutoLoginGet();
             DataTable dt = ds.Tables[0];
 
@@ -109,7 +149,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -206,6 +246,21 @@ namespace Sistema_de_Venta.Presentacion
                 SendKeys.Send("{TAB}"); //hace que se presione la tecla TAB por código
             }
         }
+
+
+        #region Mover Formulario
+            private void FRM_Login_MouseDown(object sender, MouseEventArgs e)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+
+            private void panel1_MouseDown(object sender, MouseEventArgs e)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+        #endregion
 
     }
 }

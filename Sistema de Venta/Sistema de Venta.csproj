@@ -319,6 +319,8 @@
     <None Include="Resources\ServiciosBig.png" />
     <None Include="Resources\UsuariosBig.png" />
     <None Include="Resources\ISOTIPO MEF srl.png" />
+    <None Include="Resources\close_gray.png" />
+    <None Include="Resources\minimize_gray.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

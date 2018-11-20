@@ -62,15 +62,15 @@
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Imagen = new System.Windows.Forms.PictureBox();
-            this.pbx_Productos = new System.Windows.Forms.PictureBox();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.pbx_Servicios = new System.Windows.Forms.PictureBox();
+            this.pbx_Productos = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Productos = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).BeginInit();
-            this.pnl_Lista_Categoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).BeginInit();
+            this.pnl_Lista_Productos.SuspendLayout();
             this.SuspendLayout();
             // 
             // BT_liminar
@@ -490,34 +490,6 @@
             this.Imagen.TabStop = false;
             this.Imagen.Click += new System.EventHandler(this.Imagen_Click);
             // 
-            // pbx_Productos
-            // 
-            this.pbx_Productos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbx_Productos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbx_Productos.Image = global::Sistema_de_Venta.Properties.Resources.ProductosBig;
-            this.pbx_Productos.Location = new System.Drawing.Point(204, 501);
-            this.pbx_Productos.Margin = new System.Windows.Forms.Padding(4);
-            this.pbx_Productos.Name = "pbx_Productos";
-            this.pbx_Productos.Size = new System.Drawing.Size(100, 100);
-            this.pbx_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbx_Productos.TabIndex = 22;
-            this.pbx_Productos.TabStop = false;
-            // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvProductos);
-            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1398, 640);
-            this.pnl_Lista_Categoria.TabIndex = 26;
-            // 
             // pbx_Servicios
             // 
             this.pbx_Servicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -534,13 +506,41 @@
             this.pbx_Servicios.TabStop = false;
             this.pbx_Servicios.Visible = false;
             // 
+            // pbx_Productos
+            // 
+            this.pbx_Productos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbx_Productos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbx_Productos.Image = global::Sistema_de_Venta.Properties.Resources.ProductosBig;
+            this.pbx_Productos.Location = new System.Drawing.Point(204, 501);
+            this.pbx_Productos.Margin = new System.Windows.Forms.Padding(4);
+            this.pbx_Productos.Name = "pbx_Productos";
+            this.pbx_Productos.Size = new System.Drawing.Size(100, 100);
+            this.pbx_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_Productos.TabIndex = 22;
+            this.pbx_Productos.TabStop = false;
+            // 
+            // pnl_Lista_Productos
+            // 
+            this.pnl_Lista_Productos.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Productos.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Productos.Controls.Add(this.dgvProductos);
+            this.pnl_Lista_Productos.Controls.Add(this.BT_liminar);
+            this.pnl_Lista_Productos.Controls.Add(this.Buscar);
+            this.pnl_Lista_Productos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Productos.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Productos.Name = "pnl_Lista_Productos";
+            this.pnl_Lista_Productos.Size = new System.Drawing.Size(1398, 640);
+            this.pnl_Lista_Productos.TabIndex = 26;
+            // 
             // FRM_Producto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1398, 640);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnl_Lista_Categoria);
+            this.Controls.Add(this.pnl_Lista_Productos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -555,10 +555,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).EndInit();
-            this.pnl_Lista_Categoria.ResumeLayout(false);
-            this.pnl_Lista_Categoria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).EndInit();
+            this.pnl_Lista_Productos.ResumeLayout(false);
+            this.pnl_Lista_Productos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -597,8 +597,8 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnl_Lista_Categoria;
-        private System.Windows.Forms.PictureBox pbx_Productos;
-        private System.Windows.Forms.PictureBox pbx_Servicios;
+        private System.Windows.Forms.Panel pnl_Lista_Productos;
+        public System.Windows.Forms.PictureBox pbx_Productos;
+        public System.Windows.Forms.PictureBox pbx_Servicios;
     }
 }

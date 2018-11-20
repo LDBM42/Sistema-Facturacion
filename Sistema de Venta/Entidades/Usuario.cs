@@ -79,6 +79,5 @@ namespace Sistema_de_Venta.Entidades
             get { return _logged; }
             set { _logged = value; }
         }
-
     }
 }

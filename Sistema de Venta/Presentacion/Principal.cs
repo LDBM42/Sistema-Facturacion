@@ -22,41 +22,47 @@ namespace Sistema_de_Venta
         }
 
         private int childFormNumber = 0;
-        private bool cerrarSeccion = false;
+        FRM_Login login = new FRM_Login();
+        string UserTemp = Usuario.Nombre;
+        string prodOrServ; 
+        string prodOrServ_Before;
 
 
-
-       private void ShowNewForm(object sender, EventArgs e)
+        private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
             childForm.MdiParent = this;
             childForm.Text = "Window " + childFormNumber++;
             childForm.Show();
         }
+
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Ventas>(1);
+            AbrirFormulario<FRM_Ventas>(0);
             //FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
             //frmVenta.ShowDialog(this);
         }
 
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FRM_Cliente>(1);
+            AbrirFormulario<FRM_Cliente>(0);
             //FRM_Cliente frmCliente = FRM_Cliente.GetInstance();
             //frmCliente.ShowDialog(this);
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            prodOrServ_Before = prodOrServ;
+            prodOrServ = "P";
             AbrirFormulario<FRM_Producto>(0);
             //FRM_Producto frmProducto = FRM_Producto.GetInscance();
             //frmProducto.ShowDialog(this);
         }
 
-
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            prodOrServ_Before = prodOrServ;
+            prodOrServ = "S";
             AbrirFormulario<FRM_Producto>(1);
         }
 
@@ -76,9 +82,11 @@ namespace Sistema_de_Venta
         }
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cerrarSeccion = true;
-            if (MessageBox.Show("¿Estás seguro de cerrar sección " + 
+        {            
+            //para saber si es el mismo usuario
+            UserTemp = Usuario.Nombre;
+
+            if (MessageBox.Show("¿Estás seguro de cerrar sección " +
                 Usuario.Nombre + " " + Usuario.Apellido + "?", "Cerrar Sección",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -88,28 +96,72 @@ namespace Sistema_de_Venta
                 {
                     MessageBox.Show("No se pudo hacer el cerrado de sección", "Cerado Sección");
                 }
+                else
+                {
+                    OpenSettings();
+                }
 
-                Application.Exit();
             }
-            else
-                cerrarSeccion = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+
+
+
+        private void OpenSettings()
         {
+
+            try
+            {   // para saber si el formulario existe, o sea si está abierto o cerrado
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "FRM_Login").SingleOrDefault<Form>();
+
+                if (existe != null)
+
+                {
+                    existe.Close();
+                }
+
+
+                pnl_Formularios.Controls.Clear(); // para cerrar todas las ventanas abiertas
+                pnl_Formularios.Controls.Add(pbx_Logo);
+
+
+
+                FRM_Login login = new FRM_Login();
+                login.reOpened++;
+                this.Hide();
+                login.Show();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+
+
+        private void Form1_Load(object sender, EventArgs e)            
+                    
+        {
+            this.Opacity = 0.95;
+
             if (Usuario.Tipo != "Admin")
             {
                 cONFIGURACIONESToolStripMenuItem.Visible = false;
             }
+            else
+            {
+                cONFIGURACIONESToolStripMenuItem.Visible = true;
+            }
+
             toolStripStatusLabel1.Text = "Usuario - " + Usuario.Nombre + " " + Usuario.Apellido;
 
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(!cerrarSeccion)
-            { 
-                //Mejora para asegurar que el usuario si quiere salir del programa
+            //Mejora para asegurar que el usuario si quiere salir del programa
                 if (MessageBox.Show("¿Estás seguro de salir del programa " +
                 Usuario.Nombre + " " + Usuario.Apellido + "?", "Salir del Programa",
                       MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -117,7 +169,6 @@ namespace Sistema_de_Venta
                     Environment.Exit(1);
                 }
                 else e.Cancel = true;
-            }
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -210,19 +261,46 @@ namespace Sistema_de_Venta
         //Form dentro del panel
         public void AbrirFormulario<MiForm>(params object[] args) where MiForm : Form, IFormulario, new()
         {
+            Form formulario0;
+            formulario0 = pnl_Formularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion el formulario
+
+            if (formulario0 != null)
+            {
+                if (formulario0.Text == "Mantenimiento de Producto")
+                {
+                    if (prodOrServ_Before != prodOrServ)
+                    {
+                        formulario0.Close();
+                    }
+                }
+            }
+
+            formulario0 = null; // destruyendo formulario0 ya que solo es para pruebas
+
+
             Form formulario;
             formulario = pnl_Formularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion el formulario
+            
+
             //si el formulario/instancia no existe
             if (formulario == null)
             {
                 formulario = new MiForm();
-                ((IFormulario)formulario).InicializarParametros(args);
+                ((IFormulario)formulario).InicializarParametros(args); // para pasarle parametros
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
                 pnl_Formularios.Controls.Add(formulario);
                 pnl_Formularios.Tag = formulario;
-                formulario.Show();
+                try
+                {
+                    formulario.Show();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Favor intentarlo otra vez", "Advertencia");
+                }
+
                 formulario.BringToFront();
             }
             //si el formulario/instancia existe
@@ -232,5 +310,13 @@ namespace Sistema_de_Venta
             }
         }
 
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (UserTemp != Usuario.Nombre)
+            {
+                UserTemp = Usuario.Nombre;
+                Form1_Load(sender, e);
+            }
+        }
     }
 }
