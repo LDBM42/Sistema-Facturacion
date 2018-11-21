@@ -1362,7 +1362,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet</DataSetName>
             <Top>5.0927cm</Top>
-            <Left>1.62137cm</Left>
+            <Left>2.78157cm</Left>
             <Height>4.34817cm</Height>
             <Width>16.12888cm</Width>
             <Style>
@@ -1402,7 +1402,7 @@
             </Paragraphs>
             <rd:DefaultName>FechaVenta</rd:DefaultName>
             <Top>2.50414cm</Top>
-            <Left>7.86431cm</Left>
+            <Left>9.02452cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.643cm</Width>
             <ZIndex>2</ZIndex>
@@ -1434,7 +1434,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
             <Top>1.6002cm</Top>
-            <Left>5.77878cm</Left>
+            <Left>6.93899cm</Left>
             <Height>0.62117cm</Height>
             <Width>7.81405cm</Width>
             <ZIndex>3</ZIndex>
@@ -1474,7 +1474,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
             <Top>1.93914cm</Top>
-            <Left>5.87699cm</Left>
+            <Left>6.98809cm</Left>
             <Height>0.69933cm</Height>
             <Width>7.71585cm</Width>
             <ZIndex>4</ZIndex>
@@ -1491,14 +1491,16 @@
       </Body>
       <Width>8.54017in</Width>
       <Page>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>
         <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
-        <Style />
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Page>
     </ReportSection>
   </ReportSections>
