@@ -60,7 +60,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(992, 678);
+            this.reportViewer1.Size = new System.Drawing.Size(1050, 750);
             this.reportViewer1.TabIndex = 0;
             // 
             // usp_Reportes_GenrerarReporteVentaTableAdapter
@@ -69,23 +69,25 @@
             // 
             // txtVentaId
             // 
-            this.txtVentaId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtVentaId.Location = new System.Drawing.Point(0, 0);
+            this.txtVentaId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVentaId.Location = new System.Drawing.Point(30, 86);
             this.txtVentaId.Name = "txtVentaId";
             this.txtVentaId.Size = new System.Drawing.Size(992, 22);
             this.txtVentaId.TabIndex = 1;
+            this.txtVentaId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtVentaId.Visible = false;
             // 
             // FRM_ReporteVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 678);
-            this.Controls.Add(this.reportViewer1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1050, 750);
             this.Controls.Add(this.txtVentaId);
+            this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1010, 1000);
-            this.MinimumSize = new System.Drawing.Size(1010, 500);
+            this.MinimumSize = new System.Drawing.Size(1050, 500);
             this.Name = "FRM_ReporteVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Factura";

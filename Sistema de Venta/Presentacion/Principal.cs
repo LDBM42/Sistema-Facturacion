@@ -26,7 +26,7 @@ namespace Sistema_de_Venta
         private int childFormNumber = 0;
         FRM_Login login = new FRM_Login();
         string UserTemp = Usuario.Nombre;
-        string prodOrServ; 
+        string prodOrServ;
         string prodOrServ_Before;
         int minimizar = 0;
 
@@ -81,7 +81,7 @@ namespace Sistema_de_Venta
         }
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
+        {
             //para saber si es el mismo usuario
             UserTemp = Usuario.Nombre;
 
@@ -140,8 +140,8 @@ namespace Sistema_de_Venta
 
 
 
-        private void Form1_Load(object sender, EventArgs e)            
-                    
+        private void Form1_Load(object sender, EventArgs e)
+
         {
             this.Opacity = 0.95;
 
@@ -161,13 +161,13 @@ namespace Sistema_de_Venta
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Mejora para asegurar que el usuario si quiere salir del programa
-                if (MessageBox.Show("¿Estás seguro de salir del programa " +
-                Usuario.Nombre + " " + Usuario.Apellido + "?", "Salir del Programa",
-                      MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
-                    Environment.Exit(1);
-                }
-                else e.Cancel = true;
+            if (MessageBox.Show("¿Estás seguro de salir del programa " +
+            Usuario.Nombre + " " + Usuario.Apellido + "?", "Salir del Programa",
+                  MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else e.Cancel = true;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -283,7 +283,7 @@ namespace Sistema_de_Venta
 
             Form formulario;
             formulario = pnl_Formularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la coleccion el formulario
-            
+
 
             //si el formulario/instancia no existe
             if (formulario == null)
@@ -304,8 +304,8 @@ namespace Sistema_de_Venta
                 catch (Exception e)
                 {
                     MessageBox.Show(e.ToString());
-                    
-                }                
+
+                }
             }
             //si el formulario/instancia existe
             else
