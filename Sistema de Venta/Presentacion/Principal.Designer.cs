@@ -350,9 +350,9 @@
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnRestore;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Panel pnl_Formularios;
         private System.Windows.Forms.PictureBox pbx_Logo;
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
+        public System.Windows.Forms.Panel pnl_Formularios;
     }
 }
 

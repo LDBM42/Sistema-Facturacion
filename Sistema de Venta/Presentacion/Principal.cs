@@ -16,6 +16,8 @@ namespace Sistema_de_Venta
 {
     public partial class Form1 : Form
     {
+        private static Form1 _Instancia;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +30,12 @@ namespace Sistema_de_Venta
         string prodOrServ_Before;
         int minimizar = 0;
 
+        public static Form1 GetInscance()
+        {
+            if (_Instancia == null)
+                _Instancia = new Form1();
+            return _Instancia;
+        }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -40,15 +48,11 @@ namespace Sistema_de_Venta
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Ventas>(0);
-            //FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
-            //frmVenta.ShowDialog(this);
         }
 
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Cliente>(0);
-            //FRM_Cliente frmCliente = FRM_Cliente.GetInstance();
-            //frmCliente.ShowDialog(this);
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,8 +60,6 @@ namespace Sistema_de_Venta
             prodOrServ_Before = prodOrServ;
             prodOrServ = "P";
             AbrirFormulario<FRM_Producto>(0);
-            //FRM_Producto frmProducto = FRM_Producto.GetInscance();
-            //frmProducto.ShowDialog(this);
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,16 +72,12 @@ namespace Sistema_de_Venta
         private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Categoria>(0);
-            //FRM_Categoria frmCategoria = FRM_Categoria.GetInstance();
-            //frmCategoria.ShowDialog(this);
 
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Usuario>(0);
-            //FRM_Usuario Usuario = new FRM_Usuario();
-            //Usuario.ShowDialog(this);
         }
 
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,6 +208,10 @@ namespace Sistema_de_Venta
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+            //cambiar boton a Restore, al mover el formulario
+            btnMaximize.Visible = true;
+            btnRestore.Visible = false;
         }
 
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
@@ -303,8 +305,7 @@ namespace Sistema_de_Venta
                 {
                     MessageBox.Show(e.ToString());
                     
-                }
-                
+                }                
             }
             //si el formulario/instancia existe
             else
@@ -338,5 +339,6 @@ namespace Sistema_de_Venta
                 minimizar = 0;
             }
         }
+
     }
 }

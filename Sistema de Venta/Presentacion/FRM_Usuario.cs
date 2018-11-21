@@ -350,10 +350,5 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
-
-        private void pnl_Lista_Categoria_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -218,7 +218,6 @@
             this.text_Id.Size = new System.Drawing.Size(15, 27);
             this.text_Id.TabIndex = 0;
             this.text_Id.Visible = false;
-            this.text_Id.TextChanged += new System.EventHandler(this.text_Id_TextChanged);
             // 
             // label3
             // 
@@ -242,7 +241,6 @@
             this.text_Flag.Size = new System.Drawing.Size(12, 27);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
-            this.text_Flag.TextChanged += new System.EventHandler(this.text_Flag_TextChanged);
             // 
             // Pnl_Categoria_Size
             // 

@@ -10,6 +10,7 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Cliente _instancia;
+        public string idCliente, nombreCliente;
         public FRM_Cliente()
         {
             InitializeComponent();
@@ -37,15 +38,12 @@ namespace Sistema_de_Venta.Presentacion
                 _instancia = new FRM_Cliente();
             return _instancia;
         }
+
         private void ViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.dgvClientes.AutoSize = true;
         }
 
-        private void DatosClientes_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void FRM_Cliente_Load(object sender, EventArgs e)
         {
@@ -233,10 +231,6 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-        private void FRM_Cliente_Click(object sender, EventArgs e)
-        {
-
-        }
         public void limpiar()
         {
             text_Id.Clear();
@@ -254,8 +248,6 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (MessageBox.Show("Esta seguro de eliminar los clientes seleccionados?", "Eliminacion de Clientes", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-
-
 
 
                     foreach (DataGridViewRow row in dgvClientes.Rows)
@@ -353,24 +345,15 @@ namespace Sistema_de_Venta.Presentacion
             text_Flag.Text = band;
         }
 
-        private void dgvClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (text_Flag.Text == "1")
             {
-                FRM_Ventas frmVenta = FRM_Ventas.GetInstance();
-
                 if (dgvClientes.CurrentRow != null)
                 {
-
-                    frmVenta.SetClientes(dgvClientes.CurrentRow.Cells[1].Value.ToString(), dgvClientes.CurrentRow.Cells[2].Value.ToString()
-                        );
-                    frmVenta.Show();
-                    Close();
+                    idCliente = dgvClientes.CurrentRow.Cells[1].Value.ToString();
+                    nombreCliente = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                    this.DialogResult = DialogResult.OK; //terminar
                 }
             }
         }

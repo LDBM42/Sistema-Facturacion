@@ -29,17 +29,6 @@ namespace Sistema_de_Venta
             //
             if (login.DialogResult == DialogResult.OK)
                 Application.Run(new Form1());
-           // Application.Run(new FRM_Login());
-
-
-
-
-
-           
-          //Application.Run(FRM_Ventas.GetInstance());
-           //Application.Run(new FRM_Usuario());
-          //Application.Run(new FRM_Producto());
-          //Application.Run(FRM_DetalleVenta.GetInstance());
         }
-    } 
+    }
 }

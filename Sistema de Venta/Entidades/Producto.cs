@@ -86,7 +86,7 @@ namespace Sistema_de_Venta.Entidades
             _categoria = new Categoria();
         }
 
-        public Producto(int id, Categoria categoria, string nombre, string descripcion, int stock, double precioCompra, double precioVenta, DateTime fechaVencimiento, byte[] imagen )
+        public Producto(int id, Categoria categoria, string nombre, string descripcion, int stock, double precioCompra, double precioVenta, DateTime fechaVencimiento, byte[] imagen)
 
         {
             Id = id;
@@ -97,8 +97,8 @@ namespace Sistema_de_Venta.Entidades
             PrecioCompra = precioCompra;
             PrecioVenta = precioVenta;
             FechaVencimiento = fechaVencimiento;
-            Imagen = imagen;                          
-        
+            Imagen = imagen;
+
         }
 
 

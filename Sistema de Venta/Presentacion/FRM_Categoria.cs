@@ -17,6 +17,8 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Categoria _instancia;
+        public string id, descripcion;
+
         public FRM_Categoria()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace Sistema_de_Venta.Presentacion
                 _instancia = new FRM_Categoria();
             return _instancia;
         }
+
         public void SetFlag(string valor)
         {
             text_Flag.Text = valor;
@@ -53,31 +56,31 @@ namespace Sistema_de_Venta.Presentacion
             CMB_Buscar.Text = "Descripcion";
 
             try
-   
-             {
-                 DataSet ds = FCategoria.GetAll();
-                 dt = ds.Tables[0];
-                 dgvCategoria.DataSource = dt;
 
-                 if (dt.Rows.Count > 0)
-              
-              {
+            {
+                DataSet ds = FCategoria.GetAll();
+                dt = ds.Tables[0];
+                dgvCategoria.DataSource = dt;
 
-                  noencontrado.Visible = false;
-                  dgvCategoria_CellClick(null, null);
-              }
-                 else
-                 {
+                if (dt.Rows.Count > 0)
 
-                     noencontrado.Visible = true;
-                 }
-          }
+                {
+
+                    noencontrado.Visible = false;
+                    dgvCategoria_CellClick(null, null);
+                }
+                else
+                {
+
+                    noencontrado.Visible = true;
+                }
+            }
             catch (Exception ex)
-          {
-              MessageBox.Show(ex.Message + ex.StackTrace);
-          }
-          MostrarGuardarCancelar(false);
-   
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            MostrarGuardarCancelar(false);
+
         }
 
 
@@ -85,42 +88,42 @@ namespace Sistema_de_Venta.Presentacion
         {
             try
             {
-               string sresultado = ValidarDatos();
+                string sresultado = ValidarDatos();
 
-               if (sresultado =="")
-               { 
-                if (text_Id.Text == "")
+                if (sresultado == "")
                 {
-
-                    Categoria categoria = new Categoria();
-                    categoria.Descripcion = text_Descripcion.Text;
-
-                    if (FCategoria.Insertar(categoria) > 0)
+                    if (text_Id.Text == "")
                     {
 
-                        MessageBox.Show("Datos insertados correctamente");
-                        FRM_Categoria_Load(null, null);
+                        Categoria categoria = new Categoria();
+                        categoria.Descripcion = text_Descripcion.Text;
+
+                        if (FCategoria.Insertar(categoria) > 0)
+                        {
+
+                            MessageBox.Show("Datos insertados correctamente");
+                            FRM_Categoria_Load(null, null);
+                        }
+                    }
+
+                    else
+                    {
+
+                        Categoria categoria = new Categoria();
+                        categoria.Descripcion = text_Descripcion.Text;
+                        categoria.Id = Convert.ToInt32(text_Id.Text);
+
+
+                        if (FCategoria.Actualizar(categoria) == 1)
+                        {
+
+                            MessageBox.Show("Datos Modificados correctamente");
+                            FRM_Categoria_Load(null, null);
+                        }
                     }
                 }
 
                 else
-                {
-
-                    Categoria categoria = new Categoria();
-                    categoria.Descripcion = text_Descripcion.Text;
-                    categoria.Id = Convert.ToInt32(text_Id.Text);
-                
-
-                    if (FCategoria.Actualizar(categoria) == 1)
-                    {
-                         
-                        MessageBox.Show("Datos Modificados correctamente");
-                        FRM_Categoria_Load(null, null);
-                    }
-                }
-            }
-
-               else
                 {
                     MessageBox.Show("Faltan Completar Datos: \n " + sresultado);
 
@@ -128,9 +131,9 @@ namespace Sistema_de_Venta.Presentacion
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message + ex.StackTrace);
-                
+
             }
 
         }
@@ -248,7 +251,7 @@ namespace Sistema_de_Venta.Presentacion
                     (DataGridViewCheckBoxCell)dgvCategoria.Rows[e.RowIndex].Cells["Eliminar"];
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
-            
+
         }
 
         private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -270,7 +273,7 @@ namespace Sistema_de_Venta.Presentacion
                 Resultado = Resultado + " DESCRIPCION \n";
 
             }
-            
+
             return Resultado;
         }
 
@@ -291,35 +294,15 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (text_Flag.Text == "1")
-            { 
-            FRM_Producto frmProd = FRM_Producto.GetInscance();
-            
-           if (dgvCategoria.CurrentRow != null)
             {
-
-                frmProd.SetCategoria(dgvCategoria.CurrentRow.Cells[1].Value.ToString(), dgvCategoria.CurrentRow.Cells[2].Value.ToString()
-                    );
-                frmProd.Show();
-            Close();
+                if (dgvCategoria.CurrentRow != null)
+                {
+                    id = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+                    descripcion = dgvCategoria.CurrentRow.Cells[2].Value.ToString();
+                    this.DialogResult = DialogResult.OK; //terminar
                 }
             }
-        }
-
-        private void text_Id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void text_Flag_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
@@ -331,7 +314,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
     }

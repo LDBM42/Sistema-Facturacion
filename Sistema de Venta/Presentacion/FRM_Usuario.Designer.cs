@@ -483,7 +483,6 @@
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
             this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 552);
             this.pnl_Lista_Categoria.TabIndex = 16;
-            this.pnl_Lista_Categoria.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Lista_Categoria_Paint);
             // 
             // FRM_Usuario
             // 

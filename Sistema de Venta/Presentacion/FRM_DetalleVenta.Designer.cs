@@ -319,6 +319,7 @@
             this.text_ProductoId.Name = "text_ProductoId";
             this.text_ProductoId.Size = new System.Drawing.Size(12, 26);
             this.text_ProductoId.TabIndex = 7;
+            this.text_ProductoId.Visible = false;
             // 
             // text_ProductoDescripcion
             // 

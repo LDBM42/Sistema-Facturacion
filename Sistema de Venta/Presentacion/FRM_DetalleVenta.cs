@@ -29,14 +29,6 @@ namespace Sistema_de_Venta.Presentacion
             return _instancia;
         }
 
-        internal void SetProducto(Producto producto)
-        {
-            text_ProductoId.Text = producto.Id.ToString();
-            text_ProductoDescripcion.Text = producto.Nombre;
-            text_stock.Text = producto.Stock.ToString();
-            text_PrecioUnitario.Text = producto.PrecioVenta.ToString();
-            
-        }
 
         internal void SetVenta(Venta venta)
         {
@@ -51,28 +43,28 @@ namespace Sistema_de_Venta.Presentacion
         {
             try
             {
-                if (txtFlag.Text !=" ")
-                { 
-               
-                DataSet ds = FDetalleVenta.GetAll(Convert.ToInt32((textVentaId.Text)));
-                dt = ds.Tables[0];
-                dgvVentas.DataSource = dt;
-                dgvVentas.Columns["VentaId"].Visible = false;
-                dgvVentas.Columns["ProductoId"].Visible = false;
-                dgvVentas.Columns["Id"].Visible = false;
-                dgvVentas.Columns["PrecioVenta"].Visible = false;
-
-                    if (dt.Rows.Count > 0)  
+                if (txtFlag.Text != " ")
                 {
 
-                    noencontrado.Visible = false;
-                   // dgvVentas_CellClick(null, null);
-                }
-                else
-                {
+                    DataSet ds = FDetalleVenta.GetAll(Convert.ToInt32((textVentaId.Text)));
+                    dt = ds.Tables[0];
+                    dgvVentas.DataSource = dt;
+                    dgvVentas.Columns["VentaId"].Visible = false;
+                    dgvVentas.Columns["ProductoId"].Visible = false;
+                    dgvVentas.Columns["Id"].Visible = false;
+                    dgvVentas.Columns["PrecioVenta"].Visible = false;
 
-                    noencontrado.Visible = true;
-                }
+                    if (dt.Rows.Count > 0)
+                    {
+
+                        noencontrado.Visible = false;
+                        // dgvVentas_CellClick(null, null);
+                    }
+                    else
+                    {
+
+                        noencontrado.Visible = true;
+                    }
 
                 }
             }
@@ -97,7 +89,7 @@ namespace Sistema_de_Venta.Presentacion
                     DetalleVenta Dventa = new DetalleVenta();
 
 
-                    
+
                     Dventa.Venta.Id = Convert.ToInt32(textVentaId.Text);
                     Dventa.Producto.Id = Convert.ToInt32(text_ProductoId.Text);
                     Dventa.Cantidad = Convert.ToInt32(text_Cantidad.Text);
@@ -125,7 +117,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 else
                 {
-                    MessageBox.Show(sresultado,"Error",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(sresultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -135,7 +127,7 @@ namespace Sistema_de_Venta.Presentacion
 
             }
             FRM_DetalleVenta_Load(null, null);
-            
+
         }
 
         private void Limpiar()
@@ -184,7 +176,7 @@ namespace Sistema_de_Venta.Presentacion
                 catch (Exception)
                 {
                 }
-                
+
             }
         }
 
@@ -226,7 +218,7 @@ namespace Sistema_de_Venta.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
 
             }
-            
+
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -237,12 +229,20 @@ namespace Sistema_de_Venta.Presentacion
         }
 
         private void text_ProductoDescripcion_MouseClick(object sender, MouseEventArgs e)
-        {
-            FRM_Producto FRMPro = FRM_Producto.GetInscance();
-            FRMPro.Hide();
+        {        
+            FRM_Producto FRMPro = new FRM_Producto();
             FRMPro.SetFlag("1");
             FRMPro.WindowState = FormWindowState.Maximized;
-            FRMPro.ShowDialog();
+            DialogResult res = FRMPro.ShowDialog(); //abrimos el Categoría como cuadro de dialogo modal
+
+            if (res == DialogResult.OK)
+            {
+                //recuperando la variable publica del formulario Categoría
+                text_ProductoId.Text = FRMPro.id_Producto;//asignamos al texbox el dato de la variable
+                text_ProductoDescripcion.Text = FRMPro.nombre_Producto;
+                text_stock.Text = FRMPro.stock_Producto;
+                text_PrecioUnitario.Text = FRMPro.precioVenta_Producto;                
+            }
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)

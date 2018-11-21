@@ -308,7 +308,6 @@
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
-            this.dgvClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentDoubleClick);
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
             // Eliminar
@@ -414,7 +413,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Cliente";
             this.Load += new System.EventHandler(this.FRM_Cliente_Load);
-            this.Click += new System.EventHandler(this.FRM_Cliente_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.pnl_Lista_Categoria.ResumeLayout(false);
             this.pnl_Lista_Categoria.PerformLayout();

@@ -18,6 +18,10 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Producto _Instancia;
+
+        public string id_Producto, stock_Producto, nombre_Producto, precioVenta_Producto;
+        
+
         public FRM_Producto()
         {
             InitializeComponent();
@@ -40,12 +44,6 @@ namespace Sistema_de_Venta.Presentacion
             return _Instancia;
         }
 
-        public void SetCategoria(string id, string descripcion)
-        {
-            text_Categoria.Text = id;
-            text_CategoriaDescripcion.Text = descripcion;
-        }
- 
         private void Buscar_Categoria_Click(object sender, EventArgs e)
         {
             FRM_Categoria FRMCate = new FRM_Categoria();
@@ -143,7 +141,7 @@ namespace Sistema_de_Venta.Presentacion
                         if (Fproducto.Actualizar(producto) > 0)
                         {
                             MessageBox.Show("Datos Modificados correctamente");
-                            FRM_Producto_Load(null, null); 
+                            FRM_Producto_Load(null, null);
                         }
                     }
                 }
@@ -257,15 +255,13 @@ namespace Sistema_de_Venta.Presentacion
                 catch (Exception)
                 {
                 }
-                
+
             }
 
         }
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
-            //Form1 frmDetalle = Form1.GetInstance();
-            //frmDetalle.SetVenta(venta);
             if (Servicios == 1)
             {
                 pbx_Productos.Visible = false;
@@ -354,7 +350,6 @@ namespace Sistema_de_Venta.Presentacion
 
             }
 
-
             return Resultado;
         }
 
@@ -376,40 +371,23 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
-
-
-        private void Imagen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void SetFlag(string SValor)
         {
             text_Flag.Text = SValor;
-        }
-
-        private void text_Flag_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (text_Flag.Text == "1")
             {
-                FRM_DetalleVenta frmDetalle = FRM_DetalleVenta.GetInstance();
-
                 if (dgvProductos.CurrentRow != null)
                 {
-                    Producto producto = new Producto();
-                    producto.Id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Id"].Value.ToString());
-                    producto.Nombre = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    producto.Stock = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Stock"].Value.ToString());
-                    producto.PrecioVenta = Convert.ToDouble(dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString());
+                    id_Producto = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
+                    nombre_Producto = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
+                    stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                    precioVenta_Producto = dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
 
-                    frmDetalle.SetProducto(producto);
-                    frmDetalle.Show();
-                    Close();
+                    this.DialogResult = DialogResult.OK; //terminar
                 }
             }
         }
@@ -426,7 +404,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 }
 
-                
+
             }
         }
 
@@ -434,7 +412,15 @@ namespace Sistema_de_Venta.Presentacion
         {
             FRM_Categoria FRMCate = new FRM_Categoria();
             FRMCate.SetFlag("1");
-            FRMCate.ShowDialog();
+            FRMCate.WindowState = FormWindowState.Maximized;
+            DialogResult res = FRMCate.ShowDialog(); //abrimos el formulario 2 como cuadro de dialogo modal
+
+            if (res == DialogResult.OK)
+            {
+                //recuperando la variable publica del formulario 2
+                text_Categoria.Text = FRMCate.id;//asignamos al texbox el dato de la variable
+                text_CategoriaDescripcion.Text = FRMCate.descripcion;
+            }
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)

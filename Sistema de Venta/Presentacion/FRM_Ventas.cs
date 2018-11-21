@@ -40,6 +40,7 @@ namespace Sistema_de_Venta.Presentacion
                 _Instancia = new FRM_Ventas();
             return _Instancia;
         }
+
         private void FRM_Ventas_Load(object sender, EventArgs e)
         {
             CMB_Buscar.Text = "Nombre";
@@ -88,9 +89,9 @@ namespace Sistema_de_Venta.Presentacion
                         venta.FechaVenta = text_fecha.Value;
                         venta.NumeroDocumento = text_NumeroDoc.Text;
                         venta.Cliente.Nombre = text_ClienteNombre.Text;
-                        
-                        int iVentaId =FVenta.Insertar(venta);
-                        if ( iVentaId> 0)
+
+                        int iVentaId = FVenta.Insertar(venta);
+                        if (iVentaId > 0)
                         {
                             FRM_Ventas_Load(null, null);
                             venta.Id = iVentaId;
@@ -148,7 +149,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             MostrarGuardarCancelar(true);
             limpiar();
-            
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -185,13 +186,14 @@ namespace Sistema_de_Venta.Presentacion
                 }
 
                 dgvVentas.DataSource = dv;
-                
+
                 if (dv.Count == 0)
                 {
                     noencontrado.Visible = true;
                 }
-                
-                else {
+
+                else
+                {
                     noencontrado.Visible = false;
                 }
             }
@@ -211,7 +213,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 textId.Text = dgvVentas.CurrentRow.Cells["Id"].Value.ToString();
                 text_ClienteId.Text = dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString();
-                text_ClienteNombre.Text = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() +" "+ dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
+                text_ClienteNombre.Text = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
                 text_fecha.Text = dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString();
                 text_NumeroDoc.Text = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
             }
@@ -224,7 +226,7 @@ namespace Sistema_de_Venta.Presentacion
             btnCancelar.Visible = b;
             btnNuevo.Visible = !b;
             btnEditar.Visible = !b;
-            
+
             dgvVentas.Enabled = !b;
 
             //text_ClienteId.Enabled = b;
@@ -260,13 +262,6 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
-
-        internal void SetClientes(string sIdCliente, string sNombreCliente)
-        {
-            text_ClienteId.Text = sIdCliente;
-            text_ClienteNombre.Text = sNombreCliente;
-        }
-
         private void dgvVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvVentas.CurrentRow != null)
@@ -274,7 +269,7 @@ namespace Sistema_de_Venta.Presentacion
                 Venta venta = new Venta();
                 venta.Id = Convert.ToInt32(dgvVentas.CurrentRow.Cells["Id"].Value.ToString());
                 venta.Cliente.Id = Convert.ToInt32(dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString());
-                venta.Cliente.Nombre= dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
+                venta.Cliente.Nombre = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
                 venta.FechaVenta = Convert.ToDateTime(dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString());
                 venta.NumeroDocumento = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
 
@@ -290,7 +285,7 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     MessageBox.Show("La Fecha de venta no puede menor a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     text_fecha.Value = DateTime.Now;
-                
+
                 }
                 if (text_fecha.Value > DateTime.Now && text_fecha.Enabled)
                 {
@@ -301,14 +296,22 @@ namespace Sistema_de_Venta.Presentacion
                 }
 
 
-            }            
+            }
         }
 
         private void text_ClienteNombre_MouseClick(object sender, MouseEventArgs e)
         {
             FRM_Cliente FRMCli = new FRM_Cliente();
             FRMCli.SetFlag("1");
-            FRMCli.Show();
+            FRMCli.WindowState = FormWindowState.Maximized;
+            DialogResult res = FRMCli.ShowDialog(); //abrimos el formulario CLiente como cuadro de dialogo modal
+
+            if (res == DialogResult.OK)
+            {
+                //recuperando la variable publica del Cliente
+                text_ClienteId.Text = FRMCli.idCliente;//asignamos al texbox el dato de la variable
+                text_ClienteNombre.Text = FRMCli.nombreCliente;
+            }
         }
 
         private void CMB_Buscar_SelectedIndexChanged(object sender, EventArgs e)
@@ -321,5 +324,5 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
-    } 
+    }
 }

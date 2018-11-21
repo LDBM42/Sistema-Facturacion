@@ -426,7 +426,6 @@
             this.text_Flag.Size = new System.Drawing.Size(11, 26);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
-            this.text_Flag.TextChanged += new System.EventHandler(this.text_Flag_TextChanged);
             // 
             // btn_Cerrar
             // 
@@ -489,7 +488,6 @@
             this.Imagen.Size = new System.Drawing.Size(207, 150);
             this.Imagen.TabIndex = 20;
             this.Imagen.TabStop = false;
-            this.Imagen.Click += new System.EventHandler(this.Imagen_Click);
             // 
             // pbx_Servicios
             // 
