@@ -413,11 +413,11 @@ namespace Sistema_de_Venta.Presentacion
             FRM_Categoria FRMCate = new FRM_Categoria();
             FRMCate.SetFlag("1");
             FRMCate.WindowState = FormWindowState.Maximized;
-            DialogResult res = FRMCate.ShowDialog(); //abrimos el formulario 2 como cuadro de dialogo modal
+            DialogResult res = FRMCate.ShowDialog(); //abrimos el formulario Categoría como cuadro de dialogo modal
 
             if (res == DialogResult.OK)
             {
-                //recuperando la variable publica del formulario 2
+                //recuperando la variable publica del formulario Categoría
                 text_Categoria.Text = FRMCate.id;//asignamos al texbox el dato de la variable
                 text_CategoriaDescripcion.Text = FRMCate.descripcion;
             }
