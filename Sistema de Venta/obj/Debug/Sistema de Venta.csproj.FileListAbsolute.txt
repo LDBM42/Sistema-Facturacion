@@ -143,3 +143,82 @@ E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\obj\Debug\Sistema de Ven
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 E:\Documents\GitHub\SistemaFacturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Sistema de Venta.exe.config
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Sistema de Venta.exe
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Sistema de Venta.pdb
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\EnvDTE.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\stdole.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\Microsoft.MSXML.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csprojAssemblyReference.cache
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Auditoria.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Login.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Usuario.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Form1.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Categoria.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Cliente.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_DetalleVenta.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Producto.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Presentacion.FRM_Ventas.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.Properties.Resources.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema_de_Venta.FRM_ReporteVenta.resources
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.GenerateResource.cache
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CoreCompileInputs.cache
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.csproj.CopyComplete
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.exe
+C:\Users\wliz\Desktop\Bases de datos\Sistema_Facturacion\Sistema de Venta\obj\Debug\Sistema de Venta.pdb

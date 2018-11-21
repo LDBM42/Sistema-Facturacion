@@ -105,6 +105,12 @@
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
     <Compile Include="IFormulario.cs" />
+    <Compile Include="Presentacion\FRM_Auditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FRM_Auditoria.Designer.cs">
+      <DependentUpon>FRM_Auditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
       <DependentUpon>FRM_ReporteVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Presentacion\FRM_Auditoria.resx">
+      <DependentUpon>FRM_Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FRM_Login.resx">
       <DependentUpon>FRM_Login.cs</DependentUpon>
     </EmbeddedResource>

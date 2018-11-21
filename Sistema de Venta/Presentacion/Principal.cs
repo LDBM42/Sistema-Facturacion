@@ -338,5 +338,16 @@ namespace Sistema_de_Venta
                 minimizar = 0;
             }
         }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Auditoria auditor = new FRM_Auditoria();
+            auditor.Show(this);
+        }
+
+        private void pbx_Logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
