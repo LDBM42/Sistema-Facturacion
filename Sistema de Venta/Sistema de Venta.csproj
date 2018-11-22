@@ -236,9 +236,9 @@
       <DependentUpon>dbSFacturacionDataSetAuditoria.xsd</DependentUpon>
     </None>
     <None Include="dbSFacturacionDataSetAuditoria.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dbSFacturacionDataSetAuditoria.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="dbSFacturacionDataSetAuditoria.xss">
       <DependentUpon>dbSFacturacionDataSetAuditoria.xsd</DependentUpon>
