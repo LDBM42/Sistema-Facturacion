@@ -115,7 +115,7 @@ namespace Sistema_de_Venta
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@usuario",SqlDbType.VarChar, 0, usuario),
-                    FDBHelper.MakeParam("@fechaHora",SqlDbType.VarChar, 0, DateTime.Now),
+                    FDBHelper.MakeParam("@fechaHora",SqlDbType.DateTime, 0, DateTime.Now),
                     FDBHelper.MakeParam("@accion", SqlDbType.VarChar, 0, accion)
                 };
             FDBHelper.ExecuteDataSet("usp_Data_FLogin_LogLogin", dbParams);
