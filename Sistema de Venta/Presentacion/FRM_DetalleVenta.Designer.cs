@@ -74,7 +74,7 @@
             this.text_fecha.Location = new System.Drawing.Point(153, 108);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
-            this.text_fecha.Size = new System.Drawing.Size(265, 26);
+            this.text_fecha.Size = new System.Drawing.Size(265, 23);
             this.text_fecha.TabIndex = 15;
             // 
             // text_NumeroDoc
@@ -83,7 +83,7 @@
             this.text_NumeroDoc.Location = new System.Drawing.Point(153, 149);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 23);
             this.text_NumeroDoc.TabIndex = 0;
             // 
             // text_ClienteId
@@ -92,7 +92,7 @@
             this.text_ClienteId.Location = new System.Drawing.Point(356, 28);
             this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(11, 26);
+            this.text_ClienteId.Size = new System.Drawing.Size(11, 23);
             this.text_ClienteId.TabIndex = 7;
             this.text_ClienteId.Visible = false;
             // 
@@ -102,7 +102,7 @@
             this.text_ClienteNombre.Location = new System.Drawing.Point(153, 68);
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
-            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
+            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 23);
             this.text_ClienteNombre.TabIndex = 7;
             // 
             // textVentaId
@@ -112,7 +112,7 @@
             this.textVentaId.Location = new System.Drawing.Point(375, 28);
             this.textVentaId.Margin = new System.Windows.Forms.Padding(4);
             this.textVentaId.Name = "textVentaId";
-            this.textVentaId.Size = new System.Drawing.Size(11, 26);
+            this.textVentaId.Size = new System.Drawing.Size(11, 23);
             this.textVentaId.TabIndex = 6;
             this.textVentaId.Visible = false;
             // 
@@ -123,7 +123,7 @@
             this.label8.Location = new System.Drawing.Point(50, 152);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
+            this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 4;
             this.label8.Text = "No. Doc";
             // 
@@ -134,7 +134,7 @@
             this.label10.Location = new System.Drawing.Point(50, 111);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 20);
+            this.label10.Size = new System.Drawing.Size(47, 17);
             this.label10.TabIndex = 2;
             this.label10.Text = "Fecha";
             // 
@@ -145,7 +145,7 @@
             this.label11.Location = new System.Drawing.Point(50, 71);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 20);
+            this.label11.Size = new System.Drawing.Size(51, 17);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cliente";
             // 
@@ -160,7 +160,7 @@
             this.noencontrado.Location = new System.Drawing.Point(395, 303);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(217, 18);
+            this.noencontrado.Size = new System.Drawing.Size(171, 15);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -195,7 +195,7 @@
             this.dgvVentas.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SteelBlue;
             this.dgvVentas.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVentas.Size = new System.Drawing.Size(923, 421);
+            this.dgvVentas.Size = new System.Drawing.Size(895, 421);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
@@ -213,7 +213,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 68);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(755, 24);
+            this.Buscar.Size = new System.Drawing.Size(727, 21);
             this.Buscar.TabIndex = 22;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -229,7 +229,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 68);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 23);
             this.CMB_Buscar.TabIndex = 21;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -244,7 +244,7 @@
             this.btnQuitar.Location = new System.Drawing.Point(42, 520);
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(923, 46);
+            this.btnQuitar.Size = new System.Drawing.Size(895, 46);
             this.btnQuitar.TabIndex = 13;
             this.btnQuitar.Text = "Quitrar Producto";
             this.btnQuitar.UseVisualStyleBackColor = false;
@@ -266,7 +266,7 @@
             this.Lbl_Comentario.Location = new System.Drawing.Point(50, 306);
             this.Lbl_Comentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Comentario.Name = "Lbl_Comentario";
-            this.Lbl_Comentario.Size = new System.Drawing.Size(99, 20);
+            this.Lbl_Comentario.Size = new System.Drawing.Size(82, 17);
             this.Lbl_Comentario.TabIndex = 19;
             this.Lbl_Comentario.Text = "Descripción";
             // 
@@ -285,7 +285,7 @@
             0,
             0});
             this.text_Cantidad.Name = "text_Cantidad";
-            this.text_Cantidad.Size = new System.Drawing.Size(105, 26);
+            this.text_Cantidad.Size = new System.Drawing.Size(105, 23);
             this.text_Cantidad.TabIndex = 1;
             this.text_Cantidad.Value = new decimal(new int[] {
             1,
@@ -299,7 +299,7 @@
             this.text_stock.Location = new System.Drawing.Point(333, 229);
             this.text_stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_stock.Name = "text_stock";
-            this.text_stock.Size = new System.Drawing.Size(85, 26);
+            this.text_stock.Size = new System.Drawing.Size(85, 23);
             this.text_stock.TabIndex = 7;
             this.text_stock.Text = "0";
             // 
@@ -308,7 +308,7 @@
             this.text_PrecioUnitario.Location = new System.Drawing.Point(153, 266);
             this.text_PrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioUnitario.Name = "text_PrecioUnitario";
-            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 26);
+            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 23);
             this.text_PrecioUnitario.TabIndex = 2;
             // 
             // text_ProductoId
@@ -338,7 +338,7 @@
             this.label3.Location = new System.Drawing.Point(277, 232);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Stock";
             // 
@@ -349,7 +349,7 @@
             this.label4.Location = new System.Drawing.Point(50, 269);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(90, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Valor Unidad";
             // 
@@ -360,7 +360,7 @@
             this.label2.Location = new System.Drawing.Point(50, 232);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cantidad";
             // 
@@ -371,7 +371,7 @@
             this.label1.Location = new System.Drawing.Point(50, 192);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Producto";
             // 
@@ -380,7 +380,7 @@
             this.txtFlag.Location = new System.Drawing.Point(396, 28);
             this.txtFlag.Margin = new System.Windows.Forms.Padding(4);
             this.txtFlag.Name = "txtFlag";
-            this.txtFlag.Size = new System.Drawing.Size(12, 26);
+            this.txtFlag.Size = new System.Drawing.Size(12, 23);
             this.txtFlag.TabIndex = 9;
             this.txtFlag.Visible = false;
             // 
@@ -483,14 +483,14 @@
             this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Lista_Categoria.Location = new System.Drawing.Point(461, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1011, 608);
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(983, 608);
             this.pnl_Lista_Categoria.TabIndex = 25;
             // 
             // FRM_DetalleVenta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1472, 608);
+            this.ClientSize = new System.Drawing.Size(1444, 608);
             this.Controls.Add(this.pnl_Lista_Categoria);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -47,6 +47,7 @@
             this.cATEGORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cERRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
@@ -94,9 +95,9 @@
             // 
             this.pnl_Formularios.Controls.Add(this.pbx_Logo);
             this.pnl_Formularios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Formularios.Location = new System.Drawing.Point(0, 74);
+            this.pnl_Formularios.Location = new System.Drawing.Point(0, 69);
             this.pnl_Formularios.Name = "pnl_Formularios";
-            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 611);
+            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 619);
             this.pnl_Formularios.TabIndex = 8;
             // 
             // pbx_Logo
@@ -106,10 +107,11 @@
             this.pbx_Logo.Image = global::Sistema_de_Venta.Properties.Resources.MiEmpresaFicticiaLOGO__peq_;
             this.pbx_Logo.Location = new System.Drawing.Point(0, 0);
             this.pbx_Logo.Name = "pbx_Logo";
-            this.pbx_Logo.Size = new System.Drawing.Size(1300, 611);
+            this.pbx_Logo.Size = new System.Drawing.Size(1300, 619);
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Logo.TabIndex = 0;
             this.pbx_Logo.TabStop = false;
+            this.pbx_Logo.Click += new System.EventHandler(this.pbx_Logo_Click);
             // 
             // btnClose
             // 
@@ -160,9 +162,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 685);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 688);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1300, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1300, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -170,7 +172,7 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(49, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel1.Text = "Status";
             // 
             // menuStrip1
@@ -185,7 +187,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(18, 20, 5, 20);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1300, 74);
+            this.menuStrip1.Size = new System.Drawing.Size(1300, 69);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -202,7 +204,7 @@
             this.mENÚToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.mENÚToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.menu1;
             this.mENÚToolStripMenuItem.Name = "mENÚToolStripMenuItem";
-            this.mENÚToolStripMenuItem.Size = new System.Drawing.Size(115, 34);
+            this.mENÚToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.mENÚToolStripMenuItem.Text = "MENÚ";
             // 
             // cLIENTESToolStripMenuItem
@@ -212,7 +214,7 @@
             this.cLIENTESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Usuario;
             this.cLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
@@ -223,7 +225,7 @@
             this.pRODUCTOSToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Productos;
             this.pRODUCTOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
-            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
@@ -233,7 +235,7 @@
             this.serviciosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.serviciosToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Servicios;
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.serviciosToolStripMenuItem.Text = "SERVICIOS";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
             // 
@@ -245,7 +247,7 @@
             this.vENTASToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Ventas;
             this.vENTASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.vENTASToolStripMenuItem.Text = "VENTAS";
             this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
@@ -256,20 +258,21 @@
             this.cATEGORIAToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Categoria;
             this.cATEGORIAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
-            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(204, 30);
             this.cATEGORIAToolStripMenuItem.Text = "CATEGORIAS";
             this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
             // 
             // cONFIGURACIONESToolStripMenuItem
             // 
             this.cONFIGURACIONESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.auditoriaToolStripMenuItem});
             this.cONFIGURACIONESToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cONFIGURACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cONFIGURACIONESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.settingss;
             this.cONFIGURACIONESToolStripMenuItem.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.cONFIGURACIONESToolStripMenuItem.Name = "cONFIGURACIONESToolStripMenuItem";
-            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(218, 29);
             this.cONFIGURACIONESToolStripMenuItem.Text = "CONFIGURACIONES";
             // 
             // usuariosToolStripMenuItem
@@ -278,9 +281,19 @@
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuariosToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Usuarios1;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // auditoriaToolStripMenuItem
+            // 
+            this.auditoriaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(117)))));
+            this.auditoriaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.auditoriaToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Productos;
+            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // cERRARToolStripMenuItem
             // 
@@ -290,7 +303,7 @@
             this.cERRARToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cERRARToolStripMenuItem.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.cERRARToolStripMenuItem.Name = "cERRARToolStripMenuItem";
-            this.cERRARToolStripMenuItem.Size = new System.Drawing.Size(215, 34);
+            this.cERRARToolStripMenuItem.Size = new System.Drawing.Size(187, 29);
             this.cERRARToolStripMenuItem.Text = "CERRAR SESION";
             this.cERRARToolStripMenuItem.Click += new System.EventHandler(this.cERRARToolStripMenuItem_Click);
             // 
@@ -353,6 +366,7 @@
         private System.Windows.Forms.PictureBox pbx_Logo;
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
         public System.Windows.Forms.Panel pnl_Formularios;
+        private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
     }
 }
 
