@@ -102,10 +102,16 @@ namespace Sistema_de_Venta.Presentacion
                         cliente.Dni = Convert.ToInt32(text_DNI.Text);
                         cliente.Telefono = text_Telefono.Text;
 
-                        if (FClientes.Insertar(cliente) > 0)
+                        //esta en una variable para luego llamarla "idcliente"
+                        int idcliente = FClientes.Insertar(cliente);
+                        if (idcliente > 0)
                         {
 
                             MessageBox.Show("Datos insertados correctamente");
+
+                            //este es el metodo para guardar el log con la accion Inserto Cliente
+                            Form1.Log(Usuario.Nombreusuario, "Inserto Cliente: " + idcliente + " - " + cliente.Nombre);
+
                             FRM_Cliente_Load(null, null);
                         }
                     }

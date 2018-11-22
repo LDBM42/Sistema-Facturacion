@@ -28,23 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BT_Cerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dbSFacturacionDataSetAuditoria = new Sistema_de_Venta.dbSFacturacionDataSetAuditoria();
+            this.auditorialogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.auditoria_logTableAdapter = new Sistema_de_Venta.dbSFacturacionDataSetAuditoriaTableAdapters.auditoria_logTableAdapter();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSFacturacionDataSetAuditoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auditorialogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usuarioDataGridViewTextBoxColumn,
+            this.fechaHoraDataGridViewTextBoxColumn,
+            this.accionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.auditorialogBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(206, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(764, 403);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -93,6 +111,45 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // dbSFacturacionDataSetAuditoria
+            // 
+            this.dbSFacturacionDataSetAuditoria.DataSetName = "dbSFacturacionDataSetAuditoria";
+            this.dbSFacturacionDataSetAuditoria.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // auditorialogBindingSource
+            // 
+            this.auditorialogBindingSource.DataMember = "auditoria_log";
+            this.auditorialogBindingSource.DataSource = this.dbSFacturacionDataSetAuditoria;
+            // 
+            // auditoria_logTableAdapter
+            // 
+            this.auditoria_logTableAdapter.ClearBeforeFill = true;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.FillWeight = 33F;
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaHoraDataGridViewTextBoxColumn
+            // 
+            this.fechaHoraDataGridViewTextBoxColumn.DataPropertyName = "fechaHora";
+            this.fechaHoraDataGridViewTextBoxColumn.FillWeight = 33F;
+            this.fechaHoraDataGridViewTextBoxColumn.HeaderText = "fechaHora";
+            this.fechaHoraDataGridViewTextBoxColumn.Name = "fechaHoraDataGridViewTextBoxColumn";
+            this.fechaHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // accionDataGridViewTextBoxColumn
+            // 
+            this.accionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.accionDataGridViewTextBoxColumn.DataPropertyName = "Accion";
+            this.accionDataGridViewTextBoxColumn.FillWeight = 33F;
+            this.accionDataGridViewTextBoxColumn.HeaderText = "Accion";
+            this.accionDataGridViewTextBoxColumn.Name = "accionDataGridViewTextBoxColumn";
+            this.accionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FRM_Auditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,10 +164,13 @@
             this.Name = "FRM_Auditoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Auditoria";
+            this.Load += new System.EventHandler(this.FRM_Auditoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSFacturacionDataSetAuditoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auditorialogBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +182,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private dbSFacturacionDataSetAuditoria dbSFacturacionDataSetAuditoria;
+        private System.Windows.Forms.BindingSource auditorialogBindingSource;
+        private dbSFacturacionDataSetAuditoriaTableAdapters.auditoria_logTableAdapter auditoria_logTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaHoraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accionDataGridViewTextBoxColumn;
     }
 }

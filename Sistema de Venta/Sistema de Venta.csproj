@@ -97,6 +97,11 @@
     <Compile Include="Datos\Fproducto.cs" />
     <Compile Include="Datos\FUsuario.cs" />
     <Compile Include="Datos\FVenta.cs" />
+    <Compile Include="dbSFacturacionDataSetAuditoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSFacturacionDataSetAuditoria.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
@@ -226,6 +231,17 @@
     </None>
     <None Include="DataSetPrincipal.xss">
       <DependentUpon>DataSetPrincipal.xsd</DependentUpon>
+    </None>
+    <None Include="dbSFacturacionDataSetAuditoria.xsc">
+      <DependentUpon>dbSFacturacionDataSetAuditoria.xsd</DependentUpon>
+    </None>
+    <None Include="dbSFacturacionDataSetAuditoria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSFacturacionDataSetAuditoria.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSFacturacionDataSetAuditoria.xss">
+      <DependentUpon>dbSFacturacionDataSetAuditoria.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

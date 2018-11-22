@@ -21,5 +21,12 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
+
+        private void FRM_Auditoria_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dbSFacturacionDataSetAuditoria.auditoria_log' table. You can move, or remove it, as needed.
+            this.auditoria_logTableAdapter.Fill(this.dbSFacturacionDataSetAuditoria.auditoria_log);
+
+        }
     }
 }

@@ -113,6 +113,10 @@ namespace Sistema_de_Venta.Presentacion
                         string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
                         text_stock.Text = newStock;
 
+
+                        //este es el metodo para guardar el log con la accion Detalle de ventas agregados
+                        Form1.Log(Usuario.Nombreusuario, "Detalle de ventas agregados ");
+
                         FRM_DetalleVenta_Load(null, null);
                         Limpiar();
                     }

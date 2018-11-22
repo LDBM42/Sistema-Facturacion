@@ -1,10 +1,12 @@
 ﻿using Sistema_de_Venta.Datos;
 using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Presentacion;
+using SisVenttas.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -91,6 +93,7 @@ namespace Sistema_de_Venta
                 Usuario.Nombre + " " + Usuario.Apellido + "?", "Cerrar Sección",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
+                Form1.Log(Usuario.Nombreusuario, "Cerrar Sesion");
                 Usuario.Logged = 0; // para desactivar autologgin
                 //DESLOGEARSE
                 if (!(FLogin.AutoLoginSet(Usuario.Nombreusuario, Usuario.Password, Usuario.Logged) == 1))
@@ -104,6 +107,22 @@ namespace Sistema_de_Venta
 
             }
         }
+
+
+
+
+        //Este es el metodo para hacer el LOG
+        public static void Log(string usuario, string accion)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                    FDBHelper.MakeParam("@usuario",SqlDbType.VarChar, 0, usuario),
+                    FDBHelper.MakeParam("@fechaHora",SqlDbType.VarChar, 0, DateTime.Now),
+                    FDBHelper.MakeParam("@accion", SqlDbType.VarChar, 0, accion)
+                };
+            FDBHelper.ExecuteDataSet("usp_Data_FLogin_LogLogin", dbParams);
+        }
+
 
 
 
