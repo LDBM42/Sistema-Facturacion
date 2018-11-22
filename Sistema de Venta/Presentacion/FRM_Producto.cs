@@ -102,9 +102,14 @@ namespace Sistema_de_Venta.Presentacion
                         }
 
                         producto.Imagen = ms.GetBuffer();
-                        if (Fproducto.Insertar(producto) > 0)
+                        int idProducto = Fproducto.Insertar(producto);
+                        if (idProducto > 0)
                         {
                             MessageBox.Show("Datos insertados correctamente");
+
+                            //este es el metodo para guardar el log con la accion Inserto producto
+                            Form1.Log(Usuario.Nombreusuario, "Inserto producto: " + idProducto + " - " + producto.Nombre);
+
                             FRM_Producto_Load(null, null);
                         }
                     }

@@ -20,7 +20,7 @@ namespace Sistema_de_Venta.Datos
                 };
             return FDBHelper.ExecuteDataSet("usp_Data_FLogin_ValidarLogin", dbParams);
         }
-
+       
         public static DataSet AutoLoginGet()
         {
             SqlParameter[] dbParams = new SqlParameter[]
