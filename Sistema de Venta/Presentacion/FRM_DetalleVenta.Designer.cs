@@ -51,13 +51,13 @@
             this.text_PrecioUnitario = new System.Windows.Forms.TextBox();
             this.text_ProductoId = new System.Windows.Forms.TextBox();
             this.text_ProductoDescripcion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lab_stock = new System.Windows.Forms.Label();
+            this.lab_valor = new System.Windows.Forms.Label();
+            this.lab_Cantidad = new System.Windows.Forms.Label();
             this.txtFlag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbx_ProdSer = new System.Windows.Forms.ComboBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
@@ -71,19 +71,19 @@
             // 
             this.text_fecha.Enabled = false;
             this.text_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.text_fecha.Location = new System.Drawing.Point(153, 108);
+            this.text_fecha.Location = new System.Drawing.Point(153, 107);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
-            this.text_fecha.Size = new System.Drawing.Size(265, 23);
+            this.text_fecha.Size = new System.Drawing.Size(265, 30);
             this.text_fecha.TabIndex = 15;
             // 
             // text_NumeroDoc
             // 
             this.text_NumeroDoc.Enabled = false;
-            this.text_NumeroDoc.Location = new System.Drawing.Point(153, 149);
+            this.text_NumeroDoc.Location = new System.Drawing.Point(153, 146);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 23);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 30);
             this.text_NumeroDoc.TabIndex = 0;
             // 
             // text_ClienteId
@@ -92,7 +92,7 @@
             this.text_ClienteId.Location = new System.Drawing.Point(356, 28);
             this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(11, 23);
+            this.text_ClienteId.Size = new System.Drawing.Size(11, 30);
             this.text_ClienteId.TabIndex = 7;
             this.text_ClienteId.Visible = false;
             // 
@@ -102,7 +102,7 @@
             this.text_ClienteNombre.Location = new System.Drawing.Point(153, 68);
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
-            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 23);
+            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 30);
             this.text_ClienteNombre.TabIndex = 7;
             // 
             // textVentaId
@@ -112,7 +112,7 @@
             this.textVentaId.Location = new System.Drawing.Point(375, 28);
             this.textVentaId.Margin = new System.Windows.Forms.Padding(4);
             this.textVentaId.Name = "textVentaId";
-            this.textVentaId.Size = new System.Drawing.Size(11, 23);
+            this.textVentaId.Size = new System.Drawing.Size(11, 30);
             this.textVentaId.TabIndex = 6;
             this.textVentaId.Visible = false;
             // 
@@ -120,10 +120,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(50, 152);
+            this.label8.Location = new System.Drawing.Point(50, 149);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 17);
+            this.label8.Size = new System.Drawing.Size(82, 25);
             this.label8.TabIndex = 4;
             this.label8.Text = "No. Doc";
             // 
@@ -131,10 +131,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(50, 111);
+            this.label10.Location = new System.Drawing.Point(50, 110);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 17);
+            this.label10.Size = new System.Drawing.Size(67, 25);
             this.label10.TabIndex = 2;
             this.label10.Text = "Fecha";
             // 
@@ -145,7 +145,7 @@
             this.label11.Location = new System.Drawing.Point(50, 71);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 17);
+            this.label11.Size = new System.Drawing.Size(73, 25);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cliente";
             // 
@@ -160,7 +160,7 @@
             this.noencontrado.Location = new System.Drawing.Point(395, 303);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(171, 15);
+            this.noencontrado.Size = new System.Drawing.Size(263, 22);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -213,7 +213,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 68);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(727, 21);
+            this.Buscar.Size = new System.Drawing.Size(727, 28);
             this.Buscar.TabIndex = 22;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -229,7 +229,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 68);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 23);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 30);
             this.CMB_Buscar.TabIndex = 21;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -246,13 +246,13 @@
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(895, 46);
             this.btnQuitar.TabIndex = 13;
-            this.btnQuitar.Text = "Quitrar Producto";
+            this.btnQuitar.Text = "Eliminar";
             this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // text_DescripcionVenta
             // 
-            this.text_DescripcionVenta.Location = new System.Drawing.Point(153, 303);
+            this.text_DescripcionVenta.Location = new System.Drawing.Point(153, 263);
             this.text_DescripcionVenta.Margin = new System.Windows.Forms.Padding(4);
             this.text_DescripcionVenta.Multiline = true;
             this.text_DescripcionVenta.Name = "text_DescripcionVenta";
@@ -263,16 +263,16 @@
             // 
             this.Lbl_Comentario.AutoSize = true;
             this.Lbl_Comentario.ForeColor = System.Drawing.Color.White;
-            this.Lbl_Comentario.Location = new System.Drawing.Point(50, 306);
+            this.Lbl_Comentario.Location = new System.Drawing.Point(50, 268);
             this.Lbl_Comentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Comentario.Name = "Lbl_Comentario";
-            this.Lbl_Comentario.Size = new System.Drawing.Size(82, 17);
+            this.Lbl_Comentario.Size = new System.Drawing.Size(114, 25);
             this.Lbl_Comentario.TabIndex = 19;
             this.Lbl_Comentario.Text = "Descripción";
             // 
             // text_Cantidad
             // 
-            this.text_Cantidad.Location = new System.Drawing.Point(153, 229);
+            this.text_Cantidad.Location = new System.Drawing.Point(153, 346);
             this.text_Cantidad.Margin = new System.Windows.Forms.Padding(4);
             this.text_Cantidad.Maximum = new decimal(new int[] {
             100000,
@@ -285,7 +285,7 @@
             0,
             0});
             this.text_Cantidad.Name = "text_Cantidad";
-            this.text_Cantidad.Size = new System.Drawing.Size(105, 23);
+            this.text_Cantidad.Size = new System.Drawing.Size(105, 30);
             this.text_Cantidad.TabIndex = 1;
             this.text_Cantidad.Value = new decimal(new int[] {
             1,
@@ -296,19 +296,19 @@
             // text_stock
             // 
             this.text_stock.Enabled = false;
-            this.text_stock.Location = new System.Drawing.Point(333, 229);
+            this.text_stock.Location = new System.Drawing.Point(333, 346);
             this.text_stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_stock.Name = "text_stock";
-            this.text_stock.Size = new System.Drawing.Size(85, 23);
+            this.text_stock.Size = new System.Drawing.Size(85, 30);
             this.text_stock.TabIndex = 7;
             this.text_stock.Text = "0";
             // 
             // text_PrecioUnitario
             // 
-            this.text_PrecioUnitario.Location = new System.Drawing.Point(153, 266);
+            this.text_PrecioUnitario.Location = new System.Drawing.Point(153, 224);
             this.text_PrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioUnitario.Name = "text_PrecioUnitario";
-            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 23);
+            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 30);
             this.text_PrecioUnitario.TabIndex = 2;
             // 
             // text_ProductoId
@@ -317,70 +317,59 @@
             this.text_ProductoId.Location = new System.Drawing.Point(333, 28);
             this.text_ProductoId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoId.Name = "text_ProductoId";
-            this.text_ProductoId.Size = new System.Drawing.Size(12, 26);
+            this.text_ProductoId.Size = new System.Drawing.Size(12, 30);
             this.text_ProductoId.TabIndex = 7;
             this.text_ProductoId.Visible = false;
             // 
             // text_ProductoDescripcion
             // 
-            this.text_ProductoDescripcion.Location = new System.Drawing.Point(153, 189);
+            this.text_ProductoDescripcion.Location = new System.Drawing.Point(153, 185);
             this.text_ProductoDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoDescripcion.Name = "text_ProductoDescripcion";
             this.text_ProductoDescripcion.ReadOnly = true;
-            this.text_ProductoDescripcion.Size = new System.Drawing.Size(265, 26);
+            this.text_ProductoDescripcion.Size = new System.Drawing.Size(265, 30);
             this.text_ProductoDescripcion.TabIndex = 7;
             this.text_ProductoDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ProductoDescripcion_MouseClick);
             // 
-            // label3
+            // lab_stock
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(277, 232);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Stock";
+            this.lab_stock.AutoSize = true;
+            this.lab_stock.ForeColor = System.Drawing.Color.White;
+            this.lab_stock.Location = new System.Drawing.Point(277, 349);
+            this.lab_stock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_stock.Name = "lab_stock";
+            this.lab_stock.Size = new System.Drawing.Size(62, 25);
+            this.lab_stock.TabIndex = 1;
+            this.lab_stock.Text = "Stock";
             // 
-            // label4
+            // lab_valor
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(50, 269);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Valor Unidad";
+            this.lab_valor.AutoSize = true;
+            this.lab_valor.ForeColor = System.Drawing.Color.White;
+            this.lab_valor.Location = new System.Drawing.Point(50, 227);
+            this.lab_valor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_valor.Name = "lab_valor";
+            this.lab_valor.Size = new System.Drawing.Size(105, 25);
+            this.lab_valor.TabIndex = 1;
+            this.lab_valor.Text = "Valor/Prod";
             // 
-            // label2
+            // lab_Cantidad
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(50, 232);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Cantidad";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(50, 192);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Producto";
+            this.lab_Cantidad.AutoSize = true;
+            this.lab_Cantidad.ForeColor = System.Drawing.Color.White;
+            this.lab_Cantidad.Location = new System.Drawing.Point(50, 349);
+            this.lab_Cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_Cantidad.Name = "lab_Cantidad";
+            this.lab_Cantidad.Size = new System.Drawing.Size(91, 25);
+            this.lab_Cantidad.TabIndex = 1;
+            this.lab_Cantidad.Text = "Cantidad";
             // 
             // txtFlag
             // 
             this.txtFlag.Location = new System.Drawing.Point(396, 28);
             this.txtFlag.Margin = new System.Windows.Forms.Padding(4);
             this.txtFlag.Name = "txtFlag";
-            this.txtFlag.Size = new System.Drawing.Size(12, 23);
+            this.txtFlag.Size = new System.Drawing.Size(12, 30);
             this.txtFlag.TabIndex = 9;
             this.txtFlag.Visible = false;
             // 
@@ -403,6 +392,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.cbx_ProdSer);
             this.panel2.Controls.Add(this.txtFlag);
             this.panel2.Controls.Add(this.text_ClienteNombre);
             this.panel2.Controls.Add(this.btn_Cerrar);
@@ -418,20 +408,36 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.text_PrecioUnitario);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lab_stock);
             this.panel2.Controls.Add(this.text_fecha);
             this.panel2.Controls.Add(this.text_stock);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lab_valor);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.text_NumeroDoc);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lab_Cantidad);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(461, 608);
             this.panel2.TabIndex = 24;
+            // 
+            // cbx_ProdSer
+            // 
+            this.cbx_ProdSer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.cbx_ProdSer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_ProdSer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_ProdSer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_ProdSer.ForeColor = System.Drawing.Color.White;
+            this.cbx_ProdSer.FormattingEnabled = true;
+            this.cbx_ProdSer.Items.AddRange(new object[] {
+            "Producto",
+            "Servicio"});
+            this.cbx_ProdSer.Location = new System.Drawing.Point(50, 184);
+            this.cbx_ProdSer.Name = "cbx_ProdSer";
+            this.cbx_ProdSer.Size = new System.Drawing.Size(88, 33);
+            this.cbx_ProdSer.TabIndex = 22;
+            this.cbx_ProdSer.SelectedIndexChanged += new System.EventHandler(this.cbx_ProdSer_SelectedIndexChanged);
             // 
             // btnImprimir
             // 
@@ -442,7 +448,7 @@
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnImprimir.Image = global::Sistema_de_Venta.Properties.Resources.Imprimir;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(293, 389);
+            this.btnImprimir.Location = new System.Drawing.Point(293, 390);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(4, 0, 7, 0);
@@ -462,7 +468,7 @@
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregar.Image = global::Sistema_de_Venta.Properties.Resources.AgregarP;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(153, 389);
+            this.btnAgregar.Location = new System.Drawing.Point(153, 390);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(5, 0, 7, 0);
@@ -529,10 +535,9 @@
         private System.Windows.Forms.TextBox text_PrecioUnitario;
         private System.Windows.Forms.TextBox text_ProductoId;
         private System.Windows.Forms.TextBox text_ProductoDescripcion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lab_stock;
+        private System.Windows.Forms.Label lab_valor;
+        private System.Windows.Forms.Label lab_Cantidad;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TextBox txtFlag;
@@ -544,5 +549,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.ComboBox cbx_ProdSer;
     }
 }

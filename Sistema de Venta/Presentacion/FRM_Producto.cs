@@ -2,14 +2,9 @@
 using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -201,15 +196,14 @@ namespace Sistema_de_Venta.Presentacion
                         {
                             Producto producto = new Producto();
                             producto.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                            if (Fproducto.Eliminar(producto) == 0)
+                            if (Fproducto.Eliminar(producto) != 0)
                             {
-                                MessageBox.Show("El productos fue eliminado", "Eliminacion de Productos",
+                                MessageBox.Show("El productos pudo ser eliminado\n favor intentar mas tarde", "Eliminacion de Productos",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
                     FRM_Producto_Load(null, null);
-
                 }
 
             }
@@ -267,6 +261,9 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
+            limpiarForm();
+            desactivar(true);
+
             if (Servicios == 1)
             {
                 pbx_Productos.Visible = false;
@@ -328,8 +325,6 @@ namespace Sistema_de_Venta.Presentacion
 
         public void desactivar(bool b)
         {
-
-
             text_Nombre.Enabled = !b;
 
             text_Nombre.Enabled = !b;
@@ -344,6 +339,20 @@ namespace Sistema_de_Venta.Presentacion
 
 
 
+        }
+
+        public void limpiarForm()
+        {
+            text_Id.Text = "";
+            text_Categoria.Text = "";
+            text_CategoriaDescripcion.Text = "";
+            text_Nombre.Text = "";
+            text_Descripcion.Text = "";
+            text_Stock.Text = "";
+            text_PrecioCompra.Text = "";
+            text_PrecioVenta.Text = "";
+            text_FechadeVencimiento.Text = "";
+            Imagen.Image = null;
         }
 
         public string ValidarDatos()
@@ -381,12 +390,18 @@ namespace Sistema_de_Venta.Presentacion
             text_Flag.Text = SValor;
         }
 
+        public void ProdServ(int servicios)
+        {
+            this.Servicios = servicios;
+        }
+
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (text_Flag.Text == "1")
             {
                 if (dgvProductos.CurrentRow != null)
                 {
+
                     id_Producto = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                     nombre_Producto = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                     stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();

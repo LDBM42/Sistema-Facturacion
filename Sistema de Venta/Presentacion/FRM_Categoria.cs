@@ -186,11 +186,9 @@ namespace Sistema_de_Venta.Presentacion
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("La Categoría no pudo ser eliminada porque ha sido asignada a un producto", "Eliminacion Fallida");
             }
         }
 

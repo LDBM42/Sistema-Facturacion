@@ -41,6 +41,9 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_DetalleVenta_Load(object sender, EventArgs e)
         {
+            cbx_ProdSer.Text = "Producto";
+
+
             try
             {
                 if (txtFlag.Text != " ")
@@ -236,6 +239,7 @@ namespace Sistema_de_Venta.Presentacion
         {        
             FRM_Producto FRMPro = new FRM_Producto();
             FRMPro.SetFlag("1");
+            FRMPro.ProdServ(cbx_ProdSer.Text == "Producto" ? 0 : 1); // si es un producto es = 0, si es un servicio = 1
             FRMPro.WindowState = FormWindowState.Maximized;
             DialogResult res = FRMPro.ShowDialog(); //abrimos el Categoría como cuadro de dialogo modal
 
@@ -306,5 +310,26 @@ namespace Sistema_de_Venta.Presentacion
             this.Close();
         }
 
+        public void ProdSev_Limpiar(bool limpiar)
+        {
+            lab_Cantidad.Visible = limpiar;
+            lab_stock.Visible = limpiar;
+            text_Cantidad.Visible = limpiar;
+            text_stock.Visible = limpiar;
+        }
+
+        private void cbx_ProdSer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_ProdSer.Text == "Servicio")
+            {
+                ProdSev_Limpiar(false);
+                lab_valor.Text = "Valor/Sev";
+            }
+            else
+            {
+                ProdSev_Limpiar(true);
+                lab_valor.Text = "Valor/Prod";
+            }
+        }
     }
 }
