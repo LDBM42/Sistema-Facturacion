@@ -358,6 +358,7 @@ namespace Sistema_de_Venta
                 minimizar = 0;
             }
         }
+
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_Auditoria auditor = new FRM_Auditoria();
