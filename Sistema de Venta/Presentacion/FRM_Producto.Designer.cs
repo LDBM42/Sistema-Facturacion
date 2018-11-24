@@ -39,7 +39,7 @@
             this.text_Nombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.text_CategoriaDescripcion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lab_vencimiento = new System.Windows.Forms.Label();
             this.Editar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.Quitar = new System.Windows.Forms.Button();
@@ -52,9 +52,9 @@
             this.text_Categoria = new System.Windows.Forms.TextBox();
             this.text_Descripcion = new System.Windows.Forms.TextBox();
             this.text_Id = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lab_Costo_ProdServ = new System.Windows.Forms.Label();
+            this.lab_compra = new System.Windows.Forms.Label();
+            this.lab_stock = new System.Windows.Forms.Label();
             this.lbl_Descripcion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dialogo = new System.Windows.Forms.OpenFileDialog();
@@ -102,7 +102,7 @@
             this.noencontrado.Location = new System.Drawing.Point(334, 311);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(293, 25);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -113,7 +113,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 66);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(635, 26);
+            this.Buscar.Size = new System.Drawing.Size(635, 30);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -133,7 +133,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 65);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 33);
             this.CMB_Buscar.TabIndex = 1;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -171,29 +171,29 @@
             // text_FechadeVencimiento
             // 
             this.text_FechadeVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.text_FechadeVencimiento.Location = new System.Drawing.Point(153, 241);
+            this.text_FechadeVencimiento.Location = new System.Drawing.Point(153, 272);
             this.text_FechadeVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.text_FechadeVencimiento.Name = "text_FechadeVencimiento";
-            this.text_FechadeVencimiento.Size = new System.Drawing.Size(316, 26);
+            this.text_FechadeVencimiento.Size = new System.Drawing.Size(91, 30);
             this.text_FechadeVencimiento.TabIndex = 21;
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
             // 
             // text_Nombre
             // 
-            this.text_Nombre.Location = new System.Drawing.Point(153, 102);
+            this.text_Nombre.Location = new System.Drawing.Point(153, 103);
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
-            this.text_Nombre.Size = new System.Drawing.Size(316, 26);
+            this.text_Nombre.Size = new System.Drawing.Size(316, 30);
             this.text_Nombre.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(41, 105);
+            this.label8.Location = new System.Drawing.Point(41, 106);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 20);
+            this.label8.Size = new System.Drawing.Size(81, 25);
             this.label8.TabIndex = 18;
             this.label8.Text = "Nombre";
             // 
@@ -203,20 +203,20 @@
             this.text_CategoriaDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_CategoriaDescripcion.Name = "text_CategoriaDescripcion";
             this.text_CategoriaDescripcion.ReadOnly = true;
-            this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 26);
+            this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 30);
             this.text_CategoriaDescripcion.TabIndex = 17;
             this.text_CategoriaDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_CategoriaDescripcion_MouseClick);
             // 
-            // label1
+            // lab_vencimiento
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 244);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Vencimiento";
+            this.lab_vencimiento.AutoSize = true;
+            this.lab_vencimiento.ForeColor = System.Drawing.Color.White;
+            this.lab_vencimiento.Location = new System.Drawing.Point(40, 275);
+            this.lab_vencimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_vencimiento.Name = "lab_vencimiento";
+            this.lab_vencimiento.Size = new System.Drawing.Size(120, 25);
+            this.lab_vencimiento.TabIndex = 15;
+            this.lab_vencimiento.Text = "Vencimiento";
             // 
             // Editar
             // 
@@ -258,6 +258,7 @@
             this.Quitar.TabIndex = 12;
             this.Quitar.Text = "Quitar Imagen";
             this.Quitar.UseVisualStyleBackColor = false;
+            this.Quitar.Visible = false;
             this.Quitar.Click += new System.EventHandler(this.Quitar_Click);
             // 
             // Cambiar
@@ -272,6 +273,7 @@
             this.Cambiar.TabIndex = 12;
             this.Cambiar.Text = "Cambiar Imagen";
             this.Cambiar.UseVisualStyleBackColor = false;
+            this.Cambiar.Visible = false;
             this.Cambiar.Click += new System.EventHandler(this.Cambiar_Click);
             // 
             // Cancelar
@@ -304,42 +306,42 @@
             // 
             // text_PrecioCompra
             // 
-            this.text_PrecioCompra.Location = new System.Drawing.Point(378, 274);
+            this.text_PrecioCompra.Location = new System.Drawing.Point(378, 238);
             this.text_PrecioCompra.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioCompra.Name = "text_PrecioCompra";
-            this.text_PrecioCompra.Size = new System.Drawing.Size(91, 26);
+            this.text_PrecioCompra.Size = new System.Drawing.Size(91, 30);
             this.text_PrecioCompra.TabIndex = 10;
             // 
             // text_PrecioVenta
             // 
-            this.text_PrecioVenta.Location = new System.Drawing.Point(153, 274);
+            this.text_PrecioVenta.Location = new System.Drawing.Point(153, 238);
             this.text_PrecioVenta.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioVenta.Name = "text_PrecioVenta";
-            this.text_PrecioVenta.Size = new System.Drawing.Size(91, 26);
+            this.text_PrecioVenta.Size = new System.Drawing.Size(91, 30);
             this.text_PrecioVenta.TabIndex = 9;
             this.text_PrecioVenta.Text = " ";
             // 
             // text_Stock
             // 
-            this.text_Stock.Location = new System.Drawing.Point(153, 309);
+            this.text_Stock.Location = new System.Drawing.Point(378, 272);
             this.text_Stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_Stock.Name = "text_Stock";
-            this.text_Stock.Size = new System.Drawing.Size(91, 26);
+            this.text_Stock.Size = new System.Drawing.Size(91, 30);
             this.text_Stock.TabIndex = 8;
             // 
             // text_Categoria
             // 
-            this.text_Categoria.Location = new System.Drawing.Point(391, 23);
+            this.text_Categoria.Location = new System.Drawing.Point(392, 23);
             this.text_Categoria.Margin = new System.Windows.Forms.Padding(4);
             this.text_Categoria.Name = "text_Categoria";
             this.text_Categoria.ReadOnly = true;
-            this.text_Categoria.Size = new System.Drawing.Size(13, 26);
+            this.text_Categoria.Size = new System.Drawing.Size(12, 30);
             this.text_Categoria.TabIndex = 7;
             this.text_Categoria.Visible = false;
             // 
             // text_Descripcion
             // 
-            this.text_Descripcion.Location = new System.Drawing.Point(153, 135);
+            this.text_Descripcion.Location = new System.Drawing.Point(153, 137);
             this.text_Descripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_Descripcion.Multiline = true;
             this.text_Descripcion.Name = "text_Descripcion";
@@ -353,42 +355,42 @@
             this.text_Id.Location = new System.Drawing.Point(412, 23);
             this.text_Id.Margin = new System.Windows.Forms.Padding(4);
             this.text_Id.Name = "text_Id";
-            this.text_Id.Size = new System.Drawing.Size(15, 26);
+            this.text_Id.Size = new System.Drawing.Size(15, 30);
             this.text_Id.TabIndex = 6;
             this.text_Id.Visible = false;
             // 
-            // label5
+            // lab_Costo_ProdServ
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 277);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Costo a Pagar";
+            this.lab_Costo_ProdServ.AutoSize = true;
+            this.lab_Costo_ProdServ.ForeColor = System.Drawing.Color.White;
+            this.lab_Costo_ProdServ.Location = new System.Drawing.Point(40, 241);
+            this.lab_Costo_ProdServ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_Costo_ProdServ.Name = "lab_Costo_ProdServ";
+            this.lab_Costo_ProdServ.Size = new System.Drawing.Size(111, 25);
+            this.lab_Costo_ProdServ.TabIndex = 5;
+            this.lab_Costo_ProdServ.Text = "Costo/Prod";
             // 
-            // label6
+            // lab_compra
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(261, 277);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Precio Compra";
+            this.lab_compra.AutoSize = true;
+            this.lab_compra.ForeColor = System.Drawing.Color.White;
+            this.lab_compra.Location = new System.Drawing.Point(261, 241);
+            this.lab_compra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_compra.Name = "lab_compra";
+            this.lab_compra.Size = new System.Drawing.Size(142, 25);
+            this.lab_compra.TabIndex = 4;
+            this.lab_compra.Text = "Precio Compra";
             // 
-            // label7
+            // lab_stock
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(40, 312);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Stock";
+            this.lab_stock.AutoSize = true;
+            this.lab_stock.ForeColor = System.Drawing.Color.White;
+            this.lab_stock.Location = new System.Drawing.Point(261, 275);
+            this.lab_stock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_stock.Name = "lab_stock";
+            this.lab_stock.Size = new System.Drawing.Size(62, 25);
+            this.lab_stock.TabIndex = 3;
+            this.lab_stock.Text = "Stock";
             // 
             // lbl_Descripcion
             // 
@@ -397,7 +399,7 @@
             this.lbl_Descripcion.Location = new System.Drawing.Point(40, 142);
             this.lbl_Descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
-            this.lbl_Descripcion.Size = new System.Drawing.Size(99, 20);
+            this.lbl_Descripcion.Size = new System.Drawing.Size(114, 25);
             this.lbl_Descripcion.TabIndex = 2;
             this.lbl_Descripcion.Text = "Descripción";
             // 
@@ -408,7 +410,7 @@
             this.label3.Location = new System.Drawing.Point(41, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(97, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Categoria";
             // 
@@ -423,7 +425,7 @@
             this.text_Flag.Location = new System.Drawing.Point(435, 23);
             this.text_Flag.Margin = new System.Windows.Forms.Padding(4);
             this.text_Flag.Name = "text_Flag";
-            this.text_Flag.Size = new System.Drawing.Size(11, 26);
+            this.text_Flag.Size = new System.Drawing.Size(11, 30);
             this.text_Flag.TabIndex = 6;
             this.text_Flag.Visible = false;
             // 
@@ -461,15 +463,15 @@
             this.panel2.Controls.Add(this.text_Nombre);
             this.panel2.Controls.Add(this.Cambiar);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lab_Costo_ProdServ);
             this.panel2.Controls.Add(this.text_CategoriaDescripcion);
             this.panel2.Controls.Add(this.Quitar);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lab_compra);
+            this.panel2.Controls.Add(this.lab_vencimiento);
             this.panel2.Controls.Add(this.Guardar);
             this.panel2.Controls.Add(this.lbl_Descripcion);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lab_stock);
             this.panel2.Controls.Add(this.Editar);
             this.panel2.Controls.Add(this.pbx_Servicios);
             this.panel2.Controls.Add(this.pbx_Productos);
@@ -488,6 +490,7 @@
             this.Imagen.Size = new System.Drawing.Size(207, 150);
             this.Imagen.TabIndex = 20;
             this.Imagen.TabStop = false;
+            this.Imagen.WaitOnLoad = true;
             // 
             // pbx_Servicios
             // 
@@ -577,7 +580,7 @@
         private System.Windows.Forms.ComboBox CMB_Buscar;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.TextBox text_CategoriaDescripcion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lab_vencimiento;
         private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Button Cancelar;
@@ -588,9 +591,9 @@
         private System.Windows.Forms.TextBox text_Categoria;
         private System.Windows.Forms.TextBox text_Descripcion;
         private System.Windows.Forms.TextBox text_Id;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lab_Costo_ProdServ;
+        private System.Windows.Forms.Label lab_compra;
+        private System.Windows.Forms.Label lab_stock;
         private System.Windows.Forms.Label lbl_Descripcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox text_Nombre;

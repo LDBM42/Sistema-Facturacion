@@ -52,7 +52,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 Imagen.BackgroundImage = null;
                 Imagen.Image = new Bitmap(dialogo.FileName);
-                Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                Imagen.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -60,7 +60,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             Imagen.BackgroundImage = Resources.Transparente;
             Imagen.Image = null;
-            Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            Imagen.SizeMode = PictureBoxSizeMode.Zoom;
 
         }
 
@@ -70,7 +70,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 string sresultado = ValidarDatos();
 
-                if (sresultado == "")
+                if (sresultado == "") // significa que tiene un nombre valido
                 {
                     if (text_Id.Text == "")
                     {
@@ -78,10 +78,14 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToInt32(text_Stock.Text);
-                        producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
-                        producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
+                        if(Servicios == 0)
+                        {
+                            producto.Stock = Convert.ToInt32(text_Stock.Text);
+                            producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        }
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
+                        producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
+                        producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -121,6 +125,7 @@ namespace Sistema_de_Venta.Presentacion
                         producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
+                        producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -137,9 +142,13 @@ namespace Sistema_de_Venta.Presentacion
 
                         //Solucion del error de no guardar la imagen
                         producto.Imagen = ms.GetBuffer();
+                        int idProducto = Fproducto.Actualizar(producto);
 
-                        if (Fproducto.Actualizar(producto) > 0)
+                        if (idProducto > 0)
                         {
+                            //este es el metodo para guardar el log con la accion Actualizo producto
+                            Form1.Log(Usuario.Nombreusuario, "Actualizo producto: " + idProducto + " - " + producto.Nombre);
+
                             MessageBox.Show("Datos Modificados correctamente");
                             FRM_Producto_Load(null, null);
                         }
@@ -164,6 +173,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
+            limpiar();
+            desactivar(true);
             MostrarGuardarCancelar(false);
             dgvProductos_CellClick(null, null);
         }
@@ -222,21 +233,24 @@ namespace Sistema_de_Venta.Presentacion
 
                 text_Id.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                 text_Categoria.Text = dgvProductos.CurrentRow.Cells["CategoriaId"].Value.ToString();
-                text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
+                text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["Categoría"].Value.ToString();
                 text_Nombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
-                text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
-                text_PrecioCompra.Text = dgvProductos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
-                text_PrecioVenta.Text = dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
-                text_FechadeVencimiento.Text = dgvProductos.CurrentRow.Cells["FechaVencimiento"].Value.ToString();
+                text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripción"].Value.ToString();
+                text_PrecioVenta.Text = dgvProductos.CurrentRow.Cells["Pagar"].Value.ToString();
+                if (Servicios == 0)
+                {
+                    text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                    text_PrecioCompra.Text = dgvProductos.CurrentRow.Cells["Compra"].Value.ToString();
+                    text_FechadeVencimiento.Text = dgvProductos.CurrentRow.Cells["Venc."].Value.ToString();
 
 
-                Imagen.BackgroundImage = null;
-                byte[] b = (byte[])dgvProductos.CurrentRow.Cells["Imagen"].Value;
-                MemoryStream ms = new MemoryStream(b);
-                Imagen.Image = Image.FromStream(ms);
-                Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
-                desactivar(true);
+                    Imagen.BackgroundImage = null;
+                    byte[] b = (byte[])dgvProductos.CurrentRow.Cells["Imagen"].Value;
+                    MemoryStream ms = new MemoryStream(b);
+                    Imagen.Image = Image.FromStream(ms);
+                    Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+                    desactivar(true);
+                }
             }
 
         }
@@ -261,31 +275,53 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
-            limpiarForm();
+            limpiar();
             desactivar(true);
 
             if (Servicios == 1)
             {
                 pbx_Productos.Visible = false;
                 pbx_Servicios.Visible = true;
+                lab_Costo_ProdServ.Text = "Costo/Serv";
+                Nuevo.Size = new Size(153, 40);
+                Nuevo.Location = new Point(153, 276);
+                Guardar.Size = new Size(153, 40);
+                Guardar.Location = new Point(153, 276);
+
+                Editar.Size = new Size(153, 40);
+                Editar.Location = new Point(316, 276);
+                Cancelar.Size = new Size(153, 40);
+                Cancelar.Location = new Point(316, 276);
+
+
+                ProdServ(false);
             }
             else
             {
                 pbx_Servicios.Visible = false;
                 pbx_Productos.Visible = true;
+                lab_Costo_ProdServ.Text = "Costo/Prod";
+                ProdServ(true);
             }
 
             CMB_Buscar.Text = "Nombre";
 
             try
             {
-                DataSet ds = Fproducto.GetAll();
+                DataSet ds = Fproducto.GetAll(Servicios == 0 ? "Productos" : "Servicios");
                 dt = ds.Tables[0];
                 dgvProductos.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
                 {
-                    dgvProductos.Columns["Imagen"].Visible = false;
+                    dgvProductos.Columns["CategoriaId"].Visible = false;
+                    try
+                    {
+                        dgvProductos.Columns["Imagen"].Visible = false;
+                    }
+                    catch (Exception)
+                    {
+                    }
                     noencontrado.Visible = false;
                     dgvProductos_CellClick(null, null);
                 }
@@ -313,14 +349,11 @@ namespace Sistema_de_Venta.Presentacion
 
             dgvProductos.Enabled = !b;
 
-            Cambiar.Visible = b;
-            Quitar.Visible = b;
-
-
-
-
-
-
+            if(Servicios == 0)
+            {
+                Cambiar.Visible = b;
+                Quitar.Visible = b;
+            }
         }
 
         public void desactivar(bool b)
@@ -341,19 +374,17 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
-        public void limpiarForm()
-        {
-            text_Id.Text = "";
-            text_Categoria.Text = "";
-            text_CategoriaDescripcion.Text = "";
-            text_Nombre.Text = "";
-            text_Descripcion.Text = "";
-            text_Stock.Text = "";
-            text_PrecioCompra.Text = "";
-            text_PrecioVenta.Text = "";
-            text_FechadeVencimiento.Text = "";
-            Imagen.Image = null;
-        }
+        public void ProdServ(bool producto)
+        {   
+            lab_stock.Visible = producto;
+            lab_compra.Visible = producto;
+            lab_vencimiento.Visible = producto;
+
+            text_Stock.Visible = producto;
+            text_PrecioCompra.Visible = producto;
+            text_FechadeVencimiento.Visible = producto;
+            Imagen.Visible = producto;
+        } // muestra los campos adecuados para los servicios y productos
 
         public string ValidarDatos()
         {
@@ -370,19 +401,22 @@ namespace Sistema_de_Venta.Presentacion
         public void limpiar()
         {
             text_Id.Clear();
-            text_Nombre.Clear();
             text_Categoria.Clear();
-            text_CategoriaDescripcion.Clear();
+            text_Nombre.Clear();
             text_Descripcion.Clear();
-            text_PrecioCompra.Clear();
             text_PrecioVenta.Clear();
-            text_Stock.Clear();
-            text_Stock.Clear();
-            text_FechadeVencimiento.Text = "";
-            Imagen.BackgroundImage = Resources.Transparente;
-            Imagen.Image = null;
-            Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
 
+            if(Servicios == 0)
+            {
+                text_CategoriaDescripcion.Clear();
+                text_PrecioCompra.Clear();
+                text_Stock.Clear();
+                text_Stock.Clear();
+                text_FechadeVencimiento.Text = "";
+                Imagen.BackgroundImage = Resources.Transparente;
+                Imagen.Image = null;
+                Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
 
         public void SetFlag(string SValor)
@@ -404,8 +438,11 @@ namespace Sistema_de_Venta.Presentacion
 
                     id_Producto = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                     nombre_Producto = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
-                    precioVenta_Producto = dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
+                    precioVenta_Producto = dgvProductos.CurrentRow.Cells["Pagar"].Value.ToString();
+                    if(Servicios == 0)
+                    {
+                        stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                    }
 
                     this.DialogResult = DialogResult.OK; //terminar
                 }
@@ -419,12 +456,8 @@ namespace Sistema_de_Venta.Presentacion
                 if (text_FechadeVencimiento.Value <= DateTime.Now && text_FechadeVencimiento.Enabled)
                 {
                     MessageBox.Show("La fecha de vencimiento no puede ser menor o igual a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    text_FechadeVencimiento.Value = DateTime.Now.AddDays(1);
-
-
+                    text_FechadeVencimiento.Value = DateTime.Now.AddDays(1);                    
                 }
-
-
             }
         }
 

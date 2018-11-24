@@ -1,13 +1,7 @@
 ﻿using Sistema_de_Venta.Datos;
 using Sistema_de_Venta.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -40,7 +34,7 @@ namespace Sistema_de_Venta.Presentacion
         }
 
         private void FRM_DetalleVenta_Load(object sender, EventArgs e)
-        {
+        {            
             cbx_ProdSer.Text = "Producto";
 
 
@@ -103,10 +97,13 @@ namespace Sistema_de_Venta.Presentacion
 
                     if (iDVentaId > 0)
                     {
-                        //obteniento nuevo stock
-                        int currentStock = Convert.ToInt32(text_stock.Text);
-                        string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
-                        text_stock.Text = newStock;
+                        if (cbx_ProdSer.Text == "Producto")
+                        {
+                            //obteniento nuevo stock
+                            int currentStock = Convert.ToInt32(text_stock.Text);
+                            string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
+                            text_stock.Text = newStock;
+                        }
 
 
                         //este es el metodo para guardar el log con la accion Detalle de ventas agregados
@@ -155,11 +152,14 @@ namespace Sistema_de_Venta.Presentacion
                 Resultado = Resultado + " Debe Seleccionar al menos un producto \n";
 
             }
-            if (Convert.ToInt32(text_Cantidad.Text) > Convert.ToInt32(text_stock.Text))
+            if (cbx_ProdSer.Text == "Producto")
             {
-                Resultado = Resultado + " La cantidad que intenta vender supera el stock \n";
-                text_Cantidad.Value = Convert.ToInt32(text_stock.Text);
-                text_Cantidad.Focus();
+                if (Convert.ToInt32(text_Cantidad.Text) > Convert.ToInt32(text_stock.Text))
+                {
+                    Resultado = Resultado + " La cantidad que intenta vender supera el stock \n";
+                    text_Cantidad.Value = Convert.ToInt32(text_stock.Text);
+                    text_Cantidad.Focus();
+                }
             }
 
             return Resultado;
@@ -330,6 +330,9 @@ namespace Sistema_de_Venta.Presentacion
                 ProdSev_Limpiar(true);
                 lab_valor.Text = "Valor/Prod";
             }
+
+            text_ProductoDescripcion.Text = "";
+            text_PrecioUnitario.Text = "";
         }
     }
 }

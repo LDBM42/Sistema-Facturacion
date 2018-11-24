@@ -14,11 +14,11 @@ namespace Sistema_de_Venta.Datos
     class Fproducto
     {
 
-        public static DataSet GetAll()
+        public static DataSet GetAll(string sProdServ)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-                    
+                    FDBHelper.MakeParam("@ProdServ",SqlDbType.VarChar, 0, sProdServ),
                 };
             return FDBHelper.ExecuteDataSet("usp_Data_FProducto_GetAll", dbParams);
         }
@@ -31,11 +31,12 @@ namespace Sistema_de_Venta.Datos
                     FDBHelper.MakeParam("@CategoriaId", SqlDbType.Int, 0, producto.Categoria.Id),
                      FDBHelper.MakeParam("@Nombre", SqlDbType.VarChar, 0, producto.Nombre),
                       FDBHelper.MakeParam("@Descripcion", SqlDbType.VarChar, 0, producto.Descripcion),
-                       FDBHelper.MakeParam("@Stock", SqlDbType.Decimal, 0, producto.Stock),
+                       FDBHelper.MakeParam("@Stock", SqlDbType.Int, 0, producto.Stock),
                        FDBHelper.MakeParam("@PrecioCompra", SqlDbType.Decimal, 0, producto.PrecioCompra),
                       FDBHelper.MakeParam("@PrecioVenta", SqlDbType.Decimal, 0, producto.PrecioVenta),
                        FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.DateTime, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
+                       FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
 
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FProducto_Insertar", dbParams));
@@ -50,11 +51,12 @@ namespace Sistema_de_Venta.Datos
                     FDBHelper.MakeParam("@CategoriaId", SqlDbType.Int, 0, producto.Categoria.Id),
                      FDBHelper.MakeParam("@Nombre", SqlDbType.VarChar, 0, producto.Nombre),
                       FDBHelper.MakeParam("@Descripcion", SqlDbType.VarChar, 0, producto.Descripcion),
-                       FDBHelper.MakeParam("@Stock", SqlDbType.Decimal, 0, producto.Stock),
+                       FDBHelper.MakeParam("@Stock", SqlDbType.Int, 0, producto.Stock),
                        FDBHelper.MakeParam("@PrecioCompra", SqlDbType.Decimal, 0, producto.PrecioCompra),
                       FDBHelper.MakeParam("@PrecioVenta", SqlDbType.Decimal, 0, producto.PrecioVenta),
                        FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.DateTime, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
+                       FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FProducto_Actualizar", dbParams));
 
