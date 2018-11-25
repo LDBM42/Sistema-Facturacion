@@ -346,6 +346,15 @@
     <None Include="Resources\ISOTIPO MEF srl.png" />
     <None Include="Resources\close_gray.png" />
     <None Include="Resources\minimize_gray.png" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO1.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black1.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black2.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black3.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black4.gif" />
+    <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black5.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

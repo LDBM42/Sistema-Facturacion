@@ -121,8 +121,11 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToInt32(text_Stock.Text);
-                        producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        if (Servicios == 0)
+                        {
+                            producto.Stock = Convert.ToInt32(text_Stock.Text);
+                            producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        }
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
                         producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
@@ -228,6 +231,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (dgvProductos.CurrentRow != null)
             {
 
@@ -340,7 +344,6 @@ namespace Sistema_de_Venta.Presentacion
 
         public void MostrarGuardarCancelar(bool b)
         {
-
             Guardar.Visible = b;
             Cancelar.Visible = b;
             Nuevo.Visible = !b;
@@ -367,11 +370,7 @@ namespace Sistema_de_Venta.Presentacion
             text_PrecioCompra.Enabled = !b;
             text_PrecioVenta.Enabled = !b;
             text_Stock.Enabled = !b;
-            text_Stock.Enabled = !b;
             text_FechadeVencimiento.Enabled = !b;
-
-
-
         }
 
         public void ProdServ(bool producto)
@@ -402,13 +401,13 @@ namespace Sistema_de_Venta.Presentacion
         {
             text_Id.Clear();
             text_Categoria.Clear();
+            text_CategoriaDescripcion.Clear();
             text_Nombre.Clear();
             text_Descripcion.Clear();
             text_PrecioVenta.Clear();
 
             if(Servicios == 0)
             {
-                text_CategoriaDescripcion.Clear();
                 text_PrecioCompra.Clear();
                 text_Stock.Clear();
                 text_Stock.Clear();
@@ -475,6 +474,7 @@ namespace Sistema_de_Venta.Presentacion
                 text_CategoriaDescripcion.Text = FRMCate.descripcion;
             }
         }
+
 
         private void Buscar_TextChanged(object sender, EventArgs e)
         {

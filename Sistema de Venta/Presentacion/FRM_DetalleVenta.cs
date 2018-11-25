@@ -82,10 +82,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (sresultado == "")
                 {
-
                     DetalleVenta Dventa = new DetalleVenta();
-
-
 
                     Dventa.Venta.Id = Convert.ToInt32(textVentaId.Text);
                     Dventa.Producto.Id = Convert.ToInt32(text_ProductoId.Text);
