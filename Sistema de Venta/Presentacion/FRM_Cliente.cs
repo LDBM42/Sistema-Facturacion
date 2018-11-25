@@ -2,6 +2,7 @@
 using SistemaVentas.Datos;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -49,6 +50,9 @@ namespace Sistema_de_Venta.Presentacion
         {
             CMB_Buscar.Text = "Nombre";
 
+            if (cbx_FiscalConsumo.Text == null)
+                cbx_FiscalConsumo.Text = "Consumidor Final";
+
             try
 
             {
@@ -56,16 +60,14 @@ namespace Sistema_de_Venta.Presentacion
                 dt = ds.Tables[0];
                 dgvClientes.DataSource = dt;
 
+
                 if (dt.Rows.Count > 0)
-
                 {
-
                     noencontrado.Visible = false;
                     dgvClientes_CellClick(null, null);
                 }
                 else
                 {
-
                     noencontrado.Visible = true;
                 }
             }
@@ -74,6 +76,7 @@ namespace Sistema_de_Venta.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
             MostrarGuardarCancelar(false);
+            cbx_FiscalConsumo.Enabled = false;
 
         }
 
@@ -95,10 +98,23 @@ namespace Sistema_de_Venta.Presentacion
 
                         Cliente cliente = new Cliente();
                         cliente.Nombre = text_Nombre .Text;
-                        cliente.Apellido = text_Apellido.Text;
                         cliente.Domicilio = text_Domicilio.Text;
                         cliente.Ncf = Convert.ToInt32(text_NCF.Text);
                         cliente.Telefono = text_Telefono.Text;
+                        cliente.TipoCliente = cbx_FiscalConsumo.Text;
+
+                        if (cbx_FiscalConsumo.Text != "Crédito Fiscal")
+                        {
+                            cliente.Apellido = text_Apellido.Text;
+                            cliente.Rnc = 0;
+                            cliente.NoRSocial = "NA";
+                        }
+                        else
+                        {
+                            cliente.Apellido = "NA";
+                            cliente.Rnc = Convert.ToInt32(tbx_RNC.Text);
+                            cliente.NoRSocial = tbx_NoRSocial.Text;
+                        }
 
                         //esta en una variable para luego llamarla "idcliente"
                         int idcliente = FClientes.Insertar(cliente);
@@ -116,18 +132,30 @@ namespace Sistema_de_Venta.Presentacion
 
                     else
                     {
-
                         Cliente cliente = new Cliente();
                         cliente.Id = Convert.ToInt32(text_Id.Text);
                         cliente.Nombre = text_Nombre.Text;
-                        cliente.Apellido = text_Apellido.Text;
                         cliente.Domicilio = text_Domicilio.Text;
                         cliente.Ncf = Convert.ToInt32(text_NCF.Text);
                         cliente.Telefono = text_Telefono.Text;
-
-                        if (FClientes.Actualizar(cliente) == 1)
+                        cliente.TipoCliente = cbx_FiscalConsumo.Text;
+                        if (cbx_FiscalConsumo.Text != "Crédito Fiscal")
                         {
+                            cliente.Apellido = text_Apellido.Text;
+                            cliente.Rnc = 0;
+                            cliente.NoRSocial = "NA";
+                        }
+                        else
+                        {
+                            cliente.Apellido = "NA";
+                            cliente.Rnc = Convert.ToInt32(tbx_RNC.Text);
+                            cliente.NoRSocial = tbx_NoRSocial.Text;
+                        }
 
+
+                        int idcliente = FClientes.Actualizar(cliente);
+                        if (idcliente > 0)
+                        {
                             MessageBox.Show("Datos Modificados correctamente");
                             FRM_Cliente_Load(null, null);
                         }
@@ -156,7 +184,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 Resultado = Resultado + " Nombre \n";
             }
-            if (text_Apellido.Text == "")
+            if (text_Apellido.Text == "" && cbx_FiscalConsumo.Text != "Crédito Fiscal")
             {
                 Resultado = Resultado + " Apellido \n";
             }
@@ -167,6 +195,7 @@ namespace Sistema_de_Venta.Presentacion
         private void Nuevo_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+            cbx_FiscalConsumo.Enabled = true;
             //para que me muestre la columna eliminar 
             Eliminar.Visible = true;
             limpiar();
@@ -176,7 +205,6 @@ namespace Sistema_de_Venta.Presentacion
 
         public void MostrarGuardarCancelar(bool b)
         {
-
             Guardar.Visible = b;
             Cancelar.Visible = b;
             Nuevo.Visible = !b;
@@ -190,12 +218,14 @@ namespace Sistema_de_Venta.Presentacion
             text_Telefono.Enabled = b;
             text_NCF.Enabled = b;
             text_Domicilio.Enabled = b;
-
+            tbx_RNC.Enabled = b;
+            tbx_NoRSocial.Enabled = b;
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+            cbx_FiscalConsumo.Enabled = false;
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -219,6 +249,7 @@ namespace Sistema_de_Venta.Presentacion
         private void Cancelar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(false);
+            cbx_FiscalConsumo.Enabled = false;
             dgvClientes_CellClick(null, null);
 
         }
@@ -234,6 +265,10 @@ namespace Sistema_de_Venta.Presentacion
                 text_Telefono.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
                 text_NCF.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
                 text_Domicilio.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
+                cbx_FiscalConsumo.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
+                // total articulos comprados es el 8
+                tbx_RNC.Text = dgvClientes.CurrentRow.Cells[9].Value.ToString();
+                tbx_NoRSocial.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
             }
         }
 
@@ -245,6 +280,9 @@ namespace Sistema_de_Venta.Presentacion
             text_Domicilio.Clear();
             text_NCF.Clear();
             text_Telefono.Clear();
+            tbx_RNC.Clear();
+            tbx_NoRSocial.Clear();
+
         }
 
         private void BT_liminar_Click(object sender, EventArgs e)
@@ -363,6 +401,42 @@ namespace Sistema_de_Venta.Presentacion
                 }
             }
         }
+
+        private void cbx_FiscalConsumo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbx_FiscalConsumo.Text == "Crédito Fiscal")
+            {
+                FiscalConsumo_Mostrar(false);
+                PosicionBotones(119, 249, 390);
+            }
+            else
+            {
+                FiscalConsumo_Mostrar(true);
+                PosicionBotones(119, 249, 306);
+            }
+        }
+
+        public void PosicionBotones(int x1, int x2, int y)
+        {
+            Nuevo.Location = new Point(x1, y);
+            Guardar.Location = new Point(x1, y);
+            Cancelar.Location = new Point(x2, y);
+            Editar.Location = new Point(x2, y);
+        }
+
+        public void FiscalConsumo_Mostrar(bool visible)
+        {
+            lab_Apellido.Visible = visible;
+            text_Apellido.Visible = visible;
+            
+            lab_InfReceptor.Visible = !visible;
+            lab_RNC.Visible = !visible;
+            lab_NoRSocial.Visible = !visible;
+            tbx_RNC.Visible = !visible;
+            tbx_NoRSocial.Visible = !visible;
+
+        }
+
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {

@@ -63,16 +63,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_carro {
-            get {
-                object obj = ResourceManager.GetObject("add_carro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap adduser_añadir_3553 {
             get {
                 object obj = ResourceManager.GetObject("adduser_añadir_3553", resourceCulture);
@@ -126,26 +116,6 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap AgregarP {
             get {
                 object obj = ResourceManager.GetObject("AgregarP", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap box {
-            get {
-                object obj = ResourceManager.GetObject("box", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cart_png_pic_png_image_512 {
-            get {
-                object obj = ResourceManager.GetObject("cart-png-pic-png-image-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,16 +183,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loading_2 {
-            get {
-                object obj = ResourceManager.GetObject("loading-2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
@@ -253,6 +213,16 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MiEmpresaFicticiaLOGO___GIF_ANIMADO__peq__fondo_black3 {
+            get {
+                object obj = ResourceManager.GetObject("MiEmpresaFicticiaLOGO---GIF-ANIMADO-(peq)-fondo-black3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MiEmpresaFicticiaLOGO__peq_ {
             get {
                 object obj = ResourceManager.GetObject("MiEmpresaFicticiaLOGO (peq)", resourceCulture);
@@ -266,16 +236,6 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap minimize_gray {
             get {
                 object obj = ResourceManager.GetObject("minimize_gray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Print_icon_icons_com_73705 {
-            get {
-                object obj = ResourceManager.GetObject("Print_icon-icons.com_73705", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

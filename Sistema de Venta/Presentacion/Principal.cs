@@ -364,10 +364,5 @@ namespace Sistema_de_Venta
             FRM_Auditoria auditor = new FRM_Auditoria();
             auditor.Show(this);
         }
-
-        private void pbx_Logo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

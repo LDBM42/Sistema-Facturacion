@@ -99,7 +99,7 @@
             this.noencontrado.AutoSize = true;
             this.noencontrado.BackColor = System.Drawing.Color.Transparent;
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(334, 311);
+            this.noencontrado.Location = new System.Drawing.Point(297, 315);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
             this.noencontrado.Size = new System.Drawing.Size(293, 25);
@@ -499,10 +499,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbx_Servicios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbx_Servicios.Image = global::Sistema_de_Venta.Properties.Resources.ServiciosBig;
-            this.pbx_Servicios.Location = new System.Drawing.Point(204, 499);
+            this.pbx_Servicios.Location = new System.Drawing.Point(204, 304);
             this.pbx_Servicios.Margin = new System.Windows.Forms.Padding(4);
             this.pbx_Servicios.Name = "pbx_Servicios";
-            this.pbx_Servicios.Size = new System.Drawing.Size(100, 100);
+            this.pbx_Servicios.Size = new System.Drawing.Size(100, 295);
             this.pbx_Servicios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Servicios.TabIndex = 23;
             this.pbx_Servicios.TabStop = false;

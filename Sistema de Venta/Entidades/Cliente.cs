@@ -51,6 +51,45 @@ namespace Sistema_de_Venta.Entidades
             set { _ncf = value; }
         }
 
+        private string _tipoCliente;
+
+        public string TipoCliente
+        {
+            get { return _tipoCliente; }
+            set { _tipoCliente = value; }
+        }
+
+        private int _totalArtComprados;
+
+        public int TotalArtComprados
+        {
+            get { return _totalArtComprados; }
+            set { _totalArtComprados = value; }
+        }
+
+        //Crédito Fiscal
+        private int _rnc;
+
+        public int Rnc
+        {
+            get { return _rnc; }
+            set { _rnc = value; }
+        }
+
+        private string _noRSocial;
+
+        public string NoRSocial
+        {
+            get { return _noRSocial; }
+            set { _noRSocial = value; }
+        }
+
+
+
+
+
+
+
         public Cliente()
         {
 
