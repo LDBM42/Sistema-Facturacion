@@ -208,7 +208,6 @@
     <EmbeddedResource Include="Reportes\FRM_ReporteVenta.resx">
       <DependentUpon>FRM_ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RptReporteVenta - Consumidor.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteVenta.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet2.xsc">
