@@ -34,7 +34,6 @@
             this.Buscar = new System.Windows.Forms.TextBox();
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.text_FechadeVencimiento = new System.Windows.Forms.DateTimePicker();
             this.text_Nombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,17 +60,20 @@
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_Lista_Productos = new System.Windows.Forms.Panel();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.pbx_Servicios = new System.Windows.Forms.PictureBox();
             this.pbx_Productos = new System.Windows.Forms.PictureBox();
-            this.pnl_Lista_Productos = new System.Windows.Forms.Panel();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Favorito = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnl_Lista_Productos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).BeginInit();
-            this.pnl_Lista_Productos.SuspendLayout();
             this.SuspendLayout();
             // 
             // BT_liminar
@@ -148,7 +150,8 @@
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
+            this.Eliminar,
+            this.Favorito});
             this.dgvProductos.Location = new System.Drawing.Point(42, 102);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
@@ -160,13 +163,7 @@
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProductos_CellFormatting);
             // 
             // text_FechadeVencimiento
             // 
@@ -176,6 +173,7 @@
             this.text_FechadeVencimiento.Name = "text_FechadeVencimiento";
             this.text_FechadeVencimiento.Size = new System.Drawing.Size(91, 30);
             this.text_FechadeVencimiento.TabIndex = 21;
+            this.text_FechadeVencimiento.Value = new System.DateTime(2018, 12, 24, 22, 45, 0, 0);
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
             // 
             // text_Nombre
@@ -481,6 +479,37 @@
             this.panel2.Size = new System.Drawing.Size(513, 640);
             this.panel2.TabIndex = 22;
             // 
+            // pnl_Lista_Productos
+            // 
+            this.pnl_Lista_Productos.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Productos.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Productos.Controls.Add(this.dgvProductos);
+            this.pnl_Lista_Productos.Controls.Add(this.BT_liminar);
+            this.pnl_Lista_Productos.Controls.Add(this.Buscar);
+            this.pnl_Lista_Productos.Controls.Add(this.pnl_Lista_Categoria);
+            this.pnl_Lista_Productos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Productos.Location = new System.Drawing.Point(513, 0);
+            this.pnl_Lista_Productos.Name = "pnl_Lista_Productos";
+            this.pnl_Lista_Productos.Size = new System.Drawing.Size(885, 640);
+            this.pnl_Lista_Productos.TabIndex = 26;
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(885, 640);
+            this.pnl_Lista_Categoria.TabIndex = 17;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Favorito";
+            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff1;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 391;
+            // 
             // Imagen
             // 
             this.Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -523,27 +552,20 @@
             this.pbx_Productos.TabIndex = 22;
             this.pbx_Productos.TabStop = false;
             // 
-            // pnl_Lista_Productos
+            // Eliminar
             // 
-            this.pnl_Lista_Productos.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Productos.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Productos.Controls.Add(this.dgvProductos);
-            this.pnl_Lista_Productos.Controls.Add(this.BT_liminar);
-            this.pnl_Lista_Productos.Controls.Add(this.Buscar);
-            this.pnl_Lista_Productos.Controls.Add(this.pnl_Lista_Categoria);
-            this.pnl_Lista_Productos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Productos.Location = new System.Drawing.Point(513, 0);
-            this.pnl_Lista_Productos.Name = "pnl_Lista_Productos";
-            this.pnl_Lista_Productos.Size = new System.Drawing.Size(885, 640);
-            this.pnl_Lista_Productos.TabIndex = 26;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // pnl_Lista_Categoria
+            // Favorito
             // 
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(885, 640);
-            this.pnl_Lista_Categoria.TabIndex = 17;
+            this.Favorito.HeaderText = "Favorito";
+            this.Favorito.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
+            this.Favorito.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Favorito.Name = "Favorito";
+            this.Favorito.ReadOnly = true;
             // 
             // FRM_Producto
             // 
@@ -564,11 +586,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnl_Lista_Productos.ResumeLayout(false);
+            this.pnl_Lista_Productos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Servicios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Productos)).EndInit();
-            this.pnl_Lista_Productos.ResumeLayout(false);
-            this.pnl_Lista_Productos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -605,11 +627,13 @@
         private System.Windows.Forms.OpenFileDialog dialogo;
         private System.Windows.Forms.TextBox text_Flag;
         private System.Windows.Forms.Button btn_Cerrar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl_Lista_Productos;
         public System.Windows.Forms.PictureBox pbx_Productos;
         public System.Windows.Forms.PictureBox pbx_Servicios;
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn Favorito;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

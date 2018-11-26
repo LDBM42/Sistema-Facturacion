@@ -245,7 +245,7 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
                     text_PrecioCompra.Text = dgvProductos.CurrentRow.Cells["Compra"].Value.ToString();
-                    text_FechadeVencimiento.Text = dgvProductos.CurrentRow.Cells["Venc."].Value.ToString();
+                    text_FechadeVencimiento.Value = Convert.ToDateTime(dgvProductos.CurrentRow.Cells["Venc."].Value);
 
 
                     Imagen.BackgroundImage = null;
@@ -475,6 +475,15 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
+        private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // para activar los favoritos
+            if (this.dgvProductos.Columns[e.ColumnIndex].Index == 1)
+            {
+                if (Convert.ToInt32(this.dgvProductos.Rows[e.RowIndex].Cells["Vendidos"].Value) >= 3)
+                    e.Value = Properties.Resources.FavoriteOn;
+            }
+        }
 
         private void Buscar_TextChanged(object sender, EventArgs e)
         {

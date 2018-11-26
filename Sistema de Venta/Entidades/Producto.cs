@@ -58,7 +58,7 @@ namespace Sistema_de_Venta.Entidades
             set { _precioVenta = value; }
         }
         private DateTime _fechaVencimiento;
-
+        
         public DateTime FechaVencimiento
         {
             get { return _fechaVencimiento; }

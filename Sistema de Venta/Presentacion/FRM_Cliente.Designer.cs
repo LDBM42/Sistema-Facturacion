@@ -48,19 +48,21 @@
             this.Buscar = new System.Windows.Forms.TextBox();
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbx_FiscalConsumo = new System.Windows.Forms.ComboBox();
+            this.lab_InfReceptor = new System.Windows.Forms.Label();
             this.lab_RNC = new System.Windows.Forms.Label();
             this.lab_NoRSocial = new System.Windows.Forms.Label();
             this.tbx_RNC = new System.Windows.Forms.TextBox();
             this.tbx_NoRSocial = new System.Windows.Forms.TextBox();
-            this.lab_InfReceptor = new System.Windows.Forms.Label();
+            this.cbx_FiscalConsumo = new System.Windows.Forms.ComboBox();
             this.Guardar = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Favorite = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -292,7 +294,8 @@
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
+            this.Eliminar,
+            this.Favorite});
             this.dgvClientes.Location = new System.Drawing.Point(43, 105);
             this.dgvClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvClientes.Name = "dgvClientes";
@@ -304,12 +307,7 @@
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
             // 
             // text_Flag
             // 
@@ -385,22 +383,17 @@
             this.panel2.Size = new System.Drawing.Size(405, 660);
             this.panel2.TabIndex = 1;
             // 
-            // cbx_FiscalConsumo
+            // lab_InfReceptor
             // 
-            this.cbx_FiscalConsumo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
-            this.cbx_FiscalConsumo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiscalConsumo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbx_FiscalConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_FiscalConsumo.ForeColor = System.Drawing.Color.White;
-            this.cbx_FiscalConsumo.FormattingEnabled = true;
-            this.cbx_FiscalConsumo.Items.AddRange(new object[] {
-            "Consumidor Final",
-            "Crédito Fiscal"});
-            this.cbx_FiscalConsumo.Location = new System.Drawing.Point(119, 68);
-            this.cbx_FiscalConsumo.Name = "cbx_FiscalConsumo";
-            this.cbx_FiscalConsumo.Size = new System.Drawing.Size(247, 33);
-            this.cbx_FiscalConsumo.TabIndex = 21;
-            this.cbx_FiscalConsumo.SelectedValueChanged += new System.EventHandler(this.cbx_FiscalConsumo_SelectedValueChanged);
+            this.lab_InfReceptor.AutoSize = true;
+            this.lab_InfReceptor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_InfReceptor.ForeColor = System.Drawing.Color.White;
+            this.lab_InfReceptor.Location = new System.Drawing.Point(119, 273);
+            this.lab_InfReceptor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_InfReceptor.Name = "lab_InfReceptor";
+            this.lab_InfReceptor.Size = new System.Drawing.Size(275, 25);
+            this.lab_InfReceptor.TabIndex = 26;
+            this.lab_InfReceptor.Text = "Información del Receptor";
             // 
             // lab_RNC
             // 
@@ -439,17 +432,22 @@
             this.tbx_NoRSocial.Size = new System.Drawing.Size(247, 31);
             this.tbx_NoRSocial.TabIndex = 25;
             // 
-            // lab_InfReceptor
+            // cbx_FiscalConsumo
             // 
-            this.lab_InfReceptor.AutoSize = true;
-            this.lab_InfReceptor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_InfReceptor.ForeColor = System.Drawing.Color.White;
-            this.lab_InfReceptor.Location = new System.Drawing.Point(119, 273);
-            this.lab_InfReceptor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lab_InfReceptor.Name = "lab_InfReceptor";
-            this.lab_InfReceptor.Size = new System.Drawing.Size(275, 25);
-            this.lab_InfReceptor.TabIndex = 26;
-            this.lab_InfReceptor.Text = "Información del Receptor";
+            this.cbx_FiscalConsumo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.cbx_FiscalConsumo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiscalConsumo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_FiscalConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_FiscalConsumo.ForeColor = System.Drawing.Color.White;
+            this.cbx_FiscalConsumo.FormattingEnabled = true;
+            this.cbx_FiscalConsumo.Items.AddRange(new object[] {
+            "Consumidor Final",
+            "Crédito Fiscal"});
+            this.cbx_FiscalConsumo.Location = new System.Drawing.Point(119, 68);
+            this.cbx_FiscalConsumo.Name = "cbx_FiscalConsumo";
+            this.cbx_FiscalConsumo.Size = new System.Drawing.Size(247, 33);
+            this.cbx_FiscalConsumo.TabIndex = 21;
+            this.cbx_FiscalConsumo.SelectedValueChanged += new System.EventHandler(this.cbx_FiscalConsumo_SelectedValueChanged);
             // 
             // Guardar
             // 
@@ -465,6 +463,15 @@
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Favorite";
+            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 443;
+            // 
             // pbx_Ventas
             // 
             this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -478,6 +485,20 @@
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Ventas.TabIndex = 19;
             this.pbx_Ventas.TabStop = false;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // Favorite
+            // 
+            this.Favorite.HeaderText = "Favorito";
+            this.Favorite.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
+            this.Favorite.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Favorite.Name = "Favorite";
+            this.Favorite.ReadOnly = true;
             // 
             // FRM_Cliente
             // 
@@ -528,7 +549,6 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.PictureBox pbx_Ventas;
         private System.Windows.Forms.ComboBox cbx_FiscalConsumo;
         private System.Windows.Forms.Label lab_RNC;
@@ -537,5 +557,8 @@
         private System.Windows.Forms.TextBox tbx_NoRSocial;
         private System.Windows.Forms.Label lab_InfReceptor;
         private System.Windows.Forms.Button Guardar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn Favorite;
     }
 }

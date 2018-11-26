@@ -34,7 +34,7 @@ namespace Sistema_de_Venta.Datos
                        FDBHelper.MakeParam("@Stock", SqlDbType.Int, 0, producto.Stock),
                        FDBHelper.MakeParam("@PrecioCompra", SqlDbType.Decimal, 0, producto.PrecioCompra),
                       FDBHelper.MakeParam("@PrecioVenta", SqlDbType.Decimal, 0, producto.PrecioVenta),
-                       FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.DateTime, 0, producto.FechaVencimiento),
+                       FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.Date, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
                        FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
 
@@ -54,7 +54,7 @@ namespace Sistema_de_Venta.Datos
                        FDBHelper.MakeParam("@Stock", SqlDbType.Int, 0, producto.Stock),
                        FDBHelper.MakeParam("@PrecioCompra", SqlDbType.Decimal, 0, producto.PrecioCompra),
                       FDBHelper.MakeParam("@PrecioVenta", SqlDbType.Decimal, 0, producto.PrecioVenta),
-                       FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.DateTime, 0, producto.FechaVencimiento),
+                       FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.Date, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
                        FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
                 };

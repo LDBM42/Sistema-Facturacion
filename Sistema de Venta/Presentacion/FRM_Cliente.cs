@@ -259,16 +259,16 @@ namespace Sistema_de_Venta.Presentacion
             if (dgvClientes.CurrentRow != null)
             {
 
-                text_Id.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                text_Nombre.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
-                text_Apellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
-                text_Telefono.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
-                text_NCF.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
-                text_Domicilio.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
-                cbx_FiscalConsumo.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
-                // total articulos comprados es el 8
-                tbx_RNC.Text = dgvClientes.CurrentRow.Cells[9].Value.ToString();
-                tbx_NoRSocial.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
+                text_Id.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                text_Nombre.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
+                text_Apellido.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
+                text_Telefono.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
+                text_NCF.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
+                text_Domicilio.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
+                cbx_FiscalConsumo.Text = dgvClientes.CurrentRow.Cells[8].Value.ToString();
+                // total articulos comprados es el 9
+                tbx_RNC.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
+                tbx_NoRSocial.Text = dgvClientes.CurrentRow.Cells[11].Value.ToString();
             }
         }
 
@@ -395,8 +395,8 @@ namespace Sistema_de_Venta.Presentacion
             {
                 if (dgvClientes.CurrentRow != null)
                 {
-                    idCliente = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                    nombreCliente = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                    idCliente = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                    nombreCliente = dgvClientes.CurrentRow.Cells[3].Value.ToString();
                     this.DialogResult = DialogResult.OK; //terminar
                 }
             }
@@ -437,6 +437,22 @@ namespace Sistema_de_Venta.Presentacion
 
         }
 
+        private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+
+            // para activar los favoritos
+            if (this.dgvClientes.Columns[e.ColumnIndex].Index == 1)
+            {
+                //e.CellStyle.BackColor = Color.FromArgb(255, 142, 188, 229);
+
+                if (Convert.ToInt32(this.dgvClientes.Rows[e.RowIndex].Cells["Total Arts. Comprados"].Value) >= 3)
+                {
+                    e.Value = Properties.Resources.FavoriteOn;
+                }
+            }
+            
+        }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
