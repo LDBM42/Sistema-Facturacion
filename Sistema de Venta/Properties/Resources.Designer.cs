@@ -153,6 +153,16 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_gray1 {
+            get {
+                object obj = ResourceManager.GetObject("close_gray1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FavoriteOff {
             get {
                 object obj = ResourceManager.GetObject("FavoriteOff", resourceCulture);
@@ -276,6 +286,16 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap minimize_gray {
             get {
                 object obj = ResourceManager.GetObject("minimize_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize_gray1 {
+            get {
+                object obj = ResourceManager.GetObject("minimize_gray1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

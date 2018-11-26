@@ -359,6 +359,8 @@
     <None Include="Resources\FavoriteOff.png" />
     <None Include="Resources\FavoriteOff1.png" />
     <None Include="Resources\FavoriteOff2.png" />
+    <None Include="Resources\close_gray1.png" />
+    <None Include="Resources\minimize_gray1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
