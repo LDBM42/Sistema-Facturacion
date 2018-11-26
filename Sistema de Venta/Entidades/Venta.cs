@@ -26,9 +26,9 @@ namespace Sistema_de_Venta.Entidades
             get { return _fechaVenta; }
             set { _fechaVenta = value; }
         }
-        private string _numeroDocumento;
+        private int _numeroDocumento;
 
-        public string NumeroDocumento
+        public int NumeroDocumento
         {
             get { return _numeroDocumento; }
             set { _numeroDocumento = value; }

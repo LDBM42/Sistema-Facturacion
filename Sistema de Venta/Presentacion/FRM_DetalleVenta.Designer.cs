@@ -58,9 +58,9 @@
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbx_ProdSer = new System.Windows.Forms.ComboBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Cantidad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -160,7 +160,7 @@
             this.noencontrado.Location = new System.Drawing.Point(395, 303);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(263, 22);
+            this.noencontrado.Size = new System.Drawing.Size(293, 25);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -182,7 +182,7 @@
             this.dgvVentas.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -213,7 +213,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 68);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(727, 28);
+            this.Buscar.Size = new System.Drawing.Size(727, 30);
             this.Buscar.TabIndex = 22;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -229,7 +229,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 68);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 30);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 33);
             this.CMB_Buscar.TabIndex = 21;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -439,6 +439,19 @@
             this.cbx_ProdSer.TabIndex = 22;
             this.cbx_ProdSer.SelectedIndexChanged += new System.EventHandler(this.cbx_ProdSer_SelectedIndexChanged);
             // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.btnQuitar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(461, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(983, 608);
+            this.pnl_Lista_Categoria.TabIndex = 25;
+            // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -479,19 +492,6 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.btnQuitar);
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(461, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(983, 608);
-            this.pnl_Lista_Categoria.TabIndex = 25;
-            // 
             // FRM_DetalleVenta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -499,7 +499,7 @@
             this.ClientSize = new System.Drawing.Size(1444, 608);
             this.Controls.Add(this.pnl_Lista_Categoria);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
