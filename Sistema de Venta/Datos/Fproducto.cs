@@ -37,6 +37,7 @@ namespace Sistema_de_Venta.Datos
                        FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.Date, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
                        FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
+                       FDBHelper.MakeParam("@Itbis", SqlDbType.Int, 0, producto.Itbis)
 
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FProducto_Insertar", dbParams));
@@ -57,6 +58,7 @@ namespace Sistema_de_Venta.Datos
                        FDBHelper.MakeParam("@FechaVencimiento", SqlDbType.Date, 0, producto.FechaVencimiento),
                        FDBHelper.MakeParam("@Imagen", SqlDbType.Image, 0, producto.Imagen),
                        FDBHelper.MakeParam("@ProdServ", SqlDbType.VarChar, 0, producto.ProdServ),
+                       FDBHelper.MakeParam("@Itbis", SqlDbType.Int, 0, producto.Itbis)
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FProducto_Actualizar", dbParams));
 
