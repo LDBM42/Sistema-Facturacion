@@ -355,6 +355,10 @@
     <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black3.gif" />
     <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black4.gif" />
     <None Include="Resources\MiEmpresaFicticiaLOGO---GIF-ANIMADO-%28peq%29-fondo-black5.gif" />
+    <None Include="Resources\FavoriteOn.png" />
+    <None Include="Resources\FavoriteOff.png" />
+    <None Include="Resources\FavoriteOff1.png" />
+    <None Include="Resources\FavoriteOff2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

@@ -192,9 +192,6 @@ namespace Sistema_de_Venta.Presentacion
                 if (MessageBox.Show("Esta seguro de eliminar los productos seleccionados?", "Eliminacion de Producto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
 
-
-
-
                     foreach (DataGridViewRow row in dgvVentas.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
