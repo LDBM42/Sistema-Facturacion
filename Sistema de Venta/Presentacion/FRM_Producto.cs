@@ -489,6 +489,15 @@ namespace Sistema_de_Venta.Presentacion
                 if (Convert.ToInt32(this.dgvProductos.Rows[e.RowIndex].Cells["Vendidos"].Value) >= 3)
                     e.Value = Properties.Resources.FavoriteOn;
             }
+
+            if (this.dgvProductos.Columns[e.ColumnIndex].Name == "Venc.")
+            {
+                if (Convert.ToDateTime(e.Value) <= DateTime.Now)
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)

@@ -95,11 +95,11 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     if (text_Id.Text == "")
                     {
-
                         Cliente cliente = new Cliente();
                         cliente.Nombre = text_Nombre .Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
+                        cliente.Ncf = text_NCF.Text;
+                        cliente.VencimientoSecuencia = text_VencimientoSecuencia.Value;
                         cliente.Telefono = text_Telefono.Text;
                         cliente.TipoCliente = cbx_FiscalConsumo.Text;
 
@@ -136,7 +136,8 @@ namespace Sistema_de_Venta.Presentacion
                         cliente.Id = Convert.ToInt32(text_Id.Text);
                         cliente.Nombre = text_Nombre.Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
+                        cliente.Ncf = text_NCF.Text;
+                        cliente.VencimientoSecuencia = text_VencimientoSecuencia.Value;
                         cliente.Telefono = text_Telefono.Text;
                         cliente.TipoCliente = cbx_FiscalConsumo.Text;
                         if (cbx_FiscalConsumo.Text != "Crédito Fiscal")
@@ -217,6 +218,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Apellido.Enabled = b;
             text_Telefono.Enabled = b;
             text_NCF.Enabled = b;
+            text_VencimientoSecuencia.Enabled = b;
             text_Domicilio.Enabled = b;
             tbx_RNC.Enabled = b;
             tbx_NoRSocial.Enabled = b;
@@ -269,6 +271,7 @@ namespace Sistema_de_Venta.Presentacion
                 // total articulos comprados es el 9
                 tbx_RNC.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
                 tbx_NoRSocial.Text = dgvClientes.CurrentRow.Cells[11].Value.ToString();
+                text_VencimientoSecuencia.Value = Convert.ToDateTime(dgvClientes.CurrentRow.Cells[12].Value);
             }
         }
 
@@ -407,12 +410,12 @@ namespace Sistema_de_Venta.Presentacion
             if (cbx_FiscalConsumo.Text == "Crédito Fiscal")
             {
                 FiscalConsumo_Mostrar(false);
-                PosicionBotones(119, 249, 390);
+                PosicionBotones(119, 249, 423);
             }
             else
             {
                 FiscalConsumo_Mostrar(true);
-                PosicionBotones(119, 249, 306);
+                PosicionBotones(119, 249, 342);
             }
         }
 
@@ -439,7 +442,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+
 
             // para activar los favoritos
             if (this.dgvClientes.Columns[e.ColumnIndex].Index == 1)
@@ -451,7 +454,27 @@ namespace Sistema_de_Venta.Presentacion
                     e.Value = Properties.Resources.FavoriteOn;
                 }
             }
-            
+
+            if (this.dgvClientes.Columns[e.ColumnIndex].Name == "Válida hasta")
+            {
+                if (Convert.ToDateTime(e.Value) <= DateTime.Now)
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void text_VencimientoSecuencia_ValueChanged(object sender, EventArgs e)
+        {
+            if (ActiveControl == text_VencimientoSecuencia)
+            {
+                if (text_VencimientoSecuencia.Value <= DateTime.Now && text_VencimientoSecuencia.Enabled)
+                {
+                    MessageBox.Show("La fecha de vencimiento de la secuencia no puede ser menor o igual a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    text_VencimientoSecuencia.Value = DateTime.Now.AddDays(1); // Coloca la fecha de hoy más uno
+                }
+            }
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)

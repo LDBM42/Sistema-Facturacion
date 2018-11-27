@@ -43,9 +43,9 @@ namespace Sistema_de_Venta.Entidades
             get { return _telefono; }
             set { _telefono = value; }
         }
-        private int _ncf;
+        private string _ncf;
 
-        public int Ncf
+        public string Ncf
         {
             get { return _ncf; }
             set { _ncf = value; }
@@ -66,6 +66,15 @@ namespace Sistema_de_Venta.Entidades
             get { return _totalArtComprados; }
             set { _totalArtComprados = value; }
         }
+
+        private DateTime _vencimientoSecuencia;
+
+        public DateTime VencimientoSecuencia
+        {
+            get { return _vencimientoSecuencia; }
+            set { _vencimientoSecuencia = value; }
+        }
+        
 
         //Crédito Fiscal
         private int _rnc;
@@ -94,7 +103,7 @@ namespace Sistema_de_Venta.Entidades
         {
 
         }
-        public Cliente (int id, string nombre, string apellido, string domicilio, string telefono, int ncf)
+        public Cliente (int id, string nombre, string apellido, string domicilio, string telefono, string ncf, string vencimientoSecuencia)
         {
             this._id = id;
             this._nombre = nombre;
@@ -102,6 +111,7 @@ namespace Sistema_de_Venta.Entidades
             this._domicilio = domicilio;
             this._telefono = telefono;
             this._ncf = ncf;
+            this._vencimientoSecuencia = VencimientoSecuencia;
         }
 
     }
