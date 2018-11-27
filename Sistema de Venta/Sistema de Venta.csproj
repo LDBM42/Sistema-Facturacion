@@ -362,8 +362,11 @@
     <None Include="Resources\FavoriteOff2.png" />
     <None Include="Resources\close_gray1.png" />
     <None Include="Resources\minimize_gray1.png" />
+<<<<<<< HEAD
     <None Include="Resources\close_white.png" />
     <None Include="Resources\minimize_white.png" />
+=======
+>>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

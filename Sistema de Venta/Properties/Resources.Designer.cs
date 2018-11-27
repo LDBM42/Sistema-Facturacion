@@ -163,6 +163,7 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap close_white {
             get {
                 object obj = ResourceManager.GetObject("close_white", resourceCulture);
@@ -173,6 +174,8 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
         internal static System.Drawing.Bitmap FavoriteOff {
             get {
                 object obj = ResourceManager.GetObject("FavoriteOff", resourceCulture);
@@ -313,6 +316,7 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap minimize_white {
             get {
                 object obj = ResourceManager.GetObject("minimize_white", resourceCulture);
@@ -323,6 +327,8 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
         internal static System.Drawing.Bitmap printer_78936 {
             get {
                 object obj = ResourceManager.GetObject("printer_78936", resourceCulture);
