@@ -163,7 +163,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap close_white {
             get {
                 object obj = ResourceManager.GetObject("close_white", resourceCulture);
@@ -174,8 +173,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-=======
->>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
         internal static System.Drawing.Bitmap FavoriteOff {
             get {
                 object obj = ResourceManager.GetObject("FavoriteOff", resourceCulture);
@@ -316,7 +313,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap minimize_white {
             get {
                 object obj = ResourceManager.GetObject("minimize_white", resourceCulture);
@@ -327,8 +323,6 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-=======
->>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
         internal static System.Drawing.Bitmap printer_78936 {
             get {
                 object obj = ResourceManager.GetObject("printer_78936", resourceCulture);
@@ -372,16 +366,6 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap Reporte1 {
             get {
                 object obj = ResourceManager.GetObject("Reporte1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Reporte2 {
-            get {
-                object obj = ResourceManager.GetObject("Reporte2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

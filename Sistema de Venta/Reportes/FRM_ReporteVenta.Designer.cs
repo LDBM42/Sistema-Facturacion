@@ -64,19 +64,12 @@
             reportDataSource1.Value = this.usp_Reportes_GenrerarReporteVentaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sistema_de_Venta.Reportes.RptReporteVenta.rdlc";
-<<<<<<< HEAD
+
             this.reportViewer1.Location = new System.Drawing.Point(0, 58);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1095, 942);
-=======
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1095, 1000);
->>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
             this.reportViewer1.TabIndex = 0;
             // 
             // usp_Reportes_GenrerarReporteVentaTableAdapter
@@ -87,13 +80,10 @@
             // 
             this.txtVentaId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
+
             this.txtVentaId.Location = new System.Drawing.Point(36, 193);
             this.txtVentaId.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.txtVentaId.Location = new System.Drawing.Point(36, 103);
-            this.txtVentaId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
+
             this.txtVentaId.Name = "txtVentaId";
             this.txtVentaId.Size = new System.Drawing.Size(1025, 26);
             this.txtVentaId.TabIndex = 1;
@@ -162,11 +152,8 @@
             this.Controls.Add(this.pnl_factura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-<<<<<<< HEAD
+
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> 49e1e8311aa89cf9864728389658dd0d724c1874
             this.MinimumSize = new System.Drawing.Size(1095, 600);
             this.Name = "FRM_ReporteVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
