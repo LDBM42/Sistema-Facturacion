@@ -27,13 +27,14 @@
               <Mapping SourceColumn="PrecioUnitario" DataSetColumn="PrecioUnitario" />
               <Mapping SourceColumn="FechaVenta" DataSetColumn="FechaVenta" />
               <Mapping SourceColumn="NumeroDocumento" DataSetColumn="NumeroDocumento" />
-              <Mapping SourceColumn="TipoDocumento" DataSetColumn="TipoDocumento" />
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
               <Mapping SourceColumn="Apellido" DataSetColumn="Apellido" />
               <Mapping SourceColumn="Ncf" DataSetColumn="Ncf" />
               <Mapping SourceColumn="ProductoNombre" DataSetColumn="ProductoNombre" />
               <Mapping SourceColumn="ProductoDescripcion" DataSetColumn="ProductoDescripcion" />
               <Mapping SourceColumn="TotalParcial" DataSetColumn="TotalParcial" />
+              <Mapping SourceColumn="ITBIS" DataSetColumn="ITBIS" />
+              <Mapping SourceColumn="ITBISPrecio" DataSetColumn="ITBISPrecio" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -56,13 +57,6 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TipoDocumento" msprop:Generator_ColumnVarNameInTable="columnTipoDocumento" msprop:Generator_ColumnPropNameInRow="TipoDocumento" msprop:Generator_ColumnPropNameInTable="TipoDocumentoColumn" msprop:Generator_UserColumnName="TipoDocumento" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -90,6 +84,8 @@
               </xs:element>
               <xs:element name="ProductoDescripcion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductoDescripcion" msprop:Generator_ColumnPropNameInRow="ProductoDescripcion" msprop:Generator_ColumnPropNameInTable="ProductoDescripcionColumn" msprop:Generator_UserColumnName="ProductoDescripcion" type="xs:string" minOccurs="0" />
               <xs:element name="TotalParcial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalParcial" msprop:Generator_ColumnPropNameInRow="TotalParcial" msprop:Generator_ColumnPropNameInTable="TotalParcialColumn" msprop:Generator_UserColumnName="TotalParcial" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ITBIS" msprop:Generator_ColumnVarNameInTable="columnITBIS" msprop:Generator_ColumnPropNameInRow="ITBIS" msprop:Generator_ColumnPropNameInTable="ITBISColumn" msprop:Generator_UserColumnName="ITBIS" type="xs:int" />
+              <xs:element name="ITBISPrecio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnITBISPrecio" msprop:Generator_ColumnPropNameInRow="ITBISPrecio" msprop:Generator_ColumnPropNameInTable="ITBISPrecioColumn" msprop:Generator_UserColumnName="ITBISPrecio" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -289,8 +289,6 @@ namespace Sistema_de_Venta {
             
             private global::System.Data.DataColumn columnNumeroDocumento;
             
-            private global::System.Data.DataColumn columnTipoDocumento;
-            
             private global::System.Data.DataColumn columnNombre;
             
             private global::System.Data.DataColumn columnApellido;
@@ -302,6 +300,10 @@ namespace Sistema_de_Venta {
             private global::System.Data.DataColumn columnProductoDescripcion;
             
             private global::System.Data.DataColumn columnTotalParcial;
+            
+            private global::System.Data.DataColumn columnITBIS;
+            
+            private global::System.Data.DataColumn columnITBISPrecio;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -378,14 +380,6 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TipoDocumentoColumn {
-                get {
-                    return this.columnTipoDocumento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn NombreColumn {
                 get {
                     return this.columnNombre;
@@ -434,6 +428,22 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ITBISColumn {
+                get {
+                    return this.columnITBIS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ITBISPrecioColumn {
+                get {
+                    return this.columnITBISPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string TipoDocumento, string Nombre, string Apellido, int Ncf, string ProductoNombre, string ProductoDescripcion, decimal TotalParcial) {
+            public usp_Reportes_GenrerarReporteVentaRow Addusp_Reportes_GenrerarReporteVentaRow(int VentaId, int Cantidad, decimal PrecioUnitario, System.DateTime FechaVenta, string NumeroDocumento, string Nombre, string Apellido, int Ncf, string ProductoNombre, string ProductoDescripcion, decimal TotalParcial, int ITBIS, decimal ITBISPrecio) {
                 usp_Reportes_GenrerarReporteVentaRow rowusp_Reportes_GenrerarReporteVentaRow = ((usp_Reportes_GenrerarReporteVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VentaId,
@@ -477,13 +487,14 @@ namespace Sistema_de_Venta {
                         PrecioUnitario,
                         FechaVenta,
                         NumeroDocumento,
-                        TipoDocumento,
                         Nombre,
                         Apellido,
                         Ncf,
                         ProductoNombre,
                         ProductoDescripcion,
-                        TotalParcial};
+                        TotalParcial,
+                        ITBIS,
+                        ITBISPrecio};
                 rowusp_Reportes_GenrerarReporteVentaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowusp_Reportes_GenrerarReporteVentaRow);
                 return rowusp_Reportes_GenrerarReporteVentaRow;
@@ -511,13 +522,14 @@ namespace Sistema_de_Venta {
                 this.columnPrecioUnitario = base.Columns["PrecioUnitario"];
                 this.columnFechaVenta = base.Columns["FechaVenta"];
                 this.columnNumeroDocumento = base.Columns["NumeroDocumento"];
-                this.columnTipoDocumento = base.Columns["TipoDocumento"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellido = base.Columns["Apellido"];
                 this.columnNcf = base.Columns["Ncf"];
                 this.columnProductoNombre = base.Columns["ProductoNombre"];
                 this.columnProductoDescripcion = base.Columns["ProductoDescripcion"];
                 this.columnTotalParcial = base.Columns["TotalParcial"];
+                this.columnITBIS = base.Columns["ITBIS"];
+                this.columnITBISPrecio = base.Columns["ITBISPrecio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,8 +545,6 @@ namespace Sistema_de_Venta {
                 base.Columns.Add(this.columnFechaVenta);
                 this.columnNumeroDocumento = new global::System.Data.DataColumn("NumeroDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroDocumento);
-                this.columnTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipoDocumento);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
                 this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
@@ -547,11 +557,14 @@ namespace Sistema_de_Venta {
                 base.Columns.Add(this.columnProductoDescripcion);
                 this.columnTotalParcial = new global::System.Data.DataColumn("TotalParcial", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalParcial);
+                this.columnITBIS = new global::System.Data.DataColumn("ITBIS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnITBIS);
+                this.columnITBISPrecio = new global::System.Data.DataColumn("ITBISPrecio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnITBISPrecio);
                 this.columnVentaId.AllowDBNull = false;
                 this.columnCantidad.AllowDBNull = false;
                 this.columnFechaVenta.AllowDBNull = false;
                 this.columnNumeroDocumento.MaxLength = 50;
-                this.columnTipoDocumento.MaxLength = 100;
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
                 this.columnApellido.AllowDBNull = false;
@@ -560,6 +573,8 @@ namespace Sistema_de_Venta {
                 this.columnProductoNombre.MaxLength = 200;
                 this.columnProductoDescripcion.ReadOnly = true;
                 this.columnTotalParcial.ReadOnly = true;
+                this.columnITBIS.AllowDBNull = false;
+                this.columnITBISPrecio.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -769,23 +784,6 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string TipoDocumento {
-                get {
-                    try {
-                        return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.TipoDocumentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoDocumento\' de la tabla \'usp_Reportes_GenrerarReporteV" +
-                                "enta\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableusp_Reportes_GenrerarReporteVenta.TipoDocumentoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Nombre {
                 get {
                     return ((string)(this[this.tableusp_Reportes_GenrerarReporteVenta.NombreColumn]));
@@ -870,6 +868,34 @@ namespace Sistema_de_Venta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ITBIS {
+                get {
+                    return ((int)(this[this.tableusp_Reportes_GenrerarReporteVenta.ITBISColumn]));
+                }
+                set {
+                    this[this.tableusp_Reportes_GenrerarReporteVenta.ITBISColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal ITBISPrecio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableusp_Reportes_GenrerarReporteVenta.ITBISPrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ITBISPrecio\' de la tabla \'usp_Reportes_GenrerarReporteVen" +
+                                "ta\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableusp_Reportes_GenrerarReporteVenta.ITBISPrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPrecioUnitarioNull() {
                 return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.PrecioUnitarioColumn);
             }
@@ -890,18 +916,6 @@ namespace Sistema_de_Venta {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNumeroDocumentoNull() {
                 this[this.tableusp_Reportes_GenrerarReporteVenta.NumeroDocumentoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTipoDocumentoNull() {
-                return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.TipoDocumentoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTipoDocumentoNull() {
-                this[this.tableusp_Reportes_GenrerarReporteVenta.TipoDocumentoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -938,6 +952,18 @@ namespace Sistema_de_Venta {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTotalParcialNull() {
                 this[this.tableusp_Reportes_GenrerarReporteVenta.TotalParcialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsITBISPrecioNull() {
+                return this.IsNull(this.tableusp_Reportes_GenrerarReporteVenta.ITBISPrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetITBISPrecioNull() {
+                this[this.tableusp_Reportes_GenrerarReporteVenta.ITBISPrecioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1105,13 +1131,14 @@ namespace Sistema_de_Venta.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("PrecioUnitario", "PrecioUnitario");
             tableMapping.ColumnMappings.Add("FechaVenta", "FechaVenta");
             tableMapping.ColumnMappings.Add("NumeroDocumento", "NumeroDocumento");
-            tableMapping.ColumnMappings.Add("TipoDocumento", "TipoDocumento");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellido", "Apellido");
             tableMapping.ColumnMappings.Add("Ncf", "Ncf");
             tableMapping.ColumnMappings.Add("ProductoNombre", "ProductoNombre");
             tableMapping.ColumnMappings.Add("ProductoDescripcion", "ProductoDescripcion");
             tableMapping.ColumnMappings.Add("TotalParcial", "TotalParcial");
+            tableMapping.ColumnMappings.Add("ITBIS", "ITBIS");
+            tableMapping.ColumnMappings.Add("ITBISPrecio", "ITBISPrecio");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

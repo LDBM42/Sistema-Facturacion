@@ -22,15 +22,15 @@ namespace Sistema_de_Venta.Presentacion
 
         int countDownTimer;
         public int reOpened;
+        int x = 525, xP = 368;
         Form1 Principal;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-
+    
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             DataSet ds = FLogin.ValidarLogin(text_Usuario.Text, text_Password.Text);
@@ -92,7 +92,7 @@ namespace Sistema_de_Venta.Presentacion
                 
                 MessageBox.Show("Usuario y/o contraseña incorrectos");
                 text_Password.Text = "";
-                pictureBox1.Visible = true;
+                pbx_logo.Visible = true;
                 
                 mostrarOcultar(false);
 
@@ -101,7 +101,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private void mostrarOcultar(bool t)
         {
-            pictureBox1.Visible = !t;
+            pbx_logo.Visible = !t;
 
         }
 
@@ -109,6 +109,9 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Login_Load(object sender, EventArgs e)
         {
+            pbx_logo.Image = Properties.Resources.ISOTIPO_MEF_srl;
+            
+            tmr_cuadroAzul.Start();
             this.Opacity = 0.95;
 
             DataSet ds = FLogin.AutoLoginGet();
@@ -250,20 +253,41 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
+      
 
         #region Mover Formulario
-            private void FRM_Login_MouseDown(object sender, MouseEventArgs e)
+        private void FRM_Login_MouseDown(object sender, MouseEventArgs e)
             {
                 ReleaseCapture();
                 SendMessage(this.Handle, 0x112, 0xf012, 0);
             }
 
-            private void panel1_MouseDown(object sender, MouseEventArgs e)
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
             {
                 ReleaseCapture();
                 SendMessage(this.Handle, 0x112, 0xf012, 0);
             }
         #endregion
 
+
+
+
+        private void tmr_cuadroAzul_Tick(object sender, EventArgs e)
+        {
+            if(x >= 250)
+            {     
+                pnl_Azul.Size = new Size(x, 330);
+                x = x - 25;
+
+                pbx_logo.Location = new Point(xP, 93);
+                xP = xP - 30;
+            }
+            else
+            {
+                tmr_cuadroAzul.Stop();
+            }
+
+        }
     }
 }

@@ -153,6 +153,26 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_gray1 {
+            get {
+                object obj = ResourceManager.GetObject("close_gray1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_white {
+            get {
+                object obj = ResourceManager.GetObject("close_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FavoriteOff {
             get {
                 object obj = ResourceManager.GetObject("FavoriteOff", resourceCulture);
@@ -283,6 +303,26 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minimize_gray1 {
+            get {
+                object obj = ResourceManager.GetObject("minimize_gray1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize_white {
+            get {
+                object obj = ResourceManager.GetObject("minimize_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap printer_78936 {
             get {
                 object obj = ResourceManager.GetObject("printer_78936", resourceCulture);
@@ -326,16 +366,6 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap Reporte1 {
             get {
                 object obj = ResourceManager.GetObject("Reporte1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Reporte2 {
-            get {
-                object obj = ResourceManager.GetObject("Reporte2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

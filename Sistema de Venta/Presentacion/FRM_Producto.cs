@@ -86,6 +86,7 @@ namespace Sistema_de_Venta.Presentacion
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
+                        producto.Itbis = Convert.ToInt32(cbx_ITBIS.Text);
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -129,6 +130,7 @@ namespace Sistema_de_Venta.Presentacion
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
                         producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
+                        producto.Itbis = Convert.ToInt32(cbx_ITBIS.Text);
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -241,6 +243,7 @@ namespace Sistema_de_Venta.Presentacion
                 text_Nombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
                 text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripción"].Value.ToString();
                 text_PrecioVenta.Text = dgvProductos.CurrentRow.Cells["Pagar"].Value.ToString();
+                cbx_ITBIS.Text = dgvProductos.CurrentRow.Cells["ITBIS"].Value.ToString();
                 if (Servicios == 0)
                 {
                     text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
@@ -288,14 +291,14 @@ namespace Sistema_de_Venta.Presentacion
                 pbx_Servicios.Visible = true;
                 lab_Costo_ProdServ.Text = "Costo/Serv";
                 Nuevo.Size = new Size(153, 40);
-                Nuevo.Location = new Point(153, 276);
+                Nuevo.Location = new Point(153, 316);
                 Guardar.Size = new Size(153, 40);
-                Guardar.Location = new Point(153, 276);
+                Guardar.Location = new Point(153, 316);
 
                 Editar.Size = new Size(153, 40);
-                Editar.Location = new Point(316, 276);
+                Editar.Location = new Point(316, 316);
                 Cancelar.Size = new Size(153, 40);
-                Cancelar.Location = new Point(316, 276);
+                Cancelar.Location = new Point(316, 316);
 
 
                 ProdServ(false);
@@ -309,6 +312,7 @@ namespace Sistema_de_Venta.Presentacion
             }
 
             CMB_Buscar.Text = "Nombre";
+            cbx_ITBIS.Text = "18";
 
             try
             {
@@ -370,6 +374,7 @@ namespace Sistema_de_Venta.Presentacion
             text_PrecioCompra.Enabled = !b;
             text_PrecioVenta.Enabled = !b;
             text_Stock.Enabled = !b;
+            cbx_ITBIS.Enabled = !b;
             text_FechadeVencimiento.Enabled = !b;
         }
 
@@ -405,6 +410,7 @@ namespace Sistema_de_Venta.Presentacion
             text_Nombre.Clear();
             text_Descripcion.Clear();
             text_PrecioVenta.Clear();
+            cbx_ITBIS.Text = "18";
 
             if(Servicios == 0)
             {

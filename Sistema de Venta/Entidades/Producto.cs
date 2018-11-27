@@ -64,6 +64,16 @@ namespace Sistema_de_Venta.Entidades
             get { return _fechaVencimiento; }
             set { _fechaVencimiento = value; }
         }
+
+        private int _itbis;
+
+        public int Itbis
+        {
+            get { return _itbis; }
+            set { _itbis = value; }
+        }
+
+
         private byte[] _imagen;
 
         public byte[] Imagen

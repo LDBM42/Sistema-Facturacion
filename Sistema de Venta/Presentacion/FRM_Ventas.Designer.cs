@@ -43,7 +43,7 @@
             this.text_ClienteId = new System.Windows.Forms.TextBox();
             this.text_ClienteNombre = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lab_DocNum = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -82,7 +82,7 @@
             this.noencontrado.Location = new System.Drawing.Point(406, 287);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(293, 25);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             // 
@@ -93,7 +93,7 @@
             this.Buscar.Location = new System.Drawing.Point(216, 66);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(771, 26);
+            this.Buscar.Size = new System.Drawing.Size(771, 30);
             this.Buscar.TabIndex = 2;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -112,7 +112,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 65);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(166, 28);
+            this.CMB_Buscar.Size = new System.Drawing.Size(166, 33);
             this.CMB_Buscar.TabIndex = 1;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -140,10 +140,10 @@
             // text_fecha
             // 
             this.text_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.text_fecha.Location = new System.Drawing.Point(114, 106);
+            this.text_fecha.Location = new System.Drawing.Point(114, 146);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
-            this.text_fecha.Size = new System.Drawing.Size(265, 26);
+            this.text_fecha.Size = new System.Drawing.Size(265, 30);
             this.text_fecha.TabIndex = 15;
             this.text_fecha.ValueChanged += new System.EventHandler(this.text_fecha_ValueChanged);
             // 
@@ -173,7 +173,7 @@
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -205,10 +205,15 @@
             // 
             // text_NumeroDoc
             // 
-            this.text_NumeroDoc.Location = new System.Drawing.Point(114, 146);
+            this.text_NumeroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.text_NumeroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_NumeroDoc.Enabled = false;
+            this.text_NumeroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.text_NumeroDoc.ForeColor = System.Drawing.Color.White;
+            this.text_NumeroDoc.Location = new System.Drawing.Point(114, 69);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 23);
             this.text_NumeroDoc.TabIndex = 10;
             // 
             // text_ClienteId
@@ -217,18 +222,18 @@
             this.text_ClienteId.Location = new System.Drawing.Point(349, 19);
             this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(10, 26);
+            this.text_ClienteId.Size = new System.Drawing.Size(10, 30);
             this.text_ClienteId.TabIndex = 7;
             this.text_ClienteId.Visible = false;
             // 
             // text_ClienteNombre
             // 
             this.text_ClienteNombre.Enabled = false;
-            this.text_ClienteNombre.Location = new System.Drawing.Point(114, 66);
+            this.text_ClienteNombre.Location = new System.Drawing.Point(114, 106);
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
             this.text_ClienteNombre.ReadOnly = true;
-            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
+            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 30);
             this.text_ClienteNombre.TabIndex = 7;
             this.text_ClienteNombre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ClienteNombre_MouseClick);
             // 
@@ -239,29 +244,29 @@
             this.textId.Location = new System.Drawing.Point(367, 19);
             this.textId.Margin = new System.Windows.Forms.Padding(4);
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(12, 26);
+            this.textId.Size = new System.Drawing.Size(12, 30);
             this.textId.TabIndex = 6;
             this.textId.Visible = false;
             // 
-            // label8
+            // lab_DocNum
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(41, 149);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "No. Doc";
+            this.lab_DocNum.AutoSize = true;
+            this.lab_DocNum.ForeColor = System.Drawing.Color.White;
+            this.lab_DocNum.Location = new System.Drawing.Point(41, 69);
+            this.lab_DocNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_DocNum.Name = "lab_DocNum";
+            this.lab_DocNum.Size = new System.Drawing.Size(87, 25);
+            this.lab_DocNum.TabIndex = 4;
+            this.lab_DocNum.Text = "Doc. No.";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(41, 109);
+            this.label10.Location = new System.Drawing.Point(41, 149);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 20);
+            this.label10.Size = new System.Drawing.Size(67, 25);
             this.label10.TabIndex = 2;
             this.label10.Text = "Fecha";
             // 
@@ -269,10 +274,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(41, 69);
+            this.label11.Location = new System.Drawing.Point(41, 109);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 20);
+            this.label11.Size = new System.Drawing.Size(73, 25);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cliente";
             // 
@@ -287,7 +292,7 @@
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.textId);
             this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.lab_DocNum);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.text_NumeroDoc);
             this.panel2.Controls.Add(this.btnNuevo);
@@ -360,7 +365,7 @@
         private System.Windows.Forms.TextBox text_NumeroDoc;
         private System.Windows.Forms.TextBox text_ClienteNombre;
         private System.Windows.Forms.TextBox textId;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lab_DocNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker text_fecha;

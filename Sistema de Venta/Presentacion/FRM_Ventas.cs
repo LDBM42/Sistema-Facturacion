@@ -73,7 +73,7 @@ namespace Sistema_de_Venta.Presentacion
             text_ClienteNombre.Enabled = false;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {//guardar
             try
             {
@@ -87,9 +87,10 @@ namespace Sistema_de_Venta.Presentacion
                         Venta venta = new Venta();
                         venta.Cliente.Id = Convert.ToInt32(text_ClienteId.Text);
                         venta.FechaVenta = text_fecha.Value;
-                        venta.NumeroDocumento = text_NumeroDoc.Text;
+                        venta.NumeroDocumento = Convert.ToInt32(text_NumeroDoc.Text);
                         venta.Cliente.Nombre = text_ClienteNombre.Text;
 
+                        
                         int iVentaId = FVenta.Insertar(venta);
                         if (iVentaId > 0)
                         {
@@ -106,7 +107,7 @@ namespace Sistema_de_Venta.Presentacion
                         venta.Id = Convert.ToInt32(textId.Text);
                         venta.Cliente.Id = Convert.ToInt32(text_ClienteId.Text);
                         venta.FechaVenta = text_fecha.Value;
-                        venta.NumeroDocumento = text_NumeroDoc.Text;
+                        venta.NumeroDocumento = Convert.ToInt32(text_NumeroDoc.Text);
 
                         if (FVenta.Actualizar(venta) == 1)
                         {
@@ -149,8 +150,17 @@ namespace Sistema_de_Venta.Presentacion
         {
             MostrarGuardarCancelar(true);
             limpiar();
-
+            GetNumeroDocumento();
         }
+        public void GetNumeroDocumento()
+        {
+            DataSet ds = FVenta.GetNumeroDocumento();
+            dt = ds.Tables[0];
+            Venta venta = new Venta();
+            venta.NumeroDocumento = Convert.ToInt32(dt.Rows[0][0].ToString());
+            text_NumeroDoc.Text = (venta.NumeroDocumento > 9 ? "00000" : "000000") + venta.NumeroDocumento;
+        }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -213,9 +223,13 @@ namespace Sistema_de_Venta.Presentacion
 
                 textId.Text = dgvVentas.CurrentRow.Cells["Id"].Value.ToString();
                 text_ClienteId.Text = dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString();
-                text_ClienteNombre.Text = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
+                //para saber si se mostrará el apellido
+                string NoApellido = dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString() != "NA" ? dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString() : "";
+                text_ClienteNombre.Text = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + NoApellido;
                 text_fecha.Text = dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString();
-                text_NumeroDoc.Text = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
+                // para saber que cantidad de ceros poner al principio
+                string InicialesNoDoc = Convert.ToInt32(dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value) > 9 ? "00000" : "000000";
+                text_NumeroDoc.Text = InicialesNoDoc + dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
             }
         }
 
@@ -231,9 +245,7 @@ namespace Sistema_de_Venta.Presentacion
 
             //text_ClienteId.Enabled = b;
             text_ClienteNombre.Enabled = b;
-            text_NumeroDoc.Enabled = b;
-            text_fecha.Enabled = b;
-            text_NumeroDoc.Enabled = b;
+            text_fecha.Enabled = b;            
         }
 
         public string ValidarDatos()
@@ -246,7 +258,6 @@ namespace Sistema_de_Venta.Presentacion
             }
             if (text_NumeroDoc.Text == "")
             {
-
                 Resultado = Resultado + " Numero Documento \n";
             }
 
@@ -271,7 +282,7 @@ namespace Sistema_de_Venta.Presentacion
                 venta.Cliente.Id = Convert.ToInt32(dgvVentas.CurrentRow.Cells["ClienteId"].Value.ToString());
                 venta.Cliente.Nombre = dgvVentas.CurrentRow.Cells["Nombre"].Value.ToString() + " " + dgvVentas.CurrentRow.Cells["Apellido"].Value.ToString();
                 venta.FechaVenta = Convert.ToDateTime(dgvVentas.CurrentRow.Cells["FechaVenta"].Value.ToString());
-                venta.NumeroDocumento = dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
+                venta.NumeroDocumento = Convert.ToInt32(dgvVentas.CurrentRow.Cells["NumeroDocumento"].Value.ToString());
 
                 CargarDetalle(venta);
             }

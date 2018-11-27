@@ -208,6 +208,7 @@
     <EmbeddedResource Include="Reportes\FRM_ReporteVenta.resx">
       <DependentUpon>FRM_ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptReporteVenta - CFiacal.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteVenta.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet2.xsc">
@@ -359,6 +360,10 @@
     <None Include="Resources\FavoriteOff.png" />
     <None Include="Resources\FavoriteOff1.png" />
     <None Include="Resources\FavoriteOff2.png" />
+    <None Include="Resources\close_gray1.png" />
+    <None Include="Resources\minimize_gray1.png" />
+    <None Include="Resources\close_white.png" />
+    <None Include="Resources\minimize_white.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
