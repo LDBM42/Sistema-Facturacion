@@ -140,7 +140,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -177,7 +177,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -214,7 +214,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -251,7 +251,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -288,7 +288,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -325,7 +325,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -362,7 +362,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -633,7 +633,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -661,7 +661,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -689,7 +689,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -717,7 +717,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -745,7 +745,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -774,7 +774,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -802,7 +802,7 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BackgroundColor>Orange</BackgroundColor>
+                            <BackgroundColor>#f15a2d</BackgroundColor>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1539,7 +1539,7 @@
                 <Color>White</Color>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>Orange</BackgroundColor>
+              <BackgroundColor>#f15a2d</BackgroundColor>
             </Style>
           </Rectangle>
           <Textbox Name="FechaVenta">
@@ -1581,7 +1581,7 @@
                     <Style>
                       <FontSize>16pt</FontSize>
                       <FontWeight>Bold</FontWeight>
-                      <Color>Orange</Color>
+                      <Color>#f15a2d</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -1743,7 +1743,7 @@
                 <Color>White</Color>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>Orange</BackgroundColor>
+              <BackgroundColor>#f15a2d</BackgroundColor>
             </Style>
           </Rectangle>
           <Textbox Name="Textbox46">
