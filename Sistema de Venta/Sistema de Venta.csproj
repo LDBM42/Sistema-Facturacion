@@ -208,8 +208,8 @@
     <EmbeddedResource Include="Reportes\FRM_ReporteVenta.resx">
       <DependentUpon>FRM_ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RptReporteVenta - CFiacal.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteVenta.rdlc" />
+    <EmbeddedResource Include="Reportes\RptReporteVentaCFiscal.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>

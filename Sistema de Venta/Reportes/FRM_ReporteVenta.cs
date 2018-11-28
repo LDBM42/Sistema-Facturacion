@@ -58,11 +58,11 @@ namespace Sistema_de_Venta
             }
 
             startupPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "Reportes\\" + nombreReporte);
-            this.reportViewer2.LocalReport.ReportPath = startupPath;
+            this.reportViewer1.LocalReport.ReportPath = startupPath;
 
             // TODO: esta línea de código carga datos en la tabla 'dbSFacturacionDataSet.usp_Reportes_GenrerarReporteVenta' Puede moverla o quitarla según sea necesario.
-            this.usp_Reportes_GenrerarReporteVentaTableAdapter.Fill(this.dbSFacturacionDataSet.usp_Reportes_GenrerarReporteVenta, ventaId);
-            this.reportViewer2.RefreshReport();
+            this.usp_Reportes_GenrerarReporteVentaTableAdapter.Fill(this.DataSet2.usp_Reportes_GenrerarReporteVenta, ventaId);
+            this.reportViewer1.RefreshReport();
 
         }
 

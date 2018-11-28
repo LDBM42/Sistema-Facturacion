@@ -11,6 +11,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private static DataTable dt = new DataTable();
         public static FRM_DetalleVenta _instancia = null;
+        string tipoCliente;
         public FRM_DetalleVenta()
         {
             InitializeComponent();
@@ -50,6 +51,15 @@ namespace Sistema_de_Venta.Presentacion
                     dgvVentas.Columns["ProductoId"].Visible = false;
                     dgvVentas.Columns["Id"].Visible = false;
                     dgvVentas.Columns["PrecioVenta"].Visible = false;
+
+                    try
+                    {
+                        tipoCliente = dgvVentas.Rows[0].Cells["TipoCliente"].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    dgvVentas.Columns["TipoCliente"].Visible = false;
 
                     if (dt.Rows.Count > 0)
                     {
@@ -225,7 +235,7 @@ namespace Sistema_de_Venta.Presentacion
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             FRM_ReporteVenta frmRepVenta = new FRM_ReporteVenta();
-            frmRepVenta.SetVentaId(Convert.ToInt32(textVentaId.Text));
+            frmRepVenta.SetVentaId_y_TipoCliente(Convert.ToInt32(textVentaId.Text), tipoCliente);
             frmRepVenta.ShowDialog();
         }
 
