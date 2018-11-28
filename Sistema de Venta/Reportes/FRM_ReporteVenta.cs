@@ -63,6 +63,7 @@ namespace Sistema_de_Venta
             // TODO: esta línea de código carga datos en la tabla 'dbSFacturacionDataSet.usp_Reportes_GenrerarReporteVenta' Puede moverla o quitarla según sea necesario.
             this.usp_Reportes_GenrerarReporteVentaTableAdapter.Fill(this.DataSet2.usp_Reportes_GenrerarReporteVenta, ventaId);
             this.reportViewer1.RefreshReport();
+            CreatePDF(DateTime.Now.ToString());
 
         }
 
@@ -70,6 +71,22 @@ namespace Sistema_de_Venta
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
+        private void CreatePDF(string fileName)
+        {
+            // Variables
+            Warning[] warnings;
+            string[] streamIds;
+            string mimeType = string.Empty;
+            string encoding = string.Empty;
+            string extension = string.Empty;
+
+            byte[] bytes = reportViewer1.LocalReport.Render("pdf", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
+
+            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName) + "PDFPrueba.pdf";
+            File.WriteAllBytes(path, bytes);
         }
     }
 }

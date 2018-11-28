@@ -134,7 +134,6 @@ namespace Sistema_de_Venta
                 Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "FRM_Login").SingleOrDefault<Form>();
 
                 if (existe != null)
-
                 {
                     existe.Close();
                 }

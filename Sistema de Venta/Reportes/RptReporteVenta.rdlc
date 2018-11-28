@@ -1517,8 +1517,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet</DataSetName>
-            <Top>6.34506cm</Top>
-            <Left>1.45811cm</Left>
+            <Top>6.02756cm</Top>
+            <Left>0.51621cm</Left>
             <Height>3.65998cm</Height>
             <Width>15.85956cm</Width>
             <Style>
@@ -1529,8 +1529,8 @@
           </Tablix>
           <Rectangle Name="Rectangle2">
             <KeepTogether>true</KeepTogether>
-            <Top>0.635cm</Top>
-            <Left>1.45811cm</Left>
+            <Top>0.3175cm</Top>
+            <Left>0.5162cm</Left>
             <Height>0.6585cm</Height>
             <Width>15.85957cm</Width>
             <ZIndex>1</ZIndex>
@@ -1559,8 +1559,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>FechaVenta</rd:DefaultName>
-            <Top>4.05636cm</Top>
-            <Left>2.41061cm</Left>
+            <Top>3.73886cm</Top>
+            <Left>1.45811cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.643cm</Width>
             <ZIndex>2</ZIndex>
@@ -1591,8 +1591,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.5527cm</Top>
-            <Left>2.41061cm</Left>
+            <Top>2.2352cm</Top>
+            <Left>1.45811cm</Left>
             <Height>0.62117cm</Height>
             <Width>7.81405cm</Width>
             <ZIndex>3</ZIndex>
@@ -1631,8 +1631,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
-            <Top>3.20914cm</Top>
-            <Left>2.41061cm</Left>
+            <Top>2.89164cm</Top>
+            <Left>1.45811cm</Left>
             <Height>0.81194cm</Height>
             <Width>7.71585cm</Width>
             <ZIndex>4</ZIndex>
@@ -1663,16 +1663,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.47989cm</Top>
-            <Left>11.18989cm</Left>
-            <Height>0.69173cm</Height>
-            <Width>6.12778cm</Width>
+            <Top>2.1325cm</Top>
+            <Left>10.23739cm</Left>
+            <Height>0.80087cm</Height>
+            <Width>6.12779cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <VerticalAlign>Bottom</VerticalAlign>
+              <VerticalAlign>Top</VerticalAlign>
             </Style>
           </Textbox>
           <Textbox Name="Ncf">
@@ -1692,10 +1692,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ncf</rd:DefaultName>
-            <Top>3.84469cm</Top>
-            <Left>12.08282cm</Left>
+            <Top>3.63302cm</Top>
+            <Left>11.13032cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.23485cm</Width>
+            <Width>5.23486cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -1720,8 +1720,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>3.84469cm</Top>
-            <Left>11.18989cm</Left>
+            <Top>3.63302cm</Top>
+            <Left>10.23739cm</Left>
             <Height>0.6cm</Height>
             <Width>0.9cm</Width>
             <ZIndex>7</ZIndex>
@@ -1733,8 +1733,8 @@
           </Textbox>
           <Rectangle Name="Rectangle3">
             <KeepTogether>true</KeepTogether>
-            <Top>5.46806cm</Top>
-            <Left>1.45811cm</Left>
+            <Top>5.15056cm</Top>
+            <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
             <ZIndex>8</ZIndex>
@@ -1766,10 +1766,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>3.04469cm</Top>
-            <Left>11.18989cm</Left>
+            <Top>2.8825cm</Top>
+            <Left>10.23739cm</Left>
             <Height>0.69173cm</Height>
-            <Width>6.12778cm</Width>
+            <Width>6.12779cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1778,14 +1778,31 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </Textbox>
+          <Rectangle Name="Rectangle4">
+            <KeepTogether>true</KeepTogether>
+            <Top>10.12473cm</Top>
+            <Left>0.5162cm</Left>
+            <Height>0.14697cm</Height>
+            <Width>15.85957cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Color>White</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>#f15a2d</BackgroundColor>
+            </Style>
+          </Rectangle>
         </ReportItems>
-        <Height>4.33889in</Height>
+        <Height>4.20556in</Height>
         <Style />
       </Body>
-      <Width>7.39205in</Width>
+      <Width>6.65038in</Width>
       <Page>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
+        <RightMargin>0cm</RightMargin>
         <TopMargin>2cm</TopMargin>
         <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
@@ -1803,6 +1820,7 @@
       <NumberOfRows>2</NumberOfRows>
     </GridLayoutDefinition>
   </ReportParametersLayout>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>dec0901c-4992-43f9-8da4-3ee0002cb85f</rd:ReportID>
 </Report>
