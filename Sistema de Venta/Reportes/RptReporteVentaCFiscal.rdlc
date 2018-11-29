@@ -1625,7 +1625,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1831,7 +1830,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet</DataSetName>
-            <Top>8.19522cm</Top>
+            <Top>7.87772cm</Top>
             <Left>0.5162cm</Left>
             <Height>3.70965cm</Height>
             <Width>15.85956cm</Width>
@@ -1843,7 +1842,6 @@
           </Tablix>
           <Rectangle Name="Rectangle2">
             <KeepTogether>true</KeepTogether>
-            <Top>0.26266cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.6585cm</Height>
             <Width>15.85957cm</Width>
@@ -1873,7 +1871,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>FechaVenta</rd:DefaultName>
-            <Top>3.68402cm</Top>
+            <Top>3.36652cm</Top>
             <Left>1.27836cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.643cm</Width>
@@ -1905,7 +1903,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.18036cm</Top>
+            <Top>1.86286cm</Top>
             <Left>1.27836cm</Left>
             <Height>0.62117cm</Height>
             <Width>7.81405cm</Width>
@@ -1945,7 +1943,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
-            <Top>2.8368cm</Top>
+            <Top>2.5193cm</Top>
             <Left>1.27836cm</Left>
             <Height>0.81194cm</Height>
             <Width>7.71585cm</Width>
@@ -1977,7 +1975,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>1.88124cm</Top>
+            <Top>1.56374cm</Top>
             <Left>9.7446cm</Left>
             <Height>0.69173cm</Height>
             <Width>6.12778cm</Width>
@@ -2006,7 +2004,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ncf</rd:DefaultName>
-            <Top>3.32266cm</Top>
+            <Top>3.00516cm</Top>
             <Left>10.63753cm</Left>
             <Height>0.42361cm</Height>
             <Width>5.23485cm</Width>
@@ -2034,7 +2032,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>3.32266cm</Top>
+            <Top>3.00516cm</Top>
             <Left>9.7446cm</Left>
             <Height>0.42361cm</Height>
             <Width>0.9cm</Width>
@@ -2075,7 +2073,7 @@
               </Rectangle>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>7.31822cm</Top>
+            <Top>7.00072cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
@@ -2108,7 +2106,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.56766cm</Top>
+            <Top>2.25016cm</Top>
             <Left>9.7446cm</Left>
             <Height>0.69173cm</Height>
             <Width>6.12778cm</Width>
@@ -2137,7 +2135,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>3.74766cm</Top>
+            <Top>3.43016cm</Top>
             <Left>9.7446cm</Left>
             <Height>0.346cm</Height>
             <Width>3.87725cm</Width>
@@ -2151,7 +2149,7 @@
           </Textbox>
           <Rectangle Name="Rectangle6">
             <KeepTogether>true</KeepTogether>
-            <Top>5.14864cm</Top>
+            <Top>4.83114cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
@@ -2181,7 +2179,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>5.86175cm</Top>
+            <Top>5.54425cm</Top>
             <Left>1.27836cm</Left>
             <Height>0.36086cm</Height>
             <Width>2.49189cm</Width>
@@ -2210,7 +2208,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>6.32844cm</Top>
+            <Top>6.01094cm</Top>
             <Left>1.27836cm</Left>
             <Height>0.44953cm</Height>
             <Width>4.79189cm</Width>
@@ -2239,7 +2237,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>VencimientoSecuencia</rd:DefaultName>
-            <Top>3.74766cm</Top>
+            <Top>3.43016cm</Top>
             <Left>13.61924cm</Left>
             <Height>0.346cm</Height>
             <Width>2.25314cm</Width>
@@ -2270,7 +2268,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>RNC</rd:DefaultName>
-            <Top>5.84347cm</Top>
+            <Top>5.52597cm</Top>
             <Left>3.77025cm</Left>
             <Height>0.39741cm</Height>
             <Width>2.5cm</Width>
@@ -2300,7 +2298,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>NoRSocial</rd:DefaultName>
-            <Top>6.32844cm</Top>
+            <Top>6.01094cm</Top>
             <Left>6.07025cm</Left>
             <Height>0.44953cm</Height>
             <Width>2.5cm</Width>
@@ -2315,7 +2313,7 @@
           </Textbox>
           <Rectangle Name="Rectangle7">
             <KeepTogether>true</KeepTogether>
-            <Top>12.1727cm</Top>
+            <Top>11.8552cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
@@ -2329,7 +2327,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>5.08889in</Height>
+        <Height>4.83056in</Height>
         <Style />
       </Body>
       <Width>6.65038in</Width>

@@ -1814,7 +1814,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet</DataSetName>
-            <Top>6.02756cm</Top>
+            <Top>5.71006cm</Top>
             <Left>0.51621cm</Left>
             <Height>3.75198cm</Height>
             <Width>15.85956cm</Width>
@@ -1827,7 +1827,6 @@
           </Tablix>
           <Rectangle Name="Rectangle2">
             <KeepTogether>true</KeepTogether>
-            <Top>0.3175cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.6585cm</Height>
             <Width>15.85957cm</Width>
@@ -1857,7 +1856,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>FechaVenta</rd:DefaultName>
-            <Top>3.73886cm</Top>
+            <Top>3.42136cm</Top>
             <Left>1.45811cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.643cm</Width>
@@ -1889,7 +1888,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.2352cm</Top>
+            <Top>1.9177cm</Top>
             <Left>1.45811cm</Left>
             <Height>0.62117cm</Height>
             <Width>7.81405cm</Width>
@@ -1929,7 +1928,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
-            <Top>2.89164cm</Top>
+            <Top>2.57414cm</Top>
             <Left>1.45811cm</Left>
             <Height>0.81194cm</Height>
             <Width>7.71585cm</Width>
@@ -1961,7 +1960,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.1325cm</Top>
+            <Top>1.815cm</Top>
             <Left>10.23739cm</Left>
             <Height>0.80087cm</Height>
             <Width>6.12779cm</Width>
@@ -1990,7 +1989,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ncf</rd:DefaultName>
-            <Top>3.63302cm</Top>
+            <Top>3.31552cm</Top>
             <Left>11.13032cm</Left>
             <Height>0.6cm</Height>
             <Width>5.23486cm</Width>
@@ -2018,7 +2017,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>3.63302cm</Top>
+            <Top>3.31552cm</Top>
             <Left>10.23739cm</Left>
             <Height>0.6cm</Height>
             <Width>0.9cm</Width>
@@ -2031,7 +2030,7 @@
           </Textbox>
           <Rectangle Name="Rectangle3">
             <KeepTogether>true</KeepTogether>
-            <Top>5.15056cm</Top>
+            <Top>4.83306cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
@@ -2064,7 +2063,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
-            <Top>2.8825cm</Top>
+            <Top>2.565cm</Top>
             <Left>10.23739cm</Left>
             <Height>0.69173cm</Height>
             <Width>6.12779cm</Width>
@@ -2078,7 +2077,7 @@
           </Textbox>
           <Rectangle Name="Rectangle4">
             <KeepTogether>true</KeepTogether>
-            <Top>10.12473cm</Top>
+            <Top>9.80723cm</Top>
             <Left>0.5162cm</Left>
             <Height>0.14697cm</Height>
             <Width>15.85957cm</Width>
@@ -2092,7 +2091,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>4.19722in</Height>
+        <Height>4.01389in</Height>
         <Style />
       </Body>
       <Width>6.65038in</Width>

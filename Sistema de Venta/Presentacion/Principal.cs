@@ -1,17 +1,18 @@
-﻿using Sistema_de_Venta.Datos;
+﻿using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
+using Sistema_de_Venta.Datos;
 using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Presentacion;
 using SisVenttas.Datos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta
@@ -153,14 +154,25 @@ namespace Sistema_de_Venta
             {
                 MessageBox.Show(e.ToString());
             }
-
+            
         }
 
-
-
-        private void Form1_Load(object sender, EventArgs e)
-
+        public static void GuardarArchivo(string archivo)
         {
+            Factura factura = new Factura();
+            factura.FechaFactura = DateTime.Now;
+            factura.NombreArchivo = new FileInfo(archivo).Name;
+            // Leemos todos los bytes del archivo y luego lo guardamos como Base64 en un string.
+            factura.Archivo = File.ReadAllBytes(archivo);
+
+            int idfactura = FFactura.Insertar(factura);
+            if (idfactura > 0)
+            {
+                MessageBox.Show("Datos insertados correctamente");
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {            
             this.Opacity = 0.95;
 
             if (Usuario.Tipo != "Admin")
@@ -362,6 +374,12 @@ namespace Sistema_de_Venta
         {
             FRM_Auditoria auditor = new FRM_Auditoria();
             auditor.Show(this);
+        }
+
+        private void pbx_Logo_Click(object sender, EventArgs e)
+        {
+            FRM_Factura factura = FRM_Factura.GetInscance();
+            factura.ShowDialog();
         }
     }
 }

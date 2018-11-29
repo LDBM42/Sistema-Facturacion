@@ -85,8 +85,13 @@ namespace Sistema_de_Venta
 
             byte[] bytes = reportViewer1.LocalReport.Render("pdf", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
 
-            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName) + "PDFPrueba.pdf";
+
+            DateTime fechaAFormatear = DateTime.Now;
+            string nombreFactura = fechaAFormatear.ToString("dd-MM-yyyy");
+
+            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\" + nombreFactura + " - " + tipoCliente + ".pdf");
             File.WriteAllBytes(path, bytes);
+
         }
     }
 }

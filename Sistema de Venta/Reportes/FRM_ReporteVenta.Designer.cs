@@ -36,9 +36,9 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.usp_Reportes_GenrerarReporteVentaTableAdapter = new Sistema_de_Venta.DataSet2TableAdapters.usp_Reportes_GenrerarReporteVentaTableAdapter();
             this.pnl_factura = new System.Windows.Forms.Panel();
+            this.lbl_Login = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.lbl_Login = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usp_Reportes_GenrerarReporteVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
             this.pnl_factura.SuspendLayout();
@@ -81,11 +81,23 @@
             this.pnl_factura.Controls.Add(this.lbl_Login);
             this.pnl_factura.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_factura.Location = new System.Drawing.Point(0, 0);
-            this.pnl_factura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_factura.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_factura.Name = "pnl_factura";
             this.pnl_factura.Size = new System.Drawing.Size(825, 48);
             this.pnl_factura.TabIndex = 2;
             this.pnl_factura.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_factura_MouseDown);
+            // 
+            // lbl_Login
+            // 
+            this.lbl_Login.AutoSize = true;
+            this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Login.ForeColor = System.Drawing.Color.White;
+            this.lbl_Login.Location = new System.Drawing.Point(326, 5);
+            this.lbl_Login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Login.Name = "lbl_Login";
+            this.lbl_Login.Size = new System.Drawing.Size(173, 38);
+            this.lbl_Login.TabIndex = 9;
+            this.lbl_Login.Text = "FACTURA";
             // 
             // btnClose
             // 
@@ -94,7 +106,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::Sistema_de_Venta.Properties.Resources.close_white;
             this.btnClose.Location = new System.Drawing.Point(772, 6);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(42, 37);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,25 +121,13 @@
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = global::Sistema_de_Venta.Properties.Resources.minimize_white;
             this.btnMinimize.Location = new System.Drawing.Point(727, 6);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(42, 37);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimize.TabIndex = 11;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
-            // 
-            // lbl_Login
-            // 
-            this.lbl_Login.AutoSize = true;
-            this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Login.ForeColor = System.Drawing.Color.White;
-            this.lbl_Login.Location = new System.Drawing.Point(326, 5);
-            this.lbl_Login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Login.Name = "lbl_Login";
-            this.lbl_Login.Size = new System.Drawing.Size(173, 38);
-            this.lbl_Login.TabIndex = 9;
-            this.lbl_Login.Text = "FACTURA";
             // 
             // FRM_ReporteVenta
             // 
