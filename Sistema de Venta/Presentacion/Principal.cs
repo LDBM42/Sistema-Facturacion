@@ -24,6 +24,8 @@ namespace Sistema_de_Venta
         public Form1()
         {
             InitializeComponent();
+            ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
+
         }
 
         private int childFormNumber = 0;
@@ -156,23 +158,9 @@ namespace Sistema_de_Venta
             }
             
         }
-
-        public static void GuardarArchivo(string archivo)
-        {
-            Factura factura = new Factura();
-            factura.FechaFactura = DateTime.Now;
-            factura.NombreArchivo = new FileInfo(archivo).Name;
-            // Leemos todos los bytes del archivo y luego lo guardamos como Base64 en un string.
-            factura.Archivo = File.ReadAllBytes(archivo);
-
-            int idfactura = FFactura.Insertar(factura);
-            if (idfactura > 0)
-            {
-                MessageBox.Show("Datos insertados correctamente");
-            }
-        }
+                
         private void Form1_Load(object sender, EventArgs e)
-        {            
+        {
             this.Opacity = 0.95;
 
             if (Usuario.Tipo != "Admin")
@@ -376,10 +364,29 @@ namespace Sistema_de_Venta
             auditor.Show(this);
         }
 
-        private void pbx_Logo_Click(object sender, EventArgs e)
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_Factura factura = FRM_Factura.GetInscance();
             factura.ShowDialog();
-        }
+        }        
+    }
+
+    // para sobreescibir el menustrip
+    class CustomProfessionalColors : ProfessionalColorTable
+    {
+        public override Color ToolStripGradientBegin
+        { get { return Color.BlueViolet; } }
+
+        public override Color ToolStripGradientMiddle
+        { get { return Color.CadetBlue; } }
+
+        public override Color ToolStripGradientEnd
+        { get { return Color.CornflowerBlue; } }
+
+        public override Color MenuStripGradientBegin
+        { get { return Color.Salmon; } }
+
+        public override Color MenuStripGradientEnd
+        { get { return Color.OrangeRed; } }
     }
 }

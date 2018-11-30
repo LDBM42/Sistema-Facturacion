@@ -108,7 +108,6 @@
     <Compile Include="Datos\FClientes.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
     <Compile Include="Datos\FDetalleVenta.cs" />
-    <Compile Include="Datos\FFactura.cs" />
     <Compile Include="Datos\FLogin.cs" />
     <Compile Include="Datos\Fproducto.cs" />
     <Compile Include="Datos\FUsuario.cs" />
@@ -121,7 +120,6 @@
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
-    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\RUsuario.cs" />
     <Compile Include="Entidades\Usuario.cs" />
@@ -237,6 +235,7 @@
     <EmbeddedResource Include="Reportes\RptReporteVenta.rdlc" />
     <EmbeddedResource Include="Reportes\RptReporteVentaCFiscal.rdlc" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
@@ -391,6 +390,7 @@
     <None Include="Resources\close_white.png" />
     <None Include="Resources\minimize_white.png" />
     <None Include="Resources\search_On_50.png" />
+    <None Include="Resources\facturas.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

@@ -34,11 +34,13 @@
             this.lbl_Login = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lab_desactivarTipo = new System.Windows.Forms.Label();
             this.cmb_TipoFactura = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtp_FechaFactura = new System.Windows.Forms.DateTimePicker();
             this.Pnl_Buscar = new System.Windows.Forms.Panel();
+            this.ckb_desactivarFecha = new System.Windows.Forms.CheckBox();
+            this.ckb_desactivarTipo = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF)).BeginInit();
@@ -115,17 +117,17 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // label1
+            // lab_desactivarTipo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(244, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 25);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Tipo ";
+            this.lab_desactivarTipo.AutoSize = true;
+            this.lab_desactivarTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_desactivarTipo.ForeColor = System.Drawing.Color.White;
+            this.lab_desactivarTipo.Location = new System.Drawing.Point(244, 27);
+            this.lab_desactivarTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lab_desactivarTipo.Name = "lab_desactivarTipo";
+            this.lab_desactivarTipo.Size = new System.Drawing.Size(56, 25);
+            this.lab_desactivarTipo.TabIndex = 25;
+            this.lab_desactivarTipo.Text = "Tipo ";
             // 
             // cmb_TipoFactura
             // 
@@ -147,7 +149,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(481, 27);
+            this.label2.Location = new System.Drawing.Point(596, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
@@ -159,7 +161,7 @@
             this.dtp_FechaFactura.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtp_FechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_FechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_FechaFactura.Location = new System.Drawing.Point(553, 26);
+            this.dtp_FechaFactura.Location = new System.Drawing.Point(668, 26);
             this.dtp_FechaFactura.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_FechaFactura.Name = "dtp_FechaFactura";
             this.dtp_FechaFactura.Size = new System.Drawing.Size(182, 27);
@@ -169,17 +171,41 @@
             // Pnl_Buscar
             // 
             this.Pnl_Buscar.BackColor = System.Drawing.Color.Transparent;
+            this.Pnl_Buscar.Controls.Add(this.ckb_desactivarFecha);
+            this.Pnl_Buscar.Controls.Add(this.ckb_desactivarTipo);
             this.Pnl_Buscar.Controls.Add(this.label3);
             this.Pnl_Buscar.Controls.Add(this.btn_buscar);
             this.Pnl_Buscar.Controls.Add(this.dtp_FechaFactura);
             this.Pnl_Buscar.Controls.Add(this.label2);
             this.Pnl_Buscar.Controls.Add(this.cmb_TipoFactura);
-            this.Pnl_Buscar.Controls.Add(this.label1);
+            this.Pnl_Buscar.Controls.Add(this.lab_desactivarTipo);
             this.Pnl_Buscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Buscar.Location = new System.Drawing.Point(0, 63);
             this.Pnl_Buscar.Name = "Pnl_Buscar";
             this.Pnl_Buscar.Size = new System.Drawing.Size(1303, 76);
             this.Pnl_Buscar.TabIndex = 28;
+            // 
+            // ckb_desactivarFecha
+            // 
+            this.ckb_desactivarFecha.AutoSize = true;
+            this.ckb_desactivarFecha.Location = new System.Drawing.Point(864, 29);
+            this.ckb_desactivarFecha.Name = "ckb_desactivarFecha";
+            this.ckb_desactivarFecha.Size = new System.Drawing.Size(97, 21);
+            this.ckb_desactivarFecha.TabIndex = 30;
+            this.ckb_desactivarFecha.Text = "Desactivar";
+            this.ckb_desactivarFecha.UseVisualStyleBackColor = true;
+            this.ckb_desactivarFecha.CheckedChanged += new System.EventHandler(this.ckb_desactivarFecha_CheckedChanged);
+            // 
+            // ckb_desactivarTipo
+            // 
+            this.ckb_desactivarTipo.AutoSize = true;
+            this.ckb_desactivarTipo.Location = new System.Drawing.Point(478, 29);
+            this.ckb_desactivarTipo.Name = "ckb_desactivarTipo";
+            this.ckb_desactivarTipo.Size = new System.Drawing.Size(97, 21);
+            this.ckb_desactivarTipo.TabIndex = 29;
+            this.ckb_desactivarTipo.Text = "Desactivar";
+            this.ckb_desactivarTipo.UseVisualStyleBackColor = true;
+            this.ckb_desactivarTipo.CheckedChanged += new System.EventHandler(this.ckb_desactivarTipo_CheckedChanged);
             // 
             // label3
             // 
@@ -197,7 +223,7 @@
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buscar.Image = global::Sistema_de_Venta.Properties.Resources.search_On_50;
-            this.btn_buscar.Location = new System.Drawing.Point(746, 12);
+            this.btn_buscar.Location = new System.Drawing.Point(979, 12);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(64, 53);
             this.btn_buscar.TabIndex = 27;
@@ -235,7 +261,7 @@
         private System.Windows.Forms.Panel pnl_factura;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnMinimize;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lab_desactivarTipo;
         private System.Windows.Forms.ComboBox cmb_TipoFactura;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_FechaFactura;
@@ -243,5 +269,7 @@
         private System.Windows.Forms.Panel Pnl_Buscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_Login;
+        private System.Windows.Forms.CheckBox ckb_desactivarFecha;
+        private System.Windows.Forms.CheckBox ckb_desactivarTipo;
     }
 }

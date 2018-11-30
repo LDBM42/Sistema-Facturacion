@@ -1,15 +1,9 @@
 ﻿using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
-using Sistema_de_Venta.Datos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -18,7 +12,6 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Factura _Instancia;
-        string buscar;
 
         public FRM_Factura()
         {
@@ -32,7 +25,7 @@ namespace Sistema_de_Venta.Presentacion
             return _Instancia;
         }
 
-        public static void MergePDFs(string targetPath, params string[] pdfs)
+        public static void MergePDFs(string targetPath, string [] pdfs)
         {
             using (PdfDocument targetDoc = new PdfDocument())
             {
@@ -88,10 +81,48 @@ namespace Sistema_de_Venta.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime fechaAFormatear = dtp_FechaFactura.Value;
-            string nombreFactura = fechaAFormatear.ToString("dd-MM-yyyy") + " - " + cmb_TipoFactura.Text + ".pdf";
-            string pathGet = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\" + nombreFactura);
+            
+            
+            string nombreFactura = cmb_TipoFactura.Text + " - " + fechaAFormatear.ToString("dd-MM-yyyy") + " *.pdf";
 
-            leerPDF(pathGet);           
+            // combinar pdfs
+            string temporalPathSave = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName) + "\\Facturas\\FacturasCombinadas\\BusquedaPorDias\\FacturasCombinadas.pdf";
+            string pathGet = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\");
+            MergePDFs(temporalPathSave, obtenerArchivosDirectorio(pathGet, nombreFactura));
+
+            //leer archivo pdf
+            leerPDF(temporalPathSave);           
+        }
+
+        
+        public string [] obtenerArchivosDirectorio(string rutaArchivo, string nombreArchivo)
+        {
+            string[] Rutas = Directory.GetFiles(rutaArchivo, nombreArchivo);
+            return Rutas;
+        }
+
+        private void ckb_desactivarTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckb_desactivarTipo.Checked)
+            {
+                cmb_TipoFactura.Enabled = false;
+            }
+            else
+            {
+                cmb_TipoFactura.Enabled = true;
+            }
+        }
+
+        private void ckb_desactivarFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_desactivarFecha.Checked)
+            {
+                dtp_FechaFactura.Enabled = false;
+            }
+            else
+            {
+                dtp_FechaFactura.Enabled = true;
+            }
         }
     }
 }

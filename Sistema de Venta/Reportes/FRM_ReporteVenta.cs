@@ -87,9 +87,9 @@ namespace Sistema_de_Venta
 
 
             DateTime fechaAFormatear = DateTime.Now;
-            string nombreFactura = fechaAFormatear.ToString("dd-MM-yyyy");
+            string nombreFactura = fechaAFormatear.ToString("dd-MM-yyyy H-mm-ss");
 
-            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\" + nombreFactura + " - " + tipoCliente + ".pdf");
+            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\" + tipoCliente  + " - " + nombreFactura + ".pdf");
             File.WriteAllBytes(path, bytes);
 
         }
