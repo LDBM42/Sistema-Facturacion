@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -24,8 +25,7 @@ namespace Sistema_de_Venta
         public Form1()
         {
             InitializeComponent();
-            ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomProfessionalColors());
-
+            menuStrip1.Renderer = new BlueRenderer();
         }
 
         private int childFormNumber = 0;
@@ -368,25 +368,46 @@ namespace Sistema_de_Venta
         {
             FRM_Factura factura = FRM_Factura.GetInscance();
             factura.ShowDialog();
-        }        
+        }
+
     }
 
     // para sobreescibir el menustrip
     class CustomProfessionalColors : ProfessionalColorTable
     {
-        public override Color ToolStripGradientBegin
-        { get { return Color.BlueViolet; } }
 
-        public override Color ToolStripGradientMiddle
-        { get { return Color.CadetBlue; } }
+    }
+    /*
+    public class CustomToolStripRenderer : ToolStripProfessionalRenderer
+    {
+        public CustomToolStripRenderer() { }
 
-        public override Color ToolStripGradientEnd
-        { get { return Color.CornflowerBlue; } }
+        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = Color.MediumBlue;
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
 
-        public override Color MenuStripGradientBegin
-        { get { return Color.Salmon; } }
 
-        public override Color MenuStripGradientEnd
-        { get { return Color.OrangeRed; } }
+            //LinearGradientMode mode = LinearGradientMode.Horizontal;
+
+            //using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, ColorTable.MenuStripGradientBegin, ColorTable.MenuStripGradientEnd, mode))
+            //{
+            //    e.Graphics.FillRectangle(b, e.AffectedBounds);
+            //}
+        }
+
+    }*/
+
+    public class BlueRenderer : ToolStripProfessionalRenderer
+    {
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = Color.FromArgb(0, 56, 117);
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
+        }
     }
 }

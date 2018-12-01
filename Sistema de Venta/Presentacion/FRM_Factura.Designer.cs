@@ -188,7 +188,7 @@
             // ckb_desactivarFecha
             // 
             this.ckb_desactivarFecha.AutoSize = true;
-            this.ckb_desactivarFecha.Location = new System.Drawing.Point(864, 29);
+            this.ckb_desactivarFecha.Location = new System.Drawing.Point(855, 29);
             this.ckb_desactivarFecha.Name = "ckb_desactivarFecha";
             this.ckb_desactivarFecha.Size = new System.Drawing.Size(97, 21);
             this.ckb_desactivarFecha.TabIndex = 30;
@@ -223,7 +223,7 @@
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buscar.Image = global::Sistema_de_Venta.Properties.Resources.search_On_50;
-            this.btn_buscar.Location = new System.Drawing.Point(979, 12);
+            this.btn_buscar.Location = new System.Drawing.Point(965, 12);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(64, 53);
             this.btn_buscar.TabIndex = 27;

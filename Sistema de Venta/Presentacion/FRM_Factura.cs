@@ -25,22 +25,44 @@ namespace Sistema_de_Venta.Presentacion
             return _Instancia;
         }
 
-        public static void MergePDFs(string targetPath, string [] pdfs)
+        public void MergePDFs(string targetPath, string [] pdfs, string condicionBusqueda = "Todas")
         {
-            using (PdfDocument targetDoc = new PdfDocument())
+
+            try
             {
-                foreach (string pdf in pdfs)
+                using (PdfDocument targetDoc = new PdfDocument())
                 {
-                    using (PdfDocument pdfDoc = PdfReader.Open(pdf, PdfDocumentOpenMode.Import))
+                    foreach (string pdf in pdfs)
                     {
-                        for (int i = 0; i < pdfDoc.PageCount; i++)
+                        using (PdfDocument pdfDoc = PdfReader.Open(pdf, PdfDocumentOpenMode.Import))
                         {
-                            targetDoc.AddPage(pdfDoc.Pages[i]);
+                            for (int i = 0; i < pdfDoc.PageCount; i++)
+                            {
+                                targetDoc.AddPage(pdfDoc.Pages[i]);
+                            }
                         }
                     }
+                    targetDoc.Save(targetPath);
                 }
-                targetDoc.Save(targetPath);
+
+                //lee pdf
+                leerPDF(targetPath);
             }
+                catch (Exception)
+                {
+                    if (condicionBusqueda == "Fecha") 
+                    {
+                        MessageBox.Show("No existe ninguna factura con la Fecha especificada", "Factura no encontrada");
+                    }
+                    else if (condicionBusqueda == "Tipo") 
+                    {
+                        MessageBox.Show("No existe ninguna factura con el Tipo especificado", "Factura no encontrada");
+                    }
+                    else // busqueda por tipo y fecha
+                    {
+                        MessageBox.Show("No existe ninguna factura con la Fecha y el Tipo especificado", "Factura no encontrada");
+                    }
+                }
         }
 
         private void FRM_Factura_Load(object sender, EventArgs e)
@@ -51,7 +73,6 @@ namespace Sistema_de_Venta.Presentacion
             string[] archivos = Directory.GetFiles(pathGet, "*.pdf");
             MergePDFs(pathSave, archivos);
 
-            leerPDF(pathSave);
         }
 
         public void leerPDF(string path)
@@ -61,7 +82,6 @@ namespace Sistema_de_Venta.Presentacion
                 // leer pdf combinado
                 axAcroPDF.LoadFile(path);
                 axAcroPDF.setShowToolbar(false);
-                //axAcroPDF.setPageMode(PdfSharp.Pdf.PdfPageMode.FullScreen.ToString());
             }
             catch (Exception)
             {
@@ -81,17 +101,32 @@ namespace Sistema_de_Venta.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime fechaAFormatear = dtp_FechaFactura.Value;
-            
-            
-            string nombreFactura = cmb_TipoFactura.Text + " - " + fechaAFormatear.ToString("dd-MM-yyyy") + " *.pdf";
+            string nombreFactura;
+            string condicionBusqueda;
+
+            if (ckb_desactivarTipo.Checked == true) // buscar solo por fecha
+            {
+                nombreFactura = "* - " + fechaAFormatear.ToString("dd-MM-yyyy") + "*.pdf";
+                condicionBusqueda = "Fecha";
+            }
+            else if (ckb_desactivarFecha.Checked == true) // buscar solo por tipo
+            {
+                nombreFactura = cmb_TipoFactura.Text + " - " + "*.pdf";
+                condicionBusqueda = "Tipo";
+            }
+            else // buscar por tipo y fecha
+            {
+                nombreFactura = cmb_TipoFactura.Text + " - " + fechaAFormatear.ToString("dd-MM-yyyy") + "*.pdf";
+                condicionBusqueda = "Todas";
+            }
+
 
             // combinar pdfs
             string temporalPathSave = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName) + "\\Facturas\\FacturasCombinadas\\BusquedaPorDias\\FacturasCombinadas.pdf";
             string pathGet = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas\\");
-            MergePDFs(temporalPathSave, obtenerArchivosDirectorio(pathGet, nombreFactura));
+            MergePDFs(temporalPathSave, obtenerArchivosDirectorio(pathGet, nombreFactura), condicionBusqueda);
 
-            //leer archivo pdf
-            leerPDF(temporalPathSave);           
+            //leer archivo pdf está dentro de merge...          
         }
 
         
@@ -106,6 +141,7 @@ namespace Sistema_de_Venta.Presentacion
             if(ckb_desactivarTipo.Checked)
             {
                 cmb_TipoFactura.Enabled = false;
+                ckb_desactivarFecha.Checked = false;
             }
             else
             {
@@ -118,6 +154,7 @@ namespace Sistema_de_Venta.Presentacion
             if (ckb_desactivarFecha.Checked)
             {
                 dtp_FechaFactura.Enabled = false;
+                ckb_desactivarTipo.Checked = false;
             }
             else
             {

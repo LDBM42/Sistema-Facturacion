@@ -36,9 +36,9 @@
             this.lbl_CountDown = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnl_Azul = new System.Windows.Forms.Panel();
+            this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.lbl_Login = new System.Windows.Forms.Label();
             this.tmr_cuadroAzul = new System.Windows.Forms.Timer(this.components);
-            this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.pnl_Azul.SuspendLayout();
@@ -56,10 +56,11 @@
             this.text_Usuario.Location = new System.Drawing.Point(310, 97);
             this.text_Usuario.Margin = new System.Windows.Forms.Padding(4);
             this.text_Usuario.Name = "text_Usuario";
-            this.text_Usuario.Size = new System.Drawing.Size(408, 28);
+            this.text_Usuario.Size = new System.Drawing.Size(408, 23);
             this.text_Usuario.TabIndex = 1;
             this.text_Usuario.Text = "USUARIO";
             this.text_Usuario.Click += new System.EventHandler(this.text_Usuario_Click);
+            this.text_Usuario.Enter += new System.EventHandler(this.text_Usuario_Enter);
             this.text_Usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Usuario_KeyPress);
             this.text_Usuario.MouseEnter += new System.EventHandler(this.text_Usuario_MouseEnter);
             this.text_Usuario.MouseLeave += new System.EventHandler(this.text_Usuario_MouseLeave);
@@ -73,10 +74,12 @@
             this.text_Password.Location = new System.Drawing.Point(310, 163);
             this.text_Password.Margin = new System.Windows.Forms.Padding(4);
             this.text_Password.Name = "text_Password";
-            this.text_Password.Size = new System.Drawing.Size(408, 28);
+            this.text_Password.Size = new System.Drawing.Size(408, 23);
             this.text_Password.TabIndex = 2;
             this.text_Password.Text = "PASSWORD";
             this.text_Password.Click += new System.EventHandler(this.text_Password_Click);
+            this.text_Password.TextChanged += new System.EventHandler(this.text_Password_TextChanged);
+            this.text_Password.Enter += new System.EventHandler(this.text_Password_Enter);
             this.text_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Password_KeyPress);
             this.text_Password.MouseEnter += new System.EventHandler(this.text_Password_MouseEnter);
             this.text_Password.MouseLeave += new System.EventHandler(this.text_Password_MouseLeave);
@@ -127,22 +130,6 @@
             this.pnl_Azul.TabIndex = 4;
             this.pnl_Azul.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // lbl_Login
-            // 
-            this.lbl_Login.AutoSize = true;
-            this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Login.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_Login.Location = new System.Drawing.Point(453, 9);
-            this.lbl_Login.Name = "lbl_Login";
-            this.lbl_Login.Size = new System.Drawing.Size(143, 46);
-            this.lbl_Login.TabIndex = 0;
-            this.lbl_Login.Text = "LOGIN";
-            // 
-            // tmr_cuadroAzul
-            // 
-            this.tmr_cuadroAzul.Interval = 30;
-            this.tmr_cuadroAzul.Tick += new System.EventHandler(this.tmr_cuadroAzul_Tick);
-            // 
             // pbx_logo
             // 
             this.pbx_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -154,6 +141,22 @@
             this.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_logo.TabIndex = 0;
             this.pbx_logo.TabStop = false;
+            // 
+            // lbl_Login
+            // 
+            this.lbl_Login.AutoSize = true;
+            this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Login.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl_Login.Location = new System.Drawing.Point(453, 9);
+            this.lbl_Login.Name = "lbl_Login";
+            this.lbl_Login.Size = new System.Drawing.Size(119, 38);
+            this.lbl_Login.TabIndex = 0;
+            this.lbl_Login.Text = "LOGIN";
+            // 
+            // tmr_cuadroAzul
+            // 
+            this.tmr_cuadroAzul.Interval = 30;
+            this.tmr_cuadroAzul.Tick += new System.EventHandler(this.tmr_cuadroAzul_Tick);
             // 
             // btnClose
             // 

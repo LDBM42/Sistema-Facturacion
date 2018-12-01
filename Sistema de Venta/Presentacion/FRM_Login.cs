@@ -228,7 +228,6 @@ namespace Sistema_de_Venta.Presentacion
                 text_Usuario.Text = "USUARIO";
                 text_Usuario.ForeColor = Color.DimGray;
             }
-            text_Password.UseSystemPasswordChar = true;
         }
 
         private void text_Password_KeyPress(object sender, KeyPressEventArgs e)
@@ -272,6 +271,32 @@ namespace Sistema_de_Venta.Presentacion
 
 
 
+
+        private void text_Password_TextChanged(object sender, EventArgs e)
+        {
+            text_Password.UseSystemPasswordChar = true;
+        }
+
+        private void text_Usuario_Enter(object sender, EventArgs e)
+        {
+            if (text_Password.Text == "")
+            {
+                text_Password.Text = "PASSWORD";
+                text_Password.ForeColor = Color.DimGray;
+                text_Password.UseSystemPasswordChar = false;
+                text_Usuario.Focus();
+            }
+        }
+
+        private void text_Password_Enter(object sender, EventArgs e)
+        {
+            if (text_Usuario.Text == "")
+            {
+                text_Usuario.Text = "USUARIO";
+                text_Usuario.ForeColor = Color.DimGray;
+                text_Password.Focus();
+            }
+        }
 
         private void tmr_cuadroAzul_Tick(object sender, EventArgs e)
         {
