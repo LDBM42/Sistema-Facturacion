@@ -225,11 +225,8 @@ namespace Sistema_de_Venta.Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message + ex.StackTrace);
-
             }
-
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)

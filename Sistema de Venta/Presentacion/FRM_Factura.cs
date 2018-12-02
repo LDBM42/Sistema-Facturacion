@@ -3,6 +3,7 @@ using PdfSharp.Pdf.IO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -12,7 +13,7 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Factura _Instancia;
-
+        int x, y;
         public FRM_Factura()
         {
             InitializeComponent();
@@ -67,12 +68,24 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Factura_Load(object sender, EventArgs e)
         {
+            resetearBuscador();
+
             // combinar pdfs
             string pathSave = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName) + "\\Facturas\\FacturasCombinadas\\FacturasCombinadas.pdf";
             string pathGet = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "\\Facturas");
             string[] archivos = Directory.GetFiles(pathGet, "*.pdf");
             MergePDFs(pathSave, archivos);
+        }
 
+        private void resetearBuscador()
+        {
+            x = 70;
+            y = 50;
+            cmb_TipoFactura.Text = "Consumidor Final";
+            Pnl_Buscar.Size = new Size(x, y);
+            pbx_ChevronRight.Visible = true;
+            pbx_ChevronLeft.Visible = false;
+            pbx_BuscarUp.Visible = true;
         }
 
         public void leerPDF(string path)
@@ -82,6 +95,7 @@ namespace Sistema_de_Venta.Presentacion
                 // leer pdf combinado
                 axAcroPDF.LoadFile(path);
                 axAcroPDF.setShowToolbar(false);
+                axAcroPDF.setZoom(100);
             }
             catch (Exception)
             {
@@ -140,11 +154,13 @@ namespace Sistema_de_Venta.Presentacion
         {
             if(ckb_desactivarTipo.Checked)
             {
+                ckb_desactivarTipo.Image = Properties.Resources.locked_50;
                 cmb_TipoFactura.Enabled = false;
                 ckb_desactivarFecha.Checked = false;
             }
             else
             {
+                ckb_desactivarTipo.Image = Properties.Resources.unlocked_50;
                 cmb_TipoFactura.Enabled = true;
             }
         }
@@ -153,13 +169,75 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (ckb_desactivarFecha.Checked)
             {
+                ckb_desactivarFecha.Image = Properties.Resources.locked_50;
                 dtp_FechaFactura.Enabled = false;
                 ckb_desactivarTipo.Checked = false;
             }
             else
             {
+                ckb_desactivarFecha.Image = Properties.Resources.unlocked_50;
                 dtp_FechaFactura.Enabled = true;
             }
+        }
+
+        private void tmr_Buscar_Tick(object sender, EventArgs e)
+        {
+            if (pbx_ChevronRight.Visible == true)
+            {
+                if (x < 290)
+                {
+                    Pnl_Buscar.Size = new Size(x, y);
+                    x = x + 10;
+                }
+                else if (y < 300)
+                {
+                    pbx_BuscarUp.Visible = false;
+                    Pnl_Buscar.Size = new Size(x, y);
+                    y = y + 10;
+                }
+                else
+                {
+                    tmr_Buscar.Stop();
+                    pbx_ChevronLeft.Visible = true;
+                    pbx_ChevronRight.Visible = false;
+                }
+            }                
+        }
+
+        private void Pnl_Buscar_MouseEnter(object sender, EventArgs e)
+        {
+            if (pbx_ChevronRight.Visible == true)
+                tmr_Buscar.Start();
+        }
+
+        private void tmr_BuscarHide_Tick(object sender, EventArgs e)
+        {
+            if (pbx_ChevronLeft.Visible == true)
+            {
+                if (y > 50)
+                {
+                    Pnl_Buscar.Size = new Size(x, y);
+                    y = y - 10;
+                }
+                else if (x > 70)
+                {
+                    pbx_BuscarUp.Visible = true;
+                    Pnl_Buscar.Size = new Size(x, y);
+                    x = x - 10;
+                }
+                else
+                {
+                    tmr_BuscarHide.Stop();
+                    pbx_ChevronLeft.Visible = false;
+                    pbx_ChevronRight.Visible = true;
+                }
+            }
+               
+        }
+
+        private void pbx_ChevronLeft_Click(object sender, EventArgs e)
+        {
+            tmr_BuscarHide.Start();
         }
     }
 }

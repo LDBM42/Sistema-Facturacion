@@ -53,21 +53,19 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (dt.Rows.Count > 0)
                 {
-
                     noencontrado.Visible = false;
                     dgvVentas_CellClick(null, null);
                 }
                 else
                 {
-
                     noencontrado.Visible = true;
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+
             MostrarGuardarCancelar(false);
             text_ClienteId.Enabled = false;
             text_ClienteNombre.Enabled = false;
@@ -242,10 +240,20 @@ namespace Sistema_de_Venta.Presentacion
             btnEditar.Visible = !b;
 
             dgvVentas.Enabled = !b;
-
-            //text_ClienteId.Enabled = b;
+                       
             text_ClienteNombre.Enabled = b;
-            text_fecha.Enabled = b;            
+            text_fecha.Enabled = b;
+
+            cbx_clienteNuevoORegistrado.Enabled = b;
+            //mostrar cliente nuevo o cliente Registrado, dependiendo de si está visible o no
+            if (b == false)
+            {
+                cbx_clienteNuevoORegistrado.Text = "Cliente Registrado";
+            }
+            else
+            {
+                cbx_clienteNuevoORegistrado.Text = "Cliente Nuevo";
+            }
         }
 
         public string ValidarDatos()
@@ -314,6 +322,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             FRM_Cliente FRMCli = new FRM_Cliente();
             FRMCli.SetFlag("1");
+            FRMCli.Nuevo_o_Registrado(cbx_clienteNuevoORegistrado.Text);
             FRMCli.WindowState = FormWindowState.Maximized;
             DialogResult res = FRMCli.ShowDialog(); //abrimos el formulario CLiente como cuadro de dialogo modal
 

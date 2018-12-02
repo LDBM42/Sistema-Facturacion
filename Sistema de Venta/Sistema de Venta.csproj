@@ -391,6 +391,11 @@
     <None Include="Resources\minimize_white.png" />
     <None Include="Resources\search_On_50.png" />
     <None Include="Resources\facturas.png" />
+    <None Include="Resources\chebrón-hacia-la-derecha.png" />
+    <None Include="Resources\chebrón-hacia-la-izq.png" />
+    <None Include="Resources\Factura.png" />
+    <None Include="Resources\unlocked-50.png" />
+    <None Include="Resources\locked-50.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

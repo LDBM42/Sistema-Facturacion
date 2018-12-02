@@ -143,6 +143,26 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chebrón_hacia_la_derecha {
+            get {
+                object obj = ResourceManager.GetObject("chebrón-hacia-la-derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chebrón_hacia_la_izq {
+            get {
+                object obj = ResourceManager.GetObject("chebrón-hacia-la-izq", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_gray {
             get {
                 object obj = ResourceManager.GetObject("close_gray", resourceCulture);
@@ -166,6 +186,16 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap close_white {
             get {
                 object obj = ResourceManager.GetObject("close_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Factura {
+            get {
+                object obj = ResourceManager.GetObject("Factura", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +276,16 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap ISOTIPO_MEF_srl {
             get {
                 object obj = ResourceManager.GetObject("ISOTIPO MEF srl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap locked_50 {
+            get {
+                object obj = ResourceManager.GetObject("locked-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +496,16 @@ namespace Sistema_de_Venta.Properties {
         internal static System.Drawing.Bitmap Transparente1 {
             get {
                 object obj = ResourceManager.GetObject("Transparente1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unlocked_50 {
+            get {
+                object obj = ResourceManager.GetObject("unlocked-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

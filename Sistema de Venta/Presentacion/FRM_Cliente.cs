@@ -11,7 +11,7 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Cliente _instancia;
-        public string idCliente, nombreCliente;
+        public string idCliente, nombreCliente, nuevo_o_Registrado;
         public FRM_Cliente()
         {
             InitializeComponent();
@@ -65,6 +65,11 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     noencontrado.Visible = false;
                     dgvClientes_CellClick(null, null);
+
+                    if (nuevo_o_Registrado == "Cliente Nuevo")
+                    {
+                        Nuevo_Click(null, null);
+                    }
                 }
                 else
                 {
@@ -75,8 +80,13 @@ namespace Sistema_de_Venta.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            MostrarGuardarCancelar(false);
-            cbx_FiscalConsumo.Enabled = false;
+
+            if (nuevo_o_Registrado != "Cliente Nuevo")
+            {
+                MostrarGuardarCancelar(false);
+                cbx_FiscalConsumo.Enabled = false;
+            }
+
 
         }
 
@@ -96,7 +106,7 @@ namespace Sistema_de_Venta.Presentacion
                     if (text_Id.Text == "")
                     {
                         Cliente cliente = new Cliente();
-                        cliente.Nombre = text_Nombre .Text;
+                        cliente.Nombre = text_Nombre.Text;
                         cliente.Domicilio = text_Domicilio.Text;
                         cliente.Ncf = text_NCF.Text;
                         cliente.VencimientoSecuencia = text_VencimientoSecuencia.Value;
@@ -201,7 +211,7 @@ namespace Sistema_de_Venta.Presentacion
             Eliminar.Visible = true;
             limpiar();
 
-
+            BloquearControlesClienteNuevo();
         }
 
         public void MostrarGuardarCancelar(bool b)
@@ -226,8 +236,23 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Editar_Click(object sender, EventArgs e)
         {
+            text_NCF.Focus();
             MostrarGuardarCancelar(true);
             cbx_FiscalConsumo.Enabled = false;
+
+            BloquearControlesClienteNuevo();
+        }
+
+        private void BloquearControlesClienteNuevo()
+        {
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                text_Domicilio.Enabled = false;
+                text_Telefono.Enabled = false;
+                text_Nombre.Enabled = false;
+                text_Apellido.Enabled = false;
+                Cancelar.Enabled = false;
+            }
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -244,8 +269,6 @@ namespace Sistema_de_Venta.Presentacion
                 {
                 }
             }
-
-
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -285,6 +308,17 @@ namespace Sistema_de_Venta.Presentacion
             text_Telefono.Clear();
             tbx_RNC.Clear();
             tbx_NoRSocial.Clear();
+
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                cbx_FiscalConsumo.Text = "Consumidor Final";
+                text_Domicilio.Text = "NA";
+                text_Telefono.Text = "NA";
+                text_Nombre.Text = "NA";
+                text_Apellido.Text = "NA";
+                tbx_RNC.Text = "NA";
+                tbx_NoRSocial.Text = "NA";
+            }
 
         }
 
@@ -383,13 +417,17 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-
-
-
-
         internal void SetFlag(string band)
         {
             text_Flag.Text = band;
+        }
+
+        internal void Nuevo_o_Registrado(string nuevo_o_Registrado)
+        {
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                this.nuevo_o_Registrado = nuevo_o_Registrado;
+            }
         }
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -431,7 +469,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             lab_Apellido.Visible = visible;
             text_Apellido.Visible = visible;
-            
+
             lab_InfReceptor.Visible = !visible;
             lab_RNC.Visible = !visible;
             lab_NoRSocial.Visible = !visible;
@@ -442,8 +480,6 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
-
             // para activar los favoritos
             if (this.dgvClientes.Columns[e.ColumnIndex].Index == 1)
             {
