@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.lab_encabezado = new System.Windows.Forms.Label();
             this.btnRestore = new System.Windows.Forms.PictureBox();
             this.pnl_Formularios = new System.Windows.Forms.Panel();
             this.pbx_Logo = new System.Windows.Forms.PictureBox();
@@ -65,6 +66,7 @@
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlMain.Controls.Add(this.lab_encabezado);
             this.pnlMain.Controls.Add(this.btnRestore);
             this.pnlMain.Controls.Add(this.pnl_Formularios);
             this.pnlMain.Controls.Add(this.btnClose);
@@ -77,6 +79,21 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1300, 800);
             this.pnlMain.TabIndex = 1;
+            // 
+            // lab_encabezado
+            // 
+            this.lab_encabezado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lab_encabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(117)))));
+            this.lab_encabezado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lab_encabezado.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_encabezado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(102)))), ((int)(((byte)(145)))));
+            this.lab_encabezado.Location = new System.Drawing.Point(635, 10);
+            this.lab_encabezado.Margin = new System.Windows.Forms.Padding(0);
+            this.lab_encabezado.Name = "lab_encabezado";
+            this.lab_encabezado.Size = new System.Drawing.Size(507, 54);
+            this.lab_encabezado.TabIndex = 9;
+            this.lab_encabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRestore
             // 
@@ -215,7 +232,7 @@
             this.cLIENTESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Usuario;
             this.cLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
@@ -226,7 +243,7 @@
             this.pRODUCTOSToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Productos;
             this.pRODUCTOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
-            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
@@ -236,7 +253,7 @@
             this.serviciosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.serviciosToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Servicios;
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.serviciosToolStripMenuItem.Text = "SERVICIOS";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
             // 
@@ -248,7 +265,7 @@
             this.vENTASToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Ventas;
             this.vENTASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.vENTASToolStripMenuItem.Text = "VENTAS";
             this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
@@ -258,7 +275,7 @@
             this.verFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verFacturasToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.facturas;
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.verFacturasToolStripMenuItem.Text = "VER FACTURAS";
             this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
@@ -269,7 +286,7 @@
             this.cATEGORIAToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Categoria;
             this.cATEGORIAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
-            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
+            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.cATEGORIAToolStripMenuItem.Text = "CATEGORIAS";
             this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
             // 
@@ -379,6 +396,7 @@
         public System.Windows.Forms.Panel pnl_Formularios;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
+        public System.Windows.Forms.Label lab_encabezado;
     }
 }
 

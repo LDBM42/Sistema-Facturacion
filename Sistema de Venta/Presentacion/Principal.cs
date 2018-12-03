@@ -85,6 +85,19 @@ namespace Sistema_de_Venta
             AbrirFormulario<FRM_Usuario>(0);
         }
 
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lab_encabezado.Text = "Auritoría               ";
+            AbrirFormulario<FRM_Auditoria>(0);
+        }
+
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Factura factura = FRM_Factura.GetInscance();
+            factura.ShowDialog();
+        }
+
+
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //para saber si es el mismo usuario
@@ -310,6 +323,7 @@ namespace Sistema_de_Venta
                 {
                     formulario = new MiForm();
                     ((IFormulario)formulario).InicializarParametros(args); // para pasarle parametros
+                    this.AddOwnedForm(formulario); //establecer form principal como padre
                     formulario.TopLevel = false;
                     formulario.FormBorderStyle = FormBorderStyle.None;
                     formulario.Dock = DockStyle.Fill;
@@ -332,9 +346,10 @@ namespace Sistema_de_Venta
             }
         }
 
-        //detecta si se cambión de usuario para volver a cargar el form.
+        
         private void Form1_Activated(object sender, EventArgs e)
         {
+            //detecta si se cambión de usuario para volver a cargar el form.
             if (UserTemp != Usuario.Nombre)
             {
                 UserTemp = Usuario.Nombre;
@@ -356,20 +371,7 @@ namespace Sistema_de_Venta
                 btnRestore.Visible = false;
                 minimizar = 0;
             }
-        }
-
-        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FRM_Auditoria auditor = new FRM_Auditoria();
-            auditor.Show(this);
-        }
-
-        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FRM_Factura factura = FRM_Factura.GetInscance();
-            factura.ShowDialog();
-        }
-
+        }        
     }
 
     // para sobreescibir el menustrip

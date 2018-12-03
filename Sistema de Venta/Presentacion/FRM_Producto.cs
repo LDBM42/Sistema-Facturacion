@@ -500,6 +500,27 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
+        private void FRM_Producto_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            if(Servicios == 1)
+            {
+                principal.lab_encabezado.Text = "   Servicios";
+            }
+            else
+            {
+                principal.lab_encabezado.Text = "  Productos";
+            }
+            this.BringToFront();
+        }
+
+        private void FRM_Producto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
+        }
+
         private void Buscar_TextChanged(object sender, EventArgs e)
         {
             try

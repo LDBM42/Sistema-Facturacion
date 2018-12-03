@@ -263,6 +263,16 @@ namespace Sistema_de_Venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_letra_pequeña_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-letra-pequeña-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imprimir {
             get {
                 object obj = ResourceManager.GetObject("Imprimir", resourceCulture);

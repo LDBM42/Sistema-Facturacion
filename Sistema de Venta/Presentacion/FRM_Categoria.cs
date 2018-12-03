@@ -309,6 +309,19 @@ namespace Sistema_de_Venta.Presentacion
             Buscar.Focus();
         }
 
+        private void FRM_Categoria_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "Categoría         ";
+            this.BringToFront();
+        }
+
+        private void FRM_Categoria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
+        }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {

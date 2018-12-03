@@ -396,6 +396,7 @@
     <None Include="Resources\Factura.png" />
     <None Include="Resources\unlocked-50.png" />
     <None Include="Resources\locked-50.png" />
+    <None Include="Resources\icons8-letra-pequeña-100.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>

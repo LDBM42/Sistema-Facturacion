@@ -49,7 +49,6 @@
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Favorite = new System.Windows.Forms.DataGridViewImageColumn();
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
@@ -63,8 +62,9 @@
             this.tbx_NoRSocial = new System.Windows.Forms.TextBox();
             this.cbx_FiscalConsumo = new System.Windows.Forms.ComboBox();
             this.Guardar = new System.Windows.Forms.Button();
-            this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Favorite = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -242,15 +242,15 @@
             this.noencontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noencontrado.AutoSize = true;
             this.noencontrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(345, 327);
+            this.noencontrado.Location = new System.Drawing.Point(43, 147);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(907, 448);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
+            this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Buscar
             // 
@@ -316,14 +316,6 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            // 
-            // Favorite
-            // 
-            this.Favorite.HeaderText = "Favorito";
-            this.Favorite.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
-            this.Favorite.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Favorite.Name = "Favorite";
-            this.Favorite.ReadOnly = true;
             // 
             // text_Flag
             // 
@@ -503,6 +495,23 @@
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Favorite";
+            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 443;
+            // 
+            // Favorite
+            // 
+            this.Favorite.HeaderText = "Favorito";
+            this.Favorite.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
+            this.Favorite.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Favorite.Name = "Favorite";
+            this.Favorite.ReadOnly = true;
+            // 
             // pbx_Ventas
             // 
             this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -515,15 +524,6 @@
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_Ventas.TabIndex = 19;
             this.pbx_Ventas.TabStop = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Favorite";
-            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 443;
             // 
             // FRM_Cliente
             // 
@@ -540,7 +540,9 @@
             this.Name = "FRM_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Cliente_FormClosing);
             this.Load += new System.EventHandler(this.FRM_Cliente_Load);
+            this.Enter += new System.EventHandler(this.FRM_Cliente_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.pnl_Lista_Categoria.ResumeLayout(false);
             this.pnl_Lista_Categoria.PerformLayout();

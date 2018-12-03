@@ -72,14 +72,15 @@
             this.noencontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noencontrado.AutoSize = true;
+            this.noencontrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(411, 277);
+            this.noencontrado.Location = new System.Drawing.Point(43, 133);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(953, 326);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
+            this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BT_Eliminar
             // 
@@ -327,7 +328,9 @@
             this.Name = "FRM_Categoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Categoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Categoria_FormClosing);
             this.Load += new System.EventHandler(this.FRM_Categoria_Load);
+            this.Enter += new System.EventHandler(this.FRM_Categoria_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.Pnl_Categoria_Size.ResumeLayout(false);
             this.pnl_Lista_Categoria.ResumeLayout(false);

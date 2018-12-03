@@ -344,5 +344,19 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
+
+        private void FRM_Ventas_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "Ventas   ";
+            this.BringToFront();
+        }
+
+        private void FRM_Ventas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
+        }
     }
 }

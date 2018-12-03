@@ -48,12 +48,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbx_clienteNuevoORegistrado = new System.Windows.Forms.ComboBox();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnl_Lista_Categoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
+            this.pnl_Lista_Categoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Cerrar
@@ -77,15 +77,15 @@
             this.noencontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noencontrado.AutoSize = true;
-            this.noencontrado.BackColor = System.Drawing.Color.Transparent;
+            this.noencontrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(406, 287);
+            this.noencontrado.Location = new System.Drawing.Point(42, 129);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(945, 362);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
+            this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Buscar
             // 
@@ -322,18 +322,6 @@
             this.cbx_clienteNuevoORegistrado.Size = new System.Drawing.Size(265, 28);
             this.cbx_clienteNuevoORegistrado.TabIndex = 22;
             // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(423, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1031, 537);
-            this.pnl_Lista_Categoria.TabIndex = 26;
-            // 
             // pbx_Ventas
             // 
             this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -346,6 +334,18 @@
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Ventas.TabIndex = 17;
             this.pbx_Ventas.TabStop = false;
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(423, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1031, 537);
+            this.pnl_Lista_Categoria.TabIndex = 26;
             // 
             // FRM_Ventas
             // 
@@ -361,13 +361,15 @@
             this.Name = "FRM_Ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Ventas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Ventas_FormClosing);
             this.Load += new System.EventHandler(this.FRM_Ventas_Load);
+            this.Enter += new System.EventHandler(this.FRM_Ventas_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.pnl_Lista_Categoria.ResumeLayout(false);
             this.pnl_Lista_Categoria.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
 
         }

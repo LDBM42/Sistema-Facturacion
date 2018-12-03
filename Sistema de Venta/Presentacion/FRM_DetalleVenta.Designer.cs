@@ -58,9 +58,9 @@
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbx_ProdSer = new System.Windows.Forms.ComboBox();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Cantidad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,7 +74,7 @@
             this.text_fecha.Location = new System.Drawing.Point(153, 107);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
-            this.text_fecha.Size = new System.Drawing.Size(265, 30);
+            this.text_fecha.Size = new System.Drawing.Size(265, 26);
             this.text_fecha.TabIndex = 15;
             // 
             // text_NumeroDoc
@@ -83,7 +83,7 @@
             this.text_NumeroDoc.Location = new System.Drawing.Point(153, 146);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 30);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
             this.text_NumeroDoc.TabIndex = 0;
             // 
             // text_ClienteId
@@ -92,7 +92,7 @@
             this.text_ClienteId.Location = new System.Drawing.Point(356, 28);
             this.text_ClienteId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteId.Name = "text_ClienteId";
-            this.text_ClienteId.Size = new System.Drawing.Size(11, 30);
+            this.text_ClienteId.Size = new System.Drawing.Size(11, 26);
             this.text_ClienteId.TabIndex = 7;
             this.text_ClienteId.Visible = false;
             // 
@@ -102,7 +102,7 @@
             this.text_ClienteNombre.Location = new System.Drawing.Point(153, 68);
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
-            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 30);
+            this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
             this.text_ClienteNombre.TabIndex = 7;
             // 
             // textVentaId
@@ -112,7 +112,7 @@
             this.textVentaId.Location = new System.Drawing.Point(375, 28);
             this.textVentaId.Margin = new System.Windows.Forms.Padding(4);
             this.textVentaId.Name = "textVentaId";
-            this.textVentaId.Size = new System.Drawing.Size(11, 30);
+            this.textVentaId.Size = new System.Drawing.Size(11, 26);
             this.textVentaId.TabIndex = 6;
             this.textVentaId.Visible = false;
             // 
@@ -123,7 +123,7 @@
             this.label8.Location = new System.Drawing.Point(50, 149);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 25);
+            this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 4;
             this.label8.Text = "No. Doc";
             // 
@@ -134,7 +134,7 @@
             this.label10.Location = new System.Drawing.Point(50, 110);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 25);
+            this.label10.Size = new System.Drawing.Size(55, 20);
             this.label10.TabIndex = 2;
             this.label10.Text = "Fecha";
             // 
@@ -145,7 +145,7 @@
             this.label11.Location = new System.Drawing.Point(50, 71);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 25);
+            this.label11.Size = new System.Drawing.Size(61, 20);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cliente";
             // 
@@ -154,15 +154,15 @@
             this.noencontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noencontrado.AutoSize = true;
-            this.noencontrado.BackColor = System.Drawing.Color.Transparent;
+            this.noencontrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(395, 303);
+            this.noencontrado.Location = new System.Drawing.Point(42, 129);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(293, 25);
+            this.noencontrado.Size = new System.Drawing.Size(895, 394);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
+            this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvVentas
             // 
@@ -213,7 +213,7 @@
             this.Buscar.Location = new System.Drawing.Point(210, 68);
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(727, 30);
+            this.Buscar.Size = new System.Drawing.Size(727, 26);
             this.Buscar.TabIndex = 22;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
@@ -229,7 +229,7 @@
             this.CMB_Buscar.Location = new System.Drawing.Point(42, 68);
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
-            this.CMB_Buscar.Size = new System.Drawing.Size(160, 33);
+            this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
             this.CMB_Buscar.TabIndex = 21;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
@@ -266,7 +266,7 @@
             this.Lbl_Comentario.Location = new System.Drawing.Point(50, 268);
             this.Lbl_Comentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Comentario.Name = "Lbl_Comentario";
-            this.Lbl_Comentario.Size = new System.Drawing.Size(114, 25);
+            this.Lbl_Comentario.Size = new System.Drawing.Size(99, 20);
             this.Lbl_Comentario.TabIndex = 19;
             this.Lbl_Comentario.Text = "Descripción";
             // 
@@ -285,7 +285,7 @@
             0,
             0});
             this.text_Cantidad.Name = "text_Cantidad";
-            this.text_Cantidad.Size = new System.Drawing.Size(105, 30);
+            this.text_Cantidad.Size = new System.Drawing.Size(105, 26);
             this.text_Cantidad.TabIndex = 1;
             this.text_Cantidad.Value = new decimal(new int[] {
             1,
@@ -299,7 +299,7 @@
             this.text_stock.Location = new System.Drawing.Point(333, 346);
             this.text_stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_stock.Name = "text_stock";
-            this.text_stock.Size = new System.Drawing.Size(85, 30);
+            this.text_stock.Size = new System.Drawing.Size(85, 26);
             this.text_stock.TabIndex = 7;
             this.text_stock.Text = "0";
             // 
@@ -308,7 +308,7 @@
             this.text_PrecioUnitario.Location = new System.Drawing.Point(153, 224);
             this.text_PrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioUnitario.Name = "text_PrecioUnitario";
-            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 30);
+            this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 26);
             this.text_PrecioUnitario.TabIndex = 2;
             // 
             // text_ProductoId
@@ -317,7 +317,7 @@
             this.text_ProductoId.Location = new System.Drawing.Point(333, 28);
             this.text_ProductoId.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoId.Name = "text_ProductoId";
-            this.text_ProductoId.Size = new System.Drawing.Size(12, 30);
+            this.text_ProductoId.Size = new System.Drawing.Size(12, 26);
             this.text_ProductoId.TabIndex = 7;
             this.text_ProductoId.Visible = false;
             // 
@@ -327,7 +327,7 @@
             this.text_ProductoDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_ProductoDescripcion.Name = "text_ProductoDescripcion";
             this.text_ProductoDescripcion.ReadOnly = true;
-            this.text_ProductoDescripcion.Size = new System.Drawing.Size(265, 30);
+            this.text_ProductoDescripcion.Size = new System.Drawing.Size(265, 26);
             this.text_ProductoDescripcion.TabIndex = 7;
             this.text_ProductoDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ProductoDescripcion_MouseClick);
             // 
@@ -338,7 +338,7 @@
             this.lab_stock.Location = new System.Drawing.Point(277, 349);
             this.lab_stock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_stock.Name = "lab_stock";
-            this.lab_stock.Size = new System.Drawing.Size(62, 25);
+            this.lab_stock.Size = new System.Drawing.Size(51, 20);
             this.lab_stock.TabIndex = 1;
             this.lab_stock.Text = "Stock";
             // 
@@ -349,7 +349,7 @@
             this.lab_valor.Location = new System.Drawing.Point(50, 227);
             this.lab_valor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_valor.Name = "lab_valor";
-            this.lab_valor.Size = new System.Drawing.Size(105, 25);
+            this.lab_valor.Size = new System.Drawing.Size(88, 20);
             this.lab_valor.TabIndex = 1;
             this.lab_valor.Text = "Valor/Prod";
             // 
@@ -360,7 +360,7 @@
             this.lab_Cantidad.Location = new System.Drawing.Point(50, 349);
             this.lab_Cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_Cantidad.Name = "lab_Cantidad";
-            this.lab_Cantidad.Size = new System.Drawing.Size(91, 25);
+            this.lab_Cantidad.Size = new System.Drawing.Size(75, 20);
             this.lab_Cantidad.TabIndex = 1;
             this.lab_Cantidad.Text = "Cantidad";
             // 
@@ -369,7 +369,7 @@
             this.txtFlag.Location = new System.Drawing.Point(396, 28);
             this.txtFlag.Margin = new System.Windows.Forms.Padding(4);
             this.txtFlag.Name = "txtFlag";
-            this.txtFlag.Size = new System.Drawing.Size(12, 30);
+            this.txtFlag.Size = new System.Drawing.Size(12, 26);
             this.txtFlag.TabIndex = 9;
             this.txtFlag.Visible = false;
             // 
@@ -435,22 +435,9 @@
             "Servicio"});
             this.cbx_ProdSer.Location = new System.Drawing.Point(50, 184);
             this.cbx_ProdSer.Name = "cbx_ProdSer";
-            this.cbx_ProdSer.Size = new System.Drawing.Size(88, 33);
+            this.cbx_ProdSer.Size = new System.Drawing.Size(88, 28);
             this.cbx_ProdSer.TabIndex = 22;
             this.cbx_ProdSer.SelectedIndexChanged += new System.EventHandler(this.cbx_ProdSer_SelectedIndexChanged);
-            // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.btnQuitar);
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(461, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(983, 608);
-            this.pnl_Lista_Categoria.TabIndex = 25;
             // 
             // btnImprimir
             // 
@@ -491,6 +478,19 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.btnQuitar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvVentas);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(461, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(983, 608);
+            this.pnl_Lista_Categoria.TabIndex = 25;
             // 
             // FRM_DetalleVenta
             // 

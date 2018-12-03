@@ -137,6 +137,7 @@ namespace Sistema_de_Venta.Presentacion
                             Form1.Log(Usuario.Nombreusuario, "Inserto Cliente: " + idcliente + " - " + cliente.Nombre);
 
                             FRM_Cliente_Load(null, null);
+                            buscarCeldaYEntrar(cliente.Ncf);
                         }
                     }
 
@@ -314,7 +315,7 @@ namespace Sistema_de_Venta.Presentacion
                 cbx_FiscalConsumo.Text = "Consumidor Final";
                 text_Domicilio.Text = "NA";
                 text_Telefono.Text = "NA";
-                text_Nombre.Text = "NA";
+                text_Nombre.Text = "NUEVO CLIENTE";
                 text_Apellido.Text = "NA";
                 tbx_RNC.Text = "NA";
                 tbx_NoRSocial.Text = "NA";
@@ -430,6 +431,24 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
+        //sirve para dar doble clic automaticamente a la celda del nuevo comprador
+        private void buscarCeldaYEntrar(string NCF)
+        {
+            // busca en el campo 'NCF' la celda Cuya columna es ‘NCF’
+            foreach (DataGridViewRow Row in dgvClientes.Rows)
+            {
+                int rowIndex = Row.Index;
+                string valor = Convert.ToString(Row.Cells["NCF"].Value);
+
+                if (valor == NCF)
+                {
+                    dgvClientes.CurrentCell = dgvClientes.Rows[rowIndex].Cells["NCF"];
+                    dgvClientes_CellDoubleClick(null, null);
+                }
+            }
+        }
+
+
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (text_Flag.Text == "1")
@@ -499,6 +518,20 @@ namespace Sistema_de_Venta.Presentacion
                     e.CellStyle.ForeColor = Color.Red;
                 }
             }
+        }
+
+        private void FRM_Cliente_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "Cliente     ";
+            this.BringToFront();
+        }
+
+        private void FRM_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
         }
 
         private void text_VencimientoSecuencia_ValueChanged(object sender, EventArgs e)
