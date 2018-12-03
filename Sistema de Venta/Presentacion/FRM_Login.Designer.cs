@@ -35,15 +35,16 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lbl_CountDown = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_Azul = new System.Windows.Forms.Panel();
+            this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.lbl_Login = new System.Windows.Forms.Label();
+            this.tmr_cuadroAzul = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.pnl_Azul.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // text_Usuario
@@ -59,6 +60,7 @@
             this.text_Usuario.TabIndex = 1;
             this.text_Usuario.Text = "USUARIO";
             this.text_Usuario.Click += new System.EventHandler(this.text_Usuario_Click);
+            this.text_Usuario.Enter += new System.EventHandler(this.text_Usuario_Enter);
             this.text_Usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Usuario_KeyPress);
             this.text_Usuario.MouseEnter += new System.EventHandler(this.text_Usuario_MouseEnter);
             this.text_Usuario.MouseLeave += new System.EventHandler(this.text_Usuario_MouseLeave);
@@ -76,6 +78,8 @@
             this.text_Password.TabIndex = 2;
             this.text_Password.Text = "PASSWORD";
             this.text_Password.Click += new System.EventHandler(this.text_Password_Click);
+            this.text_Password.TextChanged += new System.EventHandler(this.text_Password_TextChanged);
+            this.text_Password.Enter += new System.EventHandler(this.text_Password_Enter);
             this.text_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Password_KeyPress);
             this.text_Password.MouseEnter += new System.EventHandler(this.text_Password_MouseEnter);
             this.text_Password.MouseLeave += new System.EventHandler(this.text_Password_MouseLeave);
@@ -114,17 +118,29 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel1
+            // pnl_Azul
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(117)))));
-            this.panel1.Controls.Add(this.lbl_CountDown);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 330);
-            this.panel1.TabIndex = 4;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.pnl_Azul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(117)))));
+            this.pnl_Azul.Controls.Add(this.lbl_CountDown);
+            this.pnl_Azul.Controls.Add(this.pbx_logo);
+            this.pnl_Azul.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_Azul.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Azul.Name = "pnl_Azul";
+            this.pnl_Azul.Size = new System.Drawing.Size(525, 330);
+            this.pnl_Azul.TabIndex = 4;
+            this.pnl_Azul.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pbx_logo
+            // 
+            this.pbx_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbx_logo.Image = global::Sistema_de_Venta.Properties.Resources.ISOTIPO_MEF_srl;
+            this.pbx_logo.Location = new System.Drawing.Point(368, 93);
+            this.pbx_logo.Margin = new System.Windows.Forms.Padding(4);
+            this.pbx_logo.Name = "pbx_logo";
+            this.pbx_logo.Size = new System.Drawing.Size(168, 145);
+            this.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_logo.TabIndex = 0;
+            this.pbx_logo.TabStop = false;
             // 
             // lbl_Login
             // 
@@ -137,12 +153,17 @@
             this.lbl_Login.TabIndex = 0;
             this.lbl_Login.Text = "LOGIN";
             // 
+            // tmr_cuadroAzul
+            // 
+            this.tmr_cuadroAzul.Interval = 30;
+            this.tmr_cuadroAzul.Tick += new System.EventHandler(this.tmr_cuadroAzul_Tick);
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Sistema_de_Venta.Properties.Resources.close_gray;
+            this.btnClose.Image = global::Sistema_de_Venta.Properties.Resources.close_gray1;
             this.btnClose.Location = new System.Drawing.Point(748, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
@@ -156,7 +177,7 @@
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::Sistema_de_Venta.Properties.Resources.minimize_gray;
+            this.btnMinimize.Image = global::Sistema_de_Venta.Properties.Resources.minimize_gray1;
             this.btnMinimize.Location = new System.Drawing.Point(722, 9);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
@@ -165,27 +186,15 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::Sistema_de_Venta.Properties.Resources.ISOTIPO_MEF_srl;
-            this.pictureBox1.Location = new System.Drawing.Point(41, 93);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FRM_Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.pnl_Azul);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.lbl_Login);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.text_Password);
             this.Controls.Add(this.text_Usuario);
@@ -200,10 +209,10 @@
             this.Load += new System.EventHandler(this.FRM_Login_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FRM_Login_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FRM_Login_MouseDown);
-            this.panel1.ResumeLayout(false);
+            this.pnl_Azul.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,15 +220,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbx_logo;
         private System.Windows.Forms.TextBox text_Usuario;
         private System.Windows.Forms.TextBox text_Password;
         private System.Windows.Forms.Label lbl_CountDown;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_Azul;
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnMinimize;
+        private System.Windows.Forms.Timer tmr_cuadroAzul;
     }
 }

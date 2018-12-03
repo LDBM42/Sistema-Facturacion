@@ -2,6 +2,7 @@
 using SistemaVentas.Datos;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -10,7 +11,7 @@ namespace Sistema_de_Venta.Presentacion
     {
         private static DataTable dt = new DataTable();
         private static FRM_Cliente _instancia;
-        public string idCliente, nombreCliente;
+        public string idCliente, nombreCliente, nuevo_o_Registrado;
         public FRM_Cliente()
         {
             InitializeComponent();
@@ -49,6 +50,9 @@ namespace Sistema_de_Venta.Presentacion
         {
             CMB_Buscar.Text = "Nombre";
 
+            if (cbx_FiscalConsumo.Text == null)
+                cbx_FiscalConsumo.Text = "Consumidor Final";
+
             try
 
             {
@@ -56,16 +60,19 @@ namespace Sistema_de_Venta.Presentacion
                 dt = ds.Tables[0];
                 dgvClientes.DataSource = dt;
 
+
                 if (dt.Rows.Count > 0)
-
                 {
-
                     noencontrado.Visible = false;
                     dgvClientes_CellClick(null, null);
+
+                    if (nuevo_o_Registrado == "Cliente Nuevo")
+                    {
+                        Nuevo_Click(null, null);
+                    }
                 }
                 else
                 {
-
                     noencontrado.Visible = true;
                 }
             }
@@ -73,7 +80,13 @@ namespace Sistema_de_Venta.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            MostrarGuardarCancelar(false);
+
+            if (nuevo_o_Registrado != "Cliente Nuevo")
+            {
+                MostrarGuardarCancelar(false);
+                cbx_FiscalConsumo.Enabled = false;
+            }
+
 
         }
 
@@ -92,13 +105,26 @@ namespace Sistema_de_Venta.Presentacion
                 {
                     if (text_Id.Text == "")
                     {
-
                         Cliente cliente = new Cliente();
-                        cliente.Nombre = text_Nombre .Text;
-                        cliente.Apellido = text_Apellido.Text;
+                        cliente.Nombre = text_Nombre.Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
+                        cliente.Ncf = text_NCF.Text;
+                        cliente.VencimientoSecuencia = text_VencimientoSecuencia.Value;
                         cliente.Telefono = text_Telefono.Text;
+                        cliente.TipoCliente = cbx_FiscalConsumo.Text;
+
+                        if (cbx_FiscalConsumo.Text != "Crédito Fiscal")
+                        {
+                            cliente.Apellido = text_Apellido.Text;
+                            cliente.Rnc = 0;
+                            cliente.NoRSocial = "NA";
+                        }
+                        else
+                        {
+                            cliente.Apellido = "NA";
+                            cliente.Rnc = Convert.ToInt32(tbx_RNC.Text);
+                            cliente.NoRSocial = tbx_NoRSocial.Text;
+                        }
 
                         //esta en una variable para luego llamarla "idcliente"
                         int idcliente = FClientes.Insertar(cliente);
@@ -111,23 +137,37 @@ namespace Sistema_de_Venta.Presentacion
                             Form1.Log(Usuario.Nombreusuario, "Inserto Cliente: " + idcliente + " - " + cliente.Nombre);
 
                             FRM_Cliente_Load(null, null);
+                            buscarCeldaYEntrar(cliente.Ncf);
                         }
                     }
 
                     else
                     {
-
                         Cliente cliente = new Cliente();
                         cliente.Id = Convert.ToInt32(text_Id.Text);
                         cliente.Nombre = text_Nombre.Text;
-                        cliente.Apellido = text_Apellido.Text;
                         cliente.Domicilio = text_Domicilio.Text;
-                        cliente.Ncf = Convert.ToInt32(text_NCF.Text);
+                        cliente.Ncf = text_NCF.Text;
+                        cliente.VencimientoSecuencia = text_VencimientoSecuencia.Value;
                         cliente.Telefono = text_Telefono.Text;
-
-                        if (FClientes.Actualizar(cliente) == 1)
+                        cliente.TipoCliente = cbx_FiscalConsumo.Text;
+                        if (cbx_FiscalConsumo.Text != "Crédito Fiscal")
                         {
+                            cliente.Apellido = text_Apellido.Text;
+                            cliente.Rnc = 0;
+                            cliente.NoRSocial = "NA";
+                        }
+                        else
+                        {
+                            cliente.Apellido = "NA";
+                            cliente.Rnc = Convert.ToInt32(tbx_RNC.Text);
+                            cliente.NoRSocial = tbx_NoRSocial.Text;
+                        }
 
+
+                        int idcliente = FClientes.Actualizar(cliente);
+                        if (idcliente > 0)
+                        {
                             MessageBox.Show("Datos Modificados correctamente");
                             FRM_Cliente_Load(null, null);
                         }
@@ -156,7 +196,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 Resultado = Resultado + " Nombre \n";
             }
-            if (text_Apellido.Text == "")
+            if (text_Apellido.Text == "" && cbx_FiscalConsumo.Text != "Crédito Fiscal")
             {
                 Resultado = Resultado + " Apellido \n";
             }
@@ -167,16 +207,16 @@ namespace Sistema_de_Venta.Presentacion
         private void Nuevo_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+            cbx_FiscalConsumo.Enabled = true;
             //para que me muestre la columna eliminar 
             Eliminar.Visible = true;
             limpiar();
 
-
+            BloquearControlesClienteNuevo();
         }
 
         public void MostrarGuardarCancelar(bool b)
         {
-
             Guardar.Visible = b;
             Cancelar.Visible = b;
             Nuevo.Visible = !b;
@@ -189,13 +229,31 @@ namespace Sistema_de_Venta.Presentacion
             text_Apellido.Enabled = b;
             text_Telefono.Enabled = b;
             text_NCF.Enabled = b;
+            text_VencimientoSecuencia.Enabled = b;
             text_Domicilio.Enabled = b;
-
+            tbx_RNC.Enabled = b;
+            tbx_NoRSocial.Enabled = b;
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
+            text_NCF.Focus();
             MostrarGuardarCancelar(true);
+            cbx_FiscalConsumo.Enabled = false;
+
+            BloquearControlesClienteNuevo();
+        }
+
+        private void BloquearControlesClienteNuevo()
+        {
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                text_Domicilio.Enabled = false;
+                text_Telefono.Enabled = false;
+                text_Nombre.Enabled = false;
+                text_Apellido.Enabled = false;
+                Cancelar.Enabled = false;
+            }
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -212,13 +270,12 @@ namespace Sistema_de_Venta.Presentacion
                 {
                 }
             }
-
-
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(false);
+            cbx_FiscalConsumo.Enabled = false;
             dgvClientes_CellClick(null, null);
 
         }
@@ -228,12 +285,17 @@ namespace Sistema_de_Venta.Presentacion
             if (dgvClientes.CurrentRow != null)
             {
 
-                text_Id.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                text_Nombre.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
-                text_Apellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
-                text_Telefono.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
-                text_NCF.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
-                text_Domicilio.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
+                text_Id.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                text_Nombre.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
+                text_Apellido.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
+                text_Telefono.Text = dgvClientes.CurrentRow.Cells[5].Value.ToString();
+                text_NCF.Text = dgvClientes.CurrentRow.Cells[6].Value.ToString();
+                text_Domicilio.Text = dgvClientes.CurrentRow.Cells[7].Value.ToString();
+                cbx_FiscalConsumo.Text = dgvClientes.CurrentRow.Cells[8].Value.ToString();
+                // total articulos comprados es el 9
+                tbx_RNC.Text = dgvClientes.CurrentRow.Cells[10].Value.ToString();
+                tbx_NoRSocial.Text = dgvClientes.CurrentRow.Cells[11].Value.ToString();
+                text_VencimientoSecuencia.Value = Convert.ToDateTime(dgvClientes.CurrentRow.Cells[12].Value);
             }
         }
 
@@ -245,6 +307,20 @@ namespace Sistema_de_Venta.Presentacion
             text_Domicilio.Clear();
             text_NCF.Clear();
             text_Telefono.Clear();
+            tbx_RNC.Clear();
+            tbx_NoRSocial.Clear();
+
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                cbx_FiscalConsumo.Text = "Consumidor Final";
+                text_Domicilio.Text = "NA";
+                text_Telefono.Text = "NA";
+                text_Nombre.Text = "NUEVO CLIENTE";
+                text_Apellido.Text = "NA";
+                tbx_RNC.Text = "NA";
+                tbx_NoRSocial.Text = "NA";
+            }
+
         }
 
         private void BT_liminar_Click(object sender, EventArgs e)
@@ -342,14 +418,36 @@ namespace Sistema_de_Venta.Presentacion
             }
         }
 
-
-
-
-
         internal void SetFlag(string band)
         {
             text_Flag.Text = band;
         }
+
+        internal void Nuevo_o_Registrado(string nuevo_o_Registrado)
+        {
+            if (nuevo_o_Registrado == "Cliente Nuevo")
+            {
+                this.nuevo_o_Registrado = nuevo_o_Registrado;
+            }
+        }
+
+        //sirve para dar doble clic automaticamente a la celda del nuevo comprador
+        private void buscarCeldaYEntrar(string NCF)
+        {
+            // busca en el campo 'NCF' la celda Cuya columna es ‘NCF’
+            foreach (DataGridViewRow Row in dgvClientes.Rows)
+            {
+                int rowIndex = Row.Index;
+                string valor = Convert.ToString(Row.Cells["NCF"].Value);
+
+                if (valor == NCF)
+                {
+                    dgvClientes.CurrentCell = dgvClientes.Rows[rowIndex].Cells["NCF"];
+                    dgvClientes_CellDoubleClick(null, null);
+                }
+            }
+        }
+
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -357,9 +455,93 @@ namespace Sistema_de_Venta.Presentacion
             {
                 if (dgvClientes.CurrentRow != null)
                 {
-                    idCliente = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-                    nombreCliente = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                    idCliente = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                    nombreCliente = dgvClientes.CurrentRow.Cells[3].Value.ToString();
                     this.DialogResult = DialogResult.OK; //terminar
+                }
+            }
+        }
+
+        private void cbx_FiscalConsumo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbx_FiscalConsumo.Text == "Crédito Fiscal")
+            {
+                FiscalConsumo_Mostrar(false);
+                PosicionBotones(119, 249, 423);
+            }
+            else
+            {
+                FiscalConsumo_Mostrar(true);
+                PosicionBotones(119, 249, 342);
+            }
+        }
+
+        public void PosicionBotones(int x1, int x2, int y)
+        {
+            Nuevo.Location = new Point(x1, y);
+            Guardar.Location = new Point(x1, y);
+            Cancelar.Location = new Point(x2, y);
+            Editar.Location = new Point(x2, y);
+        }
+
+        public void FiscalConsumo_Mostrar(bool visible)
+        {
+            lab_Apellido.Visible = visible;
+            text_Apellido.Visible = visible;
+
+            lab_InfReceptor.Visible = !visible;
+            lab_RNC.Visible = !visible;
+            lab_NoRSocial.Visible = !visible;
+            tbx_RNC.Visible = !visible;
+            tbx_NoRSocial.Visible = !visible;
+
+        }
+
+        private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // para activar los favoritos
+            if (this.dgvClientes.Columns[e.ColumnIndex].Index == 1)
+            {
+                //e.CellStyle.BackColor = Color.FromArgb(255, 142, 188, 229);
+
+                if (Convert.ToInt32(this.dgvClientes.Rows[e.RowIndex].Cells["Total Arts. Comprados"].Value) >= 3)
+                {
+                    e.Value = Properties.Resources.FavoriteOn;
+                }
+            }
+
+            if (this.dgvClientes.Columns[e.ColumnIndex].Name == "Válida hasta")
+            {
+                if (Convert.ToDateTime(e.Value) <= DateTime.Now)
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void FRM_Cliente_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "Cliente     ";
+            this.BringToFront();
+        }
+
+        private void FRM_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
+        }
+
+        private void text_VencimientoSecuencia_ValueChanged(object sender, EventArgs e)
+        {
+            if (ActiveControl == text_VencimientoSecuencia)
+            {
+                if (text_VencimientoSecuencia.Value <= DateTime.Now && text_VencimientoSecuencia.Enabled)
+                {
+                    MessageBox.Show("La fecha de vencimiento de la secuencia no puede ser menor o igual a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    text_VencimientoSecuencia.Value = DateTime.Now.AddDays(1); // Coloca la fecha de hoy más uno
                 }
             }
         }

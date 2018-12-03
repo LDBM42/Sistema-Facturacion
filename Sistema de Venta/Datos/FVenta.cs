@@ -12,11 +12,21 @@ namespace Sistema_de_Venta.Datos
 {
     public  static class FVenta
     {
-        public static DataSet GetAll()
+        public static DataSet GetNumeroDocumento()
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     
+                };
+            return FDBHelper.ExecuteDataSet("usp_Data_FVenta_GetNumeroDocumento", dbParams);
+
+        }
+
+        public static DataSet GetAll()
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+
                 };
             return FDBHelper.ExecuteDataSet("usp_Data_FVenta_GetAll", dbParams);
 

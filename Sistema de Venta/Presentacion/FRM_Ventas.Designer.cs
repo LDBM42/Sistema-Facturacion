@@ -43,10 +43,11 @@
             this.text_ClienteId = new System.Windows.Forms.TextBox();
             this.text_ClienteNombre = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lab_DocNum = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbx_clienteNuevoORegistrado = new System.Windows.Forms.ComboBox();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
@@ -76,15 +77,15 @@
             this.noencontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noencontrado.AutoSize = true;
-            this.noencontrado.BackColor = System.Drawing.Color.Transparent;
+            this.noencontrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(62)))), ((int)(((byte)(84)))));
             this.noencontrado.ForeColor = System.Drawing.Color.White;
-            this.noencontrado.Location = new System.Drawing.Point(406, 287);
+            this.noencontrado.Location = new System.Drawing.Point(42, 129);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(244, 20);
+            this.noencontrado.Size = new System.Drawing.Size(945, 362);
             this.noencontrado.TabIndex = 3;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
+            this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Buscar
             // 
@@ -140,7 +141,7 @@
             // text_fecha
             // 
             this.text_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.text_fecha.Location = new System.Drawing.Point(114, 106);
+            this.text_fecha.Location = new System.Drawing.Point(114, 186);
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
             this.text_fecha.Size = new System.Drawing.Size(265, 26);
@@ -152,7 +153,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(254, 187);
+            this.btnEditar.Location = new System.Drawing.Point(254, 227);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(125, 40);
@@ -166,21 +167,21 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Location = new System.Drawing.Point(114, 187);
+            this.btnGuardar.Location = new System.Drawing.Point(114, 227);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(125, 40);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Location = new System.Drawing.Point(254, 187);
+            this.btnCancelar.Location = new System.Drawing.Point(254, 227);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 40);
@@ -194,7 +195,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevo.Location = new System.Drawing.Point(114, 187);
+            this.btnNuevo.Location = new System.Drawing.Point(114, 227);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(125, 40);
@@ -205,10 +206,15 @@
             // 
             // text_NumeroDoc
             // 
-            this.text_NumeroDoc.Location = new System.Drawing.Point(114, 146);
+            this.text_NumeroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.text_NumeroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_NumeroDoc.Enabled = false;
+            this.text_NumeroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.text_NumeroDoc.ForeColor = System.Drawing.Color.White;
+            this.text_NumeroDoc.Location = new System.Drawing.Point(114, 69);
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
-            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
+            this.text_NumeroDoc.Size = new System.Drawing.Size(265, 19);
             this.text_NumeroDoc.TabIndex = 10;
             // 
             // text_ClienteId
@@ -224,7 +230,7 @@
             // text_ClienteNombre
             // 
             this.text_ClienteNombre.Enabled = false;
-            this.text_ClienteNombre.Location = new System.Drawing.Point(114, 66);
+            this.text_ClienteNombre.Location = new System.Drawing.Point(114, 146);
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
             this.text_ClienteNombre.ReadOnly = true;
@@ -243,22 +249,22 @@
             this.textId.TabIndex = 6;
             this.textId.Visible = false;
             // 
-            // label8
+            // lab_DocNum
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(41, 149);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "No. Doc";
+            this.lab_DocNum.AutoSize = true;
+            this.lab_DocNum.ForeColor = System.Drawing.Color.White;
+            this.lab_DocNum.Location = new System.Drawing.Point(41, 69);
+            this.lab_DocNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_DocNum.Name = "lab_DocNum";
+            this.lab_DocNum.Size = new System.Drawing.Size(74, 20);
+            this.lab_DocNum.TabIndex = 4;
+            this.lab_DocNum.Text = "Doc. No.";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(41, 109);
+            this.label10.Location = new System.Drawing.Point(41, 189);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 20);
@@ -269,7 +275,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(41, 69);
+            this.label11.Location = new System.Drawing.Point(41, 149);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 20);
@@ -279,6 +285,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.cbx_clienteNuevoORegistrado);
             this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Controls.Add(this.text_fecha);
             this.panel2.Controls.Add(this.text_ClienteId);
@@ -287,7 +294,7 @@
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.textId);
             this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.lab_DocNum);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.text_NumeroDoc);
             this.panel2.Controls.Add(this.btnNuevo);
@@ -299,15 +306,31 @@
             this.panel2.Size = new System.Drawing.Size(423, 537);
             this.panel2.TabIndex = 23;
             // 
+            // cbx_clienteNuevoORegistrado
+            // 
+            this.cbx_clienteNuevoORegistrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.cbx_clienteNuevoORegistrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_clienteNuevoORegistrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_clienteNuevoORegistrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_clienteNuevoORegistrado.ForeColor = System.Drawing.Color.White;
+            this.cbx_clienteNuevoORegistrado.FormattingEnabled = true;
+            this.cbx_clienteNuevoORegistrado.Items.AddRange(new object[] {
+            "Cliente Nuevo",
+            "Cliente Registrado"});
+            this.cbx_clienteNuevoORegistrado.Location = new System.Drawing.Point(114, 105);
+            this.cbx_clienteNuevoORegistrado.Name = "cbx_clienteNuevoORegistrado";
+            this.cbx_clienteNuevoORegistrado.Size = new System.Drawing.Size(265, 28);
+            this.cbx_clienteNuevoORegistrado.TabIndex = 22;
+            // 
             // pbx_Ventas
             // 
             this.pbx_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbx_Ventas.Image = global::Sistema_de_Venta.Properties.Resources.VentasBig;
-            this.pbx_Ventas.Location = new System.Drawing.Point(162, 226);
+            this.pbx_Ventas.Location = new System.Drawing.Point(162, 262);
             this.pbx_Ventas.Name = "pbx_Ventas";
-            this.pbx_Ventas.Size = new System.Drawing.Size(100, 223);
+            this.pbx_Ventas.Size = new System.Drawing.Size(100, 187);
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Ventas.TabIndex = 17;
             this.pbx_Ventas.TabStop = false;
@@ -338,7 +361,9 @@
             this.Name = "FRM_Ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Ventas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Ventas_FormClosing);
             this.Load += new System.EventHandler(this.FRM_Ventas_Load);
+            this.Enter += new System.EventHandler(this.FRM_Ventas_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -360,7 +385,7 @@
         private System.Windows.Forms.TextBox text_NumeroDoc;
         private System.Windows.Forms.TextBox text_ClienteNombre;
         private System.Windows.Forms.TextBox textId;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lab_DocNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker text_fecha;
@@ -370,5 +395,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbx_Ventas;
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
+        private System.Windows.Forms.ComboBox cbx_clienteNuevoORegistrado;
     }
 }
