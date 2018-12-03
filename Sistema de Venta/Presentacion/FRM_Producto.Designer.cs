@@ -35,6 +35,7 @@
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Favorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.dialogo = new System.Windows.Forms.OpenFileDialog();
             this.pnl_Lista_Productos = new System.Windows.Forms.Panel();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
@@ -65,11 +66,10 @@
             this.lab_ITBIS = new System.Windows.Forms.Label();
             this.cbx_ITBIS = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Favorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.pbx_Servicios = new System.Windows.Forms.PictureBox();
             this.pbx_Productos = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.pnl_Lista_Productos.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,7 +90,7 @@
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(803, 46);
-            this.BT_liminar.TabIndex = 12;
+            this.BT_liminar.TabIndex = 3;
             this.BT_liminar.Text = "Eliminar";
             this.BT_liminar.UseVisualStyleBackColor = false;
             this.BT_liminar.Click += new System.EventHandler(this.BT_liminar_Click);
@@ -174,6 +174,14 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // Favorito
+            // 
+            this.Favorito.HeaderText = "Favorito";
+            this.Favorito.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
+            this.Favorito.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Favorito.Name = "Favorito";
+            this.Favorito.ReadOnly = true;
+            // 
             // dialogo
             // 
             this.dialogo.FileName = "openFileDialog1";
@@ -198,7 +206,7 @@
             this.pnl_Lista_Categoria.Location = new System.Drawing.Point(0, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
             this.pnl_Lista_Categoria.Size = new System.Drawing.Size(885, 640);
-            this.pnl_Lista_Categoria.TabIndex = 17;
+            this.pnl_Lista_Categoria.TabIndex = 0;
             // 
             // Editar
             // 
@@ -222,7 +230,7 @@
             this.lab_stock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_stock.Name = "lab_stock";
             this.lab_stock.Size = new System.Drawing.Size(51, 20);
-            this.lab_stock.TabIndex = 3;
+            this.lab_stock.TabIndex = 12;
             this.lab_stock.Text = "Stock";
             // 
             // lbl_Descripcion
@@ -233,7 +241,7 @@
             this.lbl_Descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
             this.lbl_Descripcion.Size = new System.Drawing.Size(99, 20);
-            this.lbl_Descripcion.TabIndex = 2;
+            this.lbl_Descripcion.TabIndex = 4;
             this.lbl_Descripcion.Text = "Descripción";
             // 
             // Guardar
@@ -258,7 +266,7 @@
             this.lab_vencimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_vencimiento.Name = "lab_vencimiento";
             this.lab_vencimiento.Size = new System.Drawing.Size(101, 20);
-            this.lab_vencimiento.TabIndex = 15;
+            this.lab_vencimiento.TabIndex = 14;
             this.lab_vencimiento.Text = "Vencimiento";
             // 
             // lab_compra
@@ -269,7 +277,7 @@
             this.lab_compra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_compra.Name = "lab_compra";
             this.lab_compra.Size = new System.Drawing.Size(121, 20);
-            this.lab_compra.TabIndex = 4;
+            this.lab_compra.TabIndex = 8;
             this.lab_compra.Text = "Precio Compra";
             // 
             // label3
@@ -280,7 +288,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 20);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Categoria";
             // 
             // Quitar
@@ -292,7 +300,7 @@
             this.Quitar.Margin = new System.Windows.Forms.Padding(4);
             this.Quitar.Name = "Quitar";
             this.Quitar.Size = new System.Drawing.Size(206, 40);
-            this.Quitar.TabIndex = 12;
+            this.Quitar.TabIndex = 17;
             this.Quitar.Text = "Quitar Imagen";
             this.Quitar.UseVisualStyleBackColor = false;
             this.Quitar.Visible = false;
@@ -305,7 +313,7 @@
             this.text_CategoriaDescripcion.Name = "text_CategoriaDescripcion";
             this.text_CategoriaDescripcion.ReadOnly = true;
             this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 26);
-            this.text_CategoriaDescripcion.TabIndex = 17;
+            this.text_CategoriaDescripcion.TabIndex = 1;
             this.text_CategoriaDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_CategoriaDescripcion_MouseClick);
             // 
             // lab_Costo_ProdServ
@@ -316,7 +324,7 @@
             this.lab_Costo_ProdServ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_Costo_ProdServ.Name = "lab_Costo_ProdServ";
             this.lab_Costo_ProdServ.Size = new System.Drawing.Size(93, 20);
-            this.lab_Costo_ProdServ.TabIndex = 5;
+            this.lab_Costo_ProdServ.TabIndex = 6;
             this.lab_Costo_ProdServ.Text = "Costo/Prod";
             // 
             // label8
@@ -327,7 +335,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 20);
-            this.label8.TabIndex = 18;
+            this.label8.TabIndex = 2;
             this.label8.Text = "Nombre";
             // 
             // Cambiar
@@ -339,7 +347,7 @@
             this.Cambiar.Margin = new System.Windows.Forms.Padding(4);
             this.Cambiar.Name = "Cambiar";
             this.Cambiar.Size = new System.Drawing.Size(206, 40);
-            this.Cambiar.TabIndex = 12;
+            this.Cambiar.TabIndex = 16;
             this.Cambiar.Text = "Cambiar Imagen";
             this.Cambiar.UseVisualStyleBackColor = false;
             this.Cambiar.Visible = false;
@@ -351,7 +359,7 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(316, 26);
-            this.text_Nombre.TabIndex = 19;
+            this.text_Nombre.TabIndex = 3;
             // 
             // Cancelar
             // 
@@ -362,7 +370,7 @@
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(99, 40);
-            this.Cancelar.TabIndex = 12;
+            this.Cancelar.TabIndex = 19;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -384,7 +392,7 @@
             this.text_FechadeVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.text_FechadeVencimiento.Name = "text_FechadeVencimiento";
             this.text_FechadeVencimiento.Size = new System.Drawing.Size(91, 26);
-            this.text_FechadeVencimiento.TabIndex = 21;
+            this.text_FechadeVencimiento.TabIndex = 15;
             this.text_FechadeVencimiento.Value = new System.DateTime(2018, 12, 24, 22, 45, 0, 0);
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
             // 
@@ -397,7 +405,7 @@
             this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(99, 40);
-            this.Nuevo.TabIndex = 11;
+            this.Nuevo.TabIndex = 18;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -419,7 +427,7 @@
             this.text_Stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_Stock.Name = "text_Stock";
             this.text_Stock.Size = new System.Drawing.Size(91, 26);
-            this.text_Stock.TabIndex = 8;
+            this.text_Stock.TabIndex = 13;
             // 
             // text_Flag
             // 
@@ -438,7 +446,7 @@
             this.text_PrecioCompra.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioCompra.Name = "text_PrecioCompra";
             this.text_PrecioCompra.Size = new System.Drawing.Size(91, 26);
-            this.text_PrecioCompra.TabIndex = 10;
+            this.text_PrecioCompra.TabIndex = 9;
             // 
             // btn_Cerrar
             // 
@@ -451,7 +459,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(426, 46);
-            this.btn_Cerrar.TabIndex = 16;
+            this.btn_Cerrar.TabIndex = 20;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -462,7 +470,7 @@
             this.text_PrecioVenta.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioVenta.Name = "text_PrecioVenta";
             this.text_PrecioVenta.Size = new System.Drawing.Size(91, 26);
-            this.text_PrecioVenta.TabIndex = 9;
+            this.text_PrecioVenta.TabIndex = 7;
             this.text_PrecioVenta.Text = " ";
             // 
             // text_Descripcion
@@ -472,7 +480,7 @@
             this.text_Descripcion.Multiline = true;
             this.text_Descripcion.Name = "text_Descripcion";
             this.text_Descripcion.Size = new System.Drawing.Size(316, 97);
-            this.text_Descripcion.TabIndex = 7;
+            this.text_Descripcion.TabIndex = 5;
             // 
             // lab_ITBIS
             // 
@@ -482,7 +490,7 @@
             this.lab_ITBIS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_ITBIS.Name = "lab_ITBIS";
             this.lab_ITBIS.Size = new System.Drawing.Size(50, 20);
-            this.lab_ITBIS.TabIndex = 24;
+            this.lab_ITBIS.TabIndex = 10;
             this.lab_ITBIS.Text = "ITBIS";
             // 
             // cbx_ITBIS
@@ -498,7 +506,7 @@
             this.cbx_ITBIS.Location = new System.Drawing.Point(153, 279);
             this.cbx_ITBIS.Name = "cbx_ITBIS";
             this.cbx_ITBIS.Size = new System.Drawing.Size(91, 28);
-            this.cbx_ITBIS.TabIndex = 26;
+            this.cbx_ITBIS.TabIndex = 11;
             // 
             // panel2
             // 
@@ -536,24 +544,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 640);
-            this.panel2.TabIndex = 22;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Favorito";
-            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff1;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 391;
-            // 
-            // Favorito
-            // 
-            this.Favorito.HeaderText = "Favorito";
-            this.Favorito.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
-            this.Favorito.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Favorito.Name = "Favorito";
-            this.Favorito.ReadOnly = true;
+            this.panel2.TabIndex = 0;
             // 
             // Imagen
             // 
@@ -596,6 +587,15 @@
             this.pbx_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Productos.TabIndex = 22;
             this.pbx_Productos.TabStop = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Favorito";
+            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff1;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 391;
             // 
             // FRM_Producto
             // 

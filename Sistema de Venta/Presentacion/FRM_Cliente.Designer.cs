@@ -49,6 +49,7 @@
             this.CMB_Buscar = new System.Windows.Forms.ComboBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Favorite = new System.Windows.Forms.DataGridViewImageColumn();
             this.text_Flag = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
@@ -62,9 +63,8 @@
             this.tbx_NoRSocial = new System.Windows.Forms.TextBox();
             this.cbx_FiscalConsumo = new System.Windows.Forms.ComboBox();
             this.Guardar = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Favorite = new System.Windows.Forms.DataGridViewImageColumn();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(117, 40);
-            this.Editar.TabIndex = 14;
+            this.Editar.TabIndex = 19;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -119,7 +119,7 @@
             this.text_Domicilio.Margin = new System.Windows.Forms.Padding(4);
             this.text_Domicilio.Name = "text_Domicilio";
             this.text_Domicilio.Size = new System.Drawing.Size(247, 27);
-            this.text_Domicilio.TabIndex = 5;
+            this.text_Domicilio.TabIndex = 6;
             // 
             // text_Telefono
             // 
@@ -127,7 +127,7 @@
             this.text_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.text_Telefono.Name = "text_Telefono";
             this.text_Telefono.Size = new System.Drawing.Size(247, 27);
-            this.text_Telefono.TabIndex = 6;
+            this.text_Telefono.TabIndex = 8;
             this.text_Telefono.Text = " ";
             // 
             // text_NCF
@@ -136,7 +136,7 @@
             this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
             this.text_NCF.Name = "text_NCF";
             this.text_NCF.Size = new System.Drawing.Size(247, 27);
-            this.text_NCF.TabIndex = 4;
+            this.text_NCF.TabIndex = 2;
             // 
             // text_Nombre
             // 
@@ -144,7 +144,7 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(247, 27);
-            this.text_Nombre.TabIndex = 2;
+            this.text_Nombre.TabIndex = 10;
             // 
             // text_Apellido
             // 
@@ -152,7 +152,7 @@
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(247, 27);
-            this.text_Apellido.TabIndex = 3;
+            this.text_Apellido.TabIndex = 12;
             // 
             // label5
             // 
@@ -162,7 +162,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 5;
+            this.label5.TabIndex = 7;
             this.label5.Text = "Telefono";
             // 
             // label6
@@ -173,7 +173,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 4;
+            this.label6.TabIndex = 5;
             this.label6.Text = "Domicilio";
             // 
             // label7
@@ -184,7 +184,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 20);
-            this.label7.TabIndex = 3;
+            this.label7.TabIndex = 1;
             this.label7.Text = "NCF";
             // 
             // lab_Apellido
@@ -195,7 +195,7 @@
             this.lab_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_Apellido.Name = "lab_Apellido";
             this.lab_Apellido.Size = new System.Drawing.Size(77, 20);
-            this.lab_Apellido.TabIndex = 2;
+            this.lab_Apellido.TabIndex = 11;
             this.lab_Apellido.Text = "Apellidos";
             // 
             // label3
@@ -206,7 +206,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Nombres";
             // 
             // text_Id
@@ -232,7 +232,7 @@
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(906, 46);
-            this.BT_liminar.TabIndex = 12;
+            this.BT_liminar.TabIndex = 2;
             this.BT_liminar.Text = "Eliminar";
             this.BT_liminar.UseVisualStyleBackColor = false;
             this.BT_liminar.Click += new System.EventHandler(this.BT_liminar_Click);
@@ -260,7 +260,7 @@
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(739, 27);
-            this.Buscar.TabIndex = 2;
+            this.Buscar.TabIndex = 1;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
             // CMB_Buscar
@@ -282,7 +282,7 @@
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
-            this.CMB_Buscar.TabIndex = 1;
+            this.CMB_Buscar.TabIndex = 0;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dgvClientes
@@ -317,6 +317,14 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
+            // Favorite
+            // 
+            this.Favorite.HeaderText = "Favorito";
+            this.Favorite.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
+            this.Favorite.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Favorite.Name = "Favorite";
+            this.Favorite.ReadOnly = true;
+            // 
             // text_Flag
             // 
             this.text_Flag.BackColor = System.Drawing.SystemColors.Window;
@@ -340,7 +348,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(321, 46);
-            this.btn_Cerrar.TabIndex = 16;
+            this.btn_Cerrar.TabIndex = 20;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -391,7 +399,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 681);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // text_VencimientoSecuencia
             // 
@@ -400,7 +408,7 @@
             this.text_VencimientoSecuencia.Margin = new System.Windows.Forms.Padding(4);
             this.text_VencimientoSecuencia.Name = "text_VencimientoSecuencia";
             this.text_VencimientoSecuencia.Size = new System.Drawing.Size(247, 27);
-            this.text_VencimientoSecuencia.TabIndex = 29;
+            this.text_VencimientoSecuencia.TabIndex = 4;
             this.text_VencimientoSecuencia.Value = new System.DateTime(2018, 12, 24, 22, 45, 0, 0);
             this.text_VencimientoSecuencia.ValueChanged += new System.EventHandler(this.text_VencimientoSecuencia_ValueChanged);
             // 
@@ -412,7 +420,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 28;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Vence";
             // 
             // lab_InfReceptor
@@ -424,7 +432,7 @@
             this.lab_InfReceptor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_InfReceptor.Name = "lab_InfReceptor";
             this.lab_InfReceptor.Size = new System.Drawing.Size(220, 20);
-            this.lab_InfReceptor.TabIndex = 26;
+            this.lab_InfReceptor.TabIndex = 13;
             this.lab_InfReceptor.Text = "Información del Receptor";
             // 
             // lab_RNC
@@ -435,7 +443,7 @@
             this.lab_RNC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_RNC.Name = "lab_RNC";
             this.lab_RNC.Size = new System.Drawing.Size(45, 20);
-            this.lab_RNC.TabIndex = 22;
+            this.lab_RNC.TabIndex = 14;
             this.lab_RNC.Text = "RNC";
             // 
             // lab_NoRSocial
@@ -445,7 +453,7 @@
             this.lab_NoRSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_NoRSocial.Name = "lab_NoRSocial";
             this.lab_NoRSocial.Size = new System.Drawing.Size(69, 79);
-            this.lab_NoRSocial.TabIndex = 23;
+            this.lab_NoRSocial.TabIndex = 16;
             this.lab_NoRSocial.Text = "Nombre o Razón Social";
             // 
             // tbx_RNC
@@ -454,7 +462,7 @@
             this.tbx_RNC.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_RNC.Name = "tbx_RNC";
             this.tbx_RNC.Size = new System.Drawing.Size(247, 27);
-            this.tbx_RNC.TabIndex = 24;
+            this.tbx_RNC.TabIndex = 15;
             // 
             // tbx_NoRSocial
             // 
@@ -462,7 +470,7 @@
             this.tbx_NoRSocial.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_NoRSocial.Name = "tbx_NoRSocial";
             this.tbx_NoRSocial.Size = new System.Drawing.Size(247, 27);
-            this.tbx_NoRSocial.TabIndex = 25;
+            this.tbx_NoRSocial.TabIndex = 17;
             // 
             // cbx_FiscalConsumo
             // 
@@ -478,7 +486,7 @@
             this.cbx_FiscalConsumo.Location = new System.Drawing.Point(119, 68);
             this.cbx_FiscalConsumo.Name = "cbx_FiscalConsumo";
             this.cbx_FiscalConsumo.Size = new System.Drawing.Size(247, 28);
-            this.cbx_FiscalConsumo.TabIndex = 21;
+            this.cbx_FiscalConsumo.TabIndex = 0;
             this.cbx_FiscalConsumo.SelectedValueChanged += new System.EventHandler(this.cbx_FiscalConsumo_SelectedValueChanged);
             // 
             // Guardar
@@ -490,27 +498,10 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(117, 40);
-            this.Guardar.TabIndex = 13;
+            this.Guardar.TabIndex = 18;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Favorite";
-            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 443;
-            // 
-            // Favorite
-            // 
-            this.Favorite.HeaderText = "Favorito";
-            this.Favorite.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff2;
-            this.Favorite.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Favorite.Name = "Favorite";
-            this.Favorite.ReadOnly = true;
             // 
             // pbx_Ventas
             // 
@@ -524,6 +515,15 @@
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_Ventas.TabIndex = 19;
             this.pbx_Ventas.TabStop = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Favorite";
+            this.dataGridViewImageColumn1.Image = global::Sistema_de_Venta.Properties.Resources.FavoriteOff;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 443;
             // 
             // FRM_Cliente
             // 

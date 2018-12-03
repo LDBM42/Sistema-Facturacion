@@ -75,7 +75,7 @@
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
             this.text_fecha.Size = new System.Drawing.Size(265, 26);
-            this.text_fecha.TabIndex = 15;
+            this.text_fecha.TabIndex = 3;
             // 
             // text_NumeroDoc
             // 
@@ -84,7 +84,7 @@
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
             this.text_NumeroDoc.Size = new System.Drawing.Size(265, 26);
-            this.text_NumeroDoc.TabIndex = 0;
+            this.text_NumeroDoc.TabIndex = 5;
             // 
             // text_ClienteId
             // 
@@ -103,7 +103,7 @@
             this.text_ClienteNombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_ClienteNombre.Name = "text_ClienteNombre";
             this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
-            this.text_ClienteNombre.TabIndex = 7;
+            this.text_ClienteNombre.TabIndex = 1;
             // 
             // textVentaId
             // 
@@ -146,7 +146,7 @@
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 20);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 0;
             this.label11.Text = "Cliente";
             // 
             // noencontrado
@@ -214,7 +214,7 @@
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(727, 26);
-            this.Buscar.TabIndex = 22;
+            this.Buscar.TabIndex = 1;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
             // CMB_Buscar
@@ -230,7 +230,7 @@
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
-            this.CMB_Buscar.TabIndex = 21;
+            this.CMB_Buscar.TabIndex = 0;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
             // btnQuitar
@@ -245,7 +245,7 @@
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(895, 46);
-            this.btnQuitar.TabIndex = 13;
+            this.btnQuitar.TabIndex = 2;
             this.btnQuitar.Text = "Eliminar";
             this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -257,7 +257,7 @@
             this.text_DescripcionVenta.Multiline = true;
             this.text_DescripcionVenta.Name = "text_DescripcionVenta";
             this.text_DescripcionVenta.Size = new System.Drawing.Size(265, 74);
-            this.text_DescripcionVenta.TabIndex = 20;
+            this.text_DescripcionVenta.TabIndex = 11;
             // 
             // Lbl_Comentario
             // 
@@ -267,7 +267,7 @@
             this.Lbl_Comentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Comentario.Name = "Lbl_Comentario";
             this.Lbl_Comentario.Size = new System.Drawing.Size(99, 20);
-            this.Lbl_Comentario.TabIndex = 19;
+            this.Lbl_Comentario.TabIndex = 10;
             this.Lbl_Comentario.Text = "Descripción";
             // 
             // text_Cantidad
@@ -286,7 +286,7 @@
             0});
             this.text_Cantidad.Name = "text_Cantidad";
             this.text_Cantidad.Size = new System.Drawing.Size(105, 26);
-            this.text_Cantidad.TabIndex = 1;
+            this.text_Cantidad.TabIndex = 13;
             this.text_Cantidad.Value = new decimal(new int[] {
             1,
             0,
@@ -300,7 +300,7 @@
             this.text_stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_stock.Name = "text_stock";
             this.text_stock.Size = new System.Drawing.Size(85, 26);
-            this.text_stock.TabIndex = 7;
+            this.text_stock.TabIndex = 15;
             this.text_stock.Text = "0";
             // 
             // text_PrecioUnitario
@@ -309,7 +309,7 @@
             this.text_PrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioUnitario.Name = "text_PrecioUnitario";
             this.text_PrecioUnitario.Size = new System.Drawing.Size(265, 26);
-            this.text_PrecioUnitario.TabIndex = 2;
+            this.text_PrecioUnitario.TabIndex = 9;
             // 
             // text_ProductoId
             // 
@@ -339,7 +339,7 @@
             this.lab_stock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_stock.Name = "lab_stock";
             this.lab_stock.Size = new System.Drawing.Size(51, 20);
-            this.lab_stock.TabIndex = 1;
+            this.lab_stock.TabIndex = 14;
             this.lab_stock.Text = "Stock";
             // 
             // lab_valor
@@ -350,7 +350,7 @@
             this.lab_valor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_valor.Name = "lab_valor";
             this.lab_valor.Size = new System.Drawing.Size(88, 20);
-            this.lab_valor.TabIndex = 1;
+            this.lab_valor.TabIndex = 8;
             this.lab_valor.Text = "Valor/Prod";
             // 
             // lab_Cantidad
@@ -361,7 +361,7 @@
             this.lab_Cantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_Cantidad.Name = "lab_Cantidad";
             this.lab_Cantidad.Size = new System.Drawing.Size(75, 20);
-            this.lab_Cantidad.TabIndex = 1;
+            this.lab_Cantidad.TabIndex = 12;
             this.lab_Cantidad.Text = "Cantidad";
             // 
             // txtFlag
@@ -384,7 +384,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(365, 46);
-            this.btn_Cerrar.TabIndex = 21;
+            this.btn_Cerrar.TabIndex = 18;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -420,7 +420,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(461, 608);
-            this.panel2.TabIndex = 24;
+            this.panel2.TabIndex = 0;
             // 
             // cbx_ProdSer
             // 
@@ -436,7 +436,7 @@
             this.cbx_ProdSer.Location = new System.Drawing.Point(50, 184);
             this.cbx_ProdSer.Name = "cbx_ProdSer";
             this.cbx_ProdSer.Size = new System.Drawing.Size(88, 28);
-            this.cbx_ProdSer.TabIndex = 22;
+            this.cbx_ProdSer.TabIndex = 6;
             this.cbx_ProdSer.SelectedIndexChanged += new System.EventHandler(this.cbx_ProdSer_SelectedIndexChanged);
             // 
             // btnImprimir
@@ -453,7 +453,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(4, 0, 7, 0);
             this.btnImprimir.Size = new System.Drawing.Size(125, 46);
-            this.btnImprimir.TabIndex = 18;
+            this.btnImprimir.TabIndex = 17;
             this.btnImprimir.Text = "Facturar";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -473,7 +473,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(5, 0, 7, 0);
             this.btnAgregar.Size = new System.Drawing.Size(125, 46);
-            this.btnAgregar.TabIndex = 13;
+            this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;

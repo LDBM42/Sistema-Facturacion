@@ -59,12 +59,12 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
+            this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnl_Lista_Categoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).BeginInit();
+            this.pnl_Lista_Categoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // BT_liminar
@@ -79,7 +79,7 @@
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(906, 46);
-            this.BT_liminar.TabIndex = 12;
+            this.BT_liminar.TabIndex = 2;
             this.BT_liminar.Text = "Eliminar";
             this.BT_liminar.UseVisualStyleBackColor = false;
             this.BT_liminar.Click += new System.EventHandler(this.BT_liminar_Click);
@@ -93,7 +93,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(106, 40);
-            this.Editar.TabIndex = 14;
+            this.Editar.TabIndex = 17;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -107,7 +107,7 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(106, 40);
-            this.Guardar.TabIndex = 13;
+            this.Guardar.TabIndex = 16;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
@@ -147,7 +147,7 @@
             this.text_Direccion.Margin = new System.Windows.Forms.Padding(4);
             this.text_Direccion.Name = "text_Direccion";
             this.text_Direccion.Size = new System.Drawing.Size(227, 24);
-            this.text_Direccion.TabIndex = 10;
+            this.text_Direccion.TabIndex = 7;
             // 
             // text_Telefono
             // 
@@ -166,7 +166,7 @@
             this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
             this.text_NCF.Name = "text_NCF";
             this.text_NCF.Size = new System.Drawing.Size(227, 24);
-            this.text_NCF.TabIndex = 8;
+            this.text_NCF.TabIndex = 5;
             // 
             // Buscar
             // 
@@ -176,7 +176,7 @@
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(733, 26);
-            this.Buscar.TabIndex = 2;
+            this.Buscar.TabIndex = 1;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
             // CMB_Buscar
@@ -194,7 +194,7 @@
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 28);
-            this.CMB_Buscar.TabIndex = 1;
+            this.CMB_Buscar.TabIndex = 0;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
             // dgvUsuarios
@@ -233,7 +233,7 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(227, 24);
-            this.text_Nombre.TabIndex = 7;
+            this.text_Nombre.TabIndex = 1;
             // 
             // text_Apellido
             // 
@@ -242,7 +242,7 @@
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(227, 24);
-            this.text_Apellido.TabIndex = 7;
+            this.text_Apellido.TabIndex = 3;
             // 
             // text_Id
             // 
@@ -278,7 +278,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 5;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Telefono";
             // 
             // label6
@@ -289,7 +289,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 20);
-            this.label6.TabIndex = 4;
+            this.label6.TabIndex = 6;
             this.label6.Text = "Direccion";
             // 
             // label7
@@ -300,7 +300,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 20);
-            this.label7.TabIndex = 3;
+            this.label7.TabIndex = 4;
             this.label7.Text = "NCF";
             // 
             // label4
@@ -322,7 +322,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Nombres";
             // 
             // cbxTipo
@@ -335,7 +335,7 @@
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(227, 28);
-            this.cbxTipo.TabIndex = 16;
+            this.cbxTipo.TabIndex = 15;
             // 
             // txtFlag
             // 
@@ -356,7 +356,7 @@
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 18);
-            this.label9.TabIndex = 9;
+            this.label9.TabIndex = 12;
             this.label9.Text = "Contraseña";
             // 
             // label8
@@ -368,7 +368,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 18);
-            this.label8.TabIndex = 10;
+            this.label8.TabIndex = 14;
             this.label8.Text = "Tipo";
             // 
             // label1
@@ -381,7 +381,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 18);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Usuario";
             // 
             // txtPassword
@@ -406,7 +406,7 @@
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(227, 24);
-            this.txtUsuario.TabIndex = 14;
+            this.txtUsuario.TabIndex = 11;
             // 
             // btn_Cerrar
             // 
@@ -419,7 +419,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(317, 46);
-            this.btn_Cerrar.TabIndex = 16;
+            this.btn_Cerrar.TabIndex = 18;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -455,20 +455,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 552);
-            this.panel2.TabIndex = 9;
-            // 
-            // pnl_Lista_Categoria
-            // 
-            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
-            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
-            this.pnl_Lista_Categoria.Controls.Add(this.dgvUsuarios);
-            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
-            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
-            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(405, 0);
-            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 552);
-            this.pnl_Lista_Categoria.TabIndex = 16;
+            this.panel2.TabIndex = 0;
             // 
             // pbx_Ventas
             // 
@@ -483,6 +470,19 @@
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Ventas.TabIndex = 18;
             this.pbx_Ventas.TabStop = false;
+            // 
+            // pnl_Lista_Categoria
+            // 
+            this.pnl_Lista_Categoria.Controls.Add(this.BT_liminar);
+            this.pnl_Lista_Categoria.Controls.Add(this.noencontrado);
+            this.pnl_Lista_Categoria.Controls.Add(this.dgvUsuarios);
+            this.pnl_Lista_Categoria.Controls.Add(this.Buscar);
+            this.pnl_Lista_Categoria.Controls.Add(this.CMB_Buscar);
+            this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Lista_Categoria.Location = new System.Drawing.Point(405, 0);
+            this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 552);
+            this.pnl_Lista_Categoria.TabIndex = 1;
             // 
             // FRM_Usuario
             // 
@@ -504,9 +504,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.pnl_Lista_Categoria.ResumeLayout(false);
             this.pnl_Lista_Categoria.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Ventas)).EndInit();
             this.ResumeLayout(false);
 
         }

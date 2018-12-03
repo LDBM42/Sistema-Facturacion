@@ -64,7 +64,7 @@
             this.Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(785, 24);
-            this.Buscar.TabIndex = 2;
+            this.Buscar.TabIndex = 1;
             this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
             // noencontrado
@@ -94,7 +94,7 @@
             this.BT_Eliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Eliminar.Name = "BT_Eliminar";
             this.BT_Eliminar.Size = new System.Drawing.Size(953, 46);
-            this.BT_Eliminar.TabIndex = 12;
+            this.BT_Eliminar.TabIndex = 2;
             this.BT_Eliminar.Text = "Eliminar";
             this.BT_Eliminar.UseVisualStyleBackColor = false;
             this.BT_Eliminar.Click += new System.EventHandler(this.BT_liminar_Click);
@@ -112,7 +112,7 @@
             this.CMB_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.CMB_Buscar.Name = "CMB_Buscar";
             this.CMB_Buscar.Size = new System.Drawing.Size(160, 26);
-            this.CMB_Buscar.TabIndex = 1;
+            this.CMB_Buscar.TabIndex = 0;
             this.CMB_Buscar.SelectedIndexChanged += new System.EventHandler(this.CMB_Buscar_SelectedIndexChanged);
             // 
             // dgvCategoria
@@ -154,7 +154,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(0);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(128, 40);
-            this.Editar.TabIndex = 14;
+            this.Editar.TabIndex = 3;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -168,7 +168,7 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(0);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(128, 40);
-            this.Guardar.TabIndex = 13;
+            this.Guardar.TabIndex = 4;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
@@ -182,7 +182,7 @@
             this.Cancelar.Margin = new System.Windows.Forms.Padding(0);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(128, 40);
-            this.Cancelar.TabIndex = 12;
+            this.Cancelar.TabIndex = 5;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -229,7 +229,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 18);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Descripción";
             // 
             // text_Flag
@@ -264,7 +264,7 @@
             this.pnl_Lista_Categoria.Location = new System.Drawing.Point(359, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
             this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1039, 552);
-            this.pnl_Lista_Categoria.TabIndex = 14;
+            this.pnl_Lista_Categoria.TabIndex = 0;
             // 
             // panel2
             // 
@@ -296,7 +296,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(264, 46);
-            this.btn_Cerrar.TabIndex = 15;
+            this.btn_Cerrar.TabIndex = 6;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);

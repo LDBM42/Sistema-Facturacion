@@ -135,7 +135,7 @@
             this.lab_desactivarTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lab_desactivarTipo.Name = "lab_desactivarTipo";
             this.lab_desactivarTipo.Size = new System.Drawing.Size(56, 25);
-            this.lab_desactivarTipo.TabIndex = 25;
+            this.lab_desactivarTipo.TabIndex = 0;
             this.lab_desactivarTipo.Text = "Tipo ";
             // 
             // cmb_TipoFactura
@@ -151,7 +151,7 @@
             this.cmb_TipoFactura.Margin = new System.Windows.Forms.Padding(5);
             this.cmb_TipoFactura.Name = "cmb_TipoFactura";
             this.cmb_TipoFactura.Size = new System.Drawing.Size(184, 28);
-            this.cmb_TipoFactura.TabIndex = 24;
+            this.cmb_TipoFactura.TabIndex = 1;
             // 
             // label2
             // 
@@ -162,7 +162,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 26;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Fecha";
             // 
             // dtp_FechaFactura
@@ -174,7 +174,7 @@
             this.dtp_FechaFactura.Margin = new System.Windows.Forms.Padding(5);
             this.dtp_FechaFactura.Name = "dtp_FechaFactura";
             this.dtp_FechaFactura.Size = new System.Drawing.Size(184, 28);
-            this.dtp_FechaFactura.TabIndex = 23;
+            this.dtp_FechaFactura.TabIndex = 4;
             this.dtp_FechaFactura.Value = new System.DateTime(2018, 12, 1, 22, 57, 39, 0);
             // 
             // Pnl_Buscar
@@ -194,7 +194,7 @@
             this.Pnl_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_Buscar.Name = "Pnl_Buscar";
             this.Pnl_Buscar.Size = new System.Drawing.Size(70, 50);
-            this.Pnl_Buscar.TabIndex = 28;
+            this.Pnl_Buscar.TabIndex = 0;
             this.Pnl_Buscar.MouseEnter += new System.EventHandler(this.Pnl_Buscar_MouseEnter);
             // 
             // pbx_BuscarUp
@@ -219,7 +219,7 @@
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btn_buscar.Size = new System.Drawing.Size(218, 34);
-            this.btn_buscar.TabIndex = 27;
+            this.btn_buscar.TabIndex = 6;
             this.btn_buscar.Text = "Buscar      ";
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.button1_Click);
@@ -262,7 +262,7 @@
             this.ckb_desactivarFecha.Margin = new System.Windows.Forms.Padding(0);
             this.ckb_desactivarFecha.Name = "ckb_desactivarFecha";
             this.ckb_desactivarFecha.Size = new System.Drawing.Size(31, 31);
-            this.ckb_desactivarFecha.TabIndex = 30;
+            this.ckb_desactivarFecha.TabIndex = 5;
             this.ckb_desactivarFecha.UseVisualStyleBackColor = false;
             this.ckb_desactivarFecha.CheckedChanged += new System.EventHandler(this.ckb_desactivarFecha_CheckedChanged);
             // 
@@ -278,7 +278,7 @@
             this.ckb_desactivarTipo.Margin = new System.Windows.Forms.Padding(0);
             this.ckb_desactivarTipo.Name = "ckb_desactivarTipo";
             this.ckb_desactivarTipo.Size = new System.Drawing.Size(31, 31);
-            this.ckb_desactivarTipo.TabIndex = 29;
+            this.ckb_desactivarTipo.TabIndex = 2;
             this.ckb_desactivarTipo.UseVisualStyleBackColor = false;
             this.ckb_desactivarTipo.CheckedChanged += new System.EventHandler(this.ckb_desactivarTipo_CheckedChanged);
             // 

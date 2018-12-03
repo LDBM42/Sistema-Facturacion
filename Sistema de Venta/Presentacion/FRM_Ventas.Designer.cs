@@ -67,7 +67,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(335, 46);
-            this.btn_Cerrar.TabIndex = 16;
+            this.btn_Cerrar.TabIndex = 9;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -145,7 +145,7 @@
             this.text_fecha.Margin = new System.Windows.Forms.Padding(4);
             this.text_fecha.Name = "text_fecha";
             this.text_fecha.Size = new System.Drawing.Size(265, 26);
-            this.text_fecha.TabIndex = 15;
+            this.text_fecha.TabIndex = 6;
             this.text_fecha.ValueChanged += new System.EventHandler(this.text_fecha_ValueChanged);
             // 
             // btnEditar
@@ -157,7 +157,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(125, 40);
-            this.btnEditar.TabIndex = 14;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -171,7 +171,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(125, 40);
-            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -199,7 +199,7 @@
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(125, 40);
-            this.btnNuevo.TabIndex = 11;
+            this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -215,7 +215,7 @@
             this.text_NumeroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.text_NumeroDoc.Name = "text_NumeroDoc";
             this.text_NumeroDoc.Size = new System.Drawing.Size(265, 19);
-            this.text_NumeroDoc.TabIndex = 10;
+            this.text_NumeroDoc.TabIndex = 1;
             // 
             // text_ClienteId
             // 
@@ -235,7 +235,7 @@
             this.text_ClienteNombre.Name = "text_ClienteNombre";
             this.text_ClienteNombre.ReadOnly = true;
             this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
-            this.text_ClienteNombre.TabIndex = 7;
+            this.text_ClienteNombre.TabIndex = 4;
             this.text_ClienteNombre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ClienteNombre_MouseClick);
             // 
             // textId
@@ -257,7 +257,7 @@
             this.lab_DocNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_DocNum.Name = "lab_DocNum";
             this.lab_DocNum.Size = new System.Drawing.Size(74, 20);
-            this.lab_DocNum.TabIndex = 4;
+            this.lab_DocNum.TabIndex = 0;
             this.lab_DocNum.Text = "Doc. No.";
             // 
             // label10
@@ -268,7 +268,7 @@
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 20);
-            this.label10.TabIndex = 2;
+            this.label10.TabIndex = 5;
             this.label10.Text = "Fecha";
             // 
             // label11
@@ -279,7 +279,7 @@
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 20);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 3;
             this.label11.Text = "Cliente";
             // 
             // panel2
@@ -304,7 +304,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(423, 537);
-            this.panel2.TabIndex = 23;
+            this.panel2.TabIndex = 0;
             // 
             // cbx_clienteNuevoORegistrado
             // 
@@ -320,7 +320,7 @@
             this.cbx_clienteNuevoORegistrado.Location = new System.Drawing.Point(114, 105);
             this.cbx_clienteNuevoORegistrado.Name = "cbx_clienteNuevoORegistrado";
             this.cbx_clienteNuevoORegistrado.Size = new System.Drawing.Size(265, 28);
-            this.cbx_clienteNuevoORegistrado.TabIndex = 22;
+            this.cbx_clienteNuevoORegistrado.TabIndex = 2;
             // 
             // pbx_Ventas
             // 
@@ -345,7 +345,7 @@
             this.pnl_Lista_Categoria.Location = new System.Drawing.Point(423, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
             this.pnl_Lista_Categoria.Size = new System.Drawing.Size(1031, 537);
-            this.pnl_Lista_Categoria.TabIndex = 26;
+            this.pnl_Lista_Categoria.TabIndex = 1;
             // 
             // FRM_Ventas
             // 
