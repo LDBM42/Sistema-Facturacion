@@ -2,14 +2,9 @@
 using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -57,7 +52,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 Imagen.BackgroundImage = null;
                 Imagen.Image = new Bitmap(dialogo.FileName);
-                Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                Imagen.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -65,7 +60,7 @@ namespace Sistema_de_Venta.Presentacion
         {
             Imagen.BackgroundImage = Resources.Transparente;
             Imagen.Image = null;
-            Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            Imagen.SizeMode = PictureBoxSizeMode.Zoom;
 
         }
 
@@ -75,7 +70,7 @@ namespace Sistema_de_Venta.Presentacion
             {
                 string sresultado = ValidarDatos();
 
-                if (sresultado == "")
+                if (sresultado == "") // significa que tiene un nombre valido
                 {
                     if (text_Id.Text == "")
                     {
@@ -83,10 +78,15 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToInt32(text_Stock.Text);
-                        producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
-                        producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
+                        if(Servicios == 0)
+                        {
+                            producto.Stock = Convert.ToInt32(text_Stock.Text);
+                            producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        }
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
+                        producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
+                        producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
+                        producto.Itbis = Convert.ToInt32(cbx_ITBIS.Text);
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -122,10 +122,15 @@ namespace Sistema_de_Venta.Presentacion
                         producto.Nombre = text_Nombre.Text;
                         producto.Categoria.Id = Convert.ToInt32(text_Categoria.Text);
                         producto.Descripcion = text_Descripcion.Text;
-                        producto.Stock = Convert.ToInt32(text_Stock.Text);
-                        producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        if (Servicios == 0)
+                        {
+                            producto.Stock = Convert.ToInt32(text_Stock.Text);
+                            producto.PrecioCompra = Convert.ToDouble(text_PrecioCompra.Text);
+                        }
                         producto.PrecioVenta = Convert.ToDouble(text_PrecioVenta.Text);
                         producto.FechaVencimiento = text_FechadeVencimiento.Value;
+                        producto.ProdServ = Servicios == 0 ? "Productos" : "Servicios";
+                        producto.Itbis = Convert.ToInt32(cbx_ITBIS.Text);
 
                         MemoryStream ms = new MemoryStream();
                         if (Imagen.Image != null)
@@ -142,9 +147,13 @@ namespace Sistema_de_Venta.Presentacion
 
                         //Solucion del error de no guardar la imagen
                         producto.Imagen = ms.GetBuffer();
+                        int idProducto = Fproducto.Actualizar(producto);
 
-                        if (Fproducto.Actualizar(producto) > 0)
+                        if (idProducto > 0)
                         {
+                            //este es el metodo para guardar el log con la accion Actualizo producto
+                            Form1.Log(Usuario.Nombreusuario, "Actualizo producto: " + idProducto + " - " + producto.Nombre);
+
                             MessageBox.Show("Datos Modificados correctamente");
                             FRM_Producto_Load(null, null);
                         }
@@ -169,6 +178,8 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
+            limpiar();
+            desactivar(true);
             MostrarGuardarCancelar(false);
             dgvProductos_CellClick(null, null);
         }
@@ -201,15 +212,14 @@ namespace Sistema_de_Venta.Presentacion
                         {
                             Producto producto = new Producto();
                             producto.Id = Convert.ToInt32(row.Cells["Id"].Value);
-                            if (Fproducto.Eliminar(producto) == 0)
+                            if (Fproducto.Eliminar(producto) != 0)
                             {
-                                MessageBox.Show("El productos fue eliminado", "Eliminacion de Productos",
+                                MessageBox.Show("El productos pudo ser eliminado\n favor intentar mas tarde", "Eliminacion de Productos",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
                     FRM_Producto_Load(null, null);
-
                 }
 
             }
@@ -223,26 +233,31 @@ namespace Sistema_de_Venta.Presentacion
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (dgvProductos.CurrentRow != null)
             {
 
                 text_Id.Text = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                 text_Categoria.Text = dgvProductos.CurrentRow.Cells["CategoriaId"].Value.ToString();
-                text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["CategoriaDescripcion"].Value.ToString();
+                text_CategoriaDescripcion.Text = dgvProductos.CurrentRow.Cells["Categoría"].Value.ToString();
                 text_Nombre.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripcion"].Value.ToString();
-                text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
-                text_PrecioCompra.Text = dgvProductos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
-                text_PrecioVenta.Text = dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
-                text_FechadeVencimiento.Text = dgvProductos.CurrentRow.Cells["FechaVencimiento"].Value.ToString();
+                text_Descripcion.Text = dgvProductos.CurrentRow.Cells["Descripción"].Value.ToString();
+                text_PrecioVenta.Text = dgvProductos.CurrentRow.Cells["Pagar"].Value.ToString();
+                cbx_ITBIS.Text = dgvProductos.CurrentRow.Cells["ITBIS"].Value.ToString();
+                if (Servicios == 0)
+                {
+                    text_Stock.Text = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                    text_PrecioCompra.Text = dgvProductos.CurrentRow.Cells["Compra"].Value.ToString();
+                    text_FechadeVencimiento.Value = Convert.ToDateTime(dgvProductos.CurrentRow.Cells["Venc."].Value);
 
 
-                Imagen.BackgroundImage = null;
-                byte[] b = (byte[])dgvProductos.CurrentRow.Cells["Imagen"].Value;
-                MemoryStream ms = new MemoryStream(b);
-                Imagen.Image = Image.FromStream(ms);
-                Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
-                desactivar(true);
+                    Imagen.BackgroundImage = null;
+                    byte[] b = (byte[])dgvProductos.CurrentRow.Cells["Imagen"].Value;
+                    MemoryStream ms = new MemoryStream(b);
+                    Imagen.Image = Image.FromStream(ms);
+                    Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+                    desactivar(true);
+                }
             }
 
         }
@@ -267,28 +282,54 @@ namespace Sistema_de_Venta.Presentacion
 
         private void FRM_Producto_Load(object sender, EventArgs e)
         {
+            limpiar();
+            desactivar(true);
+
             if (Servicios == 1)
             {
                 pbx_Productos.Visible = false;
                 pbx_Servicios.Visible = true;
+                lab_Costo_ProdServ.Text = "Costo/Serv";
+                Nuevo.Size = new Size(153, 40);
+                Nuevo.Location = new Point(153, 316);
+                Guardar.Size = new Size(153, 40);
+                Guardar.Location = new Point(153, 316);
+
+                Editar.Size = new Size(153, 40);
+                Editar.Location = new Point(316, 316);
+                Cancelar.Size = new Size(153, 40);
+                Cancelar.Location = new Point(316, 316);
+
+
+                ProdServ(false);
             }
             else
             {
                 pbx_Servicios.Visible = false;
                 pbx_Productos.Visible = true;
+                lab_Costo_ProdServ.Text = "Costo/Prod";
+                ProdServ(true);
             }
 
             CMB_Buscar.Text = "Nombre";
+            cbx_ITBIS.Text = "18";
 
             try
             {
-                DataSet ds = Fproducto.GetAll();
+                DataSet ds = Fproducto.GetAll(Servicios == 0 ? "Productos" : "Servicios");
                 dt = ds.Tables[0];
                 dgvProductos.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
                 {
-                    dgvProductos.Columns["Imagen"].Visible = false;
+                    dgvProductos.Columns["CategoriaId"].Visible = false;
+                    try
+                    {
+                        dgvProductos.Columns["Imagen"].Visible = false;
+                    }
+                    catch (Exception)
+                    {
+                    }
                     noencontrado.Visible = false;
                     dgvProductos_CellClick(null, null);
                 }
@@ -307,7 +348,6 @@ namespace Sistema_de_Venta.Presentacion
 
         public void MostrarGuardarCancelar(bool b)
         {
-
             Guardar.Visible = b;
             Cancelar.Visible = b;
             Nuevo.Visible = !b;
@@ -316,20 +356,15 @@ namespace Sistema_de_Venta.Presentacion
 
             dgvProductos.Enabled = !b;
 
-            Cambiar.Visible = b;
-            Quitar.Visible = b;
-
-
-
-
-
-
+            if(Servicios == 0)
+            {
+                Cambiar.Visible = b;
+                Quitar.Visible = b;
+            }
         }
 
         public void desactivar(bool b)
         {
-
-
             text_Nombre.Enabled = !b;
 
             text_Nombre.Enabled = !b;
@@ -339,12 +374,21 @@ namespace Sistema_de_Venta.Presentacion
             text_PrecioCompra.Enabled = !b;
             text_PrecioVenta.Enabled = !b;
             text_Stock.Enabled = !b;
-            text_Stock.Enabled = !b;
+            cbx_ITBIS.Enabled = !b;
             text_FechadeVencimiento.Enabled = !b;
-
-
-
         }
+
+        public void ProdServ(bool producto)
+        {   
+            lab_stock.Visible = producto;
+            lab_compra.Visible = producto;
+            lab_vencimiento.Visible = producto;
+
+            text_Stock.Visible = producto;
+            text_PrecioCompra.Visible = producto;
+            text_FechadeVencimiento.Visible = producto;
+            Imagen.Visible = producto;
+        } // muestra los campos adecuados para los servicios y productos
 
         public string ValidarDatos()
         {
@@ -361,24 +405,33 @@ namespace Sistema_de_Venta.Presentacion
         public void limpiar()
         {
             text_Id.Clear();
-            text_Nombre.Clear();
             text_Categoria.Clear();
             text_CategoriaDescripcion.Clear();
+            text_Nombre.Clear();
             text_Descripcion.Clear();
-            text_PrecioCompra.Clear();
             text_PrecioVenta.Clear();
-            text_Stock.Clear();
-            text_Stock.Clear();
-            text_FechadeVencimiento.Text = "";
-            Imagen.BackgroundImage = Resources.Transparente;
-            Imagen.Image = null;
-            Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            cbx_ITBIS.Text = "18";
 
+            if(Servicios == 0)
+            {
+                text_PrecioCompra.Clear();
+                text_Stock.Clear();
+                text_Stock.Clear();
+                text_FechadeVencimiento.Text = "";
+                Imagen.BackgroundImage = Resources.Transparente;
+                Imagen.Image = null;
+                Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
 
         public void SetFlag(string SValor)
         {
             text_Flag.Text = SValor;
+        }
+
+        public void ProdServ(int servicios)
+        {
+            this.Servicios = servicios;
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -387,10 +440,14 @@ namespace Sistema_de_Venta.Presentacion
             {
                 if (dgvProductos.CurrentRow != null)
                 {
+
                     id_Producto = dgvProductos.CurrentRow.Cells["Id"].Value.ToString();
                     nombre_Producto = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
-                    stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
-                    precioVenta_Producto = dgvProductos.CurrentRow.Cells["PrecioVenta"].Value.ToString();
+                    precioVenta_Producto = dgvProductos.CurrentRow.Cells["Pagar"].Value.ToString();
+                    if(Servicios == 0)
+                    {
+                        stock_Producto = dgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
+                    }
 
                     this.DialogResult = DialogResult.OK; //terminar
                 }
@@ -404,12 +461,8 @@ namespace Sistema_de_Venta.Presentacion
                 if (text_FechadeVencimiento.Value <= DateTime.Now && text_FechadeVencimiento.Enabled)
                 {
                     MessageBox.Show("La fecha de vencimiento no puede ser menor o igual a la fecha actual", "Fecha Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    text_FechadeVencimiento.Value = DateTime.Now.AddDays(1);
-
-
+                    text_FechadeVencimiento.Value = DateTime.Now.AddDays(1);                    
                 }
-
-
             }
         }
 
@@ -426,6 +479,46 @@ namespace Sistema_de_Venta.Presentacion
                 text_Categoria.Text = FRMCate.id;//asignamos al texbox el dato de la variable
                 text_CategoriaDescripcion.Text = FRMCate.descripcion;
             }
+        }
+
+        private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // para activar los favoritos
+            if (this.dgvProductos.Columns[e.ColumnIndex].Index == 1)
+            {
+                if (Convert.ToInt32(this.dgvProductos.Rows[e.RowIndex].Cells["Vendidos"].Value) >= 3)
+                    e.Value = Properties.Resources.FavoriteOn;
+            }
+
+            if (this.dgvProductos.Columns[e.ColumnIndex].Name == "Venc.")
+            {
+                if (Convert.ToDateTime(e.Value) <= DateTime.Now)
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void FRM_Producto_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            if(Servicios == 1)
+            {
+                principal.lab_encabezado.Text = "   Servicios";
+            }
+            else
+            {
+                principal.lab_encabezado.Text = "  Productos";
+            }
+            this.BringToFront();
+        }
+
+        private void FRM_Producto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)

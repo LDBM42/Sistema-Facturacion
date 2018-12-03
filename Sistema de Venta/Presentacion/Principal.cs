@@ -1,17 +1,19 @@
-﻿using Sistema_de_Venta.Datos;
+﻿using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
+using Sistema_de_Venta.Datos;
 using Sistema_de_Venta.Entidades;
 using Sistema_de_Venta.Presentacion;
 using SisVenttas.Datos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta
@@ -23,6 +25,7 @@ namespace Sistema_de_Venta
         public Form1()
         {
             InitializeComponent();
+            menuStrip1.Renderer = new BlueRenderer();
         }
 
         private int childFormNumber = 0;
@@ -82,6 +85,19 @@ namespace Sistema_de_Venta
             AbrirFormulario<FRM_Usuario>(0);
         }
 
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lab_encabezado.Text = "Auritoría               ";
+            AbrirFormulario<FRM_Auditoria>(0);
+        }
+
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Factura factura = FRM_Factura.GetInscance();
+            factura.ShowDialog();
+        }
+
+
         private void cERRARToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //para saber si es el mismo usuario
@@ -134,7 +150,6 @@ namespace Sistema_de_Venta
                 Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "FRM_Login").SingleOrDefault<Form>();
 
                 if (existe != null)
-
                 {
                     existe.Close();
                 }
@@ -154,13 +169,10 @@ namespace Sistema_de_Venta
             {
                 MessageBox.Show(e.ToString());
             }
-
+            
         }
-
-
-
+                
         private void Form1_Load(object sender, EventArgs e)
-
         {
             this.Opacity = 0.95;
 
@@ -311,6 +323,7 @@ namespace Sistema_de_Venta
                 {
                     formulario = new MiForm();
                     ((IFormulario)formulario).InicializarParametros(args); // para pasarle parametros
+                    this.AddOwnedForm(formulario); //establecer form principal como padre
                     formulario.TopLevel = false;
                     formulario.FormBorderStyle = FormBorderStyle.None;
                     formulario.Dock = DockStyle.Fill;
@@ -333,9 +346,10 @@ namespace Sistema_de_Venta
             }
         }
 
-        //detecta si se cambión de usuario para volver a cargar el form.
+        
         private void Form1_Activated(object sender, EventArgs e)
         {
+            //detecta si se cambión de usuario para volver a cargar el form.
             if (UserTemp != Usuario.Nombre)
             {
                 UserTemp = Usuario.Nombre;
@@ -357,16 +371,45 @@ namespace Sistema_de_Venta
                 btnRestore.Visible = false;
                 minimizar = 0;
             }
-        }
-        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        }        
+    }
+
+    // para sobreescibir el menustrip
+    class CustomProfessionalColors : ProfessionalColorTable
+    {
+
+    }
+    /*
+    public class CustomToolStripRenderer : ToolStripProfessionalRenderer
+    {
+        public CustomToolStripRenderer() { }
+
+        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
-            FRM_Auditoria auditor = new FRM_Auditoria();
-            auditor.Show(this);
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = Color.MediumBlue;
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
+
+
+            //LinearGradientMode mode = LinearGradientMode.Horizontal;
+
+            //using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, ColorTable.MenuStripGradientBegin, ColorTable.MenuStripGradientEnd, mode))
+            //{
+            //    e.Graphics.FillRectangle(b, e.AffectedBounds);
+            //}
         }
 
-        private void pbx_Logo_Click(object sender, EventArgs e)
-        {
+    }*/
 
+    public class BlueRenderer : ToolStripProfessionalRenderer
+    {
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = Color.FromArgb(0, 56, 117);
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
         }
     }
 }

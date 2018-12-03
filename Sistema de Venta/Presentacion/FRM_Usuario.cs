@@ -350,5 +350,19 @@ namespace Sistema_de_Venta.Presentacion
         {
             this.Close();
         }
+
+        private void FRM_Usuario_Enter(object sender, EventArgs e)
+        {
+            //Carga el Header del form Activo
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "Usuario     ";
+            this.BringToFront();
+        }
+
+        private void FRM_Usuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 principal = Owner as Form1;
+            principal.lab_encabezado.Text = "";
+        }
     }
 }

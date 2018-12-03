@@ -29,7 +29,7 @@ namespace Sistema_de_Venta.Datos
                     //, , , 
                     FDBHelper.MakeParam("@VentaId", SqlDbType.Int, 0, detalleVenta.Venta.Id),
                      FDBHelper.MakeParam("@ProductoId", SqlDbType.Int, 0, detalleVenta.Producto.Id),
-                      FDBHelper.MakeParam("@Cantidad", SqlDbType.Decimal, 0, detalleVenta.Cantidad),
+                      FDBHelper.MakeParam("@Cantidad", SqlDbType.Int, 0, detalleVenta.Cantidad),
                        FDBHelper.MakeParam("@PrecioUnitario", SqlDbType.Decimal, 0, detalleVenta.PrecioUnitario),
                        FDBHelper.MakeParam("@DescripcionVenta", SqlDbType.VarChar, 0, detalleVenta.DescripcionVenta)
 

@@ -1,13 +1,7 @@
 ﻿using Sistema_de_Venta.Datos;
 using Sistema_de_Venta.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Venta.Presentacion
@@ -17,6 +11,7 @@ namespace Sistema_de_Venta.Presentacion
 
         private static DataTable dt = new DataTable();
         public static FRM_DetalleVenta _instancia = null;
+        string tipoCliente;
         public FRM_DetalleVenta()
         {
             InitializeComponent();
@@ -40,7 +35,10 @@ namespace Sistema_de_Venta.Presentacion
         }
 
         private void FRM_DetalleVenta_Load(object sender, EventArgs e)
-        {
+        {            
+            cbx_ProdSer.Text = "Producto";
+
+
             try
             {
                 if (txtFlag.Text != " ")
@@ -53,6 +51,15 @@ namespace Sistema_de_Venta.Presentacion
                     dgvVentas.Columns["ProductoId"].Visible = false;
                     dgvVentas.Columns["Id"].Visible = false;
                     dgvVentas.Columns["PrecioVenta"].Visible = false;
+
+                    try
+                    {
+                        tipoCliente = dgvVentas.Rows[0].Cells["TipoCliente"].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    dgvVentas.Columns["TipoCliente"].Visible = false;
 
                     if (dt.Rows.Count > 0)
                     {
@@ -85,10 +92,7 @@ namespace Sistema_de_Venta.Presentacion
 
                 if (sresultado == "")
                 {
-
                     DetalleVenta Dventa = new DetalleVenta();
-
-
 
                     Dventa.Venta.Id = Convert.ToInt32(textVentaId.Text);
                     Dventa.Producto.Id = Convert.ToInt32(text_ProductoId.Text);
@@ -100,10 +104,13 @@ namespace Sistema_de_Venta.Presentacion
 
                     if (iDVentaId > 0)
                     {
-                        //obteniento nuevo stock
-                        int currentStock = Convert.ToInt32(text_stock.Text);
-                        string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
-                        text_stock.Text = newStock;
+                        if (cbx_ProdSer.Text == "Producto")
+                        {
+                            //obteniento nuevo stock
+                            int currentStock = Convert.ToInt32(text_stock.Text);
+                            string newStock = Convert.ToString(currentStock - Dventa.Cantidad);
+                            text_stock.Text = newStock;
+                        }
 
 
                         //este es el metodo para guardar el log con la accion Detalle de ventas agregados
@@ -152,11 +159,14 @@ namespace Sistema_de_Venta.Presentacion
                 Resultado = Resultado + " Debe Seleccionar al menos un producto \n";
 
             }
-            if (Convert.ToInt32(text_Cantidad.Text) > Convert.ToInt32(text_stock.Text))
+            if (cbx_ProdSer.Text == "Producto")
             {
-                Resultado = Resultado + " La cantidad que intenta vender supera el stock \n";
-                text_Cantidad.Value = Convert.ToInt32(text_stock.Text);
-                text_Cantidad.Focus();
+                if (Convert.ToInt32(text_Cantidad.Text) > Convert.ToInt32(text_stock.Text))
+                {
+                    Resultado = Resultado + " La cantidad que intenta vender supera el stock \n";
+                    text_Cantidad.Value = Convert.ToInt32(text_stock.Text);
+                    text_Cantidad.Focus();
+                }
             }
 
             return Resultado;
@@ -192,9 +202,6 @@ namespace Sistema_de_Venta.Presentacion
                 if (MessageBox.Show("Esta seguro de eliminar los productos seleccionados?", "Eliminacion de Producto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
 
-
-
-
                     foreach (DataGridViewRow row in dgvVentas.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
@@ -218,17 +225,14 @@ namespace Sistema_de_Venta.Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message + ex.StackTrace);
-
             }
-
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             FRM_ReporteVenta frmRepVenta = new FRM_ReporteVenta();
-            frmRepVenta.SetVentaId(Convert.ToInt32(textVentaId.Text));
+            frmRepVenta.SetVentaId_y_TipoCliente(Convert.ToInt32(textVentaId.Text), tipoCliente);
             frmRepVenta.ShowDialog();
         }
 
@@ -236,6 +240,7 @@ namespace Sistema_de_Venta.Presentacion
         {        
             FRM_Producto FRMPro = new FRM_Producto();
             FRMPro.SetFlag("1");
+            FRMPro.ProdServ(cbx_ProdSer.Text == "Producto" ? 0 : 1); // si es un producto es = 0, si es un servicio = 1
             FRMPro.WindowState = FormWindowState.Maximized;
             DialogResult res = FRMPro.ShowDialog(); //abrimos el Categoría como cuadro de dialogo modal
 
@@ -306,5 +311,29 @@ namespace Sistema_de_Venta.Presentacion
             this.Close();
         }
 
+        public void ProdSev_Limpiar(bool limpiar)
+        {
+            lab_Cantidad.Visible = limpiar;
+            lab_stock.Visible = limpiar;
+            text_Cantidad.Visible = limpiar;
+            text_stock.Visible = limpiar;
+        }
+
+        private void cbx_ProdSer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_ProdSer.Text == "Servicio")
+            {
+                ProdSev_Limpiar(false);
+                lab_valor.Text = "Valor/Sev";
+            }
+            else
+            {
+                ProdSev_Limpiar(true);
+                lab_valor.Text = "Valor/Prod";
+            }
+
+            text_ProductoDescripcion.Text = "";
+            text_PrecioUnitario.Text = "";
+        }
     }
 }
