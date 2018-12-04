@@ -169,9 +169,9 @@ namespace Sistema_de_Venta
             {
                 MessageBox.Show("Algo salió mal, Favor intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
-                
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Opacity = 0.95;
@@ -346,7 +346,7 @@ namespace Sistema_de_Venta
             }
         }
 
-        
+
         private void Form1_Activated(object sender, EventArgs e)
         {
             //detecta si se cambión de usuario para volver a cargar el form.
@@ -371,65 +371,33 @@ namespace Sistema_de_Venta
                 btnRestore.Visible = false;
                 minimizar = 0;
             }
-        }        
+        }
     }
 
-    // para sobreescibir el menustrip
-    /*public class CustomToolStripRenderer : ToolStripProfessionalRenderer
-    {
-        public CustomToolStripRenderer() { }
-
-        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
-        {
-            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-            Color c = Color.MediumBlue;
-            using (SolidBrush brush = new SolidBrush(c))
-                e.Graphics.FillRectangle(brush, rc);
 
 
-            LinearGradientMode mode = LinearGradientMode.Horizontal;
 
-            using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, ColorTable.MenuStripGradientBegin, ColorTable.MenuStripGradientEnd, mode))
-            {
-                e.Graphics.FillRectangle(b, e.AffectedBounds);
-            }
-        }
 
-    }*/
-
+    // sobreescribir menustrip para modificar apariencia
     public class MiRenderizador : ToolStripProfessionalRenderer
     {
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
-            if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
-            else
+            if (!e.Item.Selected)
             {
-                e.Item.Height = 200;
                 Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-                Color c = Color.FromArgb(15, 15, 15);
+                Color c = Color.FromArgb(0, 56, 117);
                 using (SolidBrush brush = new SolidBrush(c))
                     e.Graphics.FillRectangle(brush, rc);
-                    //e.Graphics.DrawRectangle(Pens.Red, 1, 0, rc.Width - 5, rc.Height - 1);
+            }
+            else
+            {
+                Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+                Color c = Color.FromArgb(0, 33, 68);
+                using (SolidBrush brush = new SolidBrush(c))
+                    e.Graphics.FillRectangle(brush, rc);
+                //e.Graphics.DrawRectangle(Pens.Red, 1, 0, rc.Width - 5, rc.Height - 1);
             }
         }
-        /*
-        protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
-        {
-        //base.OnRenderDropDownButtonBackground(e);
-
-        Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-            Color c = Color.FromArgb(50, 50, 50);
-            using (SolidBrush brush = new SolidBrush(c))
-                e.Graphics.FillRectangle(brush, rc);
-        }*/
-        /*
-        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
-        {
-            Rectangle rc = new Rectangle(Point.Empty, e.ToolStrip.Size);
-            Color c = Color.FromArgb(50, 50, 50);
-            using (SolidBrush brush = new SolidBrush(c))
-                e.Graphics.FillRectangle(brush, rc);
-        }*/
     }
-
 }
