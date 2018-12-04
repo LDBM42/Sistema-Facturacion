@@ -195,6 +195,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(117)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mENÚToolStripMenuItem,
@@ -232,7 +233,7 @@
             this.cLIENTESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Usuario;
             this.cLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cLIENTESToolStripMenuItem.Name = "cLIENTESToolStripMenuItem";
-            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.cLIENTESToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.cLIENTESToolStripMenuItem.Text = "CLIENTES";
             this.cLIENTESToolStripMenuItem.Click += new System.EventHandler(this.cLIENTESToolStripMenuItem_Click);
             // 
@@ -243,7 +244,7 @@
             this.pRODUCTOSToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Productos;
             this.pRODUCTOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
-            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
@@ -253,7 +254,7 @@
             this.serviciosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.serviciosToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Servicios;
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.serviciosToolStripMenuItem.Text = "SERVICIOS";
             this.serviciosToolStripMenuItem.Click += new System.EventHandler(this.serviciosToolStripMenuItem_Click);
             // 
@@ -265,7 +266,7 @@
             this.vENTASToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Ventas;
             this.vENTASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
-            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.vENTASToolStripMenuItem.Text = "VENTAS";
             this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
@@ -275,7 +276,7 @@
             this.verFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verFacturasToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.facturas;
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.verFacturasToolStripMenuItem.Text = "VER FACTURAS";
             this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
@@ -286,7 +287,7 @@
             this.cATEGORIAToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.Categoria;
             this.cATEGORIAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cATEGORIAToolStripMenuItem.Name = "cATEGORIAToolStripMenuItem";
-            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.cATEGORIAToolStripMenuItem.Size = new System.Drawing.Size(252, 34);
             this.cATEGORIAToolStripMenuItem.Text = "CATEGORIAS";
             this.cATEGORIAToolStripMenuItem.Click += new System.EventHandler(this.cATEGORIAToolStripMenuItem_Click);
             // 
