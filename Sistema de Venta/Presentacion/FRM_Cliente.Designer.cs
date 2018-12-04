@@ -65,6 +65,7 @@
             this.Guardar = new System.Windows.Forms.Button();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lab_encabezado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnl_Lista_Categoria.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,7 +81,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(117, 40);
-            this.Editar.TabIndex = 19;
+            this.Editar.TabIndex = 11;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -94,7 +95,7 @@
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(117, 40);
-            this.Cancelar.TabIndex = 12;
+            this.Cancelar.TabIndex = 11;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -108,7 +109,7 @@
             this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(117, 40);
-            this.Nuevo.TabIndex = 0;
+            this.Nuevo.TabIndex = 10;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -119,7 +120,8 @@
             this.text_Domicilio.Margin = new System.Windows.Forms.Padding(4);
             this.text_Domicilio.Name = "text_Domicilio";
             this.text_Domicilio.Size = new System.Drawing.Size(247, 27);
-            this.text_Domicilio.TabIndex = 6;
+            this.text_Domicilio.TabIndex = 3;
+            this.text_Domicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Domicilio_KeyPress);
             // 
             // text_Telefono
             // 
@@ -127,8 +129,9 @@
             this.text_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.text_Telefono.Name = "text_Telefono";
             this.text_Telefono.Size = new System.Drawing.Size(247, 27);
-            this.text_Telefono.TabIndex = 8;
+            this.text_Telefono.TabIndex = 4;
             this.text_Telefono.Text = " ";
+            this.text_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Telefono_KeyPress);
             // 
             // text_NCF
             // 
@@ -136,7 +139,8 @@
             this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
             this.text_NCF.Name = "text_NCF";
             this.text_NCF.Size = new System.Drawing.Size(247, 27);
-            this.text_NCF.TabIndex = 2;
+            this.text_NCF.TabIndex = 1;
+            this.text_NCF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_NCF_KeyPress);
             // 
             // text_Nombre
             // 
@@ -144,7 +148,8 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(247, 27);
-            this.text_Nombre.TabIndex = 10;
+            this.text_Nombre.TabIndex = 5;
+            this.text_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Nombre_KeyPress);
             // 
             // text_Apellido
             // 
@@ -152,7 +157,8 @@
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(247, 27);
-            this.text_Apellido.TabIndex = 12;
+            this.text_Apellido.TabIndex = 6;
+            this.text_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Apellido_KeyPress);
             // 
             // label5
             // 
@@ -228,7 +234,7 @@
             this.BT_liminar.FlatAppearance.BorderSize = 0;
             this.BT_liminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_liminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BT_liminar.Location = new System.Drawing.Point(43, 591);
+            this.BT_liminar.Location = new System.Drawing.Point(43, 729);
             this.BT_liminar.Margin = new System.Windows.Forms.Padding(4);
             this.BT_liminar.Name = "BT_liminar";
             this.BT_liminar.Size = new System.Drawing.Size(906, 46);
@@ -247,8 +253,8 @@
             this.noencontrado.Location = new System.Drawing.Point(43, 147);
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
-            this.noencontrado.Size = new System.Drawing.Size(907, 448);
-            this.noencontrado.TabIndex = 3;
+            this.noencontrado.Size = new System.Drawing.Size(907, 586);
+            this.noencontrado.TabIndex = 4;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -304,8 +310,8 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(907, 490);
-            this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.Size = new System.Drawing.Size(907, 628);
+            this.dgvClientes.TabIndex = 3;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
@@ -344,11 +350,11 @@
             this.btn_Cerrar.FlatAppearance.BorderSize = 0;
             this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cerrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cerrar.Location = new System.Drawing.Point(45, 591);
+            this.btn_Cerrar.Location = new System.Drawing.Point(45, 729);
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(321, 46);
-            this.btn_Cerrar.TabIndex = 20;
+            this.btn_Cerrar.TabIndex = 12;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -363,12 +369,14 @@
             this.pnl_Lista_Categoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Lista_Categoria.Location = new System.Drawing.Point(405, 0);
             this.pnl_Lista_Categoria.Name = "pnl_Lista_Categoria";
-            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 681);
+            this.pnl_Lista_Categoria.Size = new System.Drawing.Size(993, 819);
             this.pnl_Lista_Categoria.TabIndex = 15;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.lab_encabezado);
+            this.panel2.Controls.Add(this.Nuevo);
             this.panel2.Controls.Add(this.text_VencimientoSecuencia);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lab_InfReceptor);
@@ -384,7 +392,6 @@
             this.panel2.Controls.Add(this.text_Id);
             this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.Nuevo);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.text_Domicilio);
             this.panel2.Controls.Add(this.lab_Apellido);
@@ -398,7 +405,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(405, 681);
+            this.panel2.Size = new System.Drawing.Size(405, 819);
             this.panel2.TabIndex = 0;
             // 
             // text_VencimientoSecuencia
@@ -408,9 +415,10 @@
             this.text_VencimientoSecuencia.Margin = new System.Windows.Forms.Padding(4);
             this.text_VencimientoSecuencia.Name = "text_VencimientoSecuencia";
             this.text_VencimientoSecuencia.Size = new System.Drawing.Size(247, 27);
-            this.text_VencimientoSecuencia.TabIndex = 4;
+            this.text_VencimientoSecuencia.TabIndex = 2;
             this.text_VencimientoSecuencia.Value = new System.DateTime(2018, 12, 24, 22, 45, 0, 0);
             this.text_VencimientoSecuencia.ValueChanged += new System.EventHandler(this.text_VencimientoSecuencia_ValueChanged);
+            this.text_VencimientoSecuencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_VencimientoSecuencia_KeyPress);
             // 
             // label1
             // 
@@ -432,7 +440,7 @@
             this.lab_InfReceptor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_InfReceptor.Name = "lab_InfReceptor";
             this.lab_InfReceptor.Size = new System.Drawing.Size(220, 20);
-            this.lab_InfReceptor.TabIndex = 13;
+            this.lab_InfReceptor.TabIndex = 7;
             this.lab_InfReceptor.Text = "Información del Receptor";
             // 
             // lab_RNC
@@ -462,7 +470,8 @@
             this.tbx_RNC.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_RNC.Name = "tbx_RNC";
             this.tbx_RNC.Size = new System.Drawing.Size(247, 27);
-            this.tbx_RNC.TabIndex = 15;
+            this.tbx_RNC.TabIndex = 8;
+            this.tbx_RNC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_RNC_KeyPress);
             // 
             // tbx_NoRSocial
             // 
@@ -470,7 +479,8 @@
             this.tbx_NoRSocial.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_NoRSocial.Name = "tbx_NoRSocial";
             this.tbx_NoRSocial.Size = new System.Drawing.Size(247, 27);
-            this.tbx_NoRSocial.TabIndex = 17;
+            this.tbx_NoRSocial.TabIndex = 9;
+            this.tbx_NoRSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_NoRSocial_KeyPress);
             // 
             // cbx_FiscalConsumo
             // 
@@ -498,7 +508,7 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(117, 40);
-            this.Guardar.TabIndex = 18;
+            this.Guardar.TabIndex = 10;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
@@ -509,9 +519,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pbx_Ventas.BackColor = System.Drawing.Color.Transparent;
             this.pbx_Ventas.Image = global::Sistema_de_Venta.Properties.Resources.UsuarioBig;
-            this.pbx_Ventas.Location = new System.Drawing.Point(152, 470);
+            this.pbx_Ventas.Location = new System.Drawing.Point(149, 470);
             this.pbx_Ventas.Name = "pbx_Ventas";
-            this.pbx_Ventas.Size = new System.Drawing.Size(107, 118);
+            this.pbx_Ventas.Size = new System.Drawing.Size(107, 256);
             this.pbx_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_Ventas.TabIndex = 19;
             this.pbx_Ventas.TabStop = false;
@@ -525,11 +535,26 @@
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 443;
             // 
+            // lab_encabezado
+            // 
+            this.lab_encabezado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lab_encabezado.BackColor = System.Drawing.Color.Transparent;
+            this.lab_encabezado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lab_encabezado.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_encabezado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(102)))), ((int)(((byte)(145)))));
+            this.lab_encabezado.Location = new System.Drawing.Point(0, 632);
+            this.lab_encabezado.Margin = new System.Windows.Forms.Padding(0);
+            this.lab_encabezado.Name = "lab_encabezado";
+            this.lab_encabezado.Size = new System.Drawing.Size(405, 40);
+            this.lab_encabezado.TabIndex = 16;
+            this.lab_encabezado.Text = "Cliente";
+            this.lab_encabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FRM_Cliente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1398, 681);
+            this.ClientSize = new System.Drawing.Size(1398, 819);
             this.Controls.Add(this.pnl_Lista_Categoria);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -578,7 +603,6 @@
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbx_Ventas;
-        private System.Windows.Forms.ComboBox cbx_FiscalConsumo;
         private System.Windows.Forms.Label lab_RNC;
         private System.Windows.Forms.Label lab_NoRSocial;
         private System.Windows.Forms.TextBox tbx_RNC;
@@ -590,5 +614,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Favorite;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker text_VencimientoSecuencia;
+        public System.Windows.Forms.Label lab_encabezado;
+        private System.Windows.Forms.ComboBox cbx_FiscalConsumo;
     }
 }

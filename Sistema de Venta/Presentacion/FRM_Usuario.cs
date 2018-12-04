@@ -66,9 +66,9 @@ namespace Sistema_de_Venta.Presentacion
                 MostrarBotonesOcultos(false);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo está mal, Favor cerrar y volver a abrir los Usuarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             CMB_Buscar.Text = "Nombre";
@@ -103,7 +103,7 @@ namespace Sistema_de_Venta.Presentacion
                         usuario.Id = Convert.ToInt32(text_Id.Text);
                         usuario.Nombre = text_Nombre.Text;
                         usuario.Apellido = text_Apellido.Text;
-                        usuario.Ncf = Convert.ToInt32(text_NCF.Text);
+                        usuario.Ncf = text_NCF.Text;
                         usuario.Direccion = text_Direccion.Text;
                         usuario.Telefono = text_Telefono.Text;
                         usuario.Nombreusuario = txtUsuario.Text;
@@ -121,7 +121,7 @@ namespace Sistema_de_Venta.Presentacion
                         RUsuario usuario = new RUsuario();
                         usuario.Nombre = text_Nombre.Text;
                         usuario.Apellido = text_Apellido.Text;
-                        usuario.Ncf = Convert.ToInt32(text_NCF.Text);
+                        usuario.Ncf = text_NCF.Text;
                         usuario.Direccion = text_Direccion.Text;
                         usuario.Telefono = text_Telefono.Text;
                         usuario.Nombreusuario = txtUsuario.Text;
@@ -140,9 +140,9 @@ namespace Sistema_de_Venta.Presentacion
                     MessageBox.Show("Faltan datos en: \n" + sResultado);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo está mal, Favor llenar correctamente todos los campos e intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         //Funciones
@@ -154,14 +154,14 @@ namespace Sistema_de_Venta.Presentacion
             if (text_Apellido.Text == "") resultado += "El campo: Apellido,\n";
             if (text_Id.Text == "" && text_NCF.Text != "") //está agregando nuevo
             {
-                if (FUsuario.VerificarNCF(Convert.ToInt32(text_NCF.Text)) > 0)
+                if (FUsuario.VerificarNCF(text_NCF.Text) > 0)
                     resultado += "El campo: NCF,\n (NCF ya existe) \n";
             }   
             else //está modificando
             {
                 if (text_NCF.Text != ncfValidar)
                 {
-                    if (FUsuario.VerificarNCF(Convert.ToInt32(text_NCF.Text)) > 0)
+                    if (FUsuario.VerificarNCF(text_NCF.Text) > 0)
                         resultado += "El campo: NCF,\n (NCF ya existe) \n";
                 }
             }
@@ -207,13 +207,15 @@ namespace Sistema_de_Venta.Presentacion
             text_Telefono.Text = "";
             txtUsuario.Text = "";
             txtPassword.Text = "";
-            cbxTipo.Text = "";   
+            cbxTipo.Text = "";
+            text_Nombre.Focus();
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             ncfValidar = text_NCF.Text; //asignar NCF anterior a la variable
             MostrarBotonesOcultos(true);
+            text_Nombre.Focus();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -276,9 +278,9 @@ namespace Sistema_de_Venta.Presentacion
                 else if (!verificarFilasSeleccionada()) MessageBox.Show("Debe selecionar un Registro primero",
                  "Eliminacion de Registro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo está mal, Favor intentar denuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -362,7 +364,64 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
         }
+
+
+
+
+        private void text_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidarLetras(e);
+        }
+
+        private void text_Telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidar(e, "0123456789-()\b");
+        }
+
+        private void text_Apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidarLetras(e);
+        }
+
+        private void text_NCF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validadores.CantidadCaracteres(e, text_NCF.Text, 11);
+            Validadores.EnterPress_TabyValidar(e, "0123456789ABCDEFG\b");
+        }
+
+        private void text_Direccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void cbxTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                Guardar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
+        }
+
     }
 }

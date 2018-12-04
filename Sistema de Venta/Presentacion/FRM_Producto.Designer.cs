@@ -217,7 +217,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(99, 40);
-            this.Editar.TabIndex = 14;
+            this.Editar.TabIndex = 11;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -253,7 +253,7 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(99, 40);
-            this.Guardar.TabIndex = 13;
+            this.Guardar.TabIndex = 10;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
@@ -300,7 +300,7 @@
             this.Quitar.Margin = new System.Windows.Forms.Padding(4);
             this.Quitar.Name = "Quitar";
             this.Quitar.Size = new System.Drawing.Size(206, 40);
-            this.Quitar.TabIndex = 17;
+            this.Quitar.TabIndex = 9;
             this.Quitar.Text = "Quitar Imagen";
             this.Quitar.UseVisualStyleBackColor = false;
             this.Quitar.Visible = false;
@@ -313,8 +313,9 @@
             this.text_CategoriaDescripcion.Name = "text_CategoriaDescripcion";
             this.text_CategoriaDescripcion.ReadOnly = true;
             this.text_CategoriaDescripcion.Size = new System.Drawing.Size(316, 26);
-            this.text_CategoriaDescripcion.TabIndex = 1;
+            this.text_CategoriaDescripcion.TabIndex = 0;
             this.text_CategoriaDescripcion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_CategoriaDescripcion_MouseClick);
+            this.text_CategoriaDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_CategoriaDescripcion_KeyPress);
             // 
             // lab_Costo_ProdServ
             // 
@@ -347,7 +348,7 @@
             this.Cambiar.Margin = new System.Windows.Forms.Padding(4);
             this.Cambiar.Name = "Cambiar";
             this.Cambiar.Size = new System.Drawing.Size(206, 40);
-            this.Cambiar.TabIndex = 16;
+            this.Cambiar.TabIndex = 8;
             this.Cambiar.Text = "Cambiar Imagen";
             this.Cambiar.UseVisualStyleBackColor = false;
             this.Cambiar.Visible = false;
@@ -359,7 +360,8 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(316, 26);
-            this.text_Nombre.TabIndex = 3;
+            this.text_Nombre.TabIndex = 1;
+            this.text_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Nombre_KeyPress);
             // 
             // Cancelar
             // 
@@ -370,7 +372,7 @@
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(99, 40);
-            this.Cancelar.TabIndex = 19;
+            this.Cancelar.TabIndex = 11;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -392,9 +394,10 @@
             this.text_FechadeVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.text_FechadeVencimiento.Name = "text_FechadeVencimiento";
             this.text_FechadeVencimiento.Size = new System.Drawing.Size(91, 26);
-            this.text_FechadeVencimiento.TabIndex = 15;
+            this.text_FechadeVencimiento.TabIndex = 7;
             this.text_FechadeVencimiento.Value = new System.DateTime(2018, 12, 24, 22, 45, 0, 0);
             this.text_FechadeVencimiento.ValueChanged += new System.EventHandler(this.text_FechadeVencimiento_ValueChanged);
+            this.text_FechadeVencimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_FechadeVencimiento_KeyPress);
             // 
             // Nuevo
             // 
@@ -405,7 +408,7 @@
             this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(99, 40);
-            this.Nuevo.TabIndex = 18;
+            this.Nuevo.TabIndex = 10;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -427,7 +430,8 @@
             this.text_Stock.Margin = new System.Windows.Forms.Padding(4);
             this.text_Stock.Name = "text_Stock";
             this.text_Stock.Size = new System.Drawing.Size(91, 26);
-            this.text_Stock.TabIndex = 13;
+            this.text_Stock.TabIndex = 6;
+            this.text_Stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Stock_KeyPress);
             // 
             // text_Flag
             // 
@@ -446,7 +450,8 @@
             this.text_PrecioCompra.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioCompra.Name = "text_PrecioCompra";
             this.text_PrecioCompra.Size = new System.Drawing.Size(91, 26);
-            this.text_PrecioCompra.TabIndex = 9;
+            this.text_PrecioCompra.TabIndex = 4;
+            this.text_PrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_PrecioCompra_KeyPress);
             // 
             // btn_Cerrar
             // 
@@ -459,7 +464,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(426, 46);
-            this.btn_Cerrar.TabIndex = 20;
+            this.btn_Cerrar.TabIndex = 12;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -470,8 +475,9 @@
             this.text_PrecioVenta.Margin = new System.Windows.Forms.Padding(4);
             this.text_PrecioVenta.Name = "text_PrecioVenta";
             this.text_PrecioVenta.Size = new System.Drawing.Size(91, 26);
-            this.text_PrecioVenta.TabIndex = 7;
+            this.text_PrecioVenta.TabIndex = 3;
             this.text_PrecioVenta.Text = " ";
+            this.text_PrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_PrecioVenta_KeyPress);
             // 
             // text_Descripcion
             // 
@@ -480,7 +486,8 @@
             this.text_Descripcion.Multiline = true;
             this.text_Descripcion.Name = "text_Descripcion";
             this.text_Descripcion.Size = new System.Drawing.Size(316, 97);
-            this.text_Descripcion.TabIndex = 5;
+            this.text_Descripcion.TabIndex = 2;
+            this.text_Descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Descripcion_KeyPress);
             // 
             // lab_ITBIS
             // 
@@ -506,11 +513,13 @@
             this.cbx_ITBIS.Location = new System.Drawing.Point(153, 279);
             this.cbx_ITBIS.Name = "cbx_ITBIS";
             this.cbx_ITBIS.Size = new System.Drawing.Size(91, 28);
-            this.cbx_ITBIS.TabIndex = 11;
+            this.cbx_ITBIS.TabIndex = 5;
+            this.cbx_ITBIS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbx_ITBIS_KeyPress);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.Editar);
             this.panel2.Controls.Add(this.cbx_ITBIS);
             this.panel2.Controls.Add(this.lab_ITBIS);
             this.panel2.Controls.Add(this.text_Descripcion);
@@ -537,7 +546,6 @@
             this.panel2.Controls.Add(this.Guardar);
             this.panel2.Controls.Add(this.lbl_Descripcion);
             this.panel2.Controls.Add(this.lab_stock);
-            this.panel2.Controls.Add(this.Editar);
             this.panel2.Controls.Add(this.pbx_Servicios);
             this.panel2.Controls.Add(this.pbx_Productos);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;

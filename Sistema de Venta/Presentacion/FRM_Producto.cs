@@ -166,11 +166,9 @@ namespace Sistema_de_Venta.Presentacion
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Algo está mal, Favor intentar denuevo", "Error");
             }
 
 
@@ -191,19 +189,20 @@ namespace Sistema_de_Venta.Presentacion
             Eliminar.Visible = true;
             limpiar();
             desactivar(false);
+            text_CategoriaDescripcion.Focus();
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
             desactivar(false);
+            text_CategoriaDescripcion.Focus();
         }
 
         private void BT_liminar_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (MessageBox.Show("Esta seguro de eliminar los productos seleccionados?", "Eliminacion de Productos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     foreach (DataGridViewRow row in dgvProductos.Rows)
@@ -215,19 +214,16 @@ namespace Sistema_de_Venta.Presentacion
                             if (Fproducto.Eliminar(producto) != 0)
                             {
                                 MessageBox.Show("El productos pudo ser eliminado\n favor intentar mas tarde", "Eliminacion de Productos",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
                     FRM_Producto_Load(null, null);
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Algo está mal, Favor intentar denuevo", "Error");
             }
         }
 
@@ -274,6 +270,7 @@ namespace Sistema_de_Venta.Presentacion
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show("Algo está mal, Favor intentar denuevo", "Error");
                 }
 
             }
@@ -339,9 +336,10 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo está mal, Favor intentar denuevo", "Error");
+                //MessageBox.Show(ex.Message + ex.StackTrace);
             }
             MostrarGuardarCancelar(false);
         }
@@ -518,7 +516,59 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Producto_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void text_CategoriaDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void text_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidarLetras(e);
+        }
+
+        private void text_Descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void text_PrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidar(e, "0123456789.\b");
+        }
+
+        private void text_PrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidar(e, "0123456789.\b");
+        }
+
+        private void cbx_ITBIS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void text_Stock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidar(e, "0123456789\b");
+        }
+
+        private void text_FechadeVencimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                Guardar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)

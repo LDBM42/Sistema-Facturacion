@@ -32,7 +32,7 @@ namespace Sistema_de_Venta.Datos
                 {
                     FDBHelper.MakeParam("@Nombre",SqlDbType.VarChar, 0, Rusuario.Nombre),
                     FDBHelper.MakeParam("@Apellido",SqlDbType.VarChar, 0,Rusuario.Apellido),
-                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Rusuario.Ncf),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.VarChar, 0, Rusuario.Ncf),
                     FDBHelper.MakeParam("@Direccion",SqlDbType.VarChar, 0, Rusuario.Direccion),
                     FDBHelper.MakeParam("@Telefono",SqlDbType.VarChar, 0, Rusuario.Telefono),
                     FDBHelper.MakeParam("@Usuario",SqlDbType.VarChar, 0, Rusuario.Nombreusuario),
@@ -49,7 +49,7 @@ namespace Sistema_de_Venta.Datos
                     FDBHelper.MakeParam("@Id",SqlDbType.Int, 0, Rusuario.Id),
                     FDBHelper.MakeParam("@Nombre",SqlDbType.VarChar, 0, Rusuario.Nombre),
                     FDBHelper.MakeParam("@Apellido",SqlDbType.VarChar, 0,Rusuario.Apellido),
-                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Rusuario.Ncf),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.VarChar, 0, Rusuario.Ncf),
                     FDBHelper.MakeParam("@Direccion",SqlDbType.VarChar, 0, Rusuario.Direccion),
                     FDBHelper.MakeParam("@Telefono",SqlDbType.VarChar, 0, Rusuario.Telefono),
                     FDBHelper.MakeParam("@Usuario",SqlDbType.VarChar, 0, Rusuario.Nombreusuario),
@@ -68,11 +68,11 @@ namespace Sistema_de_Venta.Datos
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FUsuario_Eliminar", dbParams));
         }
 
-        public static int VerificarNCF(int Ncf)
+        public static int VerificarNCF(string Ncf)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-                    FDBHelper.MakeParam("@Ncf",SqlDbType.Int, 0, Ncf),
+                    FDBHelper.MakeParam("@Ncf",SqlDbType.VarChar, 0, Ncf),
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FUsuario_VerificarNCF", dbParams));
         }

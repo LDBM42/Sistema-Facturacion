@@ -49,9 +49,21 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Cliente_Load(object sender, EventArgs e)
         {
             CMB_Buscar.Text = "Nombre";
+            cbx_FiscalConsumo.Focus();
 
             if (cbx_FiscalConsumo.Text == null)
                 cbx_FiscalConsumo.Text = "Consumidor Final";
+
+            if (text_Flag.Text == "1")
+            {
+                lab_encabezado.Text = "Cliente";
+                lab_encabezado.Visible = true;
+            }
+            else
+            {
+                lab_encabezado.Visible = false;
+            }
+
 
             try
 
@@ -76,9 +88,9 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if (nuevo_o_Registrado != "Cliente Nuevo")
@@ -180,10 +192,10 @@ namespace Sistema_de_Venta.Presentacion
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, Favor llenar correctamente todos los campos e intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -213,6 +225,8 @@ namespace Sistema_de_Venta.Presentacion
             limpiar();
 
             BloquearControlesClienteNuevo();
+
+            cbx_FiscalConsumo.Focus();
         }
 
         public void MostrarGuardarCancelar(bool b)
@@ -237,11 +251,11 @@ namespace Sistema_de_Venta.Presentacion
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            text_NCF.Focus();
             MostrarGuardarCancelar(true);
             cbx_FiscalConsumo.Enabled = false;
 
             BloquearControlesClienteNuevo();
+            cbx_FiscalConsumo.Focus();
         }
 
         private void BloquearControlesClienteNuevo()
@@ -351,15 +365,11 @@ namespace Sistema_de_Venta.Presentacion
                         }
                     }
                     FRM_Cliente_Load(null, null);
-
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-
+                MessageBox.Show("Algo salió mal, Favor intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -531,7 +541,71 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Cliente_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void text_NCF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validadores.CantidadCaracteres(e, text_NCF.Text, 11);
+            Validadores.EnterPress_TabyValidar(e, "0123456789ABCDEFG\b");
+        }
+
+        private void text_VencimientoSecuencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void text_Domicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void text_Telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidar(e, "0123456789-()\b");
+        }
+
+        private void text_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validadores.EnterPress_TabyValidarLetras(e);
+        }
+
+        private void text_Apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                Guardar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
+            else
+            {
+                Validadores.EnterPress_TabyValidarLetras(e);
+            }
+        }
+
+        private void tbx_RNC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validadores.CantidadCaracteres(e, tbx_RNC.Text, 9);
+            Validadores.EnterPress_TabyValidar(e, "0123456789\b");
+        }
+
+        private void tbx_NoRSocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                Guardar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
         }
 
         private void text_VencimientoSecuencia_ValueChanged(object sender, EventArgs e)

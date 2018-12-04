@@ -37,11 +37,6 @@ namespace SisVenttas.Datos
                     }
                 }
                 da.Fill(ds);
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
             return ds;
         }
 

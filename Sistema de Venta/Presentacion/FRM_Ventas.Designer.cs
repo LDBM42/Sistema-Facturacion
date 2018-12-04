@@ -185,7 +185,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 40);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -199,7 +199,7 @@
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(125, 40);
-            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -237,6 +237,7 @@
             this.text_ClienteNombre.Size = new System.Drawing.Size(265, 26);
             this.text_ClienteNombre.TabIndex = 4;
             this.text_ClienteNombre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_ClienteNombre_MouseClick);
+            this.text_ClienteNombre.Enter += new System.EventHandler(this.text_ClienteNombre_Enter);
             // 
             // textId
             // 
@@ -285,6 +286,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.cbx_clienteNuevoORegistrado);
             this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Controls.Add(this.text_fecha);
@@ -297,7 +299,6 @@
             this.panel2.Controls.Add(this.lab_DocNum);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.text_NumeroDoc);
-            this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.pbx_Ventas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;

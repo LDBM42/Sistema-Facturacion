@@ -89,7 +89,7 @@
             this.dgv_Auditoria.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_Auditoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Auditoria.Size = new System.Drawing.Size(937, 460);
-            this.dgv_Auditoria.TabIndex = 0;
+            this.dgv_Auditoria.TabIndex = 3;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
@@ -139,7 +139,7 @@
             this.BT_Cerrar.Margin = new System.Windows.Forms.Padding(5);
             this.BT_Cerrar.Name = "BT_Cerrar";
             this.BT_Cerrar.Size = new System.Drawing.Size(937, 46);
-            this.BT_Cerrar.TabIndex = 1;
+            this.BT_Cerrar.TabIndex = 2;
             this.BT_Cerrar.Text = "Cerrar";
             this.BT_Cerrar.UseVisualStyleBackColor = false;
             this.BT_Cerrar.Click += new System.EventHandler(this.BT_Cerrar_Click);
@@ -219,7 +219,7 @@
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
             this.noencontrado.Size = new System.Drawing.Size(937, 431);
-            this.noencontrado.TabIndex = 5;
+            this.noencontrado.TabIndex = 4;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.noencontrado.Visible = false;

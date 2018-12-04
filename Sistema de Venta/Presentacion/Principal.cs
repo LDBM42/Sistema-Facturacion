@@ -165,9 +165,9 @@ namespace Sistema_de_Venta
                 this.Hide();
                 login.Show();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("Algo salió mal, Favor intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
@@ -333,9 +333,9 @@ namespace Sistema_de_Venta
 
                     formulario.BringToFront();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.ToString());
+                    MessageBox.Show("Algo salió mal, Favor intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }

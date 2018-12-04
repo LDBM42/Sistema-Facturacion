@@ -17,9 +17,9 @@ namespace Sistema_de_Venta.Entidades
             get { return _id; }
             set { _id = value; }
         }
-        public int _ncf;
+        public string _ncf;
 
-        public   int Ncf
+        public string Ncf
         {
             get { return _ncf; }
             set {  _ncf = value; }

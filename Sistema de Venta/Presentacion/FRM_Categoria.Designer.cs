@@ -46,6 +46,7 @@
             this.Pnl_Categoria_Size = new System.Windows.Forms.Panel();
             this.pnl_Lista_Categoria = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lab_encabezado = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.pbx_Ventas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
@@ -78,7 +79,7 @@
             this.noencontrado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noencontrado.Name = "noencontrado";
             this.noencontrado.Size = new System.Drawing.Size(953, 326);
-            this.noencontrado.TabIndex = 3;
+            this.noencontrado.TabIndex = 4;
             this.noencontrado.Text = "\"DATOS NO ENCONTRADOS\"";
             this.noencontrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -134,7 +135,7 @@
             this.dgvCategoria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategoria.Size = new System.Drawing.Size(953, 363);
-            this.dgvCategoria.TabIndex = 0;
+            this.dgvCategoria.TabIndex = 3;
             this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
             this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
             this.dgvCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellDoubleClick);
@@ -154,7 +155,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(0);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(128, 40);
-            this.Editar.TabIndex = 3;
+            this.Editar.TabIndex = 2;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -196,7 +197,7 @@
             this.Nuevo.Margin = new System.Windows.Forms.Padding(0);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(128, 40);
-            this.Nuevo.TabIndex = 2;
+            this.Nuevo.TabIndex = 1;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -207,7 +208,8 @@
             this.text_Descripcion.Margin = new System.Windows.Forms.Padding(4);
             this.text_Descripcion.Name = "text_Descripcion";
             this.text_Descripcion.Size = new System.Drawing.Size(265, 27);
-            this.text_Descripcion.TabIndex = 1;
+            this.text_Descripcion.TabIndex = 0;
+            this.text_Descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Descripcion_KeyPress);
             // 
             // text_Id
             // 
@@ -269,6 +271,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.lab_encabezado);
             this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Controls.Add(this.Nuevo);
             this.panel2.Controls.Add(this.text_Flag);
@@ -285,6 +288,21 @@
             this.panel2.Size = new System.Drawing.Size(359, 552);
             this.panel2.TabIndex = 0;
             // 
+            // lab_encabezado
+            // 
+            this.lab_encabezado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lab_encabezado.BackColor = System.Drawing.Color.Transparent;
+            this.lab_encabezado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lab_encabezado.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_encabezado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(102)))), ((int)(((byte)(145)))));
+            this.lab_encabezado.Location = new System.Drawing.Point(0, 346);
+            this.lab_encabezado.Margin = new System.Windows.Forms.Padding(0);
+            this.lab_encabezado.Name = "lab_encabezado";
+            this.lab_encabezado.Size = new System.Drawing.Size(359, 40);
+            this.lab_encabezado.TabIndex = 20;
+            this.lab_encabezado.Text = "Categoría";
+            this.lab_encabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btn_Cerrar
             // 
             this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -296,7 +314,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(264, 46);
-            this.btn_Cerrar.TabIndex = 6;
+            this.btn_Cerrar.TabIndex = 3;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -362,5 +380,6 @@
         private System.Windows.Forms.Panel pnl_Lista_Categoria;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.PictureBox pbx_Ventas;
+        public System.Windows.Forms.Label lab_encabezado;
     }
 }

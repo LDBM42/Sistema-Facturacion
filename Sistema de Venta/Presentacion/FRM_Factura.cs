@@ -208,6 +208,8 @@ namespace Sistema_de_Venta.Presentacion
         {
             if (pbx_ChevronRight.Visible == true)
                 tmr_Buscar.Start();
+
+            cmb_TipoFactura.Focus();
         }
 
         private void tmr_BuscarHide_Tick(object sender, EventArgs e)
@@ -233,6 +235,23 @@ namespace Sistema_de_Venta.Presentacion
                 }
             }
                
+        }
+
+        private void cmb_TipoFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            Validadores.EnterPress_Tab(e);
+        }
+
+        private void dtp_FechaFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                btn_buscar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
         }
 
         private void pbx_ChevronLeft_Click(object sender, EventArgs e)

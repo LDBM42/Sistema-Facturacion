@@ -55,6 +55,17 @@ namespace Sistema_de_Venta.Presentacion
         {
             CMB_Buscar.Text = "Descripcion";
 
+
+            if (text_Flag.Text == "1")
+            {
+                lab_encabezado.Text = "Categoría";
+                lab_encabezado.Visible = true;
+            }
+            else
+            {
+                lab_encabezado.Visible = false;
+            }
+
             try
 
             {
@@ -75,9 +86,9 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, Favor volver a cargar las categorías", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             MostrarGuardarCancelar(false);
 
@@ -129,10 +140,10 @@ namespace Sistema_de_Venta.Presentacion
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, Favor llentar todos los campos correctamente e intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -151,6 +162,7 @@ namespace Sistema_de_Venta.Presentacion
             Eliminar.Visible = true;
             text_Id.Clear();
             text_Descripcion.Clear();
+            text_Descripcion.Focus();
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -158,6 +170,7 @@ namespace Sistema_de_Venta.Presentacion
             MostrarGuardarCancelar(true);
 
             Eliminar.Visible = true;
+            text_Descripcion.Focus();
         }
 
         private void BT_liminar_Click(object sender, EventArgs e)
@@ -320,7 +333,24 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Categoria_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void text_Descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 'e' almacena la tecla presionada
+            if (e.KeyChar == (char)13) //si la tecla pesionada es igual a ENTER (13)
+            {
+                e.Handled = true; //.Handled significa que nosotros nos haremos cargo del codigo
+                                  //al ser true, evita que apareca la tecla presionada
+                Guardar.PerformClick(); // permite hacer clic en el boton por codigo.
+            }
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)

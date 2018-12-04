@@ -100,7 +100,13 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Auditoria_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -61,9 +61,10 @@ namespace Sistema_de_Venta.Presentacion
                     noencontrado.Visible = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                //MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, favor volver a cargar las Ventas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             MostrarGuardarCancelar(false);
@@ -122,10 +123,10 @@ namespace Sistema_de_Venta.Presentacion
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo salió mal, Favor llenar correctamente todos los campos e intentarlo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -149,6 +150,7 @@ namespace Sistema_de_Venta.Presentacion
             MostrarGuardarCancelar(true);
             limpiar();
             GetNumeroDocumento();
+            cbx_clienteNuevoORegistrado.Focus();
         }
         public void GetNumeroDocumento()
         {
@@ -163,6 +165,7 @@ namespace Sistema_de_Venta.Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+            cbx_clienteNuevoORegistrado.Focus();
         }
 
         private void Buscar_TextChanged(object sender, EventArgs e)
@@ -325,7 +328,7 @@ namespace Sistema_de_Venta.Presentacion
             FRMCli.Nuevo_o_Registrado(cbx_clienteNuevoORegistrado.Text);
             FRMCli.WindowState = FormWindowState.Maximized;
             DialogResult res = FRMCli.ShowDialog(); //abrimos el formulario CLiente como cuadro de dialogo modal
-
+            
             if (res == DialogResult.OK)
             {
                 //recuperando la variable publica del Cliente
@@ -356,7 +359,18 @@ namespace Sistema_de_Venta.Presentacion
         private void FRM_Ventas_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 principal = Owner as Form1;
-            principal.lab_encabezado.Text = "";
+            try
+            {
+                principal.lab_encabezado.Text = "";
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void text_ClienteNombre_Enter(object sender, EventArgs e)
+        {
+            text_ClienteNombre_MouseClick(null, null);
         }
     }
 }

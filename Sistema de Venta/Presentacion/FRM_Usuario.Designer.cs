@@ -93,7 +93,7 @@
             this.Editar.Margin = new System.Windows.Forms.Padding(4);
             this.Editar.Name = "Editar";
             this.Editar.Size = new System.Drawing.Size(106, 40);
-            this.Editar.TabIndex = 17;
+            this.Editar.TabIndex = 9;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
             this.Editar.Click += new System.EventHandler(this.Editar_Click);
@@ -107,7 +107,7 @@
             this.Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(106, 40);
-            this.Guardar.TabIndex = 16;
+            this.Guardar.TabIndex = 8;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
@@ -121,7 +121,7 @@
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(106, 40);
-            this.Cancelar.TabIndex = 12;
+            this.Cancelar.TabIndex = 9;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -135,7 +135,7 @@
             this.Nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(106, 40);
-            this.Nuevo.TabIndex = 1;
+            this.Nuevo.TabIndex = 8;
             this.Nuevo.Text = "Nuevo";
             this.Nuevo.UseVisualStyleBackColor = false;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
@@ -147,7 +147,8 @@
             this.text_Direccion.Margin = new System.Windows.Forms.Padding(4);
             this.text_Direccion.Name = "text_Direccion";
             this.text_Direccion.Size = new System.Drawing.Size(227, 24);
-            this.text_Direccion.TabIndex = 7;
+            this.text_Direccion.TabIndex = 3;
+            this.text_Direccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Direccion_KeyPress);
             // 
             // text_Telefono
             // 
@@ -156,8 +157,9 @@
             this.text_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.text_Telefono.Name = "text_Telefono";
             this.text_Telefono.Size = new System.Drawing.Size(227, 24);
-            this.text_Telefono.TabIndex = 9;
+            this.text_Telefono.TabIndex = 4;
             this.text_Telefono.Text = " ";
+            this.text_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Telefono_KeyPress);
             // 
             // text_NCF
             // 
@@ -166,7 +168,8 @@
             this.text_NCF.Margin = new System.Windows.Forms.Padding(4);
             this.text_NCF.Name = "text_NCF";
             this.text_NCF.Size = new System.Drawing.Size(227, 24);
-            this.text_NCF.TabIndex = 5;
+            this.text_NCF.TabIndex = 2;
+            this.text_NCF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_NCF_KeyPress);
             // 
             // Buscar
             // 
@@ -233,7 +236,8 @@
             this.text_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.text_Nombre.Name = "text_Nombre";
             this.text_Nombre.Size = new System.Drawing.Size(227, 24);
-            this.text_Nombre.TabIndex = 1;
+            this.text_Nombre.TabIndex = 0;
+            this.text_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Nombre_KeyPress);
             // 
             // text_Apellido
             // 
@@ -242,7 +246,8 @@
             this.text_Apellido.Margin = new System.Windows.Forms.Padding(4);
             this.text_Apellido.Name = "text_Apellido";
             this.text_Apellido.Size = new System.Drawing.Size(227, 24);
-            this.text_Apellido.TabIndex = 3;
+            this.text_Apellido.TabIndex = 1;
+            this.text_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Apellido_KeyPress);
             // 
             // text_Id
             // 
@@ -327,6 +332,7 @@
             // 
             // cbxTipo
             // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Admin",
@@ -335,7 +341,8 @@
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(227, 28);
-            this.cbxTipo.TabIndex = 15;
+            this.cbxTipo.TabIndex = 7;
+            this.cbxTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTipo_KeyPress);
             // 
             // txtFlag
             // 
@@ -394,8 +401,9 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(227, 25);
-            this.txtPassword.TabIndex = 13;
+            this.txtPassword.TabIndex = 6;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsuario
             // 
@@ -406,7 +414,8 @@
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(227, 24);
-            this.txtUsuario.TabIndex = 11;
+            this.txtUsuario.TabIndex = 5;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // btn_Cerrar
             // 
@@ -419,7 +428,7 @@
             this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(317, 46);
-            this.btn_Cerrar.TabIndex = 18;
+            this.btn_Cerrar.TabIndex = 10;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
@@ -427,6 +436,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.Nuevo);
+            this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.btn_Cerrar);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cbxTipo);
@@ -441,11 +452,9 @@
             this.panel2.Controls.Add(this.text_Id);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.text_Apellido);
-            this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Controls.Add(this.text_Nombre);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.text_NCF);
-            this.panel2.Controls.Add(this.Nuevo);
             this.panel2.Controls.Add(this.text_Telefono);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtUsuario);

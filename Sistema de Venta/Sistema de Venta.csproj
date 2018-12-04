@@ -123,6 +123,7 @@
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\RUsuario.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Validadores.cs" />
     <Compile Include="Entidades\Venta.cs" />
     <Compile Include="IFormulario.cs" />
     <Compile Include="Presentacion\FRM_Auditoria.cs">

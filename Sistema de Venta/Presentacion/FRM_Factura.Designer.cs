@@ -152,6 +152,7 @@
             this.cmb_TipoFactura.Name = "cmb_TipoFactura";
             this.cmb_TipoFactura.Size = new System.Drawing.Size(184, 28);
             this.cmb_TipoFactura.TabIndex = 1;
+            this.cmb_TipoFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_TipoFactura_KeyPress);
             // 
             // label2
             // 
@@ -176,6 +177,7 @@
             this.dtp_FechaFactura.Size = new System.Drawing.Size(184, 28);
             this.dtp_FechaFactura.TabIndex = 4;
             this.dtp_FechaFactura.Value = new System.DateTime(2018, 12, 1, 22, 57, 39, 0);
+            this.dtp_FechaFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtp_FechaFactura_KeyPress);
             // 
             // Pnl_Buscar
             // 
