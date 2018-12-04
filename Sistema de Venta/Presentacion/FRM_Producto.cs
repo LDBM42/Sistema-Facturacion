@@ -53,6 +53,9 @@ namespace Sistema_de_Venta.Presentacion
                 Imagen.BackgroundImage = null;
                 Imagen.Image = new Bitmap(dialogo.FileName);
                 Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+
+                //este es el metodo para guardar el log con la accion Cambio Imagen de Producto
+                Form1.Log(Usuario.Nombreusuario, "Cambio Imagen de Producto: ");
             }
         }
 
@@ -61,6 +64,9 @@ namespace Sistema_de_Venta.Presentacion
             Imagen.BackgroundImage = Resources.Transparente;
             Imagen.Image = null;
             Imagen.SizeMode = PictureBoxSizeMode.Zoom;
+
+            //este es el metodo para guardar el log con la accion quitar Imagen de Producto
+            Form1.Log(Usuario.Nombreusuario, "Quitar Imagen de Producto:");
 
         }
 
@@ -190,6 +196,8 @@ namespace Sistema_de_Venta.Presentacion
             limpiar();
             desactivar(false);
             text_CategoriaDescripcion.Focus();
+            //este es el metodo para guardar el log con la accion nuevo Producto
+            Form1.Log(Usuario.Nombreusuario, "Nuevo Producto: ");
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -219,6 +227,8 @@ namespace Sistema_de_Venta.Presentacion
                         }
                     }
                     FRM_Producto_Load(null, null);
+                    //este es el metodo para guardar el log con la accion  Producto Eliminado
+                    Form1.Log(Usuario.Nombreusuario, "Producto Eliminado: ");
                 }
             }
             catch (Exception)

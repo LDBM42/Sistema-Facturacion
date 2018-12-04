@@ -113,9 +113,9 @@
             // 
             this.pnl_Formularios.Controls.Add(this.pbx_Logo);
             this.pnl_Formularios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Formularios.Location = new System.Drawing.Point(0, 74);
+            this.pnl_Formularios.Location = new System.Drawing.Point(0, 69);
             this.pnl_Formularios.Name = "pnl_Formularios";
-            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 701);
+            this.pnl_Formularios.Size = new System.Drawing.Size(1300, 709);
             this.pnl_Formularios.TabIndex = 8;
             // 
             // pbx_Logo
@@ -125,7 +125,7 @@
             this.pbx_Logo.Image = global::Sistema_de_Venta.Properties.Resources.MiEmpresaFicticiaLOGO___GIF_ANIMADO__peq__fondo_black3;
             this.pbx_Logo.Location = new System.Drawing.Point(0, 0);
             this.pbx_Logo.Name = "pbx_Logo";
-            this.pbx_Logo.Size = new System.Drawing.Size(1300, 701);
+            this.pbx_Logo.Size = new System.Drawing.Size(1300, 709);
             this.pbx_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbx_Logo.TabIndex = 0;
             this.pbx_Logo.TabStop = false;
@@ -179,9 +179,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 775);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 778);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1300, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1300, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -189,7 +189,7 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(49, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel1.Text = "Status";
             // 
             // menuStrip1
@@ -205,7 +205,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(18, 20, 5, 20);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1300, 74);
+            this.menuStrip1.Size = new System.Drawing.Size(1300, 69);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -223,7 +223,7 @@
             this.mENÚToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.mENÚToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.menu1;
             this.mENÚToolStripMenuItem.Name = "mENÚToolStripMenuItem";
-            this.mENÚToolStripMenuItem.Size = new System.Drawing.Size(115, 34);
+            this.mENÚToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.mENÚToolStripMenuItem.Text = "MENÚ";
             // 
             // cLIENTESToolStripMenuItem
@@ -301,7 +301,7 @@
             this.cONFIGURACIONESToolStripMenuItem.Image = global::Sistema_de_Venta.Properties.Resources.settingss;
             this.cONFIGURACIONESToolStripMenuItem.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.cONFIGURACIONESToolStripMenuItem.Name = "cONFIGURACIONESToolStripMenuItem";
-            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(218, 29);
             this.cONFIGURACIONESToolStripMenuItem.Text = "CONFIGURACIONES";
             // 
             // usuariosToolStripMenuItem
@@ -332,7 +332,7 @@
             this.cERRARToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cERRARToolStripMenuItem.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.cERRARToolStripMenuItem.Name = "cERRARToolStripMenuItem";
-            this.cERRARToolStripMenuItem.Size = new System.Drawing.Size(215, 34);
+            this.cERRARToolStripMenuItem.Size = new System.Drawing.Size(187, 29);
             this.cERRARToolStripMenuItem.Text = "CERRAR SESION";
             this.cERRARToolStripMenuItem.Click += new System.EventHandler(this.cERRARToolStripMenuItem_Click);
             // 

@@ -39,7 +39,7 @@ namespace Sistema_de_Venta.Presentacion
 
             if (dt.Rows.Count > 0)
             {
-                //Este es para pasarle ao stored procedure el usuario y la accion
+                //Este es para pasarle el stored procedure el usuario y la accion
                 Form1.Log(text_Usuario.Text, "Iniciar Sesion");
 
                 Usuario.Id = Convert.ToInt32(dt.Rows[0]["Id"]);
