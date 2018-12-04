@@ -12,8 +12,6 @@ namespace Sistema_de_Venta.Presentacion
         private static DataTable dt = new DataTable();
         private static FRM_Cliente _instancia;
         public string idCliente, nombreCliente, nuevo_o_Registrado;
-        private string idcliente;
-        private object cliente;
 
         public FRM_Cliente()
         {
@@ -257,7 +255,7 @@ namespace Sistema_de_Venta.Presentacion
             MostrarGuardarCancelar(true);
             cbx_FiscalConsumo.Enabled = false;
             //este es el metodo para guardar el log con la accion Inserto Cliente
-            Form1.Log(Usuario.Nombreusuario, "Edito Cliente: " + idcliente);
+            Form1.Log(Usuario.Nombreusuario, "Edito Cliente: " + idCliente);
 
             BloquearControlesClienteNuevo();
             cbx_FiscalConsumo.Focus();
@@ -363,7 +361,7 @@ namespace Sistema_de_Venta.Presentacion
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                                 //este es el metodo para guardar el log con la accion Inserto Cliente
-                                Form1.Log(Usuario.Nombreusuario, "Elimino Cliente: " + idcliente + " - " + cliente.Nombre);
+                                Form1.Log(Usuario.Nombreusuario, "Elimino Cliente: " + idCliente + " - " + cliente.Nombre);
                             }
                             else
                             {

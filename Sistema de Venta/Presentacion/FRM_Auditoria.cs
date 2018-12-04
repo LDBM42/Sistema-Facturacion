@@ -39,6 +39,7 @@ namespace Sistema_de_Venta.Presentacion
             // TODO: This line of code loads data into the 'dbSFacturacionDataSetAuditoria.auditoria_log' table. You can move, or remove it, as needed.
             this.auditoria_logTableAdapter.Fill(this.dbSFacturacionDataSetAuditoria.auditoria_log);
 
+            dgv_Auditoria.Sort(dgv_Auditoria.Columns[1], ListSortDirection.Descending); // ordenar datagridview de forma descendente
             DataSet ds = dbSFacturacionDataSetAuditoria;
             dt = ds.Tables[0];
         }
