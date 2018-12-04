@@ -89,7 +89,10 @@ namespace Sistema_de_Venta.Presentacion
                         venta.NumeroDocumento = Convert.ToInt32(text_NumeroDoc.Text);
                         venta.Cliente.Nombre = text_ClienteNombre.Text;
 
-                        
+                        //este es el metodo para guardar el log con la accion Guardar Ventas
+                        Form1.Log(Usuario.Nombreusuario, "Venta Guardada: ");
+
+
                         int iVentaId = FVenta.Insertar(venta);
                         if (iVentaId > 0)
                         {

@@ -113,6 +113,7 @@ namespace Sistema_de_Venta.Presentacion
                         //este es el metodo para guardar el log con la accion Detalle de ventas agregados
                         Form1.Log(Usuario.Nombreusuario, "Detalle de ventas agregados ");
 
+
                         FRM_DetalleVenta_Load(null, null);
                         Limpiar();
                     }
@@ -234,6 +235,8 @@ namespace Sistema_de_Venta.Presentacion
             FRM_ReporteVenta frmRepVenta = new FRM_ReporteVenta();
             frmRepVenta.SetVentaId_y_TipoCliente(Convert.ToInt32(textVentaId.Text), tipoCliente);
             frmRepVenta.ShowDialog();
+            //este es el metodo para guardar el log con la accion Facturar
+            Form1.Log(Usuario.Nombreusuario, "Facturar venta ");
         }
 
         private void text_ProductoDescripcion_MouseClick(object sender, MouseEventArgs e)

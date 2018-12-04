@@ -53,11 +53,15 @@ namespace Sistema_de_Venta
         private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Ventas>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de Ventas
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Ventas ");
         }
 
         private void cLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Cliente>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de cliente
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Cliente ");
         }
 
         private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +69,9 @@ namespace Sistema_de_Venta
             prodOrServ_Before = prodOrServ;
             prodOrServ = "P";
             AbrirFormulario<FRM_Producto>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de Producto
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Producto ");
+
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,29 +79,40 @@ namespace Sistema_de_Venta
             prodOrServ_Before = prodOrServ;
             prodOrServ = "S";
             AbrirFormulario<FRM_Producto>(1);
+            //este es el metodo para guardar el log con la accion entro a l menu de Servicio
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Servicios ");
         }
 
         private void cATEGORIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Categoria>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de Categoria
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Categoria ");
 
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FRM_Usuario>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de Usuario
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Usuario ");
         }
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lab_encabezado.Text = "Auritoría               ";
             AbrirFormulario<FRM_Auditoria>(0);
+            //este es el metodo para guardar el log con la accion entro a l menu de Auditoria
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de Auditoria ");
         }
 
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_Factura factura = FRM_Factura.GetInscance();
             factura.ShowDialog();
+            //este es el metodo para guardar el log con la accion entro a l menu de ver Factura
+            Form1.Log(Usuario.Nombreusuario, "Ingreso al menu de ver Factura ");
+
         }
 
 
@@ -217,6 +235,11 @@ namespace Sistema_de_Venta
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        internal static void Log(string nombreusuario, object p)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)

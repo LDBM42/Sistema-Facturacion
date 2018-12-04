@@ -163,11 +163,15 @@ namespace Sistema_de_Venta.Presentacion
             text_Id.Clear();
             text_Descripcion.Clear();
             text_Descripcion.Focus();
+            //este es el metodo para guardar el log con la accion Nueva Categoria
+            Form1.Log(Usuario.Nombreusuario, "Nueva Categoria ");
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             MostrarGuardarCancelar(true);
+            //este es el metodo para guardar el log con la accion Editar Categoria
+            Form1.Log(Usuario.Nombreusuario, "Editar Categoria ");
 
             Eliminar.Visible = true;
             text_Descripcion.Focus();
