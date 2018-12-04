@@ -375,12 +375,7 @@ namespace Sistema_de_Venta
     }
 
     // para sobreescibir el menustrip
-    class CustomProfessionalColors : ProfessionalColorTable
-    {
-
-    }
-    /*
-    public class CustomToolStripRenderer : ToolStripProfessionalRenderer
+    /*public class CustomToolStripRenderer : ToolStripProfessionalRenderer
     {
         public CustomToolStripRenderer() { }
 
@@ -392,27 +387,15 @@ namespace Sistema_de_Venta
                 e.Graphics.FillRectangle(brush, rc);
 
 
-            //LinearGradientMode mode = LinearGradientMode.Horizontal;
+            LinearGradientMode mode = LinearGradientMode.Horizontal;
 
-            //using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, ColorTable.MenuStripGradientBegin, ColorTable.MenuStripGradientEnd, mode))
-            //{
-            //    e.Graphics.FillRectangle(b, e.AffectedBounds);
-            //}
+            using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, ColorTable.MenuStripGradientBegin, ColorTable.MenuStripGradientEnd, mode))
+            {
+                e.Graphics.FillRectangle(b, e.AffectedBounds);
+            }
         }
 
     }*/
-
-    public class BlueRenderer : ToolStripProfessionalRenderer
-    {
-        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
-        {
-            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-            Color c = Color.FromArgb(0, 56, 117);
-            using (SolidBrush brush = new SolidBrush(c))
-                e.Graphics.FillRectangle(brush, rc);
-        }
-    }
-
 
     public class MiRenderizador : ToolStripProfessionalRenderer
     {
@@ -421,10 +404,32 @@ namespace Sistema_de_Venta
             if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
             else
             {
+                e.Item.Height = 200;
                 Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
-                e.Graphics.FillRectangle(Brushes.Beige, rc);
-                e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                Color c = Color.FromArgb(15, 15, 15);
+                using (SolidBrush brush = new SolidBrush(c))
+                    e.Graphics.FillRectangle(brush, rc);
+                    //e.Graphics.DrawRectangle(Pens.Red, 1, 0, rc.Width - 5, rc.Height - 1);
             }
         }
+        /*
+        protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
+        {
+        //base.OnRenderDropDownButtonBackground(e);
+
+        Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Color c = Color.FromArgb(50, 50, 50);
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
+        }*/
+        /*
+        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.ToolStrip.Size);
+            Color c = Color.FromArgb(50, 50, 50);
+            using (SolidBrush brush = new SolidBrush(c))
+                e.Graphics.FillRectangle(brush, rc);
+        }*/
     }
+
 }
