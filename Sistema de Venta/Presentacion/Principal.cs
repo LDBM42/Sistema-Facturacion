@@ -25,7 +25,7 @@ namespace Sistema_de_Venta
         public Form1()
         {
             InitializeComponent();
-            menuStrip1.Renderer = new BlueRenderer();
+            menuStrip1.Renderer = new MiRenderizador();
         }
 
         private int childFormNumber = 0;
@@ -410,6 +410,21 @@ namespace Sistema_de_Venta
             Color c = Color.FromArgb(0, 56, 117);
             using (SolidBrush brush = new SolidBrush(c))
                 e.Graphics.FillRectangle(brush, rc);
+        }
+    }
+
+
+    public class MiRenderizador : ToolStripProfessionalRenderer
+    {
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
+            else
+            {
+                Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+                e.Graphics.FillRectangle(Brushes.Beige, rc);
+                e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+            }
         }
     }
 }
